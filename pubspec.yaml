@@ -9,6 +9,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  google_fonts: ^4.0.4
+  shared_preferences: any
 
 dev_dependencies:
   flutter_test:
@@ -16,4 +18,10 @@ dev_dependencies:
   flutter_lints: ^2.0.0
 
 flutter:
+  generate: true
+
   uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/gifs/
