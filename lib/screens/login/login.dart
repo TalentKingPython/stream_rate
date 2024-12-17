@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:stream_rate/screens/login/login.dart';
-import 'package:stream_rate/screens/signup/face_signup.dart';
+import 'package:stream_rate/screens/signup/signup.dart';
 import 'package:stream_rate/utils/utils.dart';
 import 'package:stream_rate/commonView/custom_fill_button.dart';
 
-class SignUp extends StatefulWidget {
-  const SignUp({Key? key}) : super(key: key);
+class LogIn extends StatefulWidget {
+  const LogIn({Key? key}) : super(key: key);
 
   @override
-  SignUpState createState() => SignUpState();
+  LogInState createState() => LogInState();
 }
 
-class SignUpState extends State<SignUp> {
+class LogInState extends State<LogIn> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
@@ -44,14 +43,24 @@ class SignUpState extends State<SignUp> {
               fit: BoxFit.fill, // Adjust image fit if necessary
             ),
             Container(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 30, horizontal: 90),
+                padding: const EdgeInsets.only(top: 30, bottom: 10),
                 child: const Text(
-                  "Create an account to get started",
+                  "Welcome Back",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: colorWhite,
-                    fontSize: 28,
+                    fontSize: 24,
+                  ),
+                )),
+
+            Container(
+                padding: const EdgeInsets.only(top: 10, bottom: 20),
+                child: const Text(
+                  "Log in to continue",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: colorWhite,
+                    fontSize: 24,
                   ),
                 )),
 
@@ -70,7 +79,7 @@ class SignUpState extends State<SignUp> {
                         Container(
                           padding: const EdgeInsets.only(left: 10),
                           child: const Text(
-                            'Sign up with Phone or Email',
+                            'Log in with Phone or Email',
                             style: TextStyle(color: colorWhite, fontSize: 16),
                           ),
                         )
@@ -87,8 +96,8 @@ class SignUpState extends State<SignUp> {
                 children: [
                   CustomFillButton(
                     isColorBtn: false,
-                    onPressed: () =>
-                        openScreenWithResult(context, const FaceIdSignUp()),
+                    // onPressed: () =>
+                    //     openScreenWithResult(context, const FaceIdSignUp()),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -97,7 +106,7 @@ class SignUpState extends State<SignUp> {
                         Container(
                           padding: const EdgeInsets.only(left: 10),
                           child: const Text(
-                            'Sign up with Face ID',
+                            'Log in with Face ID',
                             style: TextStyle(color: colorWhite, fontSize: 16),
                           ),
                         )
@@ -159,7 +168,7 @@ class SignUpState extends State<SignUp> {
             ),
 
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+              padding: const EdgeInsets.fromLTRB(25, 10, 25, 50),
               child: Column(
                 children: [
                   CustomFillButton(
@@ -183,23 +192,13 @@ class SignUpState extends State<SignUp> {
               ),
             ),
 
-            Container(
-              padding: const EdgeInsets.symmetric(vertical: 30),
-              child: const Text("I will do it later",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: colorWhite,
-                      fontSize: 16,
-                      decoration: TextDecoration.underline)),
-            ),
-
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text("Already have an account?",
+                const Text("Don't have an account?",
                     style: TextStyle(fontSize: 16, color: colorWhite)),
                 GestureDetector(
-                  onTap: () => openScreenWithResult(context, const LogIn()),
+                  onTap: () => openScreenWithResult(context, const SignUp()),
                   child: Center(
                     child: Padding(
                       padding: const EdgeInsets.symmetric(
@@ -213,7 +212,7 @@ class SignUpState extends State<SignUp> {
                           ).createShader(bounds);
                         },
                         child: const Text(
-                          "Log In?",
+                          "Sign Up?",
                           style: TextStyle(
                             fontSize: 16,
                             color: Colors
