@@ -35,7 +35,7 @@ class CustomFillButton extends StatelessWidget {
                 begin: Alignment(-0.7, 0.0),
                 end: Alignment.centerRight)
             : null,
-        color: isColorBtn ? null : const Color(0xff202a39),
+        color: isColorBtn ? null : Colors.white.withOpacity(0.1),
         borderRadius: BorderRadius.circular(30),
       ),
       child: ElevatedButton(
