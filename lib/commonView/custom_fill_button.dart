@@ -28,6 +28,8 @@ class CustomFillButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: margin,
+      width: width,
+      height: height,
       decoration: BoxDecoration(
         gradient: isColorBtn
             ? const LinearGradient(
@@ -38,12 +40,7 @@ class CustomFillButton extends StatelessWidget {
         color: isColorBtn ? null : Colors.white.withOpacity(0.1),
         borderRadius: BorderRadius.circular(30),
       ),
-      child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-            minimumSize: Size(width ?? 50, height ?? 50)),
-        onPressed: onPressed,
-        child: child,
-      ),
+      child: MaterialButton(onPressed: onPressed, child: child),
     );
   }
 }
