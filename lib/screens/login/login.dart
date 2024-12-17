@@ -5,14 +5,14 @@ import 'package:stream_rate/screens/signup/signup.dart';
 import 'package:stream_rate/utils/utils.dart';
 import 'package:stream_rate/commonView/custom_fill_button.dart';
 
-class LogIn extends StatefulWidget {
-  const LogIn({Key? key}) : super(key: key);
+class Login extends StatefulWidget {
+  const Login({Key? key}) : super(key: key);
 
   @override
-  LogInState createState() => LogInState();
+  LoginState createState() => LoginState();
 }
 
-class LogInState extends State<LogIn> {
+class LoginState extends State<Login> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();

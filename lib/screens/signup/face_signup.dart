@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:stream_rate/commonView/load_image_with_placeholder.dart';
 
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:stream_rate/screens/onboard/onboard.dart';
+import 'package:stream_rate/screens/login/login.dart';
 import 'package:stream_rate/screens/signup/signup.dart';
 import 'package:stream_rate/utils/utils.dart';
 import 'package:stream_rate/commonView/custom_fill_button.dart';
@@ -30,19 +30,14 @@ class FaceIdSignUpState extends State<FaceIdSignUp> {
       backgroundColor: colorMainBackground,
       body: Stack(children: [
         Padding(
-          // Added padding around the entire body
-          padding: const EdgeInsets.only(
-              left: 30,
-              right: 30,
-              top: 80), // Adjust the value to your preference
+          padding: const EdgeInsets.only(left: 30, right: 30, top: 80),
           child: Column(
             children: [
-              // Image at the top
-              Image.asset(
-                'assets/images/streamrate-logo.png', // Your image path here
-                width: deviceWidth * 0.4, // Make it responsive to screen width
-                height: 100, // Adjust the height to your preference
-                fit: BoxFit.fill, // Adjust image fit if necessary
+              LoadImageSimple(
+                image: 'assets/images/streamrate-logo.png',
+                width: deviceWidth * 0.4,
+                height: 100,
+                imageFit: BoxFit.fill,
               ),
               Container(
                   padding: const EdgeInsets.only(top: 30, bottom: 10),
@@ -54,7 +49,6 @@ class FaceIdSignUpState extends State<FaceIdSignUp> {
                       fontSize: 24,
                     ),
                   )),
-
               Container(
                   padding: const EdgeInsets.only(bottom: 30),
                   child: const Text(
@@ -65,16 +59,12 @@ class FaceIdSignUpState extends State<FaceIdSignUp> {
                       fontSize: 24,
                     ),
                   )),
-
-              // Existing content inside the container
-
-              Image.asset(
-                'assets/images/face_signup_main.png', // Your image path here
-                width: deviceWidth * 0.5, // Make it responsive to screen width
-                height: 210, // Adjust the height to your preference
-                fit: BoxFit.fill, // Adjust image fit if necessary
+              LoadImageSimple(
+                image: 'assets/images/face_signup_main.png',
+                width: deviceWidth * 0.5,
+                height: 210,
+                imageFit: BoxFit.fill,
               ),
-
               Container(
                 padding:
                     const EdgeInsets.symmetric(vertical: 30, horizontal: 60),
@@ -86,7 +76,6 @@ class FaceIdSignUpState extends State<FaceIdSignUp> {
                       fontSize: 16,
                     )),
               ),
-
               Container(
                 padding: const EdgeInsets.fromLTRB(25, 10, 25, 30),
                 child: Column(
@@ -110,31 +99,33 @@ class FaceIdSignUpState extends State<FaceIdSignUp> {
                   ],
                 ),
               ),
-
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text("Already have an account?",
                       style: TextStyle(fontSize: 16, color: colorWhite)),
-                  Center(
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 8), // Add uniform padding of 16 pixels
-                      child: ShaderMask(
-                        shaderCallback: (Rect bounds) {
-                          return const LinearGradient(
-                            colors: [Color(0xFFF79B1E), Color(0xFFED1945)],
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
-                          ).createShader(bounds);
-                        },
-                        child: const Text(
-                          "Log In?",
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: Colors
-                                .white, // The base color won't be visible due to ShaderMask
-                            fontWeight: FontWeight.bold,
+                  GestureDetector(
+                    onTap: () => openScreenWithResult(context, const Login()),
+                    child: Center(
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 8), // Add uniform padding of 16 pixels
+                        child: ShaderMask(
+                          shaderCallback: (Rect bounds) {
+                            return const LinearGradient(
+                              colors: [Color(0xFFF79B1E), Color(0xFFED1945)],
+                              begin: Alignment.topLeft,
+                              end: Alignment.bottomRight,
+                            ).createShader(bounds);
+                          },
+                          child: const Text(
+                            "Log In?",
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: Colors
+                                  .white, // The base color won't be visible due to ShaderMask
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                       ),
@@ -146,10 +137,10 @@ class FaceIdSignUpState extends State<FaceIdSignUp> {
           ),
         ),
         Positioned(
-          top: 20,
+          top: 50,
           left: 20,
           child: GestureDetector(
-            onTap: () => openScreenWithClearPrevious(context, const SignUp()),
+            onTap: () => Navigator.pop(context),
             child: Container(
               height: 36,
               width: 36,

@@ -199,7 +199,7 @@ class SignUpState extends State<SignUp> {
                 const Text("Already have an account?",
                     style: TextStyle(fontSize: 16, color: colorWhite)),
                 GestureDetector(
-                  onTap: () => openScreenWithResult(context, const LogIn()),
+                  onTap: () => openScreenWithResult(context, const Login()),
                   child: Center(
                     child: Padding(
                       padding: const EdgeInsets.symmetric(
