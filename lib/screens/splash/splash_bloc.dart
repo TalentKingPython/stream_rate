@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:stream_rate/screens/onboard/onboard.dart';
 
 import 'splash.dart';
 import '../../../blocs/bloc.dart';
@@ -13,12 +14,13 @@ class SplashBloc extends Bloc {
 
   State<Splash> state;
 
-  SplashBloc(this.context, this.state);
+  SplashBloc(this.context, this.state) {
+    splashAction();
+  }
 
   splashAction() {
-    _timer = Timer(const Duration(milliseconds: 2000), () {
-      // openScreenWithClearPrevious(
-      //     context, const OnboardingPage(isFromHome: false));
+    _timer = Timer(const Duration(seconds: 3), () {
+      openScreenWithClearPrevious(context, const Onboard());
     });
   }
 

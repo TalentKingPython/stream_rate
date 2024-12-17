@@ -44,14 +44,15 @@ class SplashState extends State<Splash> {
           ),
           child: Align(
             alignment: Alignment.bottomCenter,
-            child: SizedBox(
-              child: Image.asset(
+            child: Column(mainAxisSize: MainAxisSize.min, children: [
+              Image.asset(
                 "assets/gifs/splash_loading.gif",
                 color: colorWhite,
                 height: deviceHeight * 0.05,
                 width: deviceWidth * 0.09,
               ),
-            ),
+              SizedBox(height: deviceHeight * 0.03),
+            ]),
           ),
         ),
       ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const colorPrimary = Color(0xFFFF401A);
+const colorPrimary = Color(0xFF141F2F);
 const colorPrimaryDark = Color(0xFFC63013);
 const colorAccent = Color(0xFF2FC494);
 const Color colorWhite = Color(0xffFFFFFF);
@@ -13,7 +13,7 @@ const Color colorHomeTextLight2 = Color(0xffABABAB);
 const Color colorLoginTextLight = Color(0xffBEBEBE);
 const Color colorTextLight = Color(0xff949494);
 const Color colorRipple = Color(0xffd0d0d0);
-const Color colorMainBackground = Color(0xffFAFAFA);
+const Color colorMainBackground = Color(0xff141F2F);
 const Color colorMainFacebookBtn = Color(0xff3062af);
 const Color colorMainView = Color(0xffe6e6e6);
 const Color colorMainGray = Color(0xff737373);

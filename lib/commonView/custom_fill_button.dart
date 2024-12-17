@@ -1,0 +1,49 @@
+import 'package:flutter/material.dart';
+
+import '../constant/constant.dart';
+
+class CustomFillButton extends StatelessWidget {
+  final Widget child;
+  final void Function()? onPressed;
+  final bool isColorBtn;
+  final double? width, height;
+  final BorderRadiusDirectional? borderRadius;
+  final EdgeInsetsDirectional? margin, padding;
+  final MaterialTapTargetSize? tapTargetSize;
+
+  const CustomFillButton({
+    super.key,
+    required this.child,
+    this.onPressed,
+    this.margin,
+    this.width,
+    this.height = 50,
+    this.padding,
+    this.isColorBtn = true,
+    this.borderRadius,
+    this.tapTargetSize = MaterialTapTargetSize.padded,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: margin,
+      decoration: BoxDecoration(
+        gradient: isColorBtn
+            ? const LinearGradient(
+                colors: [Color(0xFFED1945), Color(0xFFF79B1E)],
+                begin: Alignment(-0.7, 0.0),
+                end: Alignment.centerRight)
+            : null,
+        color: isColorBtn ? null : const Color(0xff202a39),
+        borderRadius: BorderRadius.circular(30),
+      ),
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+            minimumSize: Size(width ?? 50, height ?? 50)),
+        onPressed: onPressed,
+        child: child,
+      ),
+    );
+  }
+}

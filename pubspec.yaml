@@ -9,6 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_svg: ^2.0.5
   google_fonts: ^4.0.4
   shared_preferences: any
 
@@ -25,3 +26,4 @@ flutter:
   assets:
     - assets/images/
     - assets/gifs/
+    - assets/svgs/
