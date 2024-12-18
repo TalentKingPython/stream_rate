@@ -1,6 +1,10 @@
 import 'dart:async';
+import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:stream_rate/screens/subscription/subscription_first.dart';
+import 'package:stream_rate/screens/subscription/subscription_second.dart';
+import 'package:stream_rate/screens/subscription/subscription_third.dart';
 
 import '../constant/constant.dart';
 import '../main.dart';
@@ -155,4 +159,16 @@ openSimpleSnackbar(String title, {duration = 3}) {
       ),
     );
   }
+}
+
+openSubscriptionPage(BuildContext context) {
+  final randomIndex = Random().nextInt(3);
+
+  final screens = [
+    const SubScriptionFirst(),
+    const SubScriptionSecond(),
+    const SubScriptionThird(),
+  ];
+
+  openScreenWithResult(context, screens[randomIndex]);
 }

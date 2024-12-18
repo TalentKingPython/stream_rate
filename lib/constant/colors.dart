@@ -58,3 +58,11 @@ const Color colorButtomNavBroder = Color(0xffF1F1F1);
 const Color colorNotSelected = Color(0xffB2B2B2);
 const Color colorSelected = Color(0xff28C271);
 const Color colorLoginBg = Color(0xff7d7d7d);
+
+const Color onBoardingOrange = const Color.fromARGB(255, 247, 155, 30);
+const Color onBoardingRed = const Color.fromARGB(255, 237, 25, 69);
+const Color white = const Color.fromARGB(255, 255, 255, 255);
+const Color whitelow = const Color.fromARGB(35, 255, 255, 255);
+const Color whiteLowOpacity = const Color.fromARGB(5, 255, 255, 255);
+const Color grey = const Color.fromARGB(5, 255, 255, 255);
+const Color darkblue = const Color.fromARGB(255, 25, 37, 56);

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:stream_rate/commonView/custom_check_text.dart';
 import 'package:stream_rate/commonView/load_image_with_placeholder.dart';
+import 'package:stream_rate/screens/subscription/thanks.dart';
 
 import 'package:stream_rate/utils/utils.dart';
 import 'package:stream_rate/commonView/custom_fill_button.dart';
@@ -29,7 +30,7 @@ class SubScriptionFirstState extends State<SubScriptionFirst> {
       backgroundColor: colorMainBackground,
       body: Stack(children: [
         Padding(
-          padding: const EdgeInsets.only(left: 30, right: 30, top: 80),
+          padding: const EdgeInsets.only(left: 30, right: 30, top: 100),
           child: Column(
             children: [
               LoadImageSimple(
@@ -142,33 +143,29 @@ class SubScriptionFirstState extends State<SubScriptionFirst> {
                       ]))),
               Container(
                 padding: const EdgeInsets.fromLTRB(25, 50, 25, 30),
-                child: Column(
-                  children: [
-                    CustomFillButton(
-                      isColorBtn: true,
-                      child: Row(
+                child: CustomFillButton(
+                  onPressed: () =>
+                      openScreenWithResult(context, const Thanks()),
+                  isColorBtn: true,
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text("PAY \$2.99",
+                          style: TextStyle(fontSize: 12, color: colorWhite)),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          const Text("PAY \$2.99",
+                        children: const [
+                          Text("SUBSCRIBE",
                               style:
                                   TextStyle(fontSize: 12, color: colorWhite)),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: const [
-                              Text("SUBSCRIBE",
-                                  style: TextStyle(
-                                      fontSize: 12, color: colorWhite)),
-                              SizedBox(width: 2),
-                              Icon(Icons.chevron_right,
-                                  size: 12, color: colorWhite)
-                            ],
-                          )
+                          SizedBox(width: 2),
+                          Icon(Icons.chevron_right, size: 12, color: colorWhite)
                         ],
-                      ),
-                    ),
-                  ],
+                      )
+                    ],
+                  ),
                 ),
               ),
             ],

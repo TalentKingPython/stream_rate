@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:stream_rate/commonView/custom_check_text.dart';
 import 'package:stream_rate/commonView/load_image_with_placeholder.dart';
+import 'package:stream_rate/screens/subscription/thanks.dart';
 
 import 'package:stream_rate/utils/utils.dart';
 import 'package:stream_rate/commonView/custom_fill_button.dart';
 
-class SubScriptionThree extends StatefulWidget {
-  const SubScriptionThree({Key? key}) : super(key: key);
+class SubScriptionThird extends StatefulWidget {
+  const SubScriptionThird({Key? key}) : super(key: key);
 
   @override
-  SubScriptionThreeState createState() => SubScriptionThreeState();
+  SubScriptionThirdState createState() => SubScriptionThirdState();
 }
 
-class SubScriptionThreeState extends State<SubScriptionThree> {
+class SubScriptionThirdState extends State<SubScriptionThird> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
@@ -29,7 +30,7 @@ class SubScriptionThreeState extends State<SubScriptionThree> {
       backgroundColor: colorMainBackground,
       body: Stack(children: [
         Padding(
-          padding: const EdgeInsets.only(left: 30, right: 30, top: 50),
+          padding: const EdgeInsets.only(left: 30, right: 30, top: 100),
           child: Column(
             children: [
               LoadImageSimple(
@@ -39,49 +40,47 @@ class SubScriptionThreeState extends State<SubScriptionThree> {
                 imageFit: BoxFit.fill,
               ),
               const SizedBox(height: 40),
-              Container(
-                padding: const EdgeInsets.all(16),
-                width: deviceWidth * 0.9,
-                height: deviceHeight * 0.72,
-                decoration: BoxDecoration(
-                  color: colorWhite,
-                  borderRadius: BorderRadius.circular(30),
-                ),
-                child: Column(children: [
-                  LoadImageSimple(
-                      image: "assets/images/subscribe_main.png",
-                      width: deviceWidth * 0.4,
-                      height: 100,
-                      imageFit: BoxFit.fill),
-                  const Text("Go Unlimited with Premium",
-                      style: TextStyle(fontSize: 20)),
+              Stack(
+                children: [
                   Container(
-                      padding: const EdgeInsets.all(1),
-                      width: deviceWidth * 0.8,
-                      decoration: BoxDecoration(
-                        color: colorMainBackground, // Background color
-                        borderRadius:
-                            BorderRadius.circular(20.0), // Rounded corners
-                        gradient: const LinearGradient(
-                          colors: [
-                            Color(0xFFED1945),
-                            Color(0xFFF79B1E)
-                          ], // Gradient colors
-                          begin: Alignment.bottomLeft, // Start from bottom-left
-                          end: Alignment.topRight, // End at top-right
-                        ), // Border color and width
-                      ),
-                      child: Container(
+                    padding: const EdgeInsets.all(16),
+                    margin: const EdgeInsets.only(bottom: 30),
+                    width: deviceWidth * 0.9,
+                    height: 610,
+                    decoration: BoxDecoration(
+                      color: colorWhite,
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    child: Column(children: [
+                      LoadImageSimple(
+                          image: "assets/images/subscribe_main.png",
+                          width: deviceWidth * 0.4,
+                          height: 100,
+                          imageFit: BoxFit.fill),
+                      const Text("Go Unlimited with Premium",
+                          style: TextStyle(fontSize: 20)),
+                      Container(
+                        padding: const EdgeInsets.all(3),
+                        width: deviceWidth * 0.8,
+                        decoration: BoxDecoration(
+                          color: colorMainBackground,
+                          borderRadius: BorderRadius.circular(20.0),
+                          gradient: const LinearGradient(
+                            colors: [Color(0xFFED1945), Color(0xFFF79B1E)],
+                            begin: Alignment.bottomLeft,
+                            end: Alignment.topRight,
+                          ),
+                        ),
+                        child: Container(
                           padding: const EdgeInsets.all(16.0),
-                          width: deviceWidth * 0.79,
+                          width: deviceWidth * 0.75,
                           decoration: BoxDecoration(
                               color: colorWhite,
                               borderRadius: BorderRadius.circular(20)),
                           child: Column(children: [
                             Row(
                               mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment
-                                  .baseline, // Align based on the baseline
+                              crossAxisAlignment: CrossAxisAlignment.baseline,
                               textBaseline: TextBaseline.alphabetic,
                               children: [
                                 ShaderMask(
@@ -99,8 +98,7 @@ class SubScriptionThreeState extends State<SubScriptionThree> {
                                     "\$2.99 ",
                                     style: TextStyle(
                                       fontSize: 30,
-                                      color: Colors
-                                          .white, // The base color won't be visible due to ShaderMask
+                                      color: colorWhite,
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
@@ -149,8 +147,43 @@ class SubScriptionThreeState extends State<SubScriptionThree> {
                               backgroundColor: Colors.black.withOpacity(0.1),
                               fontColor: colorBlack,
                             ),
-                          ]))),
-                ]),
+                          ]),
+                        ),
+                      ),
+                    ]),
+                  ),
+                  Positioned(
+                    bottom: 0,
+                    left: 60,
+                    right: 60,
+                    child: CustomFillButton(
+                      onPressed: () =>
+                          openScreenWithResult(context, const Thanks()),
+                      isColorBtn: true,
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Text("PAY \$2.99",
+                              style:
+                                  TextStyle(fontSize: 12, color: colorWhite)),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: const [
+                              Text("SUBSCRIBE",
+                                  style: TextStyle(
+                                      fontSize: 12, color: colorWhite)),
+                              SizedBox(width: 2),
+                              Icon(Icons.chevron_right,
+                                  size: 12, color: colorWhite)
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
@@ -174,40 +207,6 @@ class SubScriptionThreeState extends State<SubScriptionThree> {
             ),
           ),
         ),
-        Positioned(
-            bottom: 30,
-            left: 60,
-            right: 60,
-            child: SizedBox(
-              width: deviceWidth * 0.7,
-              child: Column(
-                children: [
-                  CustomFillButton(
-                    isColorBtn: true,
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const Text("PAY \$2.99",
-                            style: TextStyle(fontSize: 12, color: colorWhite)),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: const [
-                            Text("SUBSCRIBE",
-                                style:
-                                    TextStyle(fontSize: 12, color: colorWhite)),
-                            SizedBox(width: 2),
-                            Icon(Icons.chevron_right,
-                                size: 12, color: colorWhite)
-                          ],
-                        )
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ))
       ]),
     );
   }

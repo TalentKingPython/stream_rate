@@ -3,6 +3,8 @@ import 'package:stream_rate/commonView/custom_fill_button.dart';
 
 import 'package:stream_rate/commonView/item_card.dart';
 import 'package:stream_rate/commonView/item_card_model.dart';
+import 'package:stream_rate/commonView/load_image_with_placeholder.dart';
+import 'package:stream_rate/constant/image_assets.dart';
 
 import 'package:stream_rate/utils/utils.dart';
 
@@ -14,49 +16,7 @@ class Profile extends StatefulWidget {
 }
 
 class ProfileState extends State<Profile> {
-  List<ItemCardModel> items = [
-    ItemCardModel(
-        image: 'assets/images/item_card.png',
-        itemName: 'Jaws',
-        year: 1978,
-        imdb: 8.1,
-        metacritic: 7.3,
-        rottenTomatoes: 97,
-        letterboxd: 3.6),
-    ItemCardModel(
-        image: 'assets/images/item_card.png',
-        itemName: 'Star Wars',
-        year: 1977,
-        imdb: 8.7,
-        metacritic: 6.9,
-        rottenTomatoes: 94,
-        letterboxd: 4.4),
-    ItemCardModel(
-        image: 'assets/images/item_card.png',
-        itemName: 'Toy Story 2',
-        year: 1999,
-        imdb: 7.9,
-        metacritic: 8.5,
-        rottenTomatoes: 98,
-        letterboxd: 4.5),
-    ItemCardModel(
-        image: 'assets/images/item_card.png',
-        itemName: 'Casablanca',
-        year: 1942,
-        imdb: 7.7,
-        metacritic: 7.9,
-        rottenTomatoes: 88,
-        letterboxd: 4.0),
-    ItemCardModel(
-        image: 'assets/images/item_card.png',
-        itemName: 'Parasite',
-        year: 2019,
-        imdb: 9.7,
-        metacritic: 6.6,
-        rottenTomatoes: 86,
-        letterboxd: 3.2),
-  ];
-
+  final isSubscribed = false;
   @override
   void initState() {
     super.initState();
@@ -87,7 +47,7 @@ class ProfileState extends State<Profile> {
               height: 50,
               child: Center(
                 child: Text(
-                  'Favourites',
+                  'My Profile',
                   style: TextStyle(fontSize: 24, color: colorWhite),
                 ),
               ),
@@ -116,9 +76,138 @@ class ProfileState extends State<Profile> {
       ),
       backgroundColor: colorMainBackground,
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(15, 0, 15, 0),
-        child: ListView(
-          children: items.map((item) => ItemCard(item: item)).toList(),
+        padding: const EdgeInsets.all(15),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            Center(
+              child: Stack(
+                children: [
+                  const ClipOval(
+                    child: LoadImageSimple(
+                      image: 'assets/images/default-avatar.jpg',
+                      width: 230,
+                      height: 230,
+                    ),
+                  ),
+                  Positioned(
+                    right: 0,
+                    bottom: 0,
+                    child: Container(
+                      width: 45.0,
+                      height: 45.0,
+                      decoration: const BoxDecoration(
+                        color: colorWhite,
+                        shape: BoxShape.circle,
+                      ),
+                      child: const Icon(
+                        Icons.camera_alt_outlined,
+                        size: 30.0,
+                        color: colorMainGray,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 20),
+            const Center(
+              child: Text('Jim Robbins',
+                  style: TextStyle(fontSize: 35, color: colorWhite)),
+            ),
+            const SizedBox(height: 40),
+            Row(
+              children: const [
+                Text('Profile Details',
+                    style: TextStyle(color: colorWhite, fontSize: 18)),
+                Spacer(),
+                Icon(Icons.edit_square, color: colorMainLightGray)
+              ],
+            ),
+            const SizedBox(height: 35),
+            const Text('jimrobbins29@domain.com',
+                style: TextStyle(fontSize: 16, color: colorWhite)),
+            const SizedBox(height: 30),
+            const Text('+078 0527 882',
+                style: TextStyle(fontSize: 16, color: colorWhite)),
+            const SizedBox(height: 30),
+            const Text('********',
+                style: TextStyle(fontSize: 16, color: colorWhite)),
+            const Spacer(),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text('Subscription',
+                    style: TextStyle(color: colorWhite, fontSize: 18)),
+                const SizedBox(height: 10),
+                if (isSubscribed)
+                  _subscribedContainer()
+                else
+                  _unsubscribedContainer()
+              ],
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _subscribedContainer() {
+    return Container(
+      padding: const EdgeInsets.all(1),
+      width: deviceWidth,
+      decoration: BoxDecoration(
+        color: colorMainBackground,
+        borderRadius: BorderRadius.circular(20.0),
+        gradient: const LinearGradient(
+          colors: [Color(0xFFED1945), Color(0xFFF79B1E)],
+          begin: Alignment.bottomLeft,
+          end: Alignment.topRight,
+        ),
+      ),
+    );
+  }
+
+  Widget _unsubscribedContainer() {
+    return Container(
+      padding: const EdgeInsets.all(1),
+      width: deviceWidth,
+      decoration: BoxDecoration(
+        color: colorMainBackground,
+        borderRadius: BorderRadius.circular(20.0),
+        gradient: const LinearGradient(
+          colors: [Color(0xFFED1945), Color(0xFFF79B1E)],
+          begin: Alignment.bottomLeft,
+          end: Alignment.topRight,
+        ),
+      ),
+      child: Container(
+        padding: const EdgeInsets.all(10),
+        decoration: BoxDecoration(
+          color: colorMainBackground,
+          borderRadius: BorderRadius.circular(20.0),
+        ),
+        child: Row(
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: const LoadImageSimple(
+                image: AppImageAsset.homeBG,
+                width: 90,
+                height: 150,
+                imageFit: BoxFit.cover,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(15),
+              child: Column(children: [
+                Text(
+                  'Your are currently subscribed to our',
+                  style: TextStyle(color: colorWhite),
+                )
+              ]),
+            )
+          ],
         ),
       ),
     );

@@ -3,7 +3,7 @@ import 'package:stream_rate/commonView/custom_fill_button.dart';
 
 import 'package:stream_rate/commonView/item_card.dart';
 import 'package:stream_rate/commonView/item_card_model.dart';
-
+import 'package:stream_rate/constant/image_assets.dart';
 import 'package:stream_rate/utils/utils.dart';
 
 class History extends StatefulWidget {
@@ -16,7 +16,7 @@ class History extends StatefulWidget {
 class HistoryState extends State<History> {
   List<ItemCardModel> items = [
     ItemCardModel(
-        image: 'assets/images/item_card.png',
+        image: AppImageAsset.resultnoimg,
         itemName: 'Jaws',
         year: 1978,
         imdb: 8.1,
@@ -24,7 +24,7 @@ class HistoryState extends State<History> {
         rottenTomatoes: 97,
         letterboxd: 3.6),
     ItemCardModel(
-        image: 'assets/images/item_card.png',
+        image: AppImageAsset.resultnoimg,
         itemName: 'Star Wars',
         year: 1977,
         imdb: 8.7,
@@ -32,7 +32,7 @@ class HistoryState extends State<History> {
         rottenTomatoes: 94,
         letterboxd: 4.4),
     ItemCardModel(
-        image: 'assets/images/item_card.png',
+        image: AppImageAsset.resultnoimg,
         itemName: 'Toy Story 2',
         year: 1999,
         imdb: 7.9,
@@ -40,7 +40,7 @@ class HistoryState extends State<History> {
         rottenTomatoes: 98,
         letterboxd: 4.5),
     ItemCardModel(
-        image: 'assets/images/item_card.png',
+        image: AppImageAsset.resultnoimg,
         itemName: 'Casablanca',
         year: 1942,
         imdb: 7.7,
@@ -48,7 +48,7 @@ class HistoryState extends State<History> {
         rottenTomatoes: 88,
         letterboxd: 4.0),
     ItemCardModel(
-        image: 'assets/images/item_card.png',
+        image: AppImageAsset.resultnoimg,
         itemName: 'Parasite',
         year: 2019,
         imdb: 9.7,
@@ -153,18 +153,18 @@ class HistoryState extends State<History> {
                     ],
                   ),
                   CustomFillButton(
-                      child: Row(
-                    children: const [
+                    onPressed: () => openSubscriptionPage(context),
+                    child: Row(children: const [
                       Text('SUBSCRIBE',
                           style: TextStyle(
                               color: colorWhite, fontWeight: FontWeight.bold)),
                       Icon(Icons.arrow_forward_ios, size: 15, color: colorWhite)
-                    ],
-                  ))
+                    ]),
+                  )
                 ],
               ),
             ),
-          )
+          ),
         ],
       ),
     );

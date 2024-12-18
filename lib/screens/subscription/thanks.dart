@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:stream_rate/commonView/custom_check_text.dart';
 import 'package:stream_rate/commonView/load_image_with_placeholder.dart';
+import 'package:stream_rate/screens/home/home.dart';
 
 import 'package:stream_rate/utils/utils.dart';
 import 'package:stream_rate/commonView/custom_fill_button.dart';
@@ -63,6 +64,8 @@ class ThanksState extends State<Thanks> {
                             textAlign: TextAlign.center,
                             style: TextStyle(fontSize: 20))),
                     CustomFillButton(
+                      onPressed: () =>
+                          openScreenWithResult(context, const Home()),
                       width: deviceWidth * 0.4,
                       isColorBtn: true,
                       child: Row(

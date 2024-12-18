@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:stream_rate/screens/subscription/thanks.dart';
 
 import 'package:stream_rate/utils/utils.dart';
 import 'package:stream_rate/commonView/custom_fill_button.dart';
@@ -28,7 +29,7 @@ class SubScriptionSecondState extends State<SubScriptionSecond> {
       body: Container(
         decoration: const BoxDecoration(
             image: DecorationImage(
-                image: AssetImage('assets/images/subscription-bg3.png'),
+                image: AssetImage('assets/images/subscription-bg.png'),
                 fit: BoxFit.cover)),
         child: Stack(
           children: [
@@ -58,6 +59,8 @@ class SubScriptionSecondState extends State<SubScriptionSecond> {
                 right: 0,
                 child: Center(
                   child: CustomFillButton(
+                    onPressed: () =>
+                        openScreenWithResult(context, const Thanks()),
                     width: deviceWidth * .6,
                     isColorBtn: true,
                     child: Row(

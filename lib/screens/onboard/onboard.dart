@@ -4,6 +4,7 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
 import 'package:stream_rate/commonView/load_image_with_placeholder.dart';
+import 'package:stream_rate/constant/image_assets.dart';
 import 'package:stream_rate/screens/signup/signup.dart';
 import 'package:stream_rate/utils/utils.dart';
 import 'package:stream_rate/commonView/custom_fill_button.dart';
@@ -33,77 +34,36 @@ class OnboardState extends State<Onboard> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: colorMainBackground,
-      body: SizedBox(
-        height: deviceHeight,
-        child: Stack(children: [
-          CarouselSlider(
-            carouselController: controller,
-            options: CarouselOptions(
-              height: deviceHeight - 80,
-              viewportFraction: 1,
-              enlargeCenterPage: false,
-              autoPlay: false,
-              enableInfiniteScroll: false,
-              onPageChanged: (index, reason) {
-                setState(() {
-                  currentPage = index;
-                });
-              },
-            ),
-            items: [firstBoard(), secondBoard(), thirdBoard()],
+      body: Stack(children: [
+        CarouselSlider(
+          carouselController: controller,
+          options: CarouselOptions(
+            height: deviceHeight,
+            viewportFraction: 1,
+            enlargeCenterPage: false,
+            autoPlay: false,
+            enableInfiniteScroll: false,
+            onPageChanged: (index, reason) {
+              setState(() {
+                currentPage = index;
+              });
+            },
           ),
-          Positioned(bottom: 0, right: 0, left: 0, child: bottomSection())
-        ]),
-      ),
-    );
-  }
-
-  Widget firstBoard() {
-    return Column(
-      children: const [
-        SizedBox(height: 150),
-        LoadImageSimple(
-            image: 'assets/images/onboarding_logo.png', height: 100),
-        SizedBox(height: 70),
-        Text(
-          'Welcome!',
-          style: TextStyle(color: colorWhite, fontSize: 30),
+          items: [1, 2, 3].map((e) {
+            return Container(
+              width: deviceWidth,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(
+                      'assets/images/onboarding/OnBoarding${e}BG.png'),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            );
+          }).toList(),
         ),
-        Text(
-          'We are happy to see you here.',
-          style: TextStyle(color: colorWhite, fontSize: 20),
-        ),
-        SizedBox(height: 70),
-        LoadImageSimple(
-            image: 'assets/images/onboarding_image.png', height: 160),
-        SizedBox(height: 40),
-        Text(
-          'StreamRate is very easy to use.',
-          style: TextStyle(
-              color: colorWhite, fontSize: 20, fontWeight: FontWeight.bold),
-        ),
-        SizedBox(height: 10),
-        Text(
-          'You will receive 5 free',
-          style: TextStyle(color: colorWhite, fontSize: 20),
-        ),
-        Text(
-          'credits every month.',
-          style: TextStyle(color: colorWhite, fontSize: 20),
-        ),
-      ],
-    );
-  }
-
-  Widget secondBoard() {
-    return Column(
-      children: const [LoadImageSimple(image: 'assets/images/onboarding2.png')],
-    );
-  }
-
-  Widget thirdBoard() {
-    return Column(
-      children: const [LoadImageSimple(image: 'assets/images/onboarding3.png')],
+        Positioned(bottom: 0, right: 0, left: 0, child: bottomSection())
+      ]),
     );
   }
 

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:stream_rate/screens/home/home.dart';
 import 'package:stream_rate/screens/signup/signup.dart';
 import 'package:stream_rate/utils/utils.dart';
 import 'package:stream_rate/commonView/custom_fill_button.dart';
@@ -70,6 +71,8 @@ class LoginState extends State<Login> {
               child: Column(
                 children: [
                   CustomFillButton(
+                    onPressed: () =>
+                        openScreenWithResult(context, const Home()),
                     isColorBtn: false,
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -96,8 +99,6 @@ class LoginState extends State<Login> {
                 children: [
                   CustomFillButton(
                     isColorBtn: false,
-                    // onPressed: () =>
-                    //     openScreenWithResult(context, const FaceIdSignUp()),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,

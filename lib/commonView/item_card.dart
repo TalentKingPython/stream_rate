@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:stream_rate/commonView/item_card_model.dart';
 import 'package:stream_rate/commonView/load_image_with_placeholder.dart';
+import 'package:stream_rate/constant/image_assets.dart';
 import 'package:stream_rate/utils/utils.dart';
 
 class ItemCard extends StatelessWidget {
@@ -20,11 +21,12 @@ class ItemCard extends StatelessWidget {
           ClipRRect(
             borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(20), bottomLeft: Radius.circular(20)),
-            child: LoadImageWithPlaceHolder(
+            child: LoadImageSimple(
               image: item.image,
               width: 95,
               height: 130,
               imageFit: BoxFit.contain,
+              defaultAssetImage: AppImageAsset.resultnoimg,
             ),
           ),
           Expanded(
