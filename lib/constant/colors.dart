@@ -49,6 +49,7 @@ const Color colorPickUp = Color(0xff2FC494);
 const Color lightStepUnProgress = Color(0xffc6c6c6);
 const Color colorIconLight = Color(0xffc6c6c6);
 const Color colorHistoryCompleteDark = Color(0xffE8F8F0);
+const Color colorItemCard = Color(0xff192538);
 
 //Status Color
 const Color colorYellow = Color(0xffffbb45);

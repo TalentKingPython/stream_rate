@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:slider_captcha/slider_captcha.dart';
 import 'package:stream_rate/commonView/load_image_with_placeholder.dart';
