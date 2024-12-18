@@ -4,6 +4,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:stream_rate/screens/login/login.dart';
 import 'package:stream_rate/screens/signup/email_signup.dart';
 import 'package:stream_rate/screens/signup/face_signup.dart';
+import 'package:stream_rate/screens/subscription/subscription_one.dart';
+import 'package:stream_rate/screens/subscription/subscription_second.dart';
+import 'package:stream_rate/screens/subscription/subscription_three.dart';
+import 'package:stream_rate/screens/subscription/thanks.dart';
 import 'package:stream_rate/utils/utils.dart';
 import 'package:stream_rate/commonView/custom_fill_button.dart';
 
@@ -200,7 +204,7 @@ class SignUpState extends State<SignUp> {
                 const Text("Already have an account?",
                     style: TextStyle(fontSize: 16, color: colorWhite)),
                 GestureDetector(
-                  onTap: () => openScreenWithResult(context, const Login()),
+                  onTap: () => openScreenWithResult(context, const Thanks()),
                   child: Center(
                     child: Padding(
                       padding: const EdgeInsets.symmetric(
