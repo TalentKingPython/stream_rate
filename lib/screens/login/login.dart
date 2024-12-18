@@ -212,7 +212,7 @@ class LoginState extends State<Login> {
                           ).createShader(bounds);
                         },
                         child: const Text(
-                          "Sign Up?",
+                          "Sign Up",
                           style: TextStyle(
                             fontSize: 16,
                             color: Colors

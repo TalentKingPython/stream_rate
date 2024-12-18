@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:stream_rate/screens/login/login.dart';
+import 'package:stream_rate/screens/signup/email_signup.dart';
 import 'package:stream_rate/screens/signup/face_signup.dart';
 import 'package:stream_rate/utils/utils.dart';
 import 'package:stream_rate/commonView/custom_fill_button.dart';
@@ -44,16 +45,14 @@ class SignUpState extends State<SignUp> {
               fit: BoxFit.fill, // Adjust image fit if necessary
             ),
             Container(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 30, horizontal: 90),
-                child: const Text(
-                  "Create an account to get started",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: colorWhite,
-                    fontSize: 28,
-                  ),
-                )),
+              width: 230,
+              padding: const EdgeInsets.symmetric(vertical: 30),
+              child: const Text(
+                "Create an account to get started",
+                textAlign: TextAlign.center,
+                style: TextStyle(color: colorWhite, fontSize: 28),
+              ),
+            ),
 
             // Existing content inside the container
             Container(
@@ -62,6 +61,8 @@ class SignUpState extends State<SignUp> {
                 children: [
                   CustomFillButton(
                     isColorBtn: false,
+                    onPressed: () =>
+                        openScreenWithResult(context, const EmailSignUp()),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -213,7 +214,7 @@ class SignUpState extends State<SignUp> {
                           ).createShader(bounds);
                         },
                         child: const Text(
-                          "Log In?",
+                          "Log In",
                           style: TextStyle(
                             fontSize: 16,
                             color: Colors

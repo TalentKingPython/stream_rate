@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:stream_rate/commonView/load_image_with_placeholder.dart';
+import 'package:stream_rate/screens/capture/capture.dart';
 
 import 'package:stream_rate/screens/login/login.dart';
-import 'package:stream_rate/screens/signup/signup.dart';
 import 'package:stream_rate/utils/utils.dart';
 import 'package:stream_rate/commonView/custom_fill_button.dart';
 
@@ -81,6 +81,8 @@ class FaceIdSignUpState extends State<FaceIdSignUp> {
                 child: Column(
                   children: [
                     CustomFillButton(
+                      onPressed: () =>
+                          openScreenWithResult(context, const Capture()),
                       isColorBtn: true,
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
