@@ -22,6 +22,8 @@ class CustomTextFormField extends StatelessWidget {
   final TextInputType inputType;
   final Color fillColor;
   final bool filled;
+  final int? maxLines;
+  final int? minLines;
   final OutlineInputBorder? enabledBorder;
   final OutlineInputBorder? focusedBorder;
   final OutlineInputBorder? errorBorder;
@@ -49,6 +51,8 @@ class CustomTextFormField extends StatelessWidget {
     this.inputType = TextInputType.text,
     this.fillColor = colorPrimary,
     this.filled = true,
+    this.maxLines,
+    this.minLines,
     this.enabledBorder,
     this.focusedBorder,
     this.errorBorder,
@@ -66,6 +70,9 @@ class CustomTextFormField extends StatelessWidget {
       textInputAction: inputAction,
       initialValue: initialValue,
       readOnly: readOnly,
+      maxLines: isPassword ? 1 : maxLines,
+      minLines: minLines,
+      cursorColor: colorWhite,
       decoration: InputDecoration(
         hintText: hintText,
         labelText: labelText,

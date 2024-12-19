@@ -4,6 +4,7 @@ import 'package:pin_code_fields/pin_code_fields.dart';
 
 import 'package:stream_rate/commonView/custom_fill_button.dart';
 import 'package:stream_rate/commonView/load_image_with_placeholder.dart';
+import 'package:stream_rate/screens/login/login.dart';
 import 'package:stream_rate/utils/utils.dart';
 
 class ConfirmEmail extends StatefulWidget {
@@ -130,7 +131,9 @@ class ConfirmEmailState extends State<ConfirmEmail> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   CustomFillButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      openScreenWithResult(context, const Login());
+                    },
                     isColorBtn: false,
                     width: deviceWidth * .39,
                     height: 60,

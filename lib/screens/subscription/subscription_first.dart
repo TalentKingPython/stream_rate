@@ -71,17 +71,13 @@ class SubScriptionFirstState extends State<SubScriptionFirst> {
                       child: Column(children: [
                         Row(
                           mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment
-                              .baseline, // Align based on the baseline
+                          crossAxisAlignment: CrossAxisAlignment.baseline,
                           textBaseline: TextBaseline.alphabetic,
                           children: [
                             ShaderMask(
                               shaderCallback: (Rect bounds) {
                                 return const LinearGradient(
-                                  colors: [
-                                    Color(0xFFED1945),
-                                    Color(0xFFF79B1E)
-                                  ],
+                                  colors: [onBoardingRed, onBoardingOrange],
                                   begin: Alignment.topLeft,
                                   end: Alignment.bottomRight,
                                 ).createShader(bounds);
@@ -90,8 +86,7 @@ class SubScriptionFirstState extends State<SubScriptionFirst> {
                                 "\$2.99 ",
                                 style: TextStyle(
                                   fontSize: 30,
-                                  color: Colors
-                                      .white, // The base color won't be visible due to ShaderMask
+                                  color: colorWhite,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),

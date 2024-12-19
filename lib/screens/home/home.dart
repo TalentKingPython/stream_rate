@@ -3,8 +3,10 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:stream_rate/screens/favourite/favourite.dart';
 import 'package:stream_rate/screens/history/history.dart';
+import 'package:stream_rate/screens/login/login.dart';
 import 'package:stream_rate/screens/profile/profile.dart';
 import 'package:stream_rate/screens/result/result.dart';
+import 'package:stream_rate/screens/support/support.dart';
 
 import 'package:stream_rate/utils/utils.dart';
 import 'package:stream_rate/constant/image_assets.dart';
@@ -266,7 +268,7 @@ class CustomBottomSheet extends StatelessWidget {
                   weight: FontWeight.normal,
                 ),
                 onTap: () {
-                  // Handle tap
+                  openScreenWithResult(context, const Support());
                 },
               ),
               ListTile(
@@ -283,7 +285,7 @@ class CustomBottomSheet extends StatelessWidget {
                   weight: FontWeight.normal,
                 ),
                 onTap: () {
-                  // Handle tap
+                  openScreen(context, const Login());
                 },
               ),
             ],
