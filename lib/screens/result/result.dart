@@ -1,13 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:stream_rate/commonView/custom_fill_button.dart';
 
-import 'package:stream_rate/constant/constant.dart';
 import 'package:stream_rate/constant/image_assets.dart';
 import 'package:stream_rate/commonView/textwithpoppins.dart';
 import 'package:stream_rate/utils/utils.dart';
+import 'result_bloc.dart';
 
-class Result extends StatelessWidget {
-  const Result({super.key});
+class Result extends StatefulWidget {
+  const Result({Key? key}) : super(key: key);
+
+  @override
+  ResultState createState() => ResultState();
+}
+
+class ResultState extends State<Result> {
+  ResultBloc? _bloc;
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -89,7 +106,9 @@ class Result extends StatelessWidget {
                     child: Row(
                       children: [
                         InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            openReportDialog(context);
+                          },
                           child: Image.asset(
                             AppImageAsset.dislike,
                             width: 20,
@@ -99,7 +118,9 @@ class Result extends StatelessWidget {
                           width: 20,
                         ),
                         InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            openNotificationAllowDialog(context);
+                          },
                           child: Image.asset(
                             AppImageAsset.love,
                             width: 20,
@@ -109,7 +130,9 @@ class Result extends StatelessWidget {
                           width: 20,
                         ),
                         InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            openNotFoundDialog(context);
+                          },
                           child: Image.asset(
                             AppImageAsset.share,
                             width: 20,

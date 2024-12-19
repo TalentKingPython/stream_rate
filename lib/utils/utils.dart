@@ -6,9 +6,11 @@ import 'package:flutter_svg/svg.dart';
 import 'package:stream_rate/commonView/custom_fill_button.dart';
 import 'package:stream_rate/commonView/custom_text_form.dart';
 import 'package:stream_rate/commonView/load_image_with_placeholder.dart';
+import 'package:stream_rate/screens/home/home.dart';
 import 'package:stream_rate/screens/subscription/subscription_first.dart';
 import 'package:stream_rate/screens/subscription/subscription_second.dart';
 import 'package:stream_rate/screens/subscription/subscription_third.dart';
+import 'package:stream_rate/screens/support/support.dart';
 
 import '../constant/constant.dart';
 import '../main.dart';
@@ -229,7 +231,7 @@ openNotificationAllowDialog(BuildContext context) {
                         children: [
                           CustomFillButton(
                               isColorBtn: false,
-                              width: deviceWidth * 0.3,
+                              width: deviceWidth * 0.35,
                               child: const Text("DON'T ALLOW",
                                   style: TextStyle(
                                       color: colorWhite, fontSize: 16))),
@@ -290,7 +292,7 @@ openContactsAllowDialog(BuildContext context) {
                         children: [
                           CustomFillButton(
                               isColorBtn: false,
-                              width: deviceWidth * 0.3,
+                              width: deviceWidth * 0.35,
                               child: const Text("DON'T ALLOW",
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
@@ -358,6 +360,8 @@ openReportDialog(BuildContext context) {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           CustomFillButton(
+                              onPressed: () => openScreenWithResult(
+                                  context, const Support()),
                               isColorBtn: false,
                               width: deviceWidth * 0.3,
                               child: Row(
@@ -371,6 +375,8 @@ openReportDialog(BuildContext context) {
                                             color: colorWhite, fontSize: 20))
                                   ])),
                           CustomFillButton(
+                              onPressed: () =>
+                                  openScreenWithResult(context, const Home()),
                               isColorBtn: true,
                               width: deviceWidth * 0.3,
                               child: const Text(
@@ -429,6 +435,8 @@ openNotFoundDialog(BuildContext context) {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           CustomFillButton(
+                              onPressed: () => openScreenWithResult(
+                                  context, const Support()),
                               isColorBtn: false,
                               width: deviceWidth * 0.3,
                               child: Row(
@@ -442,6 +450,8 @@ openNotFoundDialog(BuildContext context) {
                                             color: colorWhite, fontSize: 20))
                                   ])),
                           CustomFillButton(
+                              onPressed: () =>
+                                  openScreenWithResult(context, const Home()),
                               isColorBtn: true,
                               width: deviceWidth * 0.3,
                               child: const Text(
@@ -489,6 +499,8 @@ openMessageDialog(BuildContext context) {
                           style: TextStyle(color: colorWhite, fontSize: 18)),
                     ),
                     CustomFillButton(
+                        onPressed: () =>
+                            openScreenWithResult(context, const Home()),
                         isColorBtn: true,
                         width: deviceWidth * 0.3,
                         child: const Text(

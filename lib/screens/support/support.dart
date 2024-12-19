@@ -121,6 +121,7 @@ class SupportState extends State<Support> {
             const CustomTextFormField(),
             const Spacer(),
             CustomFillButton(
+              onPressed: () => openMessageDialog(context),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: const [
