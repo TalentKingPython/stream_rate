@@ -1,13 +1,15 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+
 import 'package:stream_rate/screens/favourite/favourite.dart';
 import 'package:stream_rate/screens/history/history.dart';
 import 'package:stream_rate/screens/login/login.dart';
 import 'package:stream_rate/screens/profile/profile.dart';
 import 'package:stream_rate/screens/result/result.dart';
 import 'package:stream_rate/screens/support/support.dart';
-
+import 'package:stream_rate/screens/invite/invite.dart';
+import 'package:stream_rate/screens/voucher/voucher.dart';
 import 'package:stream_rate/utils/utils.dart';
 import 'package:stream_rate/constant/image_assets.dart';
 import 'package:stream_rate/commonView/textwithpoppins.dart';
@@ -235,26 +237,21 @@ class CustomBottomSheet extends StatelessWidget {
                   size: 16,
                   weight: FontWeight.normal,
                 ),
-                onTap: () {
-                  // Handle tap
-                },
+                onTap: () => openScreenWithResult(context, const Voucher()),
               ),
               ListTile(
-                leading: Image.asset(
-                  AppImageAsset.invite,
-                  width: 20,
-                ),
-                title: const TextWithPoppins(
-                  text: 'Invite People',
-                  align: TextAlign.start,
-                  color: colorWhite,
-                  size: 16,
-                  weight: FontWeight.normal,
-                ),
-                onTap: () {
-                  // Handle tap
-                },
-              ),
+                  leading: Image.asset(
+                    AppImageAsset.invite,
+                    width: 20,
+                  ),
+                  title: const TextWithPoppins(
+                    text: 'Invite People',
+                    align: TextAlign.start,
+                    color: colorWhite,
+                    size: 16,
+                    weight: FontWeight.normal,
+                  ),
+                  onTap: () => openScreenWithResult(context, const Invite())),
               ListTile(
                 leading: Image.asset(
                   AppImageAsset.contact,
