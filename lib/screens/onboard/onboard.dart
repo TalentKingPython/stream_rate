@@ -74,7 +74,17 @@ class OnboardState extends State<Onboard> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const CustomFillButton(isColorBtn: false, width: 85, child: Text('')),
+          CustomFillButton(
+              isColorBtn: false,
+              onPressed: () {
+                openScreenWithResult(context, const SignUp());
+              },
+              width: 85,
+              child: const Text('SKIP',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                      color: colorWhite))),
           DotsIndicator(
             dotsCount: 3,
             position: currentPage,
@@ -96,6 +106,8 @@ class OnboardState extends State<Onboard> {
               controller.nextPage();
             },
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: const [
                 Text(
                   'NEXT',
@@ -104,6 +116,7 @@ class OnboardState extends State<Onboard> {
                       fontSize: 12,
                       color: colorWhite),
                 ),
+                SizedBox(width: 5),
                 Icon(Icons.arrow_forward_ios, color: colorWhite, size: 15)
               ],
             ),

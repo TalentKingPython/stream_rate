@@ -16,6 +16,19 @@ class Splash extends StatefulWidget {
 class SplashState extends State<Splash> {
   SplashBloc? _bloc;
 
+  double scale = 1.0;
+
+  @override
+  void initState() {
+    super.initState();
+    // Automatically zoom in and out every 2 seconds
+    Future.delayed(const Duration(seconds: 2), () {
+      setState(() {
+        scale = 1.5; // Zoom in
+      });
+    });
+  }
+
   @override
   void didChangeDependencies() {
     if (mounted) {
@@ -44,9 +57,28 @@ class SplashState extends State<Splash> {
                 image: AssetImage(AppImageAsset.splashBG), fit: BoxFit.cover),
           ),
           child: Stack(children: [
-            const Center(
-                child: LoadImageSimple(
-                    image: AppImageAsset.logoWithText, width: 200)),
+            Center(
+                child: AnimatedScale(
+                    scale: scale,
+                    duration: const Duration(seconds: 1),
+                    curve: Curves.easeInOut,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        const LoadImageSimple(
+                            image: "assets/images/streamrate-logo.png"),
+                        const SizedBox(height: 10),
+                        Container(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 120),
+                            child: const Text(
+                              "Movie and series ratings at your fingertips",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(color: colorWhite, fontSize: 18),
+                            ))
+                      ],
+                    ))),
             Positioned(
               bottom: 100,
               right: 0,
