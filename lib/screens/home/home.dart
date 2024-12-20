@@ -37,6 +37,7 @@ class HomeState extends State<Home> {
     return Scaffold(
       backgroundColor: colorMainBackground,
       body: Container(
+        padding: const EdgeInsets.all(0),
         decoration: const BoxDecoration(
             image: DecorationImage(
                 image: AssetImage(AppImageAsset.homeBG), fit: BoxFit.cover)),
@@ -62,10 +63,10 @@ class HomeState extends State<Home> {
             Positioned(
                 left: 50,
                 right: 50,
-                bottom: 5,
+                bottom: 0,
                 child: Container(
                   width: 350,
-                  height: 65,
+                  height: 100,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
                     color: whiteLowOpacity,

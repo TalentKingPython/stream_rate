@@ -40,6 +40,24 @@ class SubScriptionFirstState extends State<SubScriptionFirst> {
                 imageFit: BoxFit.fill,
               ),
               Container(
+                  margin: const EdgeInsets.symmetric(vertical: 10),
+                  width: deviceWidth * 0.3,
+                  height: 30,
+                  decoration: BoxDecoration(
+                    gradient: const LinearGradient(
+                        colors: [Color(0xFFED1945), Color(0xFFF79B1E)],
+                        begin: Alignment(-0.7, 0.0),
+                        end: Alignment.centerRight),
+                    color: Colors.white.withOpacity(0.1),
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  child: const Text("PREMIUM",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          color: colorWhite,
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold))),
+              Container(
                   padding:
                       const EdgeInsets.symmetric(vertical: 30, horizontal: 60),
                   child: const Text(
