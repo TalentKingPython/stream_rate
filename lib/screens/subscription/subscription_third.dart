@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:stream_rate/commonView/custom_check_text.dart';
 import 'package:stream_rate/commonView/load_image_with_placeholder.dart';
 import 'package:stream_rate/screens/subscription/thanks.dart';
@@ -57,8 +58,8 @@ class SubScriptionThirdState extends State<SubScriptionThird> {
                           width: deviceWidth * 0.4,
                           height: 100,
                           imageFit: BoxFit.fill),
-                      const Text("Go Unlimited with Premium",
-                          style: TextStyle(fontSize: 20)),
+                      Text("Go Unlimited with Premium",
+                          style: GoogleFonts.poppins(fontSize: 20)),
                       Container(
                         padding: const EdgeInsets.all(3),
                         width: deviceWidth * 0.8,
@@ -94,20 +95,20 @@ class SubScriptionThirdState extends State<SubScriptionThird> {
                                       end: Alignment.bottomRight,
                                     ).createShader(bounds);
                                   },
-                                  child: const Text(
+                                  child: Text(
                                     "\$2.99 ",
-                                    style: TextStyle(
+                                    style: GoogleFonts.poppins(
                                       fontSize: 30,
                                       color: colorWhite,
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
                                 ),
-                                const Text("/ ",
-                                    style: TextStyle(
+                                Text("/ ",
+                                    style: GoogleFonts.poppins(
                                         fontSize: 20, color: Colors.black)),
-                                const Text("week",
-                                    style: TextStyle(
+                                Text("week",
+                                    style: GoogleFonts.poppins(
                                         fontSize: 20, color: colorBlack)),
                               ],
                             ),
@@ -164,18 +165,18 @@ class SubScriptionThirdState extends State<SubScriptionThird> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const Text("PAY \$2.99",
-                              style:
-                                  TextStyle(fontSize: 12, color: colorWhite)),
+                          Text("PAY \$2.99",
+                              style: GoogleFonts.poppins(
+                                  fontSize: 12, color: colorWhite)),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
-                            children: const [
+                            children: [
                               Text("SUBSCRIBE",
-                                  style: TextStyle(
+                                  style: GoogleFonts.poppins(
                                       fontSize: 12, color: colorWhite)),
-                              SizedBox(width: 2),
-                              Icon(Icons.chevron_right,
+                              const SizedBox(width: 2),
+                              const Icon(Icons.chevron_right,
                                   size: 12, color: colorWhite)
                             ],
                           )

@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:barcode/barcode.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:stream_rate/commonView/custom_text_form.dart';
 import 'package:stream_rate/commonView/load_image_with_placeholder.dart';
 import 'package:stream_rate/screens/capture/capture.dart';
@@ -75,10 +76,10 @@ class VoucherState extends State<Voucher> {
               ),
               Container(
                   padding: const EdgeInsets.only(top: 30, bottom: 10),
-                  child: const Text(
+                  child: Text(
                     " Redeem Voucher",
                     textAlign: TextAlign.center,
-                    style: TextStyle(
+                    style: GoogleFonts.poppins(
                       color: colorWhite,
                       fontSize: 24,
                     ),
@@ -86,10 +87,10 @@ class VoucherState extends State<Voucher> {
               Container(
                   padding:
                       const EdgeInsets.symmetric(vertical: 30, horizontal: 80),
-                  child: const Text(
+                  child: Text(
                     "Enter the code below to redeem your free credits",
                     textAlign: TextAlign.center,
-                    style: TextStyle(
+                    style: GoogleFonts.poppins(
                       color: colorWhite,
                       fontSize: 20,
                     ),
@@ -135,15 +136,15 @@ class VoucherState extends State<Voucher> {
                             child: Row(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               mainAxisAlignment: MainAxisAlignment.center,
-                              children: const [
-                                Icon(
+                              children: [
+                                const Icon(
                                   Icons.check,
                                   color: colorWhite,
                                 ),
-                                SizedBox(width: 5),
+                                const SizedBox(width: 5),
                                 Text(
                                   'VALIDATE',
-                                  style: TextStyle(
+                                  style: GoogleFonts.poppins(
                                       color: colorWhite, fontSize: 16),
                                 ),
                               ],

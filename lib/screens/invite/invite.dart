@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:stream_rate/commonView/custom_fill_button.dart';
 import 'package:stream_rate/commonView/contact_user_cart.dart';
 
@@ -59,22 +60,23 @@ class InviteState extends State<Invite> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Text("Invite People",
-                  style: TextStyle(fontSize: 30, color: colorWhite)),
+              Text("Invite People",
+                  style: GoogleFonts.poppins(fontSize: 30, color: colorWhite)),
               Container(
                 padding: const EdgeInsets.fromLTRB(30, 60, 30, 40),
-                child: const Text(
+                child: Text(
                   "Invite people you know and earn 5 CREDITS for each subscription.",
                   textAlign: TextAlign.center,
-                  style: TextStyle(color: colorWhite, fontSize: 24),
+                  style: GoogleFonts.poppins(color: colorWhite, fontSize: 24),
                 ),
               ),
               Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
+                  children: [
                     Text("Synced Contacts",
-                        style: TextStyle(fontSize: 18, color: colorWhite)),
+                        style: GoogleFonts.poppins(
+                            fontSize: 18, color: colorWhite)),
                     // Expanded(
                     //   child: ListView.builder(
                     //     padding: const EdgeInsets.all(10),
@@ -93,19 +95,20 @@ class InviteState extends State<Invite> {
                     //     },
                     //   ),
                     // ),
-                    UserCard(userName: "John Warney", isSelected: true),
-                    UserCard(userName: "Mary Styles"),
-                    UserCard(userName: "Mommy", isSelected: true),
-                    UserCard(
+                    const UserCard(userName: "John Warney", isSelected: true),
+                    const UserCard(userName: "Mary Styles"),
+                    const UserCard(userName: "Mommy", isSelected: true),
+                    const UserCard(
                         userName: "Jack Frank",
                         imagePath: "assets/images/test-avatar.png",
                         isSelected: true),
-                    UserCard(userName: "Eddie Joe"),
-                    SizedBox(height: 20),
+                    const UserCard(userName: "Eddie Joe"),
+                    const SizedBox(height: 20),
                     Text("Not in contacts? Invite by email",
-                        style: TextStyle(fontSize: 16, color: colorWhite)),
-                    SizedBox(height: 10),
-                    CustomTextFormField(
+                        style: GoogleFonts.poppins(
+                            fontSize: 16, color: colorWhite)),
+                    const SizedBox(height: 10),
+                    const CustomTextFormField(
                       labelText: 'Email',
                       prefixIcon:
                           Icon(Icons.email_outlined, color: colorMainLightGray),
@@ -119,14 +122,14 @@ class InviteState extends State<Invite> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
-                  children: const [
+                  children: [
                     Text(
                       'SENT INVITATIONS',
-                      style: TextStyle(
+                      style: GoogleFonts.poppins(
                           color: colorWhite, fontWeight: FontWeight.bold),
                     ),
-                    SizedBox(width: 5),
-                    Icon(
+                    const SizedBox(width: 5),
+                    const Icon(
                       Icons.chevron_right,
                       color: colorWhite,
                     )

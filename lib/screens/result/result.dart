@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:stream_rate/commonView/custom_fill_button.dart';
 
 import 'package:stream_rate/constant/image_assets.dart';
@@ -77,8 +78,8 @@ class ResultState extends State<Result> {
                                 weight: FontWeight.normal),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.start,
-                              children: const [
-                                TextWithPoppins(
+                              children: [
+                                const TextWithPoppins(
                                     text: 'by Steven Spiderman',
                                     align: TextAlign.start,
                                     color: colorMainLightGray,
@@ -86,9 +87,10 @@ class ResultState extends State<Result> {
                                     weight: FontWeight.normal),
                                 Text(
                                   " | ",
-                                  style: TextStyle(color: colorMainLightGray),
+                                  style: GoogleFonts.poppins(
+                                      color: colorMainLightGray),
                                 ),
-                                TextWithPoppins(
+                                const TextWithPoppins(
                                     text: '1955',
                                     align: TextAlign.start,
                                     color: colorMainLightGray,
@@ -154,9 +156,9 @@ class ResultState extends State<Result> {
                                   image: AssetImage(
                             AppImageAsset.rate,
                           ))),
-                          child: const Text('   4.2',
+                          child: Text('   4.2',
                               textAlign: TextAlign.center,
-                              style: TextStyle(
+                              style: GoogleFonts.poppins(
                                 color: white,
                               )),
                         ),
@@ -180,10 +182,9 @@ class ResultState extends State<Result> {
                                   AppImageAsset.trailer,
                                   width: 20,
                                 ),
-                                const Text(
+                                Text(
                                   '  Trailer',
-                                  style: TextStyle(
-                                      color: colorWhite, fontFamily: "Poppins"),
+                                  style: GoogleFonts.poppins(color: colorWhite),
                                 )
                               ],
                             ),
@@ -334,18 +335,19 @@ class ResultState extends State<Result> {
                         Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            const Text('You have only 3 credits left',
-                                style:
-                                    TextStyle(color: colorWhite, fontSize: 16)),
+                            Text('You have only 3 credits left',
+                                style: GoogleFonts.poppins(
+                                    color: colorWhite, fontSize: 16)),
                             Row(
-                              children: const [
+                              children: [
                                 Text('Go Unlimited for ',
-                                    style: TextStyle(
+                                    style: GoogleFonts.poppins(
                                         color: colorWhite, fontSize: 16)),
                                 Text('\$2.99',
-                                    style: TextStyle(color: colorDestination)),
+                                    style: GoogleFonts.poppins(
+                                        color: colorDestination)),
                                 Text('eek',
-                                    style: TextStyle(
+                                    style: GoogleFonts.poppins(
                                         color: colorWhite, fontSize: 16)),
                               ],
                             ),
@@ -353,12 +355,12 @@ class ResultState extends State<Result> {
                         ),
                         CustomFillButton(
                           onPressed: () => openSubscriptionPage(context),
-                          child: Row(children: const [
+                          child: Row(children: [
                             Text('SUBSCRIBE',
-                                style: TextStyle(
+                                style: GoogleFonts.poppins(
                                     color: colorWhite,
                                     fontWeight: FontWeight.bold)),
-                            Icon(Icons.arrow_forward_ios,
+                            const Icon(Icons.arrow_forward_ios,
                                 size: 15, color: colorWhite)
                           ]),
                         )

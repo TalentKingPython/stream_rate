@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:stream_rate/screens/onboard/onboard_one.dart';
+import 'package:stream_rate/screens/onboard/onboard_three.dart';
+import 'package:stream_rate/screens/onboard/onboard_two.dart';
 
-import 'package:stream_rate/commonView/load_image_with_placeholder.dart';
-import 'package:stream_rate/constant/image_assets.dart';
 import 'package:stream_rate/screens/signup/signup.dart';
 import 'package:stream_rate/utils/utils.dart';
 import 'package:stream_rate/commonView/custom_fill_button.dart';
@@ -19,6 +21,12 @@ class Onboard extends StatefulWidget {
 class OnboardState extends State<Onboard> {
   final CarouselSliderController controller = CarouselSliderController();
   int currentPage = 0;
+
+  final List<Widget> pages = [
+    const OnboardOne(),
+    const OnboardTwo(),
+    const OnboardThree()
+  ];
 
   @override
   void didChangeDependencies() {
@@ -49,16 +57,11 @@ class OnboardState extends State<Onboard> {
               });
             },
           ),
-          items: [1, 2, 3].map((e) {
-            return Container(
+          items: pages.map((page) {
+            return SizedBox(
               width: deviceWidth,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(
-                      'assets/images/onboarding/OnBoarding${e}BG.png'),
-                  fit: BoxFit.cover,
-                ),
-              ),
+              height: deviceHeight,
+              child: page,
             );
           }).toList(),
         ),
@@ -79,9 +82,9 @@ class OnboardState extends State<Onboard> {
               onPressed: () {
                 openScreenWithResult(context, const SignUp());
               },
-              width: 85,
-              child: const Text('SKIP',
-                  style: TextStyle(
+              width: 100,
+              child: Text('SKIP',
+                  style: GoogleFonts.poppins(
                       fontWeight: FontWeight.bold,
                       fontSize: 16,
                       color: colorWhite))),
@@ -98,7 +101,7 @@ class OnboardState extends State<Onboard> {
             ),
           ),
           CustomFillButton(
-            width: 85,
+            width: 100,
             onPressed: () {
               if (currentPage == 2) {
                 openScreenWithResult(context, const SignUp());
@@ -108,16 +111,16 @@ class OnboardState extends State<Onboard> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
-              children: const [
+              children: [
                 Text(
                   'NEXT',
-                  style: TextStyle(
+                  style: GoogleFonts.poppins(
                       fontWeight: FontWeight.bold,
-                      fontSize: 12,
+                      fontSize: 16,
                       color: colorWhite),
                 ),
-                SizedBox(width: 5),
-                Icon(Icons.arrow_forward_ios, color: colorWhite, size: 15)
+                const SizedBox(width: 5),
+                const Icon(Icons.arrow_forward_ios, color: colorWhite, size: 15)
               ],
             ),
           ),

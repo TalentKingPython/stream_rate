@@ -44,23 +44,6 @@ class HomeState extends State<Home> {
         child: Stack(
           children: [
             Positioned(
-                bottom: 10,
-                right: 50,
-                left: 50,
-                child: Container(
-                  alignment: Alignment.center,
-                  child: InkWell(
-                    onTap: () {
-                      openScreenWithResult(context, const Result());
-                    },
-                    child: Image.asset(
-                      AppImageAsset.remote,
-                      width: 140,
-                      height: 140,
-                    ),
-                  ),
-                )),
-            Positioned(
                 left: 50,
                 right: 50,
                 bottom: 0,
@@ -169,6 +152,23 @@ class HomeState extends State<Home> {
                         ),
                       ),
                     ],
+                  ),
+                )),
+            Positioned(
+                bottom: 10,
+                right: 50,
+                left: 50,
+                child: Container(
+                  alignment: Alignment.center,
+                  child: InkWell(
+                    onTap: () {
+                      openScreenWithResult(context, const Result());
+                    },
+                    child: Image.asset(
+                      AppImageAsset.remote,
+                      width: 140,
+                      height: 140,
+                    ),
                   ),
                 )),
           ],

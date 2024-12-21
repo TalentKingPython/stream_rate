@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 import 'package:stream_rate/commonView/custom_fill_button.dart';
@@ -48,21 +49,21 @@ class ConfirmEmailState extends State<ConfirmEmail> {
               ),
               Container(
                 padding: const EdgeInsets.only(top: 50, bottom: 25),
-                child: const Text(
+                child: Text(
                   "Confirm Email",
                   textAlign: TextAlign.center,
-                  style: TextStyle(color: colorWhite, fontSize: 24),
+                  style: GoogleFonts.poppins(color: colorWhite, fontSize: 24),
                 ),
               ),
-              const Text('We sent a 4-digit code to your',
-                  style: TextStyle(color: colorWhite, fontSize: 20)),
-              const Text('email address to confirm it’s yours.',
-                  style: TextStyle(color: colorWhite, fontSize: 20)),
+              Text('We sent a 4-digit code to your',
+                  style: GoogleFonts.poppins(color: colorWhite, fontSize: 20)),
+              Text('email address to confirm it’s yours.',
+                  style: GoogleFonts.poppins(color: colorWhite, fontSize: 20)),
               const SizedBox(height: 30),
-              const Text('Please check your inbox and enter',
-                  style: TextStyle(color: colorWhite, fontSize: 20)),
-              const Text('the code below.',
-                  style: TextStyle(color: colorWhite, fontSize: 20)),
+              Text('Please check your inbox and enter',
+                  style: GoogleFonts.poppins(color: colorWhite, fontSize: 20)),
+              Text('the code below.',
+                  style: GoogleFonts.poppins(color: colorWhite, fontSize: 20)),
               const SizedBox(height: 30),
               Container(
                 margin: EdgeInsetsDirectional.only(top: deviceHeight * 0.01),
@@ -77,10 +78,11 @@ class ConfirmEmailState extends State<ConfirmEmail> {
                   inputFormatters: [
                     FilteringTextInputFormatter.allow(RegExp('^[0-9]*\$'))
                   ],
-                  textStyle: const TextStyle(color: colorWhite, fontSize: 20),
+                  textStyle:
+                      GoogleFonts.poppins(color: colorWhite, fontSize: 20),
                   hintCharacter: "0",
-                  hintStyle:
-                      const TextStyle(color: colorMainLightGray, fontSize: 20),
+                  hintStyle: GoogleFonts.poppins(
+                      color: colorMainLightGray, fontSize: 20),
                   pinTheme: PinTheme(
                     shape: PinCodeFieldShape.box,
                     borderRadius: BorderRadius.circular(25),
@@ -114,15 +116,16 @@ class ConfirmEmailState extends State<ConfirmEmail> {
               ),
               const Spacer(),
               Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                const Text(
+                Text(
                   'Didn\'t receive the code?',
-                  style: TextStyle(color: colorWhite, fontSize: 18),
+                  style: GoogleFonts.poppins(color: colorWhite, fontSize: 18),
                 ),
                 TextButton(
                   onPressed: () {},
-                  child: const Text(
+                  child: Text(
                     'Resend it',
-                    style: TextStyle(color: colorYellow, fontSize: 18),
+                    style:
+                        GoogleFonts.poppins(color: colorYellow, fontSize: 18),
                   ),
                 ),
               ]),
@@ -139,11 +142,12 @@ class ConfirmEmailState extends State<ConfirmEmail> {
                     height: 60,
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
-                      children: const [
-                        Icon(Icons.arrow_back_ios, color: colorWhite, size: 15),
+                      children: [
+                        const Icon(Icons.arrow_back_ios,
+                            color: colorWhite, size: 15),
                         Text(
                           'Back',
-                          style: TextStyle(
+                          style: GoogleFonts.poppins(
                               color: colorWhite, fontWeight: FontWeight.bold),
                         ),
                       ],
@@ -155,11 +159,11 @@ class ConfirmEmailState extends State<ConfirmEmail> {
                     height: 60,
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
-                      children: const [
-                        Icon(Icons.check, color: colorWhite, size: 15),
+                      children: [
+                        const Icon(Icons.check, color: colorWhite, size: 15),
                         Text(
                           'CONFIRM',
-                          style: TextStyle(
+                          style: GoogleFonts.poppins(
                               color: colorWhite, fontWeight: FontWeight.bold),
                         ),
                       ],

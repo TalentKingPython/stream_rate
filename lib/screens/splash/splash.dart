@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:stream_rate/commonView/load_image_with_placeholder.dart';
 import 'package:stream_rate/constant/image_assets.dart';
 
@@ -13,20 +14,26 @@ class Splash extends StatefulWidget {
   SplashState createState() => SplashState();
 }
 
-class SplashState extends State<Splash> {
+class SplashState extends State<Splash> with SingleTickerProviderStateMixin {
   SplashBloc? _bloc;
+
+  late AnimationController _controller;
+  late Animation<double> _scaleAnimation;
 
   double scale = 1.0;
 
   @override
   void initState() {
     super.initState();
-    // Automatically zoom in and out every 2 seconds
-    Future.delayed(const Duration(seconds: 2), () {
-      setState(() {
-        scale = 1.5; // Zoom in
-      });
-    });
+
+    _controller =
+        AnimationController(duration: const Duration(seconds: 3), vsync: this);
+
+    _scaleAnimation = Tween<double>(begin: 1.0, end: 1.5).animate(
+      CurvedAnimation(parent: _controller, curve: Curves.easeInOut),
+    );
+
+    _controller.forward();
   }
 
   @override
@@ -58,24 +65,29 @@ class SplashState extends State<Splash> {
           ),
           child: Stack(children: [
             Center(
-                child: AnimatedScale(
-                    scale: scale,
-                    duration: const Duration(seconds: 1),
-                    curve: Curves.easeInOut,
+                child: AnimatedBuilder(
+                    animation: _scaleAnimation,
+                    builder: (context, child) {
+                      return Transform.scale(
+                        scale: _scaleAnimation.value,
+                        child: child,
+                      );
+                    },
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         const LoadImageSimple(
-                            image: "assets/images/streamrate-logo.png"),
-                        const SizedBox(height: 10),
-                        Container(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 120),
-                            child: const Text(
+                            image: "assets/images/streamrate-logo.png",
+                            width: 130),
+                        const SizedBox(height: 30),
+                        SizedBox(
+                            width: 150,
+                            child: Text(
                               "Movie and series ratings at your fingertips",
                               textAlign: TextAlign.center,
-                              style: TextStyle(color: colorWhite, fontSize: 18),
+                              style: GoogleFonts.poppins(
+                                  color: colorWhite, fontSize: 12),
                             ))
                       ],
                     ))),

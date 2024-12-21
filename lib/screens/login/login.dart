@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:stream_rate/screens/home/home.dart';
 import 'package:stream_rate/screens/signup/signup.dart';
 import 'package:stream_rate/utils/utils.dart';
@@ -45,10 +46,10 @@ class LoginState extends State<Login> {
             ),
             Container(
                 padding: const EdgeInsets.only(top: 30, bottom: 10),
-                child: const Text(
+                child: Text(
                   "Welcome Back",
                   textAlign: TextAlign.center,
-                  style: TextStyle(
+                  style: GoogleFonts.poppins(
                     color: colorWhite,
                     fontSize: 24,
                   ),
@@ -56,10 +57,10 @@ class LoginState extends State<Login> {
 
             Container(
                 padding: const EdgeInsets.only(top: 10, bottom: 20),
-                child: const Text(
+                child: Text(
                   "Log in to continue",
                   textAlign: TextAlign.center,
-                  style: TextStyle(
+                  style: GoogleFonts.poppins(
                     color: colorWhite,
                     fontSize: 24,
                   ),
@@ -81,9 +82,10 @@ class LoginState extends State<Login> {
                         SvgPicture.asset('assets/svgs/user_add.svg'),
                         Container(
                           padding: const EdgeInsets.only(left: 10),
-                          child: const Text(
+                          child: Text(
                             'Log in with Phone or Email',
-                            style: TextStyle(color: colorWhite, fontSize: 16),
+                            style: GoogleFonts.poppins(
+                                color: colorWhite, fontSize: 16),
                           ),
                         )
                       ],
@@ -106,9 +108,10 @@ class LoginState extends State<Login> {
                         SvgPicture.asset('assets/svgs/face_id.svg'),
                         Container(
                           padding: const EdgeInsets.only(left: 10),
-                          child: const Text(
+                          child: Text(
                             'Log in with Face ID',
-                            style: TextStyle(color: colorWhite, fontSize: 16),
+                            style: GoogleFonts.poppins(
+                                color: colorWhite, fontSize: 16),
                           ),
                         )
                       ],
@@ -131,9 +134,10 @@ class LoginState extends State<Login> {
                         SvgPicture.asset('assets/svgs/facebook_icon.svg'),
                         Container(
                           padding: const EdgeInsets.only(left: 10),
-                          child: const Text(
+                          child: Text(
                             'Continue with Facebook',
-                            style: TextStyle(color: colorWhite, fontSize: 16),
+                            style: GoogleFonts.poppins(
+                                color: colorWhite, fontSize: 16),
                           ),
                         )
                       ],
@@ -156,9 +160,10 @@ class LoginState extends State<Login> {
                         SvgPicture.asset('assets/svgs/apple_icon.svg'),
                         Container(
                           padding: const EdgeInsets.only(left: 10),
-                          child: const Text(
+                          child: Text(
                             'Continue with Apple',
-                            style: TextStyle(color: colorWhite, fontSize: 16),
+                            style: GoogleFonts.poppins(
+                                color: colorWhite, fontSize: 16),
                           ),
                         )
                       ],
@@ -181,9 +186,10 @@ class LoginState extends State<Login> {
                         SvgPicture.asset('assets/svgs/google_icon.svg'),
                         Container(
                           padding: const EdgeInsets.only(left: 10),
-                          child: const Text(
+                          child: Text(
                             'Continue with Google',
-                            style: TextStyle(color: colorWhite, fontSize: 16),
+                            style: GoogleFonts.poppins(
+                                color: colorWhite, fontSize: 16),
                           ),
                         )
                       ],
@@ -196,8 +202,9 @@ class LoginState extends State<Login> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text("Don't have an account?",
-                    style: TextStyle(fontSize: 16, color: colorWhite)),
+                Text("Don't have an account?",
+                    style:
+                        GoogleFonts.poppins(fontSize: 16, color: colorWhite)),
                 GestureDetector(
                   onTap: () => openScreenWithResult(context, const SignUp()),
                   child: Center(
@@ -212,9 +219,9 @@ class LoginState extends State<Login> {
                             end: Alignment.bottomRight,
                           ).createShader(bounds);
                         },
-                        child: const Text(
+                        child: Text(
                           "Sign Up",
-                          style: TextStyle(
+                          style: GoogleFonts.poppins(
                             fontSize: 16,
                             color: Colors
                                 .white, // The base color won't be visible due to ShaderMask

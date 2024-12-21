@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:stream_rate/commonView/load_image_with_placeholder.dart';
 import 'package:stream_rate/constant/colors.dart';
 
@@ -57,7 +58,7 @@ class UserCard extends StatelessWidget {
               const SizedBox(width: 10),
               Text(
                 userName,
-                style: const TextStyle(
+                style: GoogleFonts.poppins(
                   color: Colors.white, // Replace with `colorWhite`
                   fontSize: 20,
                 ),

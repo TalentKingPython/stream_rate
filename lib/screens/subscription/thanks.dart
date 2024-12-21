@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:stream_rate/commonView/custom_check_text.dart';
 import 'package:stream_rate/commonView/load_image_with_placeholder.dart';
 import 'package:stream_rate/screens/home/home.dart';
@@ -59,10 +60,10 @@ class ThanksState extends State<Thanks> {
                     Container(
                         padding: const EdgeInsets.symmetric(
                             vertical: 20, horizontal: 50),
-                        child: const Text(
+                        child: Text(
                             "Thank you for subscribing for StreamRate Premium",
                             textAlign: TextAlign.center,
-                            style: TextStyle(fontSize: 20))),
+                            style: GoogleFonts.poppins(fontSize: 20))),
                     CustomFillButton(
                       onPressed: () =>
                           openScreenWithResult(context, const Home()),
@@ -71,12 +72,13 @@ class ThanksState extends State<Thanks> {
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: const [
+                        children: [
                           Text("GO BACK HOME",
-                              style:
-                                  TextStyle(fontSize: 16, color: colorWhite)),
-                          SizedBox(width: 2),
-                          Icon(Icons.chevron_right, size: 18, color: colorWhite)
+                              style: GoogleFonts.poppins(
+                                  fontSize: 16, color: colorWhite)),
+                          const SizedBox(width: 2),
+                          const Icon(Icons.chevron_right,
+                              size: 18, color: colorWhite)
                         ],
                       ),
                     ),

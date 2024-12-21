@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:stream_rate/commonView/custom_fill_button.dart';
 
 import 'package:stream_rate/commonView/item_card.dart';
@@ -83,12 +84,12 @@ class HistoryState extends State<History> {
         elevation: 0,
         title: Stack(
           children: [
-            const SizedBox(
+            SizedBox(
               height: 50,
               child: Center(
                 child: Text(
                   'History',
-                  style: TextStyle(fontSize: 24, color: colorWhite),
+                  style: GoogleFonts.poppins(fontSize: 24, color: colorWhite),
                 ),
               ),
             ),
@@ -136,29 +137,32 @@ class HistoryState extends State<History> {
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text('You have only 3 credits left',
-                          style: TextStyle(color: colorWhite, fontSize: 16)),
+                      Text('You have only 3 credits left',
+                          style: GoogleFonts.poppins(
+                              color: colorWhite, fontSize: 16)),
                       Row(
-                        children: const [
+                        children: [
                           Text('Go Unlimited for ',
-                              style:
-                                  TextStyle(color: colorWhite, fontSize: 16)),
+                              style: GoogleFonts.poppins(
+                                  color: colorWhite, fontSize: 16)),
                           Text('\$2.99',
-                              style: TextStyle(color: colorDestination)),
-                          Text('eek',
                               style:
-                                  TextStyle(color: colorWhite, fontSize: 16)),
+                                  GoogleFonts.poppins(color: colorDestination)),
+                          Text('eek',
+                              style: GoogleFonts.poppins(
+                                  color: colorWhite, fontSize: 16)),
                         ],
                       ),
                     ],
                   ),
                   CustomFillButton(
                     onPressed: () => openSubscriptionPage(context),
-                    child: Row(children: const [
+                    child: Row(children: [
                       Text('SUBSCRIBE',
-                          style: TextStyle(
+                          style: GoogleFonts.poppins(
                               color: colorWhite, fontWeight: FontWeight.bold)),
-                      Icon(Icons.arrow_forward_ios, size: 15, color: colorWhite)
+                      const Icon(Icons.arrow_forward_ios,
+                          size: 15, color: colorWhite)
                     ]),
                   )
                 ],

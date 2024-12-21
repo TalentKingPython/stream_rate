@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class IconWithText extends StatelessWidget {
   final String text;
@@ -35,7 +36,7 @@ class IconWithText extends StatelessWidget {
           const SizedBox(width: 5),
           Text(
             text,
-            style: TextStyle(fontSize: 20, color: fontColor),
+            style: GoogleFonts.poppins(fontSize: 20, color: fontColor),
           ),
         ],
       ),
