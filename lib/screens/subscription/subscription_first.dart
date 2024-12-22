@@ -31,27 +31,19 @@ class SubScriptionFirstState extends State<SubScriptionFirst> {
       backgroundColor: colorMainBackground,
       body: Stack(children: [
         Padding(
-          padding: const EdgeInsets.only(left: 30, right: 30, top: 100),
+          padding: const EdgeInsets.symmetric(horizontal: 30),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               LoadImageSimple(
                 image: 'assets/images/streamrate-logo.png',
                 width: deviceWidth * 0.4,
-                height: 100,
-                imageFit: BoxFit.fill,
               ),
-              Container(
-                  margin: const EdgeInsets.symmetric(vertical: 10),
+              const SizedBox(height: 10),
+              CustomFillButton(
                   width: deviceWidth * 0.3,
                   height: 30,
-                  decoration: BoxDecoration(
-                    gradient: const LinearGradient(
-                        colors: [Color(0xFFED1945), Color(0xFFF79B1E)],
-                        begin: Alignment(-0.7, 0.0),
-                        end: Alignment.centerRight),
-                    color: Colors.white.withOpacity(0.1),
-                    borderRadius: BorderRadius.circular(30),
-                  ),
                   child: Text("PREMIUM",
                       textAlign: TextAlign.center,
                       style: GoogleFonts.poppins(
@@ -65,7 +57,7 @@ class SubScriptionFirstState extends State<SubScriptionFirst> {
                       "Subscribe to our Premium Plan and enjoy unlimited access.",
                       textAlign: TextAlign.center,
                       style: GoogleFonts.poppins(
-                          color: colorWhite, fontSize: 20))),
+                          color: colorWhite, fontSize: 18))),
               Container(
                   padding: const EdgeInsets.all(1),
                   width: deviceWidth * 0.8,
@@ -168,17 +160,17 @@ class SubScriptionFirstState extends State<SubScriptionFirst> {
                     children: [
                       Text("PAY \$2.99",
                           style: GoogleFonts.poppins(
-                              fontSize: 12, color: colorWhite)),
+                              fontSize: 18, color: colorWhite)),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Text("SUBSCRIBE",
                               style: GoogleFonts.poppins(
-                                  fontSize: 12, color: colorWhite)),
+                                  fontSize: 18, color: colorWhite)),
                           const SizedBox(width: 2),
                           const Icon(Icons.chevron_right,
-                              size: 12, color: colorWhite)
+                              size: 18, color: colorWhite)
                         ],
                       )
                     ],

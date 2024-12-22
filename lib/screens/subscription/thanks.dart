@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:stream_rate/commonView/custom_check_text.dart';
 import 'package:stream_rate/commonView/load_image_with_placeholder.dart';
+import 'package:stream_rate/constant/image_assets.dart';
 import 'package:stream_rate/screens/home/home.dart';
 
 import 'package:stream_rate/utils/utils.dart';
@@ -29,64 +29,82 @@ class ThanksState extends State<Thanks> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: colorMainBackground,
-        body: Stack(children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 30, right: 30, top: 50),
-            child: Column(children: [
-              LoadImageSimple(
-                image: 'assets/images/streamrate-logo.png',
-                width: deviceWidth * 0.4,
-                height: 130,
-                imageFit: BoxFit.fill,
-              ),
-              const SizedBox(height: 100),
-              Container(
-                padding: const EdgeInsets.all(16),
-                width: deviceWidth * 0.9,
-                height: deviceHeight * 0.4,
-                decoration: BoxDecoration(
-                  color: colorWhite,
-                  borderRadius: BorderRadius.circular(30),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+        body: Container(
+          width: double.infinity,
+          height: double.infinity,
+          decoration: const BoxDecoration(
+            color: colorPrimary,
+            image: DecorationImage(
+                image: AssetImage(AppImageAsset.splashBG), fit: BoxFit.cover),
+          ),
+          child: Stack(children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 30, right: 30, top: 50),
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     LoadImageSimple(
-                        image: "assets/images/thanks_main.png",
-                        width: deviceWidth * 0.4,
-                        height: 100,
-                        imageFit: BoxFit.fill),
-                    Container(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 20, horizontal: 50),
-                        child: Text(
-                            "Thank you for subscribing for StreamRate Premium",
-                            textAlign: TextAlign.center,
-                            style: GoogleFonts.poppins(fontSize: 20))),
-                    CustomFillButton(
-                      onPressed: () =>
-                          openScreenWithResult(context, const Home()),
+                      image: 'assets/images/streamrate-logo.png',
                       width: deviceWidth * 0.4,
-                      isColorBtn: true,
-                      child: Row(
+                    ),
+                    const SizedBox(height: 10),
+                    CustomFillButton(
+                        width: deviceWidth * 0.3,
+                        height: 30,
+                        child: Text("PREMIUM",
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.poppins(
+                                color: colorWhite,
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold))),
+                    const SizedBox(height: 60),
+                    Container(
+                      padding: const EdgeInsets.all(16),
+                      width: deviceWidth * 0.9,
+                      height: deviceHeight * 0.4,
+                      decoration: BoxDecoration(
+                        color: colorWhite,
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                         crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text("GO BACK HOME",
-                              style: GoogleFonts.poppins(
-                                  fontSize: 16, color: colorWhite)),
-                          const SizedBox(width: 2),
-                          const Icon(Icons.chevron_right,
-                              size: 18, color: colorWhite)
+                          LoadImageSimple(
+                              image: "assets/images/thanks_main.png",
+                              width: deviceWidth * 0.5),
+                          Container(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 20, horizontal: 60),
+                              child: Text(
+                                  "Thank you for subscribing for StreamRate Premium",
+                                  textAlign: TextAlign.center,
+                                  style: GoogleFonts.poppins(fontSize: 18))),
+                          CustomFillButton(
+                            onPressed: () =>
+                                openScreenWithResult(context, const Home()),
+                            width: deviceWidth * 0.4,
+                            isColorBtn: true,
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text("GO BACK HOME",
+                                    style: GoogleFonts.poppins(
+                                        fontSize: 16, color: colorWhite)),
+                                const SizedBox(width: 2),
+                                const Icon(Icons.chevron_right,
+                                    size: 18, color: colorWhite)
+                              ],
+                            ),
+                          ),
                         ],
                       ),
                     ),
-                  ],
-                ),
-              ),
-            ]),
-          )
-        ]));
+                  ]),
+            )
+          ]),
+        ));
   }
 }

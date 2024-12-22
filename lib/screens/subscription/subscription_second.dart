@@ -70,17 +70,17 @@ class SubScriptionSecondState extends State<SubScriptionSecond> {
                       children: [
                         Text("PAY \$2.99",
                             style: GoogleFonts.poppins(
-                                fontSize: 12, color: colorWhite)),
+                                fontSize: 16, color: colorWhite)),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Text("SUBSCRIBE",
                                 style: GoogleFonts.poppins(
-                                    fontSize: 12, color: colorWhite)),
+                                    fontSize: 16, color: colorWhite)),
                             const SizedBox(width: 2),
                             const Icon(Icons.chevron_right,
-                                size: 12, color: colorWhite)
+                                size: 16, color: colorWhite)
                           ],
                         )
                       ],

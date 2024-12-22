@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:camera/camera.dart';
 
 import 'package:stream_rate/screens/favourite/favourite.dart';
 import 'package:stream_rate/screens/history/history.dart';
@@ -22,6 +23,35 @@ class Home extends StatefulWidget {
 }
 
 class HomeState extends State<Home> {
+  late CameraController _cameraController;
+  late List<CameraDescription> cameras;
+  bool isCameraInitialized = false;
+
+  @override
+  void initState() {
+    super.initState();
+    initializeCamera();
+  }
+
+  Future<void> initializeCamera() async {
+    // Get the list of available cameras
+    cameras = await availableCameras();
+
+    // Select the first camera (usually the rear camera)
+    _cameraController = CameraController(
+      cameras[0], // Use the front camera by using cameras[1] if available
+      ResolutionPreset.high,
+    );
+
+    // Initialize the controller
+    await _cameraController.initialize();
+
+    // Update the state once the camera is initialized
+    setState(() {
+      isCameraInitialized = true;
+    });
+  }
+
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
@@ -29,6 +59,7 @@ class HomeState extends State<Home> {
 
   @override
   void dispose() {
+    _cameraController.dispose();
     super.dispose();
   }
 
@@ -38,11 +69,14 @@ class HomeState extends State<Home> {
       backgroundColor: colorMainBackground,
       body: Container(
         padding: const EdgeInsets.all(0),
-        decoration: const BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage(AppImageAsset.homeBG), fit: BoxFit.cover)),
+        // decoration: const BoxDecoration(
+        //     image: DecorationImage(
+        //         image: AssetImage(AppImageAsset.homeBG), fit: BoxFit.cover)),
         child: Stack(
           children: [
+            isCameraInitialized
+                ? CameraPreview(_cameraController) // Display the camera preview
+                : const Center(child: CircularProgressIndicator()),
             Positioned(
                 left: 50,
                 right: 50,

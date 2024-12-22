@@ -1,3 +1,4 @@
+import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:stream_rate/commonView/custom_fill_button.dart';
@@ -63,7 +64,7 @@ class ResultState extends State<Result> {
                 // ),
                 Positioned(
                     left: 20,
-                    top: 420,
+                    bottom: deviceHeight * 0.35,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -103,7 +104,7 @@ class ResultState extends State<Result> {
                       ],
                     )),
                 Positioned(
-                    top: 430,
+                    bottom: deviceHeight * 0.37,
                     right: 20,
                     child: Row(
                       children: [
@@ -144,61 +145,82 @@ class ResultState extends State<Result> {
                     )),
                 Positioned(
                     left: 20,
-                    bottom: 285,
+                    right: 20,
+                    bottom: deviceHeight * 0.29,
                     child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Container(
-                          alignment: Alignment.center,
-                          width: 80,
-                          height: 40,
-                          decoration: const BoxDecoration(
-                              image: DecorationImage(
-                                  image: AssetImage(
-                            AppImageAsset.rate,
-                          ))),
-                          child: Text('   4.2',
-                              textAlign: TextAlign.center,
-                              style: GoogleFonts.poppins(
-                                color: white,
-                              )),
-                        ),
-                        const SizedBox(
-                          width: 5,
-                        ),
-                        InkWell(
-                          onTap: () {},
-                          child: Container(
-                            padding: const EdgeInsets.all(8),
-                            width: 100,
+                        Row(children: [
+                          Container(
+                            alignment: Alignment.center,
+                            width: 80,
                             height: 40,
-                            decoration: BoxDecoration(
-                              color: whitelow,
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Image.asset(
-                                  AppImageAsset.trailer,
-                                  width: 20,
-                                ),
-                                Text(
-                                  '  Trailer',
-                                  style: GoogleFonts.poppins(color: colorWhite),
-                                )
-                              ],
+                            decoration: const BoxDecoration(
+                                image: DecorationImage(
+                                    image: AssetImage(
+                              AppImageAsset.rate,
+                            ))),
+                            child: Text('   4.2',
+                                textAlign: TextAlign.center,
+                                style: GoogleFonts.poppins(
+                                  color: white,
+                                )),
+                          ),
+                          const SizedBox(
+                            width: 5,
+                          ),
+                          InkWell(
+                            onTap: () {},
+                            child: Container(
+                              padding: const EdgeInsets.all(8),
+                              width: 100,
+                              height: 40,
+                              decoration: BoxDecoration(
+                                color: whitelow,
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Image.asset(
+                                    AppImageAsset.trailer,
+                                    width: 20,
+                                  ),
+                                  Text(
+                                    '  Trailer',
+                                    style:
+                                        GoogleFonts.poppins(color: colorWhite),
+                                  )
+                                ],
+                              ),
                             ),
                           ),
-                        ),
-                        const SizedBox(
-                          width: 60,
-                        ),
-                        const TextWithPoppins(
-                            text: 'Terror | 2h 42m',
-                            align: TextAlign.end,
-                            color: colorMainLightGray,
-                            size: 14,
-                            weight: FontWeight.normal)
+                        ]),
+                        Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              const TextWithPoppins(
+                                  text: "Terror",
+                                  align: TextAlign.end,
+                                  color: colorMainLightGray,
+                                  size: 14,
+                                  weight: FontWeight.normal),
+                              const SizedBox(width: 5),
+                              Container(
+                                  width: 4,
+                                  height: 4,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(2),
+                                      color: colorMainLightGray)),
+                              const SizedBox(width: 5),
+                              const TextWithPoppins(
+                                  text: '2h 42m',
+                                  align: TextAlign.end,
+                                  color: colorMainLightGray,
+                                  size: 14,
+                                  weight: FontWeight.normal)
+                            ]),
                       ],
                     )),
                 Positioned(
