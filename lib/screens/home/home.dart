@@ -69,10 +69,9 @@ class HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: colorMainBackground,
-      body: Container(
-        decoration: const BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage(AppImageAsset.homeBG), fit: BoxFit.cover)),
+      body: SizedBox(
+        width: deviceWidth,
+        height: deviceHeight,
         child: Stack(
           children: [
             if (controller != null && controller!.value.isInitialized)
@@ -130,8 +129,7 @@ class HomeState extends State<Home> {
                     )),
                   ),
                   child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       InkWell(
                         onTap: () {
@@ -154,6 +152,7 @@ class HomeState extends State<Home> {
                           ],
                         ),
                       ),
+                      const SizedBox(width: 30),
                       InkWell(
                         onTap: () {
                           openScreenWithResult(context, const History());
@@ -175,7 +174,7 @@ class HomeState extends State<Home> {
                           ],
                         ),
                       ),
-                      const SizedBox(),
+                      const SizedBox(width: 30),
                       InkWell(
                         onTap: () {
                           openScreenWithResult(context, const Favourite());
@@ -197,6 +196,7 @@ class HomeState extends State<Home> {
                           ],
                         ),
                       ),
+                      const SizedBox(width: 30),
                       InkWell(
                         onTap: () {
                           showModalBottomSheet(

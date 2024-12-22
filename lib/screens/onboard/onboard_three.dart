@@ -152,7 +152,7 @@ class OnboardThreeState extends State<OnboardThree> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     const LoadImageSimple(
-                        image: "assets/images/IMDB.png", width: 35, height: 35),
+                        image: "assets/images/imdb.png", width: 35, height: 35),
                     const SizedBox(width: 5),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
