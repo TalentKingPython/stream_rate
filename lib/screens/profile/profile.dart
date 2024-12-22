@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:stream_rate/commonView/custom_fill_button.dart';
 
 import 'package:stream_rate/commonView/load_image_with_placeholder.dart';
@@ -43,12 +44,12 @@ class ProfileState extends State<Profile> {
         elevation: 0,
         title: Stack(
           children: [
-            const SizedBox(
+            SizedBox(
               height: 50,
               child: Center(
                 child: Text(
                   'My Profile',
-                  style: TextStyle(fontSize: 24, color: colorWhite),
+                  style: GoogleFonts.poppins(fontSize: 24, color: colorWhite),
                 ),
               ),
             ),
@@ -111,15 +112,16 @@ class ProfileState extends State<Profile> {
               ),
             ),
             const SizedBox(height: 20),
-            const Center(
+            Center(
               child: Text('Jim Robbins',
-                  style: TextStyle(fontSize: 35, color: colorWhite)),
+                  style: GoogleFonts.poppins(fontSize: 35, color: colorWhite)),
             ),
             const SizedBox(height: 40),
             Row(
               children: [
-                const Text('Profile Details',
-                    style: TextStyle(color: colorWhite, fontSize: 18)),
+                Text('Profile Details',
+                    style:
+                        GoogleFonts.poppins(color: colorWhite, fontSize: 18)),
                 const Spacer(),
                 InkWell(
                   onTap: () =>
@@ -130,20 +132,21 @@ class ProfileState extends State<Profile> {
               ],
             ),
             const SizedBox(height: 35),
-            const Text('jimrobbins29@domain.com',
-                style: TextStyle(fontSize: 16, color: colorWhite)),
+            Text('jimrobbins29@domain.com',
+                style: GoogleFonts.poppins(fontSize: 16, color: colorWhite)),
             const SizedBox(height: 30),
-            const Text('+078 0527 882',
-                style: TextStyle(fontSize: 16, color: colorWhite)),
+            Text('+078 0527 882',
+                style: GoogleFonts.poppins(fontSize: 16, color: colorWhite)),
             const SizedBox(height: 30),
-            const Text('********',
-                style: TextStyle(fontSize: 16, color: colorWhite)),
+            Text('********',
+                style: GoogleFonts.poppins(fontSize: 16, color: colorWhite)),
             const Spacer(),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text('Subscription',
-                    style: TextStyle(color: colorWhite, fontSize: 18)),
+                Text('Subscription',
+                    style:
+                        GoogleFonts.poppins(color: colorWhite, fontSize: 18)),
                 const SizedBox(height: 10),
                 if (isSubscribed)
                   _subscribedContainer()
@@ -192,9 +195,9 @@ class ProfileState extends State<Profile> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
+                  Text(
                     'Your are currently subscribed to our',
-                    style: TextStyle(color: colorWhite, fontSize: 16),
+                    style: GoogleFonts.poppins(color: colorWhite, fontSize: 16),
                   ),
                   ShaderMask(
                     shaderCallback: (Rect bounds) {
@@ -204,9 +207,9 @@ class ProfileState extends State<Profile> {
                         end: Alignment.bottomRight,
                       ).createShader(bounds);
                     },
-                    child: const Text(
+                    child: Text(
                       "PREMIUM PLAN",
-                      style: TextStyle(
+                      style: GoogleFonts.poppins(
                         fontSize: 22,
                         color: colorWhite,
                         fontWeight: FontWeight.bold,
@@ -214,9 +217,9 @@ class ProfileState extends State<Profile> {
                     ),
                   ),
                   const SizedBox(height: 20),
-                  const Text(
+                  Text(
                     'Unlimited Access for',
-                    style: TextStyle(color: colorWhite, fontSize: 18),
+                    style: GoogleFonts.poppins(color: colorWhite, fontSize: 18),
                   ),
                   Row(
                     children: [
@@ -228,19 +231,21 @@ class ProfileState extends State<Profile> {
                             end: Alignment.bottomRight,
                           ).createShader(bounds);
                         },
-                        child: const Text(
+                        child: Text(
                           "\$2.99",
-                          style: TextStyle(
+                          style: GoogleFonts.poppins(
                             fontSize: 22,
                             color: colorWhite,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                       ),
-                      const Text("/ ",
-                          style: TextStyle(fontSize: 20, color: Colors.grey)),
-                      const Text("week",
-                          style: TextStyle(fontSize: 20, color: colorWhite)),
+                      Text("/ ",
+                          style: GoogleFonts.poppins(
+                              fontSize: 20, color: Colors.grey)),
+                      Text("week",
+                          style: GoogleFonts.poppins(
+                              fontSize: 20, color: colorWhite)),
                     ],
                   ),
                 ],
@@ -288,16 +293,18 @@ class ProfileState extends State<Profile> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
+                    Text(
                       'You have only 3 credits left.',
-                      style: TextStyle(color: colorWhite, fontSize: 16),
+                      style:
+                          GoogleFonts.poppins(color: colorWhite, fontSize: 16),
                     ),
                     const SizedBox(height: 10),
                     Row(
                       children: [
-                        const Text(
+                        Text(
                           'Subscribe to ',
-                          style: TextStyle(color: colorWhite, fontSize: 18),
+                          style: GoogleFonts.poppins(
+                              color: colorWhite, fontSize: 18),
                         ),
                         ShaderMask(
                           shaderCallback: (Rect bounds) {
@@ -307,9 +314,9 @@ class ProfileState extends State<Profile> {
                               end: Alignment.bottomRight,
                             ).createShader(bounds);
                           },
-                          child: const Text(
+                          child: Text(
                             "PREMIUM PLAN",
-                            style: TextStyle(
+                            style: GoogleFonts.poppins(
                               fontSize: 18,
                               color: colorWhite,
                               fontWeight: FontWeight.bold,
@@ -318,26 +325,27 @@ class ProfileState extends State<Profile> {
                         ),
                       ],
                     ),
-                    const Text('for Unlimited Access',
-                        style: TextStyle(color: colorWhite, fontSize: 18)),
+                    Text('for Unlimited Access',
+                        style: GoogleFonts.poppins(
+                            color: colorWhite, fontSize: 18)),
                     const SizedBox(height: 10),
                     CustomFillButton(
                       onPressed: () => openSubscriptionPage(context),
                       height: 60,
                       child: Row(
-                        children: const [
+                        children: [
                           Text(
                             '\$2.99 / week',
-                            style: TextStyle(
+                            style: GoogleFonts.poppins(
                                 color: colorWhite, fontWeight: FontWeight.bold),
                           ),
-                          Spacer(),
+                          const Spacer(),
                           Text(
                             'SUBSCRIBE',
-                            style: TextStyle(
+                            style: GoogleFonts.poppins(
                                 color: colorWhite, fontWeight: FontWeight.bold),
                           ),
-                          Icon(Icons.arrow_forward_ios,
+                          const Icon(Icons.arrow_forward_ios,
                               color: colorWhite, size: 16)
                         ],
                       ),

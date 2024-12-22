@@ -38,7 +38,7 @@ class LoadImageWithPlaceHolder extends StatelessWidget {
       width: width,
       height: height,
       child: ClipRRect(
-        borderRadius: borderRadius!,
+        borderRadius: borderRadius,
         child: Image(
           image: getImageProvider(),
           color: getColor(),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'package:stream_rate/commonView/custom_fill_button.dart';
 import 'package:stream_rate/commonView/custom_text_form.dart';
@@ -40,12 +41,12 @@ class EditProfileState extends State<EditProfile> {
         elevation: 0,
         title: Stack(
           children: [
-            const SizedBox(
+            SizedBox(
               height: 50,
               child: Center(
                 child: Text(
                   'Edit Profile',
-                  style: TextStyle(fontSize: 24, color: colorWhite),
+                  style: GoogleFonts.poppins(fontSize: 24, color: colorWhite),
                 ),
               ),
             ),
@@ -78,8 +79,8 @@ class EditProfileState extends State<EditProfile> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 30),
-            const Text('Profile Details',
-                style: TextStyle(color: colorWhite, fontSize: 18)),
+            Text('Profile Details',
+                style: GoogleFonts.poppins(color: colorWhite, fontSize: 18)),
             const SizedBox(height: 15),
             const CustomTextFormField(
               initialValue: 'Jim Robbins',
@@ -99,8 +100,8 @@ class EditProfileState extends State<EditProfile> {
               prefixIcon: Icon(Icons.phone_outlined, color: colorMainLightGray),
             ),
             const SizedBox(height: 20),
-            const Text('Change Password',
-                style: TextStyle(color: colorWhite, fontSize: 18)),
+            Text('Change Password',
+                style: GoogleFonts.poppins(color: colorWhite, fontSize: 18)),
             const SizedBox(height: 15),
             CustomTextFormField(
               isPassword: true,
@@ -136,12 +137,13 @@ class EditProfileState extends State<EditProfile> {
                     width: deviceWidth * .45,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        Icon(Icons.close, color: colorMainLightGray, size: 16),
-                        SizedBox(width: 5),
+                      children: [
+                        const Icon(Icons.close,
+                            color: colorMainLightGray, size: 16),
+                        const SizedBox(width: 5),
                         Text(
                           'CANCEL',
-                          style: TextStyle(
+                          style: GoogleFonts.poppins(
                               color: colorMainLightGray, fontSize: 16),
                         ),
                       ],
@@ -151,12 +153,13 @@ class EditProfileState extends State<EditProfile> {
                     width: deviceWidth * .45,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        Icon(Icons.check, color: colorWhite, size: 16),
-                        SizedBox(width: 5),
+                      children: [
+                        const Icon(Icons.check, color: colorWhite, size: 16),
+                        const SizedBox(width: 5),
                         Text(
                           'SAVE',
-                          style: TextStyle(color: colorWhite, fontSize: 16),
+                          style: GoogleFonts.poppins(
+                              color: colorWhite, fontSize: 16),
                         ),
                       ],
                     ),

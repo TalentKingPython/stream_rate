@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:stream_rate/screens/subscription/thanks.dart';
 
 import 'package:stream_rate/utils/utils.dart';
@@ -67,18 +68,19 @@ class SubScriptionSecondState extends State<SubScriptionSecond> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Text("PAY \$2.99",
-                            style: TextStyle(fontSize: 12, color: colorWhite)),
+                        Text("PAY \$2.99",
+                            style: GoogleFonts.poppins(
+                                fontSize: 16, color: colorWhite)),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
-                          children: const [
+                          children: [
                             Text("SUBSCRIBE",
-                                style:
-                                    TextStyle(fontSize: 12, color: colorWhite)),
-                            SizedBox(width: 2),
-                            Icon(Icons.chevron_right,
-                                size: 12, color: colorWhite)
+                                style: GoogleFonts.poppins(
+                                    fontSize: 16, color: colorWhite)),
+                            const SizedBox(width: 2),
+                            const Icon(Icons.chevron_right,
+                                size: 16, color: colorWhite)
                           ],
                         )
                       ],
