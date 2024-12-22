@@ -87,25 +87,47 @@ class CaptureState extends State<Capture> {
                       title: '',
                       image: Image.asset('assets/images/puzzle.jpg',
                           width: double.infinity, fit: BoxFit.fitWidth),
-                      colorBar: colorMainBackground.withAlpha(200),
+                      colorBar: colorMainBackground,
+                      imageToBarPadding: 1,
                       icon: Container(
                         decoration: BoxDecoration(
                             color: colorMainBackground.withAlpha(200),
                             boxShadow: [
                               BoxShadow(
                                 color: colorMainBackground.withAlpha(200),
-                                spreadRadius: 5,
+                                spreadRadius: 2,
+                                blurRadius: 5,
+                                offset: const Offset(-5, -5),
+                              ),
+                              BoxShadow(
+                                color: colorMainBackground.withAlpha(200),
+                                spreadRadius: 2,
+                                blurRadius: 5,
+                                offset: const Offset(5, -5),
+                              ),
+                              BoxShadow(
+                                color: colorMainBackground.withAlpha(200),
+                                spreadRadius: 2,
                                 blurRadius: 5,
                                 offset: const Offset(5, 5),
                               ),
                               BoxShadow(
                                 color: colorMainBackground.withAlpha(200),
-                                spreadRadius: 5,
+                                spreadRadius: 2,
                                 blurRadius: 5,
                                 offset: const Offset(-5, 5),
                               ),
+                              BoxShadow(
+                                blurStyle: BlurStyle.normal,
+                                color: colorRed,
+                                spreadRadius: 20,
+                                blurRadius: 200,
+                                offset: Offset(-120, 0),
+                              ),
                             ]),
-                        child: Image.asset('assets/images/capture_icon.png'),
+                        child: Image.asset(
+                          'assets/images/capture_icon.png',
+                        ),
                       ),
                       onConfirm: (value) {
                         if (value) {
@@ -131,12 +153,12 @@ class CaptureState extends State<Capture> {
                               child: TextButton.icon(
                                 icon: const Icon(
                                   Icons.replay_outlined,
-                                  color: whitelow,
+                                  color: whitecaptcha,
                                   size: 15,
                                 ),
                                 label: const Text(
                                   "Refresh",
-                                  style: TextStyle(color: whitelow),
+                                  style: TextStyle(color: whitecaptcha),
                                 ),
                                 onPressed: () {
                                   Future.delayed(const Duration(seconds: 1))
@@ -152,12 +174,12 @@ class CaptureState extends State<Capture> {
                               child: TextButton.icon(
                                 icon: const Icon(
                                   Icons.info_outline_rounded,
-                                  color: whitelow,
+                                  color: whitecaptcha,
                                   size: 15,
                                 ),
                                 label: const Text(
                                   "Report A Problem",
-                                  style: TextStyle(color: whitelow),
+                                  style: TextStyle(color: whitecaptcha),
                                 ),
                                 onPressed: () {
                                   ///TODO REPORT A PROBLEM ?
@@ -172,30 +194,5 @@ class CaptureState extends State<Capture> {
         ),
       ),
     );
-  }
-}
-
-class SliderBackgroundPainter extends CustomPainter {
-  final double sliderPosition;
-
-  SliderBackgroundPainter(this.sliderPosition);
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    final paint = Paint()
-      ..shader = LinearGradient(
-        colors: [Colors.orange.withOpacity(0.5), Colors.red.withOpacity(0.5)],
-        begin: Alignment.topLeft,
-        end: Alignment.bottomRight,
-      ).createShader(
-          Rect.fromLTWH(0, 0, size.width * sliderPosition, size.height));
-
-    canvas.drawRect(
-        Rect.fromLTWH(0, 0, size.width * sliderPosition, size.height), paint);
-  }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) {
-    return true;
   }
 }
