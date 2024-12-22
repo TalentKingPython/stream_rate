@@ -96,8 +96,6 @@ class HomeState extends State<Home> {
                     onTap: () async {
                       openScreenWithResult(context, const Result());
 
-                      //// TAKE SHOT
-
                       try {
                         final image = await controller!.takePicture();
                         // Save the image to a file or do something with it
