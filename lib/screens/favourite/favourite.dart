@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:stream_rate/commonView/custom_fill_button.dart';
 
 import 'package:stream_rate/commonView/item_card.dart';
@@ -84,12 +83,12 @@ class FavouriteState extends State<Favourite> {
         elevation: 0,
         title: Stack(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 50,
               child: Center(
                 child: Text(
                   'Favourites',
-                  style: GoogleFonts.poppins(fontSize: 24, color: colorWhite),
+                  style: TextStyle(fontSize: 24, color: colorWhite),
                 ),
               ),
             ),

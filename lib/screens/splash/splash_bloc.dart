@@ -19,7 +19,7 @@ class SplashBloc extends Bloc {
   }
 
   splashAction() {
-    _timer = Timer(const Duration(seconds: 4), () {
+    _timer = Timer(const Duration(seconds: 3), () {
       openScreenWithClearPrevious(context, const Onboard());
     });
   }

@@ -1,7 +1,10 @@
 import 'dart:ui';
 
-import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 import 'package:stream_rate/screens/favourite/favourite.dart';
 import 'package:stream_rate/screens/history/history.dart';
@@ -23,44 +26,43 @@ class Home extends StatefulWidget {
 }
 
 class HomeState extends State<Home> {
-  late CameraController _cameraController;
-  late List<CameraDescription> cameras;
-  bool isCameraInitialized = false;
-
-  @override
-  void initState() {
-    super.initState();
-    initializeCamera();
-  }
-
-  Future<void> initializeCamera() async {
-    // Get the list of available cameras
-    cameras = await availableCameras();
-
-    // Select the first camera (usually the rear camera)
-    _cameraController = CameraController(
-      cameras[0], // Use the front camera by using cameras[1] if available
-      ResolutionPreset.high,
-    );
-
-    // Initialize the controller
-    await _cameraController.initialize();
-
-    // Update the state once the camera is initialized
-    setState(() {
-      isCameraInitialized = true;
-    });
-  }
-
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
   }
 
+  late List<CameraDescription> cameras;
+  CameraController? controller;
+
+  Future<void> initCamera() async {
+    // Request camera permission
+    var status = await Permission.camera.status;
+    if (!status.isGranted) {
+      await Permission.camera.request();
+    }
+
+    // Initialize the camera if permission is granted
+    if (await Permission.camera.isGranted) {
+      cameras = await availableCameras();
+      controller = CameraController(cameras[0], ResolutionPreset.high);
+      await controller!.initialize();
+      setState(() {}); // Update the state to reflect the camera initialization
+    } else {
+      // Handle the case where permission is denied
+      print('Camera permission denied');
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    initCamera();
+  }
+
   @override
   void dispose() {
-    _cameraController.dispose();
     super.dispose();
+    // controller!.dispose();
   }
 
   @override
@@ -68,22 +70,57 @@ class HomeState extends State<Home> {
     return Scaffold(
       backgroundColor: colorMainBackground,
       body: Container(
-        padding: const EdgeInsets.all(0),
-        // decoration: const BoxDecoration(
-        //     image: DecorationImage(
-        //         image: AssetImage(AppImageAsset.homeBG), fit: BoxFit.cover)),
+        decoration: const BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage(AppImageAsset.homeBG), fit: BoxFit.cover)),
         child: Stack(
           children: [
-            isCameraInitialized
-                ? CameraPreview(_cameraController) // Display the camera preview
-                : const Center(child: CircularProgressIndicator()),
+            if (controller != null && controller!.value.isInitialized)
+              Positioned.fill(
+                child: CameraPreview(controller!),
+              ),
+            Positioned(
+                left: 20,
+                right: 20,
+                top: deviceHeight / 5,
+                child: Image.asset(
+                  AppImageAsset.corners,
+                  width: deviceWidth,
+                )),
+            Positioned(
+                bottom: 10,
+                right: 50,
+                left: 50,
+                child: Container(
+                  alignment: Alignment.center,
+                  child: InkWell(
+                    onTap: () async {
+                      openScreenWithResult(context, const Result());
+
+                      //// TAKE SHOT
+
+                      try {
+                        final image = await controller!.takePicture();
+                        // Save the image to a file or do something with it
+                        print('Picture taken: ${image.path}');
+                      } catch (e) {
+                        print('Error taking picture: $e');
+                      }
+                    },
+                    child: Image.asset(
+                      AppImageAsset.remote,
+                      width: 140,
+                      height: 140,
+                    ),
+                  ),
+                )),
             Positioned(
                 left: 50,
                 right: 50,
-                bottom: 0,
+                bottom: 5,
                 child: Container(
                   width: 350,
-                  height: 100,
+                  height: 65,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
                     color: whiteLowOpacity,
@@ -186,23 +223,6 @@ class HomeState extends State<Home> {
                         ),
                       ),
                     ],
-                  ),
-                )),
-            Positioned(
-                bottom: 10,
-                right: 50,
-                left: 50,
-                child: Container(
-                  alignment: Alignment.center,
-                  child: InkWell(
-                    onTap: () {
-                      openScreenWithResult(context, const Result());
-                    },
-                    child: Image.asset(
-                      AppImageAsset.remote,
-                      width: 140,
-                      height: 140,
-                    ),
                   ),
                 )),
           ],
