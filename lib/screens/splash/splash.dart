@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:stream_rate/commonView/load_image_with_placeholder.dart';
 import 'package:stream_rate/constant/image_assets.dart';
 
@@ -14,27 +13,8 @@ class Splash extends StatefulWidget {
   SplashState createState() => SplashState();
 }
 
-class SplashState extends State<Splash> with SingleTickerProviderStateMixin {
+class SplashState extends State<Splash> {
   SplashBloc? _bloc;
-
-  late AnimationController _controller;
-  late Animation<double> _scaleAnimation;
-
-  double scale = 1.0;
-
-  @override
-  void initState() {
-    super.initState();
-
-    _controller =
-        AnimationController(duration: const Duration(seconds: 3), vsync: this);
-
-    _scaleAnimation = Tween<double>(begin: 1.0, end: 1.5).animate(
-      CurvedAnimation(parent: _controller, curve: Curves.easeInOut),
-    );
-
-    _controller.forward();
-  }
 
   @override
   void didChangeDependencies() {
@@ -64,33 +44,9 @@ class SplashState extends State<Splash> with SingleTickerProviderStateMixin {
                 image: AssetImage(AppImageAsset.splashBG), fit: BoxFit.cover),
           ),
           child: Stack(children: [
-            Center(
-                child: AnimatedBuilder(
-                    animation: _scaleAnimation,
-                    builder: (context, child) {
-                      return Transform.scale(
-                        scale: _scaleAnimation.value,
-                        child: child,
-                      );
-                    },
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        const LoadImageSimple(
-                            image: "assets/images/streamrate-logo.png",
-                            width: 130),
-                        const SizedBox(height: 30),
-                        SizedBox(
-                            width: 150,
-                            child: Text(
-                              "Movie and series ratings at your fingertips",
-                              textAlign: TextAlign.center,
-                              style: GoogleFonts.poppins(
-                                  color: colorWhite, fontSize: 12),
-                            ))
-                      ],
-                    ))),
+            const Center(
+                child: LoadImageSimple(
+                    image: AppImageAsset.logoWithText, width: 200)),
             Positioned(
               bottom: 100,
               right: 0,

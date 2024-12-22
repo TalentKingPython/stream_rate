@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:stream_rate/commonView/item_card_model.dart';
 import 'package:stream_rate/commonView/load_image_with_placeholder.dart';
 import 'package:stream_rate/constant/image_assets.dart';
@@ -39,10 +38,10 @@ class ItemCard extends StatelessWidget {
                   Row(
                     children: [
                       Text('${item.itemName}  ',
-                          style: GoogleFonts.poppins(
-                              color: colorWhite, fontSize: 22)),
+                          style:
+                              const TextStyle(color: colorWhite, fontSize: 22)),
                       Text('(${item.year})',
-                          style: GoogleFonts.poppins(
+                          style: const TextStyle(
                               color: colorMainLightGray, fontSize: 14)),
                       const Spacer(),
                       SvgPicture.asset('assets/svgs/like.svg'),
@@ -59,12 +58,12 @@ class ItemCard extends StatelessWidget {
                           const SizedBox(width: 15),
                           Text(
                             '${item.imdb}',
-                            style: GoogleFonts.poppins(
+                            style: const TextStyle(
                                 color: colorWhite, fontSize: 16),
                           ),
-                          Text(
+                          const Text(
                             '  / 10',
-                            style: GoogleFonts.poppins(
+                            style: TextStyle(
                                 color: colorMainLightGray, fontSize: 12),
                           ),
                         ],
@@ -76,12 +75,12 @@ class ItemCard extends StatelessWidget {
                           const SizedBox(width: 15),
                           Text(
                             '${item.metacritic}',
-                            style: GoogleFonts.poppins(
+                            style: const TextStyle(
                                 color: colorWhite, fontSize: 16),
                           ),
-                          Text(
+                          const Text(
                             '  / 10',
-                            style: GoogleFonts.poppins(
+                            style: TextStyle(
                                 color: colorMainLightGray, fontSize: 12),
                           ),
                         ],
@@ -98,7 +97,7 @@ class ItemCard extends StatelessWidget {
                           const SizedBox(width: 15),
                           Text(
                             '${item.rottenTomatoes} %',
-                            style: GoogleFonts.poppins(
+                            style: const TextStyle(
                                 color: colorWhite, fontSize: 16),
                           ),
                         ],
@@ -111,12 +110,12 @@ class ItemCard extends StatelessWidget {
                           const SizedBox(width: 15),
                           Text(
                             '${item.letterboxd}',
-                            style: GoogleFonts.poppins(
+                            style: const TextStyle(
                                 color: colorWhite, fontSize: 16),
                           ),
-                          Text(
+                          const Text(
                             '  / 10',
-                            style: GoogleFonts.poppins(
+                            style: TextStyle(
                                 color: colorMainLightGray, fontSize: 12),
                           ),
                         ],

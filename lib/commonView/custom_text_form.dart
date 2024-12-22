@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '../constant/colors.dart';
 
 class CustomTextFormField extends StatelessWidget {
@@ -66,7 +65,7 @@ class CustomTextFormField extends StatelessWidget {
       controller: controller,
       focusNode: focusNode,
       obscureText: isPassword,
-      style: textStyle ?? GoogleFonts.poppins(color: colorWhite),
+      style: textStyle ?? const TextStyle(color: colorWhite),
       keyboardType: inputType,
       textInputAction: inputAction,
       initialValue: initialValue,
@@ -80,7 +79,7 @@ class CustomTextFormField extends StatelessWidget {
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
         labelStyle:
-            labelStyle ?? GoogleFonts.poppins(color: colorWhite, fontSize: 18),
+            labelStyle ?? const TextStyle(color: colorWhite, fontSize: 18),
         hintStyle: hintStyle,
         fillColor: fillColor,
         filled: filled,

@@ -65,7 +65,7 @@ class AppImageAsset {
   static const String movieimg = '$rootImg/movie.png';
   static const String rate = '$rootImg/rate.png';
   static const String trailer = '$rootImg/trailer.png';
-  static const String imdb = '$rootImg/IMDB.png';
+  static const String imdb = '$rootImg/imdb.png';
   static const String tomato = '$rootImg/tomato.png';
   static const String meta = '$rootImg/meta.png';
   static const String letter = '$rootImg/letter.png';
@@ -73,4 +73,5 @@ class AppImageAsset {
   static const String invite = '$rootImg/invite.png';
   static const String voucherwhite = '$rootImg/voucher.png';
   static const String contact = '$rootImg/contact.png';
+  static const String corners = '$rootImg/corners.png';
 }

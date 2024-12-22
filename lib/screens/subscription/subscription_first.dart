@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:stream_rate/commonView/custom_check_text.dart';
 import 'package:stream_rate/commonView/load_image_with_placeholder.dart';
 import 'package:stream_rate/screens/subscription/thanks.dart';
@@ -31,33 +30,22 @@ class SubScriptionFirstState extends State<SubScriptionFirst> {
       backgroundColor: colorMainBackground,
       body: Stack(children: [
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 30),
+          padding: const EdgeInsets.only(left: 30, right: 30, top: 100),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               LoadImageSimple(
                 image: 'assets/images/streamrate-logo.png',
                 width: deviceWidth * 0.4,
+                height: 100,
+                imageFit: BoxFit.fill,
               ),
-              const SizedBox(height: 10),
-              CustomFillButton(
-                  width: deviceWidth * 0.3,
-                  height: 30,
-                  child: Text("PREMIUM",
-                      textAlign: TextAlign.center,
-                      style: GoogleFonts.poppins(
-                          color: colorWhite,
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold))),
               Container(
                   padding:
                       const EdgeInsets.symmetric(vertical: 30, horizontal: 60),
-                  child: Text(
+                  child: const Text(
                       "Subscribe to our Premium Plan and enjoy unlimited access.",
                       textAlign: TextAlign.center,
-                      style: GoogleFonts.poppins(
-                          color: colorWhite, fontSize: 18))),
+                      style: TextStyle(color: colorWhite, fontSize: 20))),
               Container(
                   padding: const EdgeInsets.all(1),
                   width: deviceWidth * 0.8,
@@ -94,21 +82,21 @@ class SubScriptionFirstState extends State<SubScriptionFirst> {
                                   end: Alignment.bottomRight,
                                 ).createShader(bounds);
                               },
-                              child: Text(
+                              child: const Text(
                                 "\$2.99 ",
-                                style: GoogleFonts.poppins(
+                                style: TextStyle(
                                   fontSize: 30,
                                   color: colorWhite,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
                             ),
-                            Text("/ ",
-                                style: GoogleFonts.poppins(
+                            const Text("/ ",
+                                style: TextStyle(
                                     fontSize: 20, color: Colors.grey)),
-                            Text("week",
-                                style: GoogleFonts.poppins(
-                                    fontSize: 20, color: colorWhite)),
+                            const Text("week",
+                                style:
+                                    TextStyle(fontSize: 20, color: colorWhite)),
                           ],
                         ),
                         const SizedBox(height: 15),
@@ -158,19 +146,17 @@ class SubScriptionFirstState extends State<SubScriptionFirst> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text("PAY \$2.99",
-                          style: GoogleFonts.poppins(
-                              fontSize: 18, color: colorWhite)),
+                      const Text("PAY \$2.99",
+                          style: TextStyle(fontSize: 12, color: colorWhite)),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
+                        children: const [
                           Text("SUBSCRIBE",
-                              style: GoogleFonts.poppins(
-                                  fontSize: 18, color: colorWhite)),
-                          const SizedBox(width: 2),
-                          const Icon(Icons.chevron_right,
-                              size: 18, color: colorWhite)
+                              style:
+                                  TextStyle(fontSize: 12, color: colorWhite)),
+                          SizedBox(width: 2),
+                          Icon(Icons.chevron_right, size: 12, color: colorWhite)
                         ],
                       )
                     ],

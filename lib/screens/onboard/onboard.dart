@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:stream_rate/screens/onboard/onboard_one.dart';
-import 'package:stream_rate/screens/onboard/onboard_three.dart';
-import 'package:stream_rate/screens/onboard/onboard_two.dart';
 
+import 'package:stream_rate/commonView/load_image_with_placeholder.dart';
+import 'package:stream_rate/constant/image_assets.dart';
 import 'package:stream_rate/screens/signup/signup.dart';
 import 'package:stream_rate/utils/utils.dart';
 import 'package:stream_rate/commonView/custom_fill_button.dart';
@@ -21,12 +19,6 @@ class Onboard extends StatefulWidget {
 class OnboardState extends State<Onboard> {
   final CarouselSliderController controller = CarouselSliderController();
   int currentPage = 0;
-
-  final List<Widget> pages = [
-    const OnboardOne(),
-    const OnboardTwo(),
-    const OnboardThree()
-  ];
 
   @override
   void didChangeDependencies() {
@@ -57,11 +49,16 @@ class OnboardState extends State<Onboard> {
               });
             },
           ),
-          items: pages.map((page) {
-            return SizedBox(
+          items: [1, 2, 3].map((e) {
+            return Container(
               width: deviceWidth,
-              height: deviceHeight,
-              child: page,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(
+                      'assets/images/onboarding/OnBoarding${e}BG.png'),
+                  fit: BoxFit.cover,
+                ),
+              ),
             );
           }).toList(),
         ),
@@ -77,17 +74,7 @@ class OnboardState extends State<Onboard> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          CustomFillButton(
-              isColorBtn: false,
-              onPressed: () {
-                openScreenWithResult(context, const SignUp());
-              },
-              width: 100,
-              child: Text('SKIP',
-                  style: GoogleFonts.poppins(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16,
-                      color: colorWhite))),
+          const CustomFillButton(isColorBtn: false, width: 85, child: Text('')),
           DotsIndicator(
             dotsCount: 3,
             position: currentPage,
@@ -101,7 +88,7 @@ class OnboardState extends State<Onboard> {
             ),
           ),
           CustomFillButton(
-            width: 100,
+            width: 85,
             onPressed: () {
               if (currentPage == 2) {
                 openScreenWithResult(context, const SignUp());
@@ -109,18 +96,15 @@ class OnboardState extends State<Onboard> {
               controller.nextPage();
             },
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
+              children: const [
                 Text(
                   'NEXT',
-                  style: GoogleFonts.poppins(
+                  style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 16,
+                      fontSize: 12,
                       color: colorWhite),
                 ),
-                const SizedBox(width: 5),
-                const Icon(Icons.arrow_forward_ios, color: colorWhite, size: 15)
+                Icon(Icons.arrow_forward_ios, color: colorWhite, size: 15)
               ],
             ),
           ),

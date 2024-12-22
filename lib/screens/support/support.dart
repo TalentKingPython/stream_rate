@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import 'package:stream_rate/commonView/custom_fill_button.dart';
 import 'package:stream_rate/commonView/custom_text_form.dart';
@@ -42,12 +41,12 @@ class SupportState extends State<Support> {
         elevation: 0,
         title: Stack(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 50,
               child: Center(
                 child: Text(
                   'Contact Support',
-                  style: GoogleFonts.poppins(fontSize: 24, color: colorWhite),
+                  style: TextStyle(fontSize: 24, color: colorWhite),
                 ),
               ),
             ),
@@ -83,20 +82,19 @@ class SupportState extends State<Support> {
             Center(
               child: SizedBox(
                 width: deviceWidth * .65,
-                child: Text('Please let us know how can we help you',
+                child: const Text('Please let us know how can we help you',
                     textAlign: TextAlign.center,
-                    style:
-                        GoogleFonts.poppins(color: colorWhite, fontSize: 22)),
+                    style: TextStyle(color: colorWhite, fontSize: 22)),
               ),
             ),
             const SizedBox(height: 40),
-            Text('Write Your Message',
-                style: GoogleFonts.poppins(color: colorWhite, fontSize: 18)),
+            const Text('Write Your Message',
+                style: TextStyle(color: colorWhite, fontSize: 18)),
             const SizedBox(height: 15),
             const CustomTextFormField(minLines: 8),
             const SizedBox(height: 40),
-            Text('Please enter the characters below',
-                style: GoogleFonts.poppins(color: colorWhite, fontSize: 18)),
+            const Text('Please enter the characters below',
+                style: TextStyle(color: colorWhite, fontSize: 18)),
             const SizedBox(height: 15),
             Container(
               width: deviceWidth,
@@ -111,7 +109,7 @@ class SupportState extends State<Support> {
                   ..rotateY(0.2 * 3.14),
                 child: Text(
                   randomText,
-                  style: GoogleFonts.poppins(
+                  style: const TextStyle(
                     color: colorWhite,
                     fontSize: 40,
                     letterSpacing: 10.0,
@@ -123,15 +121,14 @@ class SupportState extends State<Support> {
             const CustomTextFormField(),
             const Spacer(),
             CustomFillButton(
-              onPressed: () => openMessageDialog(context),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Icon(Icons.send, color: colorWhite, size: 16),
-                  const SizedBox(width: 5),
+                children: const [
+                  Icon(Icons.send, color: colorWhite, size: 16),
+                  SizedBox(width: 5),
                   Text(
                     'SEND MESSAGE',
-                    style: GoogleFonts.poppins(color: colorWhite, fontSize: 16),
+                    style: TextStyle(color: colorWhite, fontSize: 16),
                   ),
                 ],
               ),
