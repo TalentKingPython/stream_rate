@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:stream_rate/commonView/custom_fill_button.dart';
 
 import 'package:stream_rate/commonView/load_image_with_placeholder.dart';
+import 'package:stream_rate/constant/constant.dart';
 import 'package:stream_rate/constant/image_assets.dart';
 import 'package:stream_rate/screens/profile/edit_profile.dart';
 
@@ -77,33 +78,32 @@ class ProfileState extends State<Profile> {
       ),
       backgroundColor: colorMainBackground,
       body: Padding(
-        padding: const EdgeInsets.all(15),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
+        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+        child: ListView(
           children: [
             Center(
               child: Stack(
                 children: [
-                  const ClipOval(
+                  ClipOval(
                     child: LoadImageSimple(
                       image: 'assets/images/default-avatar.jpg',
-                      width: 230,
-                      height: 230,
+                      width: deviceWidth * 0.38,
+                      height: deviceHeight * 0.18,
                     ),
                   ),
                   Positioned(
                     right: 0,
                     bottom: 0,
                     child: Container(
-                      width: 45.0,
-                      height: 45.0,
+                      width: deviceWidth * 0.1,
+                      height: deviceHeight * 0.05,
                       decoration: const BoxDecoration(
                         color: colorWhite,
                         shape: BoxShape.circle,
                       ),
-                      child: const Icon(
-                        Icons.camera_alt_outlined,
-                        size: 30.0,
+                      child: Icon(
+                        Icons.cameraswitch_sharp,
+                        size: deviceWidth * 0.075,
                         color: colorMainGray,
                       ),
                     ),
@@ -111,12 +111,13 @@ class ProfileState extends State<Profile> {
                 ],
               ),
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: deviceHeight * 0.02),
             Center(
               child: Text('Jim Robbins',
-                  style: GoogleFonts.poppins(fontSize: 35, color: colorWhite)),
+                  style: GoogleFonts.poppins(
+                      fontSize: deviceHeight * 0.035, color: colorWhite)),
             ),
-            const SizedBox(height: 40),
+            SizedBox(height: deviceHeight * 0.03),
             Row(
               children: [
                 Text('Profile Details',
@@ -131,16 +132,43 @@ class ProfileState extends State<Profile> {
                 )
               ],
             ),
-            const SizedBox(height: 35),
-            Text('jimrobbins29@domain.com',
-                style: GoogleFonts.poppins(fontSize: 16, color: colorWhite)),
-            const SizedBox(height: 30),
-            Text('+078 0527 882',
-                style: GoogleFonts.poppins(fontSize: 16, color: colorWhite)),
-            const SizedBox(height: 30),
-            Text('********',
-                style: GoogleFonts.poppins(fontSize: 16, color: colorWhite)),
-            const Spacer(),
+            SizedBox(height: deviceHeight * 0.03),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Email',
+                    style:
+                        GoogleFonts.poppins(fontSize: 16, color: whitecaptcha)),
+                Text('jimrobbins29@domain.com',
+                    style:
+                        GoogleFonts.poppins(fontSize: 16, color: colorWhite)),
+              ],
+            ),
+            SizedBox(height: deviceHeight * 0.03),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Phone',
+                    style:
+                        GoogleFonts.poppins(fontSize: 16, color: whitecaptcha)),
+                Text('+078 0527 882',
+                    style:
+                        GoogleFonts.poppins(fontSize: 16, color: colorWhite)),
+              ],
+            ),
+            SizedBox(height: deviceHeight * 0.03),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Password',
+                    style:
+                        GoogleFonts.poppins(fontSize: 16, color: whitecaptcha)),
+                Text('********',
+                    style:
+                        GoogleFonts.poppins(fontSize: 16, color: colorWhite)),
+              ],
+            ),
+            SizedBox(height: deviceHeight * 0.06),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -162,7 +190,7 @@ class ProfileState extends State<Profile> {
 
   Widget _subscribedContainer() {
     return Container(
-      padding: const EdgeInsets.all(1),
+      padding: const EdgeInsets.all(5),
       width: deviceWidth,
       decoration: BoxDecoration(
         color: colorMainBackground,
@@ -185,8 +213,8 @@ class ProfileState extends State<Profile> {
               borderRadius: BorderRadius.circular(10),
               child: const LoadImageSimple(
                 image: AppImageAsset.homeBG,
-                width: 90,
-                height: 150,
+                // width: 90,
+                // height: 150,
                 imageFit: BoxFit.cover,
               ),
             ),
@@ -197,7 +225,8 @@ class ProfileState extends State<Profile> {
                 children: [
                   Text(
                     'Your are currently subscribed to our',
-                    style: GoogleFonts.poppins(color: colorWhite, fontSize: 16),
+                    style: GoogleFonts.poppins(
+                        color: colorWhite, fontSize: deviceWidth * 0.016),
                   ),
                   ShaderMask(
                     shaderCallback: (Rect bounds) {
@@ -210,16 +239,17 @@ class ProfileState extends State<Profile> {
                     child: Text(
                       "PREMIUM PLAN",
                       style: GoogleFonts.poppins(
-                        fontSize: 22,
+                        fontSize: deviceWidth * 0.18,
                         color: colorWhite,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
-                  const SizedBox(height: 20),
+                  SizedBox(height: deviceWidth * 0.12),
                   Text(
                     'Unlimited Access for',
-                    style: GoogleFonts.poppins(color: colorWhite, fontSize: 18),
+                    style: GoogleFonts.poppins(
+                        color: colorWhite, fontSize: deviceWidth * 0.18),
                   ),
                   Row(
                     children: [
@@ -234,7 +264,7 @@ class ProfileState extends State<Profile> {
                         child: Text(
                           "\$2.99",
                           style: GoogleFonts.poppins(
-                            fontSize: 22,
+                            fontSize: deviceWidth * 0.02,
                             color: colorWhite,
                             fontWeight: FontWeight.bold,
                           ),
@@ -242,10 +272,11 @@ class ProfileState extends State<Profile> {
                       ),
                       Text("/ ",
                           style: GoogleFonts.poppins(
-                              fontSize: 20, color: Colors.grey)),
+                              fontSize: deviceWidth * 0.02,
+                              color: Colors.grey)),
                       Text("week",
                           style: GoogleFonts.poppins(
-                              fontSize: 20, color: colorWhite)),
+                              fontSize: deviceWidth * 0.02, color: colorWhite)),
                     ],
                   ),
                 ],
@@ -280,10 +311,10 @@ class ProfileState extends State<Profile> {
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(10),
-              child: const LoadImageSimple(
+              child: LoadImageSimple(
                 image: AppImageAsset.homeBG,
-                width: 90,
-                height: 150,
+                width: deviceWidth * 0.23,
+                height: deviceHeight * 0.2,
                 imageFit: BoxFit.cover,
               ),
             ),
@@ -295,16 +326,17 @@ class ProfileState extends State<Profile> {
                   children: [
                     Text(
                       'You have only 3 credits left.',
-                      style:
-                          GoogleFonts.poppins(color: colorWhite, fontSize: 16),
+                      style: GoogleFonts.poppins(
+                          color: colorWhite, fontSize: deviceHeight * 0.016),
                     ),
-                    const SizedBox(height: 10),
+                    SizedBox(height: deviceHeight * 0.01),
                     Row(
                       children: [
                         Text(
                           'Subscribe to ',
                           style: GoogleFonts.poppins(
-                              color: colorWhite, fontSize: 18),
+                              color: colorWhite,
+                              fontSize: deviceHeight * 0.018),
                         ),
                         ShaderMask(
                           shaderCallback: (Rect bounds) {
@@ -317,7 +349,7 @@ class ProfileState extends State<Profile> {
                           child: Text(
                             "PREMIUM PLAN",
                             style: GoogleFonts.poppins(
-                              fontSize: 18,
+                              fontSize: deviceHeight * 0.019,
                               color: colorWhite,
                               fontWeight: FontWeight.bold,
                             ),
@@ -327,26 +359,32 @@ class ProfileState extends State<Profile> {
                     ),
                     Text('for Unlimited Access',
                         style: GoogleFonts.poppins(
-                            color: colorWhite, fontSize: 18)),
-                    const SizedBox(height: 10),
+                            color: colorWhite, fontSize: deviceHeight * 0.019)),
+                    SizedBox(height: deviceHeight * 0.02),
                     CustomFillButton(
                       onPressed: () => openSubscriptionPage(context),
-                      height: 60,
+                      height: deviceHeight * 0.06,
                       child: Row(
                         children: [
                           Text(
                             '\$2.99 / week',
                             style: GoogleFonts.poppins(
-                                color: colorWhite, fontWeight: FontWeight.bold),
+                                fontSize: deviceHeight * 0.016,
+                                color: colorWhite,
+                                fontWeight: FontWeight.bold),
                           ),
-                          const Spacer(),
+                          SizedBox(
+                            width: deviceWidth * 0.02,
+                          ),
                           Text(
                             'SUBSCRIBE',
                             style: GoogleFonts.poppins(
-                                color: colorWhite, fontWeight: FontWeight.bold),
+                                fontSize: deviceHeight * 0.018,
+                                color: colorWhite,
+                                fontWeight: FontWeight.bold),
                           ),
-                          const Icon(Icons.arrow_forward_ios,
-                              color: colorWhite, size: 16)
+                          Icon(Icons.arrow_forward_ios,
+                              color: colorWhite, size: deviceHeight * 0.012)
                         ],
                       ),
                     )

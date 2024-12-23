@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'package:stream_rate/commonView/custom_fill_button.dart';
 import 'package:stream_rate/commonView/custom_text_form.dart';
+import 'package:stream_rate/constant/constant.dart';
 import 'package:stream_rate/utils/utils.dart';
 
 class Support extends StatefulWidget {
@@ -43,11 +44,12 @@ class SupportState extends State<Support> {
         title: Stack(
           children: [
             SizedBox(
-              height: 50,
+              height: deviceHeight * 0.06,
               child: Center(
                 child: Text(
                   'Contact Support',
-                  style: GoogleFonts.poppins(fontSize: 24, color: colorWhite),
+                  style: GoogleFonts.poppins(
+                      fontSize: deviceHeight * 0.035, color: colorWhite),
                 ),
               ),
             ),
@@ -82,22 +84,37 @@ class SupportState extends State<Support> {
             const SizedBox(height: 15),
             Center(
               child: SizedBox(
-                width: deviceWidth * .65,
+                width: deviceWidth * 0.75,
                 child: Text('Please let us know how can we help you',
                     textAlign: TextAlign.center,
-                    style:
-                        GoogleFonts.poppins(color: colorWhite, fontSize: 22)),
+                    style: GoogleFonts.poppins(
+                        color: colorWhite,
+                        fontSize: deviceHeight * 0.024,
+                        fontWeight: FontWeight.w300)),
               ),
             ),
-            const SizedBox(height: 40),
+            SizedBox(height: deviceHeight * 0.05),
             Text('Write Your Message',
-                style: GoogleFonts.poppins(color: colorWhite, fontSize: 18)),
-            const SizedBox(height: 15),
-            const CustomTextFormField(minLines: 8),
-            const SizedBox(height: 40),
+                style: GoogleFonts.poppins(
+                    color: colorWhite,
+                    fontSize: deviceHeight * 0.022,
+                    fontWeight: FontWeight.w300)),
+            SizedBox(height: deviceHeight * 0.02),
+            CustomTextFormField(
+                height: deviceHeight * 0.18,
+                hintText: "  Message ..",
+                hintStyle: GoogleFonts.poppins(
+                    color: whitecaptcha,
+                    fontSize: deviceHeight * 0.02,
+                    fontWeight: FontWeight.w300),
+                minLines: 8),
+            SizedBox(height: deviceHeight * 0.05),
             Text('Please enter the characters below',
-                style: GoogleFonts.poppins(color: colorWhite, fontSize: 18)),
-            const SizedBox(height: 15),
+                style: GoogleFonts.poppins(
+                    color: colorWhite,
+                    fontSize: deviceHeight * 0.022,
+                    fontWeight: FontWeight.w300)),
+            SizedBox(height: deviceHeight * 0.015),
             Container(
               width: deviceWidth,
               height: 100,
@@ -113,14 +130,21 @@ class SupportState extends State<Support> {
                   randomText,
                   style: GoogleFonts.poppins(
                     color: colorWhite,
-                    fontSize: 40,
+                    fontSize: deviceWidth * 0.095,
                     letterSpacing: 10.0,
                   ),
                 ),
               ),
             ),
-            const SizedBox(height: 15),
-            const CustomTextFormField(),
+            SizedBox(height: deviceHeight * 0.018),
+            CustomTextFormField(
+              height: deviceHeight * 0.08,
+              hintText: "  Enter Captcha",
+              hintStyle: GoogleFonts.poppins(
+                  color: whitecaptcha,
+                  fontSize: deviceHeight * 0.02,
+                  fontWeight: FontWeight.w300),
+            ),
             const Spacer(),
             CustomFillButton(
               onPressed: () => openMessageDialog(context),
@@ -131,7 +155,8 @@ class SupportState extends State<Support> {
                   const SizedBox(width: 5),
                   Text(
                     'SEND MESSAGE',
-                    style: GoogleFonts.poppins(color: colorWhite, fontSize: 16),
+                    style: GoogleFonts.poppins(
+                        color: colorWhite, fontSize: deviceWidth * 0.045),
                   ),
                 ],
               ),

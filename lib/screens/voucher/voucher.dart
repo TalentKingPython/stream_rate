@@ -8,7 +8,6 @@ import 'package:stream_rate/commonView/custom_text_form.dart';
 import 'package:stream_rate/commonView/load_image_with_placeholder.dart';
 import 'package:stream_rate/screens/capture/capture.dart';
 
-import 'package:stream_rate/screens/login/login.dart';
 import 'package:stream_rate/utils/utils.dart';
 import 'package:stream_rate/commonView/custom_fill_button.dart';
 
@@ -56,8 +55,8 @@ class VoucherState extends State<Voucher> {
     final Barcode barcode = Barcode.upcA();
     final String svg = barcode.toSvg(
       '98765432109', // Your data
-      width: 300, // Width
-      height: 100, // Height
+      width: deviceWidth * 0.9, // Width
+      height: deviceHeight * 0.12, // Height
       drawText: true, // Include text under the barcode
     );
 
@@ -71,7 +70,7 @@ class VoucherState extends State<Voucher> {
               LoadImageSimple(
                 image: 'assets/images/voucher_main.png',
                 width: deviceWidth * 0.4,
-                height: 150,
+                height: deviceHeight * 0.18,
                 imageFit: BoxFit.fill,
               ),
               Container(
@@ -81,18 +80,18 @@ class VoucherState extends State<Voucher> {
                     textAlign: TextAlign.center,
                     style: GoogleFonts.poppins(
                       color: colorWhite,
-                      fontSize: 24,
+                      fontSize: deviceWidth * 0.065,
                     ),
                   )),
               Container(
                   padding:
-                      const EdgeInsets.symmetric(vertical: 30, horizontal: 80),
+                      const EdgeInsets.symmetric(vertical: 30, horizontal: 50),
                   child: Text(
                     "Enter the code below to redeem your free credits",
                     textAlign: TextAlign.center,
                     style: GoogleFonts.poppins(
                       color: colorWhite,
-                      fontSize: 20,
+                      fontSize: deviceWidth * 0.045,
                     ),
                   )),
               Container(
@@ -107,6 +106,13 @@ class VoucherState extends State<Voucher> {
                   color: Colors.grey,
                 ),
               ),
+              SizedBox(
+                height: deviceHeight * 0.001,
+                width: deviceWidth * 0.7,
+                child: Container(
+                  color: white,
+                ),
+              ),
               Container(
                 padding: const EdgeInsets.all(20),
                 width: deviceWidth * 0.8,
@@ -119,8 +125,12 @@ class VoucherState extends State<Voucher> {
                       Icon(Icons.discount_outlined, color: colorMainLightGray),
                 ),
               ),
+              SizedBox(
+                height: deviceHeight * 0.05,
+              ),
               Container(
-                padding: const EdgeInsets.fromLTRB(25, 100, 25, 30),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 20, horizontal: 60),
                 child: Column(
                   children: [
                     CustomFillButton(

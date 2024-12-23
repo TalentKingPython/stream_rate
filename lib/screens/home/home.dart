@@ -1,10 +1,9 @@
 import 'dart:ui';
 
 import 'package:camera/camera.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:stream_rate/constant/constant.dart';
 
 import 'package:stream_rate/screens/favourite/favourite.dart';
 import 'package:stream_rate/screens/history/history.dart';
@@ -116,8 +115,8 @@ class HomeState extends State<Home> {
                 right: 50,
                 bottom: 5,
                 child: Container(
-                  width: 350,
-                  height: 65,
+                  width: deviceWidth * 0.3,
+                  height: deviceHeight * 0.08,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
                     color: whiteLowOpacity,
@@ -138,8 +137,8 @@ class HomeState extends State<Home> {
                           children: [
                             Image.asset(
                               AppImageAsset.profile,
-                              width: 20,
-                              height: 20,
+                              width: deviceWidth * 0.05,
+                              height: deviceHeight * 0.025,
                             ),
                             const TextWithPoppins(
                                 text: 'Profile',
@@ -150,7 +149,7 @@ class HomeState extends State<Home> {
                           ],
                         ),
                       ),
-                      const SizedBox(width: 30),
+                      SizedBox(width: deviceWidth * 0.05),
                       InkWell(
                         onTap: () {
                           openScreenWithResult(context, const History());
@@ -160,8 +159,8 @@ class HomeState extends State<Home> {
                           children: [
                             Image.asset(
                               AppImageAsset.history,
-                              width: 20,
-                              height: 20,
+                              width: deviceWidth * 0.05,
+                              height: deviceHeight * 0.025,
                             ),
                             const TextWithPoppins(
                                 text: 'History',
@@ -172,7 +171,7 @@ class HomeState extends State<Home> {
                           ],
                         ),
                       ),
-                      const SizedBox(width: 30),
+                      SizedBox(width: deviceWidth * 0.15),
                       InkWell(
                         onTap: () {
                           openScreenWithResult(context, const Favourite());
@@ -182,8 +181,8 @@ class HomeState extends State<Home> {
                           children: [
                             Image.asset(
                               AppImageAsset.favorites,
-                              width: 20,
-                              height: 20,
+                              width: deviceWidth * 0.05,
+                              height: deviceHeight * 0.025,
                             ),
                             const TextWithPoppins(
                                 text: 'Favorites',
@@ -194,7 +193,7 @@ class HomeState extends State<Home> {
                           ],
                         ),
                       ),
-                      const SizedBox(width: 30),
+                      SizedBox(width: deviceWidth * 0.05),
                       InkWell(
                         onTap: () {
                           showModalBottomSheet(
@@ -208,8 +207,8 @@ class HomeState extends State<Home> {
                           children: [
                             Image.asset(
                               AppImageAsset.more,
-                              width: 20,
-                              height: 20,
+                              width: deviceWidth * 0.05,
+                              height: deviceHeight * 0.025,
                             ),
                             const TextWithPoppins(
                                 text: 'More',

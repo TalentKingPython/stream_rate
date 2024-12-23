@@ -4,7 +4,7 @@ import 'package:stream_rate/commonView/custom_fill_button.dart';
 import 'package:stream_rate/commonView/contact_user_cart.dart';
 
 import 'package:stream_rate/commonView/custom_text_form.dart';
-import 'package:stream_rate/screens/signup/confirm_email.dart';
+import 'package:stream_rate/constant/constant.dart';
 import 'package:stream_rate/utils/utils.dart';
 
 class Invite extends StatefulWidget {
@@ -56,18 +56,32 @@ class InviteState extends State<Invite> {
       backgroundColor: colorMainBackground,
       body: Stack(children: [
         Padding(
-          padding: const EdgeInsets.only(left: 30, right: 30, top: 50),
+          padding: const EdgeInsets.only(left: 20, right: 20, top: 50),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text("Invite People",
-                  style: GoogleFonts.poppins(fontSize: 30, color: colorWhite)),
+                  style: GoogleFonts.poppins(
+                      fontSize: deviceHeight * 0.035, color: colorWhite)),
               Container(
-                padding: const EdgeInsets.fromLTRB(30, 60, 30, 40),
-                child: Text(
-                  "Invite people you know and earn 5 CREDITS for each subscription.",
-                  textAlign: TextAlign.center,
-                  style: GoogleFonts.poppins(color: colorWhite, fontSize: 24),
+                width: deviceWidth,
+                padding:
+                    const EdgeInsets.symmetric(vertical: 40, horizontal: 20),
+                child: Column(
+                  children: [
+                    Text(
+                      "Invite people you know and earn 5 CREDITS for each subscription.",
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.poppins(
+                          color: colorWhite, fontSize: deviceHeight * 0.022),
+                    ),
+                    Text(
+                      "LIMITED TO 200 CREDITS",
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.poppins(
+                          color: whitecaptcha, fontSize: deviceHeight * 0.018),
+                    ),
+                  ],
                 ),
               ),
               Column(
@@ -76,7 +90,7 @@ class InviteState extends State<Invite> {
                   children: [
                     Text("Synced Contacts",
                         style: GoogleFonts.poppins(
-                            fontSize: 18, color: colorWhite)),
+                            fontSize: deviceHeight * 0.02, color: colorWhite)),
                     // Expanded(
                     //   child: ListView.builder(
                     //     padding: const EdgeInsets.all(10),
@@ -114,11 +128,11 @@ class InviteState extends State<Invite> {
                           Icon(Icons.email_outlined, color: colorMainLightGray),
                     ),
                   ]),
-              const SizedBox(height: 100),
+              SizedBox(height: deviceHeight * 0.04),
               CustomFillButton(
                 onPressed: onSubmit,
                 width: double.infinity,
-                height: 60,
+                height: deviceHeight * 0.07,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,

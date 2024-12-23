@@ -2,6 +2,7 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:stream_rate/commonView/custom_fill_button.dart';
+import 'package:stream_rate/constant/constant.dart';
 
 import 'package:stream_rate/constant/image_assets.dart';
 import 'package:stream_rate/commonView/textwithpoppins.dart';
@@ -36,7 +37,7 @@ class ResultState extends State<Result> {
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage(AppImageAsset.resultBG), fit: BoxFit.cover),
+                  image: AssetImage(AppImageAsset.resultBG), fit: BoxFit.fill),
             ),
             child: Stack(
               children: [
@@ -64,7 +65,7 @@ class ResultState extends State<Result> {
                 // ),
                 Positioned(
                     left: 20,
-                    bottom: deviceHeight * 0.35,
+                    bottom: deviceHeight * 0.39,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -104,7 +105,7 @@ class ResultState extends State<Result> {
                       ],
                     )),
                 Positioned(
-                    bottom: deviceHeight * 0.37,
+                    bottom: deviceHeight * 0.42,
                     right: 20,
                     child: Row(
                       children: [
@@ -146,7 +147,7 @@ class ResultState extends State<Result> {
                 Positioned(
                     left: 20,
                     right: 20,
-                    bottom: deviceHeight * 0.29,
+                    bottom: deviceHeight * 0.335,
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -154,8 +155,8 @@ class ResultState extends State<Result> {
                         Row(children: [
                           Container(
                             alignment: Alignment.center,
-                            width: 80,
-                            height: 40,
+                            width: deviceWidth * 0.2,
+                            height: deviceHeight * 0.05,
                             decoration: const BoxDecoration(
                                 image: DecorationImage(
                                     image: AssetImage(
@@ -174,8 +175,8 @@ class ResultState extends State<Result> {
                             onTap: () {},
                             child: Container(
                               padding: const EdgeInsets.all(8),
-                              width: 100,
-                              height: 40,
+                              width: deviceWidth * 0.26,
+                              height: deviceHeight * 0.05,
                               decoration: BoxDecoration(
                                 color: whitelow,
                                 borderRadius: BorderRadius.circular(20),
@@ -226,55 +227,55 @@ class ResultState extends State<Result> {
                 Positioned(
                     left: 20,
                     right: 20,
-                    bottom: 100,
+                    bottom: deviceHeight * 0.12,
                     child: Column(
                       children: [
                         Row(
                           children: [
                             Image.asset(AppImageAsset.imdb,
                                 width: 50, height: 25),
-                            const TextWithPoppins(
+                            TextWithPoppins(
                               text: 'IMDb',
                               align: TextAlign.start,
                               color: white,
-                              size: 14,
+                              size: deviceHeight * 0.017,
                               weight: FontWeight.normal,
                             ),
                             const Spacer(),
-                            const TextWithPoppins(
+                            TextWithPoppins(
                                 text: '5.5',
                                 align: TextAlign.end,
                                 color: white,
-                                size: 16,
+                                size: deviceHeight * 0.017,
                                 weight: FontWeight.normal),
-                            const TextWithPoppins(
+                            TextWithPoppins(
                                 text: ' /10',
                                 align: TextAlign.end,
                                 color: colorMainLightGray,
-                                size: 14,
+                                size: deviceHeight * 0.017,
                                 weight: FontWeight.normal),
                           ],
                         ),
-                        const SizedBox(
-                          height: 20,
+                        SizedBox(
+                          height: deviceWidth * 0.04,
                         ),
                         Row(
                           children: [
                             Image.asset(AppImageAsset.tomato,
                                 width: 50, height: 20),
-                            const TextWithPoppins(
+                            TextWithPoppins(
                               text: 'Rotten Tomatoes',
                               align: TextAlign.start,
                               color: white,
-                              size: 14,
+                              size: deviceHeight * 0.017,
                               weight: FontWeight.normal,
                             ),
                             const Spacer(),
-                            const TextWithPoppins(
+                            TextWithPoppins(
                                 text: '97 %',
                                 align: TextAlign.end,
                                 color: white,
-                                size: 16,
+                                size: deviceHeight * 0.017,
                                 weight: FontWeight.normal),
                             // const TextWithPoppins(
                             //     text: '%',
@@ -284,61 +285,61 @@ class ResultState extends State<Result> {
                             //     weight: FontWeight.normal),
                           ],
                         ),
-                        const SizedBox(
-                          height: 20,
+                        SizedBox(
+                          height: deviceWidth * 0.04,
                         ),
                         Row(
                           children: [
                             Image.asset(AppImageAsset.meta,
                                 width: 50, height: 25),
-                            const TextWithPoppins(
+                            TextWithPoppins(
                               text: 'Metacritic',
                               align: TextAlign.start,
                               color: white,
-                              size: 14,
+                              size: deviceHeight * 0.017,
                               weight: FontWeight.normal,
                             ),
                             const Spacer(),
-                            const TextWithPoppins(
+                            TextWithPoppins(
                                 text: '9.9',
                                 align: TextAlign.end,
                                 color: white,
-                                size: 16,
+                                size: deviceHeight * 0.017,
                                 weight: FontWeight.normal),
-                            const TextWithPoppins(
+                            TextWithPoppins(
                                 text: ' /10',
                                 align: TextAlign.end,
                                 color: colorMainLightGray,
-                                size: 14,
+                                size: deviceHeight * 0.017,
                                 weight: FontWeight.normal),
                           ],
                         ),
-                        const SizedBox(
-                          height: 20,
+                        SizedBox(
+                          height: deviceWidth * 0.04,
                         ),
                         Row(
                           children: [
                             Image.asset(AppImageAsset.letter,
                                 width: 50, height: 25),
-                            const TextWithPoppins(
+                            TextWithPoppins(
                               text: 'Letterboxd',
                               align: TextAlign.start,
                               color: white,
-                              size: 14,
+                              size: deviceHeight * 0.017,
                               weight: FontWeight.normal,
                             ),
                             const Spacer(),
-                            const TextWithPoppins(
+                            TextWithPoppins(
                                 text: '9.9',
                                 align: TextAlign.end,
                                 color: white,
-                                size: 16,
+                                size: deviceHeight * 0.017,
                                 weight: FontWeight.normal),
-                            const TextWithPoppins(
+                            TextWithPoppins(
                                 text: ' /10',
                                 align: TextAlign.end,
                                 color: colorMainLightGray,
-                                size: 14,
+                                size: deviceHeight * 0.017,
                                 weight: FontWeight.normal),
                           ],
                         ),
@@ -348,7 +349,7 @@ class ResultState extends State<Result> {
                   bottom: 0,
                   child: Container(
                     padding: const EdgeInsets.all(15),
-                    height: 90,
+                    // height: deviceHeight * 0.095,
                     width: deviceWidth,
                     decoration: const BoxDecoration(color: colorItemCard),
                     child: Row(

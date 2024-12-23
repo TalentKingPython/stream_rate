@@ -30,9 +30,10 @@ class CustomTextFormField extends StatelessWidget {
   final OutlineInputBorder? focusedBorder;
   final OutlineInputBorder? errorBorder;
   final OutlineInputBorder? focusedErrorBorder;
-
+  final double? height;
   const CustomTextFormField({
     Key? key,
+    this.height,
     this.controller,
     this.focusNode,
     this.initialValue,
@@ -64,7 +65,7 @@ class CustomTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: deviceHeight * 0.068,
+      height: height ?? deviceHeight * 0.068,
       child: TextFormField(
         controller: controller,
         focusNode: focusNode,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:stream_rate/commonView/load_image_with_placeholder.dart';
 import 'package:stream_rate/constant/colors.dart';
+import 'package:stream_rate/constant/constant.dart';
 
 class UserCard extends StatelessWidget {
   final String userName;
@@ -33,8 +34,8 @@ class UserCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
-                width: 30,
-                height: 30,
+                width: deviceWidth * 0.07,
+                height: deviceHeight * 0.03,
                 decoration: BoxDecoration(
                   color: colorMainBackground,
                   borderRadius: BorderRadius.circular(5),
@@ -55,13 +56,15 @@ class UserCard extends StatelessWidget {
                         ),
                 ),
               ),
-              const SizedBox(width: 10),
+              SizedBox(
+                width: deviceWidth * 0.03,
+              ),
               Text(
                 userName,
                 style: GoogleFonts.poppins(
-                  color: Colors.white, // Replace with `colorWhite`
-                  fontSize: 20,
-                ),
+                    color: Colors.white, // Replace with `colorWhite`
+                    fontSize: deviceHeight * 0.022,
+                    fontWeight: FontWeight.w300),
               ),
             ],
           ),
