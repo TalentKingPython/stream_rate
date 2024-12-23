@@ -40,17 +40,21 @@ class SignUpState extends State<SignUp> {
               fit: BoxFit.cover),
         ),
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              SizedBox(
+                height: deviceHeight * 0.045,
+              ),
               Image.asset(
                 'assets/images/streamrate-logo.png',
                 width: deviceWidth * 0.4,
+                height: deviceHeight * 0.12,
               ),
               Container(
-                width: 250,
+                width: deviceWidth * 0.7,
                 padding: const EdgeInsets.symmetric(vertical: 30),
                 child: Text(
                   "Create an account to get started",
@@ -60,10 +64,11 @@ class SignUpState extends State<SignUp> {
               ),
               Container(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+                    const EdgeInsets.symmetric(horizontal: 25, vertical: 5),
                 child: Column(
                   children: [
                     CustomFillButton(
+                      height: deviceHeight * 0.065,
                       isColorBtn: false,
                       onPressed: () =>
                           openScreenWithResult(context, const EmailSignUp()),
@@ -88,10 +93,12 @@ class SignUpState extends State<SignUp> {
               ),
               Container(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+                    const EdgeInsets.symmetric(horizontal: 25, vertical: 5),
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     CustomFillButton(
+                      height: deviceHeight * 0.065,
                       isColorBtn: false,
                       onPressed: () =>
                           openScreenWithResult(context, const FaceIdSignUp()),
@@ -116,10 +123,11 @@ class SignUpState extends State<SignUp> {
               ),
               Container(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+                    const EdgeInsets.symmetric(horizontal: 25, vertical: 5),
                 child: Column(
                   children: [
                     CustomFillButton(
+                      height: deviceHeight * 0.065,
                       isColorBtn: false,
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -142,10 +150,11 @@ class SignUpState extends State<SignUp> {
               ),
               Container(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+                    const EdgeInsets.symmetric(horizontal: 25, vertical: 5),
                 child: Column(
                   children: [
                     CustomFillButton(
+                      height: deviceHeight * 0.065,
                       isColorBtn: false,
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -168,10 +177,11 @@ class SignUpState extends State<SignUp> {
               ),
               Container(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+                    const EdgeInsets.symmetric(horizontal: 25, vertical: 5),
                 child: Column(
                   children: [
                     CustomFillButton(
+                      height: deviceHeight * 0.065,
                       isColorBtn: false,
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -192,6 +202,9 @@ class SignUpState extends State<SignUp> {
                   ],
                 ),
               ),
+              SizedBox(
+                height: deviceHeight * 0.03,
+              ),
               Container(
                 padding: const EdgeInsets.symmetric(vertical: 20),
                 child: Text("I will do it later",
@@ -200,6 +213,9 @@ class SignUpState extends State<SignUp> {
                         color: colorWhite,
                         fontSize: 16,
                         decoration: TextDecoration.underline)),
+              ),
+              SizedBox(
+                height: deviceHeight * 0.03,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,

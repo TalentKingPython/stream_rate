@@ -44,21 +44,22 @@ class CaptureState extends State<Capture> {
     return Scaffold(
       backgroundColor: colorMainBackground,
       body: Container(
-        width: double.infinity,
-        height: double.infinity,
+        width: deviceWidth,
+        height: deviceHeight,
         decoration: const BoxDecoration(
           color: colorPrimary,
           image: DecorationImage(
               image: AssetImage(AppImageAsset.splashBG), fit: BoxFit.cover),
         ),
         child: Padding(
-          padding: const EdgeInsets.only(left: 30, right: 30, top: 100),
+          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               LoadImageSimple(
                 image: 'assets/images/streamrate-logo.png',
                 width: deviceWidth * 0.4,
-                height: 100,
+                height: deviceHeight * 0.12,
                 imageFit: BoxFit.fill,
               ),
               const SizedBox(height: 50),

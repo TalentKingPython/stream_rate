@@ -4,6 +4,7 @@ import 'package:stream_rate/commonView/custom_fill_button.dart';
 
 import 'package:stream_rate/commonView/load_image_with_placeholder.dart';
 import 'package:stream_rate/commonView/custom_text_form.dart';
+import 'package:stream_rate/constant/constant.dart';
 import 'package:stream_rate/screens/login/login.dart';
 import 'package:stream_rate/screens/signup/confirm_email.dart';
 import 'package:stream_rate/utils/utils.dart';
@@ -47,21 +48,28 @@ class EmailSignUpState extends State<EmailSignUp> {
                 fit: BoxFit.cover)),
         child: Stack(children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30),
+            padding: EdgeInsets.symmetric(
+              horizontal: deviceWidth * 0.08,
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                SizedBox(
+                  height: deviceHeight * 0.05,
+                ),
                 LoadImageSimple(
                   image: 'assets/images/streamrate-logo.png',
-                  width: deviceWidth * 0.4,
+                  width: deviceWidth * 0.5,
+                  height: deviceHeight * 0.1,
                 ),
                 Container(
-                  padding: const EdgeInsets.symmetric(vertical: 30),
+                  padding: const EdgeInsets.symmetric(vertical: 20),
                   child: Text(
                     "Create an account",
                     textAlign: TextAlign.center,
-                    style: GoogleFonts.poppins(color: colorWhite, fontSize: 24),
+                    style: GoogleFonts.poppins(
+                        color: colorWhite, fontSize: deviceHeight * 0.03),
                   ),
                 ),
                 const CustomTextFormField(
@@ -69,13 +77,13 @@ class EmailSignUpState extends State<EmailSignUp> {
                   prefixIcon:
                       Icon(Icons.email_outlined, color: colorMainLightGray),
                 ),
-                const SizedBox(height: 20),
+                SizedBox(height: deviceHeight * 0.02),
                 const CustomTextFormField(
                   labelText: 'Phone',
                   prefixIcon:
                       Icon(Icons.phone_outlined, color: colorMainLightGray),
                 ),
-                const SizedBox(height: 20),
+                SizedBox(height: deviceHeight * 0.02),
                 CustomTextFormField(
                   isPassword: true,
                   labelText: 'Password',
@@ -87,7 +95,7 @@ class EmailSignUpState extends State<EmailSignUp> {
                           : Icons.visibility_outlined,
                       color: colorMainLightGray),
                 ),
-                const SizedBox(height: 20),
+                SizedBox(height: deviceHeight * 0.02),
                 CustomTextFormField(
                   isPassword: true,
                   labelText: 'Confirm Password',
@@ -99,20 +107,20 @@ class EmailSignUpState extends State<EmailSignUp> {
                           : Icons.visibility_outlined,
                       color: colorMainLightGray),
                 ),
-                const SizedBox(height: 30),
+                SizedBox(height: deviceHeight * 0.02),
                 SizedBox(
                   width: double.infinity,
                   child: Text('Do you have a voucher code?',
-                      style:
-                          GoogleFonts.poppins(fontSize: 18, color: colorWhite)),
+                      style: GoogleFonts.poppins(
+                          fontSize: deviceHeight * 0.02, color: colorWhite)),
                 ),
-                const SizedBox(height: 10),
+                SizedBox(height: deviceHeight * 0.01),
                 const CustomTextFormField(
                   labelText: 'Voucher Code',
                   prefixIcon:
                       Icon(Icons.discount_outlined, color: colorMainLightGray),
                 ),
-                const SizedBox(height: 30),
+                SizedBox(height: deviceHeight * 0.03),
                 SizedBox(
                   width: double.infinity,
                   child: Row(
@@ -144,13 +152,15 @@ class EmailSignUpState extends State<EmailSignUp> {
                       ),
                       Text('   I accept the ',
                           style: GoogleFonts.poppins(
-                              color: colorWhite, fontSize: 18)),
+                            color: colorWhite,
+                            fontSize: deviceHeight * 0.02,
+                          )),
                       GestureDetector(
                         onTap: () {},
                         child: Text(
                           'Terms & Conditions',
                           style: GoogleFonts.poppins(
-                            fontSize: 18,
+                            fontSize: deviceHeight * 0.02,
                             color: colorWhite,
                             decoration: TextDecoration.underline,
                           ),
@@ -159,20 +169,20 @@ class EmailSignUpState extends State<EmailSignUp> {
                     ],
                   ),
                 ),
-                const SizedBox(height: 30),
+                SizedBox(height: deviceHeight * 0.025),
                 CustomFillButton(
                   onPressed: onSubmit,
                   width: double.infinity,
-                  height: 60,
+                  height: deviceHeight * 0.065,
                   child: Text(
                     'CREATE ACCOUNT',
                     style: GoogleFonts.poppins(
                         color: colorWhite,
-                        fontSize: 20,
+                        fontSize: deviceHeight * 0.024,
                         fontWeight: FontWeight.bold),
                   ),
                 ),
-                const SizedBox(height: 30),
+                SizedBox(height: deviceHeight * 0.04),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:stream_rate/constant/constant.dart';
 import '../constant/colors.dart';
 
 class CustomTextFormField extends StatelessWidget {
@@ -62,58 +63,64 @@ class CustomTextFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      controller: controller,
-      focusNode: focusNode,
-      obscureText: isPassword,
-      style: textStyle ?? GoogleFonts.poppins(color: colorWhite),
-      keyboardType: inputType,
-      textInputAction: inputAction,
-      initialValue: initialValue,
-      readOnly: readOnly,
-      maxLines: isPassword ? 1 : maxLines,
-      minLines: minLines,
-      cursorColor: colorWhite,
-      decoration: InputDecoration(
-        hintText: hintText,
-        labelText: labelText,
-        prefixIcon: prefixIcon,
-        suffixIcon: suffixIcon,
-        labelStyle:
-            labelStyle ?? GoogleFonts.poppins(color: colorWhite, fontSize: 18),
-        hintStyle: hintStyle,
-        fillColor: fillColor,
-        filled: filled,
-        errorText: errorText,
-        border: enabledBorder ??
-            OutlineInputBorder(
-              borderRadius: BorderRadius.circular(25),
-              borderSide: const BorderSide(color: colorMainLightGray, width: 1),
-            ),
-        enabledBorder: enabledBorder ??
-            OutlineInputBorder(
-              borderRadius: BorderRadius.circular(25),
-              borderSide: const BorderSide(color: colorMainLightGray, width: 1),
-            ),
-        focusedBorder: focusedBorder ??
-            OutlineInputBorder(
-              borderRadius: BorderRadius.circular(25),
-              borderSide: const BorderSide(color: colorWhite, width: 2),
-            ),
-        errorBorder: errorBorder ??
-            OutlineInputBorder(
-              borderRadius: BorderRadius.circular(25),
-              borderSide: const BorderSide(color: colorRed, width: 2),
-            ),
-        focusedErrorBorder: focusedErrorBorder ??
-            OutlineInputBorder(
-              borderRadius: BorderRadius.circular(25),
-              borderSide: const BorderSide(color: colorRed, width: 2),
-            ),
+    return Container(
+      height: deviceHeight * 0.068,
+      child: TextFormField(
+        controller: controller,
+        focusNode: focusNode,
+        obscureText: isPassword,
+        style: textStyle ?? GoogleFonts.poppins(color: colorWhite),
+        keyboardType: inputType,
+        textInputAction: inputAction,
+        initialValue: initialValue,
+        readOnly: readOnly,
+        maxLines: isPassword ? 1 : maxLines,
+        minLines: minLines,
+        cursorColor: colorWhite,
+        decoration: InputDecoration(
+          hintText: hintText,
+          labelText: labelText,
+          prefixIcon: prefixIcon,
+          suffixIcon: suffixIcon,
+          labelStyle: labelStyle ??
+              GoogleFonts.poppins(
+                  color: colorWhite, fontSize: deviceHeight * 0.02),
+          hintStyle: hintStyle,
+          fillColor: fillColor,
+          filled: filled,
+          errorText: errorText,
+          border: enabledBorder ??
+              OutlineInputBorder(
+                borderRadius: BorderRadius.circular(25),
+                borderSide:
+                    const BorderSide(color: colorMainLightGray, width: 1),
+              ),
+          enabledBorder: enabledBorder ??
+              OutlineInputBorder(
+                borderRadius: BorderRadius.circular(25),
+                borderSide:
+                    const BorderSide(color: colorMainLightGray, width: 1),
+              ),
+          focusedBorder: focusedBorder ??
+              OutlineInputBorder(
+                borderRadius: BorderRadius.circular(25),
+                borderSide: const BorderSide(color: colorWhite, width: 2),
+              ),
+          errorBorder: errorBorder ??
+              OutlineInputBorder(
+                borderRadius: BorderRadius.circular(25),
+                borderSide: const BorderSide(color: colorRed, width: 2),
+              ),
+          focusedErrorBorder: focusedErrorBorder ??
+              OutlineInputBorder(
+                borderRadius: BorderRadius.circular(25),
+                borderSide: const BorderSide(color: colorRed, width: 2),
+              ),
+        ),
+        validator: validator,
+        onChanged: onChanged,
+        onTap: onTap,
       ),
-      validator: validator,
-      onChanged: onChanged,
-      onTap: onTap,
     );
   }
 }

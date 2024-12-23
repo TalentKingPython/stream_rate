@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:stream_rate/commonView/load_image_with_placeholder.dart';
+import 'package:stream_rate/constant/constant.dart';
 import 'package:stream_rate/screens/capture/capture.dart';
 
 import 'package:stream_rate/screens/login/login.dart';
@@ -39,11 +40,16 @@ class FaceIdSignUpState extends State<FaceIdSignUp> {
                 fit: BoxFit.cover)),
         child: Stack(children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30),
+            padding: const EdgeInsets.symmetric(
+              horizontal: 10,
+            ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                SizedBox(
+                  height: deviceHeight * 0.04,
+                ),
                 LoadImageSimple(
                   image: 'assets/images/streamrate-logo.png',
                   width: deviceWidth * 0.4,
@@ -56,23 +62,23 @@ class FaceIdSignUpState extends State<FaceIdSignUp> {
                       textAlign: TextAlign.center,
                       style: GoogleFonts.poppins(
                         color: colorWhite,
-                        fontSize: 24,
+                        fontSize: deviceHeight * 0.03,
                       ),
                     )),
                 Container(
-                    padding: const EdgeInsets.only(bottom: 30),
+                    padding: EdgeInsets.only(bottom: deviceHeight * 0.025),
                     child: Text(
                       "Face ID or Touch ID",
                       textAlign: TextAlign.center,
                       style: GoogleFonts.poppins(
                         color: colorWhite,
-                        fontSize: 24,
+                        fontSize: deviceHeight * 0.03,
                       ),
                     )),
                 LoadImageSimple(
                   image: 'assets/images/face_signup_main.png',
-                  width: deviceWidth * 0.5,
-                  imageFit: BoxFit.fill,
+                  width: deviceWidth * 0.45,
+                  imageFit: BoxFit.cover,
                 ),
                 Container(
                   padding:
@@ -82,11 +88,16 @@ class FaceIdSignUpState extends State<FaceIdSignUp> {
                       textAlign: TextAlign.center,
                       style: GoogleFonts.poppins(
                         color: colorWhite,
-                        fontSize: 18,
+                        fontSize: deviceHeight * 0.02,
                       )),
                 ),
+                SizedBox(
+                  height: deviceHeight * 0.01,
+                ),
                 Container(
-                  padding: const EdgeInsets.fromLTRB(25, 10, 25, 30),
+                  width: deviceWidth * 0.8,
+
+                  // padding: const EdgeInsets.fromLTRB(25, 10, 25, 30),
                   child: Column(
                     children: [
                       CustomFillButton(
@@ -103,7 +114,7 @@ class FaceIdSignUpState extends State<FaceIdSignUp> {
                                 'SIGN UP',
                                 style: GoogleFonts.poppins(
                                     color: colorWhite,
-                                    fontSize: 20,
+                                    fontSize: deviceHeight * 0.018,
                                     fontWeight: FontWeight.w600),
                               ),
                             )
@@ -112,6 +123,9 @@ class FaceIdSignUpState extends State<FaceIdSignUp> {
                       ),
                     ],
                   ),
+                ),
+                SizedBox(
+                  height: deviceHeight * 0.02,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,

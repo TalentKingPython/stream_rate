@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:stream_rate/commonView/load_image_with_placeholder.dart';
+import 'package:stream_rate/constant/constant.dart';
 
 import '../../../utils/utils.dart';
 
@@ -39,13 +40,13 @@ class OnboardTwoState extends State<OnboardTwo> {
             LoadImageSimple(
               image: "assets/images/onboard2BG.png",
               width: deviceWidth,
-              height: deviceHeight * 0.8,
+              height: deviceHeight * 0.75,
               imageFit: BoxFit.fill,
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: deviceHeight * 0.01),
             Text("Point your phone at the TV and press the",
                 style: GoogleFonts.poppins(color: colorWhite, fontSize: 14)),
-            const SizedBox(height: 5),
+            SizedBox(height: deviceHeight * 0.005),
             Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.baseline,
@@ -56,7 +57,7 @@ class OnboardTwoState extends State<OnboardTwo> {
                       style:
                           GoogleFonts.poppins(color: colorWhite, fontSize: 14))
                 ]),
-            const SizedBox(height: 10),
+            SizedBox(height: deviceHeight * 0.01),
             Text("Results improve with the movie or series name.",
                 style: GoogleFonts.poppins(color: colorMainGray, fontSize: 14))
           ],

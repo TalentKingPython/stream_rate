@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:stream_rate/commonView/load_image_with_placeholder.dart';
+import 'package:stream_rate/constant/constant.dart';
 
 import '../../../utils/utils.dart';
 
@@ -54,14 +55,16 @@ class OnboardThreeState extends State<OnboardThree> {
                 "Our app will give you movie and series ratings",
                 textAlign: TextAlign.center,
                 style: GoogleFonts.poppins(
-                    color: colorWhite, fontSize: 16, height: 1.8),
+                  color: colorWhite,
+                  fontSize: deviceHeight * 0.02,
+                  ),
               )),
           Positioned(
               top: deviceHeight * 0.44,
               left: deviceWidth * 0.12,
               child: Container(
-                width: 120,
-                height: 50,
+                width: deviceWidth * 0.26,
+                height: deviceHeight * 0.035,
                 decoration: BoxDecoration(
                     color: colorMainGray.withOpacity(0.85),
                     borderRadius: BorderRadius.circular(20)),
@@ -69,11 +72,11 @@ class OnboardThreeState extends State<OnboardThree> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    const LoadImageSimple(
+                    LoadImageSimple(
                         image: "assets/images/letter.png",
-                        width: 35,
-                        height: 35),
-                    const SizedBox(width: 5),
+                        width: deviceWidth * 0.065,
+                        height: deviceHeight * 0.1),
+                    SizedBox(width: deviceWidth * 0.001),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.baseline,
@@ -82,16 +85,18 @@ class OnboardThreeState extends State<OnboardThree> {
                         Text("3.6 ",
                             textAlign: TextAlign.center,
                             style: GoogleFonts.poppins(
-                                color: colorWhite, fontSize: 22)),
+                                color: colorWhite,
+                                fontSize: deviceHeight * 0.023)),
                         Text("/ ",
                             textAlign: TextAlign.center,
                             style: GoogleFonts.poppins(
-                                color: colorWhite, fontSize: 16)),
+                                color: colorWhite,
+                                fontSize: deviceHeight * 0.02)),
                         Text(
                           " 5",
                           textAlign: TextAlign.center,
                           style: GoogleFonts.poppins(
-                              color: colorWhite, fontSize: 18),
+                              color: colorWhite, fontSize: deviceHeight * 0.02),
                         ),
                       ],
                     ),
@@ -102,8 +107,8 @@ class OnboardThreeState extends State<OnboardThree> {
               top: deviceHeight * 0.38,
               right: deviceWidth * 0.08,
               child: Container(
-                width: 120,
-                height: 50,
+                width: deviceWidth * 0.26,
+                height: deviceHeight * 0.035,
                 decoration: BoxDecoration(
                     color: colorMainGray.withOpacity(0.85),
                     borderRadius: BorderRadius.circular(20)),
@@ -111,9 +116,11 @@ class OnboardThreeState extends State<OnboardThree> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    const LoadImageSimple(
-                        image: "assets/images/meta.png", width: 30, height: 30),
-                    const SizedBox(width: 5),
+                    LoadImageSimple(
+                        image: "assets/images/meta.png",
+                        width: deviceWidth * 0.065,
+                        height: deviceHeight * 0.1),
+                    SizedBox(width: deviceWidth * 0.001),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.baseline,
@@ -122,16 +129,18 @@ class OnboardThreeState extends State<OnboardThree> {
                         Text("7.3 ",
                             textAlign: TextAlign.center,
                             style: GoogleFonts.poppins(
-                                color: colorWhite, fontSize: 22)),
+                                color: colorWhite,
+                                fontSize: deviceHeight * 0.023)),
                         Text("/ ",
                             textAlign: TextAlign.center,
                             style: GoogleFonts.poppins(
-                                color: colorWhite, fontSize: 16)),
+                                color: colorWhite,
+                                fontSize: deviceHeight * 0.02)),
                         Text(
                           " 10",
                           textAlign: TextAlign.center,
                           style: GoogleFonts.poppins(
-                              color: colorWhite, fontSize: 18),
+                              color: colorWhite, fontSize: deviceHeight * 0.02),
                         ),
                       ],
                     ),
@@ -142,8 +151,8 @@ class OnboardThreeState extends State<OnboardThree> {
               top: deviceHeight * 0.51,
               left: deviceWidth * 0.15,
               child: Container(
-                width: 120,
-                height: 50,
+                width: deviceWidth * 0.26,
+                height: deviceHeight * 0.035,
                 decoration: BoxDecoration(
                     color: colorMainGray.withOpacity(0.85),
                     borderRadius: BorderRadius.circular(20)),
@@ -151,9 +160,11 @@ class OnboardThreeState extends State<OnboardThree> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    const LoadImageSimple(
-                        image: "assets/images/imdb.png", width: 35, height: 35),
-                    const SizedBox(width: 5),
+                    LoadImageSimple(
+                        image: "assets/images/imdb.png",
+                        width: deviceWidth * 0.065,
+                        height: deviceHeight * 0.1),
+                    SizedBox(width: deviceWidth * 0.001),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.baseline,
@@ -162,16 +173,18 @@ class OnboardThreeState extends State<OnboardThree> {
                         Text("8.1 ",
                             textAlign: TextAlign.center,
                             style: GoogleFonts.poppins(
-                                color: colorWhite, fontSize: 22)),
+                                color: colorWhite,
+                                fontSize: deviceHeight * 0.023)),
                         Text("/ ",
                             textAlign: TextAlign.center,
                             style: GoogleFonts.poppins(
-                                color: colorWhite, fontSize: 16)),
+                                color: colorWhite,
+                                fontSize: deviceHeight * 0.02)),
                         Text(
                           " 10",
                           textAlign: TextAlign.center,
                           style: GoogleFonts.poppins(
-                              color: colorWhite, fontSize: 18),
+                              color: colorWhite, fontSize: deviceHeight * 0.02),
                         ),
                       ],
                     ),
@@ -180,10 +193,10 @@ class OnboardThreeState extends State<OnboardThree> {
               )),
           Positioned(
               top: deviceHeight * 0.45,
-              right: deviceWidth * 0.06,
+              right: deviceWidth * 0.05,
               child: Container(
-                width: 120,
-                height: 50,
+                width: deviceWidth * 0.26,
+                height: deviceHeight * 0.035,
                 decoration: BoxDecoration(
                     color: colorMainGray.withOpacity(0.85),
                     borderRadius: BorderRadius.circular(20)),
@@ -192,11 +205,11 @@ class OnboardThreeState extends State<OnboardThree> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   textBaseline: TextBaseline.alphabetic,
                   children: [
-                    const LoadImageSimple(
+                    LoadImageSimple(
                         image: "assets/images/tomato.png",
-                        width: 30,
-                        height: 30),
-                    const SizedBox(width: 5),
+                        width: deviceWidth * 0.05,
+                        height: deviceHeight * 0.05),
+                    SizedBox(width: deviceWidth * 0.001),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -205,11 +218,13 @@ class OnboardThreeState extends State<OnboardThree> {
                         Text("97 ",
                             textAlign: TextAlign.center,
                             style: GoogleFonts.poppins(
-                                color: colorWhite, fontSize: 20)),
+                                color: colorWhite,
+                                fontSize: deviceHeight * 0.023)),
                         Text("%",
                             textAlign: TextAlign.center,
                             style: GoogleFonts.poppins(
-                                color: colorWhite, fontSize: 20)),
+                                color: colorWhite,
+                                fontSize: deviceHeight * 0.02)),
                       ],
                     ),
                   ],

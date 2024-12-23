@@ -5,6 +5,7 @@ import 'package:pin_code_fields/pin_code_fields.dart';
 
 import 'package:stream_rate/commonView/custom_fill_button.dart';
 import 'package:stream_rate/commonView/load_image_with_placeholder.dart';
+import 'package:stream_rate/constant/constant.dart';
 import 'package:stream_rate/screens/login/login.dart';
 import 'package:stream_rate/utils/utils.dart';
 
@@ -37,7 +38,7 @@ class ConfirmEmailState extends State<ConfirmEmail> {
       backgroundColor: colorMainBackground,
       body: Container(
         width: deviceWidth,
-        height: deviceHeight,
+        // height: deviceHeight * 0.8,
         decoration: const BoxDecoration(
             color: colorPrimary,
             image: DecorationImage(
@@ -59,26 +60,28 @@ class ConfirmEmailState extends State<ConfirmEmail> {
                   child: Text(
                     "Confirm Email",
                     textAlign: TextAlign.center,
-                    style: GoogleFonts.poppins(color: colorWhite, fontSize: 24),
+                    style: GoogleFonts.poppins(
+                        color: colorWhite, fontSize: deviceWidth * 0.06),
                   ),
                 ),
                 Text('We sent a 4-digit code to your',
-                    style:
-                        GoogleFonts.poppins(color: colorWhite, fontSize: 20)),
+                    style: GoogleFonts.poppins(
+                        color: colorWhite, fontSize: deviceWidth * 0.045)),
                 Text('email address to confirm it’s yours.',
-                    style:
-                        GoogleFonts.poppins(color: colorWhite, fontSize: 20)),
+                    style: GoogleFonts.poppins(
+                        color: colorWhite, fontSize: deviceWidth * 0.045)),
                 const SizedBox(height: 30),
                 Text('Please check your inbox and enter',
-                    style:
-                        GoogleFonts.poppins(color: colorWhite, fontSize: 20)),
+                    style: GoogleFonts.poppins(
+                        color: colorWhite, fontSize: deviceWidth * 0.045)),
                 Text('the code below.',
-                    style:
-                        GoogleFonts.poppins(color: colorWhite, fontSize: 20)),
-                const SizedBox(height: 30),
+                    style: GoogleFonts.poppins(
+                        color: colorWhite, fontSize: deviceWidth * 0.045)),
+                SizedBox(height: deviceHeight * 0.06),
                 Container(
                   margin: EdgeInsetsDirectional.only(top: deviceHeight * 0.01),
                   width: double.infinity,
+                  height: deviceHeight * 0.1,
                   child: PinCodeTextField(
                     focusNode: otpFocusNode,
                     length: 4,
@@ -125,22 +128,22 @@ class ConfirmEmailState extends State<ConfirmEmail> {
                     appContext: context,
                   ),
                 ),
-                const Spacer(),
                 Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                   Text(
                     'Didn\'t receive the code?',
-                    style: GoogleFonts.poppins(color: colorWhite, fontSize: 18),
+                    style: GoogleFonts.poppins(
+                        color: colorWhite, fontSize: deviceWidth * 0.035),
                   ),
                   TextButton(
                     onPressed: () {},
                     child: Text(
                       'Resend it',
-                      style:
-                          GoogleFonts.poppins(color: colorYellow, fontSize: 18),
+                      style: GoogleFonts.poppins(
+                          color: colorYellow, fontSize: deviceWidth * 0.035),
                     ),
                   ),
                 ]),
-                const SizedBox(height: 30),
+                SizedBox(height: deviceHeight * 0.05),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -187,7 +190,6 @@ class ConfirmEmailState extends State<ConfirmEmail> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 50),
               ],
             ),
           ),
