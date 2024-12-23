@@ -27,9 +27,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>MainFunction</string>
+	<string>We need access to your camera for capturing photos and videos.</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>MainFunction</string>
+	<string>We need access to your microphone for recording audio.</string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
