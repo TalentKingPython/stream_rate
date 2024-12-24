@@ -59,7 +59,7 @@ class EmailSignUpState extends State<EmailSignUp> {
                   height: deviceHeight * 0.05,
                 ),
                 LoadImageSimple(
-                  image: 'assets/images/streamrate-logo.png',
+                  image: 'assets/images/logowithname.png',
                   width: deviceWidth * 0.5,
                   height: deviceHeight * 0.1,
                 ),

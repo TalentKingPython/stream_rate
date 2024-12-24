@@ -6,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:stream_rate/constant/constant.dart';
 import 'package:stream_rate/screens/onboard/onboard.dart';
 import 'package:device_preview/device_preview.dart';
+import 'package:stream_rate/screens/splash/splash.dart';
 
 late SharedPreferences sharedPrefs;
 final navigatorKey = GlobalKey<NavigatorState>();

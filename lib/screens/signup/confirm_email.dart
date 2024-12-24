@@ -46,7 +46,7 @@ class ConfirmEmailState extends State<ConfirmEmail> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 LoadImageSimple(
-                  image: 'assets/images/streamrate-logo.png',
+                  image: 'assets/images/logowithname.png',
                   width: deviceWidth * 0.4,
                 ),
                 Padding(

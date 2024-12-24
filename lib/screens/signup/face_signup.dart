@@ -50,7 +50,7 @@ class FaceIdSignUpState extends State<FaceIdSignUp> {
                 //   height: deviceHeight * 0.04,
                 // ),
                 LoadImageSimple(
-                  image: 'assets/images/streamrate-logo.png',
+                  image: 'assets/images/logowithname.png',
                   width: deviceWidth * 0.4,
                   imageFit: BoxFit.fill,
                 ),

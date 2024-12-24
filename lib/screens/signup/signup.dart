@@ -47,7 +47,7 @@ class SignUpState extends State<SignUp> {
             children: [
               SizedBox(height: deviceHeight * .12),
               Image.asset(
-                'assets/images/streamrate-logo.png',
+                'assets/images/logowithname.png',
                 width: deviceHeight * 0.17,
                 height: deviceHeight * .11,
                 fit: BoxFit.fill,
