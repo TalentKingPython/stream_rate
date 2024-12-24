@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:stream_rate/commonView/custom_fill_button.dart';
 
 import 'package:stream_rate/commonView/item_card.dart';
 import 'package:stream_rate/commonView/item_card_model.dart';
@@ -56,6 +55,14 @@ class FavouriteState extends State<Favourite> {
         metacritic: 6.6,
         rottenTomatoes: 86,
         letterboxd: 3.2),
+    ItemCardModel(
+        image: 'assets/images/item_card4.png',
+        itemName: 'Casablanca',
+        year: 1942,
+        imdb: 7.7,
+        metacritic: 7.9,
+        rottenTomatoes: 88,
+        letterboxd: 4.0),
     ItemCardModel(
         image: 'assets/images/item_card5.png',
         itemName: 'Parasite',
@@ -127,6 +134,8 @@ class FavouriteState extends State<Favourite> {
       body: Padding(
         padding: const EdgeInsets.fromLTRB(15, 0, 15, 0),
         child: ListView(
+          shrinkWrap: true,
+          scrollDirection: Axis.vertical,
           children: items.map((item) => ItemCard(item: item)).toList(),
         ),
       ),

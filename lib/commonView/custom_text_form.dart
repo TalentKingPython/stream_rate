@@ -65,7 +65,7 @@ class CustomTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: height ?? deviceHeight * 0.068,
+      height: height ?? deviceHeight * 0.08,
       child: TextFormField(
         controller: controller,
         focusNode: focusNode,

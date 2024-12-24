@@ -51,172 +51,178 @@ class EmailSignUpState extends State<EmailSignUp> {
             padding: EdgeInsets.symmetric(
               horizontal: deviceWidth * 0.08,
             ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(
-                  height: deviceHeight * 0.05,
-                ),
-                LoadImageSimple(
-                  image: 'assets/images/streamrate-logo.png',
-                  width: deviceWidth * 0.5,
-                  height: deviceHeight * 0.1,
-                ),
-                Container(
-                  padding: const EdgeInsets.symmetric(vertical: 20),
-                  child: Text(
-                    "Create an account",
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.poppins(
-                        color: colorWhite, fontSize: deviceHeight * 0.03),
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    height: deviceHeight * 0.05,
                   ),
-                ),
-                const CustomTextFormField(
-                  labelText: 'Email',
-                  prefixIcon:
-                      Icon(Icons.email_outlined, color: colorMainLightGray),
-                ),
-                SizedBox(height: deviceHeight * 0.02),
-                const CustomTextFormField(
-                  labelText: 'Phone',
-                  prefixIcon:
-                      Icon(Icons.phone_outlined, color: colorMainLightGray),
-                ),
-                SizedBox(height: deviceHeight * 0.02),
-                CustomTextFormField(
-                  isPassword: true,
-                  labelText: 'Password',
-                  prefixIcon: const Icon(Icons.lock_outlined,
-                      color: colorMainLightGray),
-                  suffixIcon: Icon(
-                      isHidden
-                          ? Icons.visibility_off_outlined
-                          : Icons.visibility_outlined,
-                      color: colorMainLightGray),
-                ),
-                SizedBox(height: deviceHeight * 0.02),
-                CustomTextFormField(
-                  isPassword: true,
-                  labelText: 'Confirm Password',
-                  prefixIcon:
-                      const Icon(Icons.lock_open, color: colorMainLightGray),
-                  suffixIcon: Icon(
-                      isHidden
-                          ? Icons.visibility_off_outlined
-                          : Icons.visibility_outlined,
-                      color: colorMainLightGray),
-                ),
-                SizedBox(height: deviceHeight * 0.02),
-                SizedBox(
-                  width: double.infinity,
-                  child: Text('Do you have a voucher code?',
+                  LoadImageSimple(
+                    image: 'assets/images/logowithname.png',
+                    width: deviceWidth * 0.5,
+                    height: deviceHeight * 0.1,
+                  ),
+                  Container(
+                    padding: const EdgeInsets.symmetric(vertical: 20),
+                    child: Text(
+                      "Create an account",
+                      textAlign: TextAlign.center,
                       style: GoogleFonts.poppins(
-                          fontSize: deviceHeight * 0.02, color: colorWhite)),
-                ),
-                SizedBox(height: deviceHeight * 0.01),
-                const CustomTextFormField(
-                  labelText: 'Voucher Code',
-                  prefixIcon:
-                      Icon(Icons.discount_outlined, color: colorMainLightGray),
-                ),
-                SizedBox(height: deviceHeight * 0.03),
-                SizedBox(
-                  width: double.infinity,
-                  child: Row(
-                    children: [
-                      GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            isChecked = !isChecked;
-                          });
-                        },
-                        child: Container(
-                          width: 24,
-                          height: 24,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            border: Border.all(
-                                color: isChecked
-                                    ? colorOfferDiscountRed
-                                    : colorMainLightGray),
-                            color: isChecked
-                                ? colorOfferDiscountRed
-                                : Colors.transparent,
-                          ),
-                          child: isChecked
-                              ? const Icon(Icons.check,
-                                  size: 20, color: colorWhite)
-                              : null,
-                        ),
-                      ),
-                      Text('   I accept the ',
-                          style: GoogleFonts.poppins(
-                            color: colorWhite,
-                            fontSize: deviceHeight * 0.02,
-                          )),
-                      GestureDetector(
-                        onTap: () {},
-                        child: Text(
-                          'Terms & Conditions',
-                          style: GoogleFonts.poppins(
-                            fontSize: deviceHeight * 0.02,
-                            color: colorWhite,
-                            decoration: TextDecoration.underline,
-                          ),
-                        ),
-                      )
-                    ],
+                          color: colorWhite, fontSize: deviceHeight * 0.03),
+                    ),
                   ),
-                ),
-                SizedBox(height: deviceHeight * 0.025),
-                CustomFillButton(
-                  onPressed: onSubmit,
-                  width: double.infinity,
-                  height: deviceHeight * 0.065,
-                  child: Text(
-                    'CREATE ACCOUNT',
-                    style: GoogleFonts.poppins(
-                        color: colorWhite,
-                        fontSize: deviceHeight * 0.024,
-                        fontWeight: FontWeight.bold),
+                  const CustomTextFormField(
+                    labelText: 'Email',
+                    prefixIcon:
+                        Icon(Icons.email_outlined, color: colorMainLightGray),
                   ),
-                ),
-                SizedBox(height: deviceHeight * 0.04),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text("Already have an account?",
+                  SizedBox(height: deviceHeight * 0.02),
+                  const CustomTextFormField(
+                    labelText: 'Phone',
+                    prefixIcon:
+                        Icon(Icons.phone_outlined, color: colorMainLightGray),
+                  ),
+                  SizedBox(height: deviceHeight * 0.02),
+                  CustomTextFormField(
+                    isPassword: true,
+                    labelText: 'Password',
+                    prefixIcon: const Icon(Icons.lock_outlined,
+                        color: colorMainLightGray),
+                    suffixIcon: Icon(
+                        isHidden
+                            ? Icons.visibility_off_outlined
+                            : Icons.visibility_outlined,
+                        color: colorMainLightGray),
+                  ),
+                  SizedBox(height: deviceHeight * 0.02),
+                  CustomTextFormField(
+                    isPassword: true,
+                    labelText: 'Confirm Password',
+                    prefixIcon:
+                        const Icon(Icons.lock_open, color: colorMainLightGray),
+                    suffixIcon: Icon(
+                        isHidden
+                            ? Icons.visibility_off_outlined
+                            : Icons.visibility_outlined,
+                        color: colorMainLightGray),
+                  ),
+                  SizedBox(height: deviceHeight * 0.02),
+                  SizedBox(
+                    width: double.infinity,
+                    child: Text('Do you have a voucher code?',
                         style: GoogleFonts.poppins(
-                            fontSize: 18, color: colorWhite)),
-                    GestureDetector(
-                      onTap: () => openScreenWithResult(context, const Login()),
-                      child: Center(
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 8),
-                          child: ShaderMask(
-                            shaderCallback: (Rect bounds) {
-                              return const LinearGradient(
-                                colors: [Color(0xFFF79B1E), Color(0xFFED1945)],
-                                begin: Alignment.topLeft,
-                                end: Alignment.bottomRight,
-                              ).createShader(bounds);
-                            },
-                            child: Text(
-                              "Log In",
-                              style: GoogleFonts.poppins(
-                                fontSize: 16,
-                                color: colorWhite,
-                                fontWeight: FontWeight.bold,
+                            fontSize: deviceHeight * 0.02, color: colorWhite)),
+                  ),
+                  SizedBox(height: deviceHeight * 0.01),
+                  const CustomTextFormField(
+                    labelText: 'Voucher Code',
+                    prefixIcon: Icon(Icons.discount_outlined,
+                        color: colorMainLightGray),
+                  ),
+                  SizedBox(height: deviceHeight * 0.03),
+                  SizedBox(
+                    width: double.infinity,
+                    child: Row(
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              isChecked = !isChecked;
+                            });
+                          },
+                          child: Container(
+                            width: 24,
+                            height: 24,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
+                              border: Border.all(
+                                  color: isChecked
+                                      ? colorOfferDiscountRed
+                                      : colorMainLightGray),
+                              color: isChecked
+                                  ? colorOfferDiscountRed
+                                  : Colors.transparent,
+                            ),
+                            child: isChecked
+                                ? const Icon(Icons.check,
+                                    size: 20, color: colorWhite)
+                                : null,
+                          ),
+                        ),
+                        Text('   I accept the ',
+                            style: GoogleFonts.poppins(
+                              color: colorWhite,
+                              fontSize: deviceHeight * 0.02,
+                            )),
+                        GestureDetector(
+                          onTap: () {},
+                          child: Text(
+                            'Terms & Conditions',
+                            style: GoogleFonts.poppins(
+                              fontSize: deviceHeight * 0.02,
+                              color: colorWhite,
+                              decoration: TextDecoration.underline,
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: deviceHeight * 0.025),
+                  CustomFillButton(
+                    onPressed: onSubmit,
+                    width: double.infinity,
+                    height: deviceHeight * 0.065,
+                    child: Text(
+                      'CREATE ACCOUNT',
+                      style: GoogleFonts.poppins(
+                          color: colorWhite,
+                          fontSize: deviceHeight * 0.024,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  SizedBox(height: deviceHeight * 0.04),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text("Already have an account?",
+                          style: GoogleFonts.poppins(
+                              fontSize: 18, color: colorWhite)),
+                      GestureDetector(
+                        onTap: () =>
+                            openScreenWithResult(context, const Login()),
+                        child: Center(
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 8),
+                            child: ShaderMask(
+                              shaderCallback: (Rect bounds) {
+                                return const LinearGradient(
+                                  colors: [
+                                    Color(0xFFF79B1E),
+                                    Color(0xFFED1945)
+                                  ],
+                                  begin: Alignment.topLeft,
+                                  end: Alignment.bottomRight,
+                                ).createShader(bounds);
+                              },
+                              child: Text(
+                                "Log In",
+                                style: GoogleFonts.poppins(
+                                  fontSize: 16,
+                                  color: colorWhite,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ),
                           ),
                         ),
-                      ),
-                    )
-                  ],
-                )
-              ],
+                      )
+                    ],
+                  )
+                ],
+              ),
             ),
           ),
           Positioned(

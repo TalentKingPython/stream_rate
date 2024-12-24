@@ -40,7 +40,7 @@ class OnboardOneState extends State<OnboardOne> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             LoadImageSimple(
-                image: "assets/images/streamrate-logo.png",
+                image: "assets/images/logowithname.png",
                 width: deviceWidth * 0.4),
             const SizedBox(height: 50),
             Text("Welcome!",

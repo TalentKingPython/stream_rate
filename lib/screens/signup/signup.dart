@@ -49,7 +49,7 @@ class SignUpState extends State<SignUp> {
                 height: deviceHeight * 0.045,
               ),
               Image.asset(
-                'assets/images/streamrate-logo.png',
+                'assets/images/logowithname.png',
                 width: deviceWidth * 0.4,
                 height: deviceHeight * 0.12,
               ),

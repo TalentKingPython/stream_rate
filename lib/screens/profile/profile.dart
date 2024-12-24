@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:stream_rate/commonView/custom_fill_button.dart';
 
@@ -79,108 +81,125 @@ class ProfileState extends State<Profile> {
       backgroundColor: colorMainBackground,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
-        child: ListView(
+        child: Column(
           children: [
-            Center(
-              child: Stack(
+            Expanded(
+              flex: 3,
+              child: Center(
+                child: Stack(
+                  children: [
+                    CircleAvatar(
+                      radius: deviceWidth * 0.2,
+                      backgroundImage:
+                          AssetImage('assets/images/default-avatar.jpg'),
+                    ),
+                    Positioned(
+                      right: 0,
+                      bottom: 0,
+                      child: Container(
+                        width: deviceWidth * 0.1,
+                        height: deviceHeight * 0.05,
+                        decoration: const BoxDecoration(
+                          color: colorWhite,
+                          shape: BoxShape.circle,
+                        ),
+                        child: Icon(
+                          Icons.cameraswitch_sharp,
+                          size: deviceWidth * 0.075,
+                          color: colorMainGray,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(height: deviceHeight * 0.02),
+            Expanded(
+              child: Center(
+                child: Text('Jim Robbins',
+                    style: GoogleFonts.poppins(
+                        fontSize: deviceHeight * 0.035, color: colorWhite)),
+              ),
+            ),
+            SizedBox(height: deviceHeight * 0.03),
+            Expanded(
+              flex: 3,
+              child: Column(
                 children: [
-                  ClipOval(
-                    child: LoadImageSimple(
-                      image: 'assets/images/default-avatar.jpg',
-                      width: deviceWidth * 0.38,
-                      height: deviceHeight * 0.18,
+                  Expanded(
+                    child: Row(
+                      children: [
+                        Text('Profile Details',
+                            style: GoogleFonts.poppins(
+                                color: colorWhite, fontSize: 18)),
+                        const Spacer(),
+                        InkWell(
+                          onTap: () => openScreenWithResult(
+                              context, const EditProfile()),
+                          child: const Icon(Icons.edit_square,
+                              color: colorMainLightGray),
+                        )
+                      ],
                     ),
                   ),
-                  Positioned(
-                    right: 0,
-                    bottom: 0,
-                    child: Container(
-                      width: deviceWidth * 0.1,
-                      height: deviceHeight * 0.05,
-                      decoration: const BoxDecoration(
-                        color: colorWhite,
-                        shape: BoxShape.circle,
-                      ),
-                      child: Icon(
-                        Icons.cameraswitch_sharp,
-                        size: deviceWidth * 0.075,
-                        color: colorMainGray,
-                      ),
+                  Expanded(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text('Email',
+                            style: GoogleFonts.poppins(
+                                fontSize: 16, color: whitecaptcha)),
+                        Text('jimrobbins29@domain.com',
+                            style: GoogleFonts.poppins(
+                                fontSize: 16, color: colorWhite)),
+                      ],
+                    ),
+                  ),
+                  Expanded(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text('Phone',
+                            style: GoogleFonts.poppins(
+                                fontSize: 16, color: whitecaptcha)),
+                        Text('+078 0527 882',
+                            style: GoogleFonts.poppins(
+                                fontSize: 16, color: colorWhite)),
+                      ],
+                    ),
+                  ),
+                  Expanded(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text('Password',
+                            style: GoogleFonts.poppins(
+                                fontSize: 16, color: whitecaptcha)),
+                        Text('********',
+                            style: GoogleFonts.poppins(
+                                fontSize: 16, color: colorWhite)),
+                      ],
                     ),
                   ),
                 ],
               ),
             ),
-            SizedBox(height: deviceHeight * 0.02),
-            Center(
-              child: Text('Jim Robbins',
-                  style: GoogleFonts.poppins(
-                      fontSize: deviceHeight * 0.035, color: colorWhite)),
-            ),
-            SizedBox(height: deviceHeight * 0.03),
-            Row(
-              children: [
-                Text('Profile Details',
-                    style:
-                        GoogleFonts.poppins(color: colorWhite, fontSize: 18)),
-                const Spacer(),
-                InkWell(
-                  onTap: () =>
-                      openScreenWithResult(context, const EditProfile()),
-                  child:
-                      const Icon(Icons.edit_square, color: colorMainLightGray),
-                )
-              ],
-            ),
-            SizedBox(height: deviceHeight * 0.03),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text('Email',
-                    style:
-                        GoogleFonts.poppins(fontSize: 16, color: whitecaptcha)),
-                Text('jimrobbins29@domain.com',
-                    style:
-                        GoogleFonts.poppins(fontSize: 16, color: colorWhite)),
-              ],
-            ),
-            SizedBox(height: deviceHeight * 0.03),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text('Phone',
-                    style:
-                        GoogleFonts.poppins(fontSize: 16, color: whitecaptcha)),
-                Text('+078 0527 882',
-                    style:
-                        GoogleFonts.poppins(fontSize: 16, color: colorWhite)),
-              ],
-            ),
-            SizedBox(height: deviceHeight * 0.03),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text('Password',
-                    style:
-                        GoogleFonts.poppins(fontSize: 16, color: whitecaptcha)),
-                Text('********',
-                    style:
-                        GoogleFonts.poppins(fontSize: 16, color: colorWhite)),
-              ],
-            ),
-            SizedBox(height: deviceHeight * 0.06),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text('Subscription',
-                    style:
-                        GoogleFonts.poppins(color: colorWhite, fontSize: 18)),
-                const SizedBox(height: 10),
-                if (isSubscribed)
-                  _subscribedContainer()
-                else
-                  _unsubscribedContainer()
-              ],
+            Expanded(
+              flex: 4,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Subscription',
+                      style:
+                          GoogleFonts.poppins(color: colorWhite, fontSize: 18)),
+                  const SizedBox(height: 10),
+                  if (isSubscribed)
+                    _subscribedContainer()
+                  else
+                    _unsubscribedContainer()
+                ],
+              ),
             )
           ],
         ),
