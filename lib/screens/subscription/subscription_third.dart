@@ -43,28 +43,28 @@ class SubScriptionThirdState extends State<SubScriptionThird> {
         child: Stack(children: [
           Padding(
             padding: EdgeInsets.symmetric(
-                horizontal: 30, vertical: deviceHeight * 0.095),
+                horizontal: 30, vertical: deviceHeight * 0.07),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Expanded(
+                  flex: 2,
                   child: LoadImageSimple(
                     image: 'assets/images/sub3-logo.png',
-                    width: deviceWidth * 0.35,
+                    // width: deviceWidth * 0.4,
                   ),
                 ),
                 SizedBox(
-                  height: deviceHeight * 0.025,
+                  height: deviceHeight * 0.03,
                 ),
                 Expanded(
-                  flex: 5,
+                  flex: 10,
                   child: Stack(
                     children: [
                       Container(
                         padding: const EdgeInsets.symmetric(
-                            vertical: 10, horizontal: 10),
-                        // height: deviceHeight * 0.85,
+                            vertical: 40, horizontal: 20),
                         decoration: BoxDecoration(
                           color: colorWhite,
                           borderRadius: BorderRadius.circular(30),
@@ -86,7 +86,7 @@ class SubScriptionThirdState extends State<SubScriptionThird> {
                                     fontSize: deviceHeight * 0.022)),
                           ),
                           Expanded(
-                            flex: 10,
+                            flex: 12,
                             child: Container(
                               padding: const EdgeInsets.all(3),
                               decoration: BoxDecoration(
@@ -102,7 +102,7 @@ class SubScriptionThirdState extends State<SubScriptionThird> {
                                 ),
                               ),
                               child: Container(
-                                padding: const EdgeInsets.all(16.0),
+                                padding: EdgeInsets.all(deviceWidth * 0.04),
                                 decoration: BoxDecoration(
                                     color: colorWhite,
                                     borderRadius: BorderRadius.circular(20)),
@@ -146,57 +146,69 @@ class SubScriptionThirdState extends State<SubScriptionThird> {
                                       ],
                                     ),
                                   ),
-                                  SizedBox(height: deviceHeight * 0.015),
+                                  SizedBox(height: deviceHeight * 0.008),
                                   Expanded(
                                     flex: 10,
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      // mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        IconWithText(
-                                          text: "Unlimited Access",
-                                          backgroundColor:
-                                              Colors.black.withOpacity(0.1),
-                                          fontColor: colorBlack,
-                                        ),
-                                        IconWithText(
-                                          text: "Priority Support",
-                                          backgroundColor:
-                                              Colors.black.withOpacity(0.1),
-                                          fontColor: colorBlack,
-                                        ),
-                                        IconWithText(
-                                          text: "Access to Series and TV shows",
-                                          backgroundColor:
-                                              Colors.black.withOpacity(0.1),
-                                          fontColor: colorBlack,
-                                        ),
-                                        IconWithText(
-                                          text: "Stop wasting time choosing",
-                                          backgroundColor:
-                                              Colors.black.withOpacity(0.1),
-                                          fontColor: colorBlack,
-                                        ),
-                                        IconWithText(
-                                          text: "Unlimited Catalog",
-                                          backgroundColor:
-                                              Colors.black.withOpacity(0.1),
-                                          fontColor: colorBlack,
-                                        ),
-                                        IconWithText(
-                                          text: "Ad-Free Experience",
-                                          backgroundColor:
-                                              Colors.black.withOpacity(0.1),
-                                          fontColor: colorBlack,
-                                        ),
-                                        IconWithText(
-                                          text: "Exclusive Features",
-                                          backgroundColor:
-                                              Colors.black.withOpacity(0.1),
-                                          fontColor: colorBlack,
-                                        ),
-                                      ],
+                                    child: SingleChildScrollView(
+                                      padding: EdgeInsets.only(bottom: 10),
+                                      physics: NeverScrollableScrollPhysics(),
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        // mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          IconWithText(
+                                            text: "Unlimited Access",
+                                            backgroundColor:
+                                                Colors.black.withOpacity(0.1),
+                                            fontColor: colorBlack,
+                                            fontSize: deviceHeight * 0.016,
+                                          ),
+                                          IconWithText(
+                                            text: "Priority Support",
+                                            backgroundColor:
+                                                Colors.black.withOpacity(0.1),
+                                            fontColor: colorBlack,
+                                            fontSize: deviceHeight * 0.016,
+                                          ),
+                                          IconWithText(
+                                            text:
+                                                "Access to Series and TV shows",
+                                            backgroundColor:
+                                                Colors.black.withOpacity(0.1),
+                                            fontColor: colorBlack,
+                                            fontSize: deviceHeight * 0.016,
+                                          ),
+                                          IconWithText(
+                                            text: "Stop wasting time choosing",
+                                            backgroundColor:
+                                                Colors.black.withOpacity(0.1),
+                                            fontColor: colorBlack,
+                                            fontSize: deviceHeight * 0.016,
+                                          ),
+                                          IconWithText(
+                                            text: "Unlimited Catalog",
+                                            backgroundColor:
+                                                Colors.black.withOpacity(0.1),
+                                            fontColor: colorBlack,
+                                            fontSize: deviceHeight * 0.016,
+                                          ),
+                                          IconWithText(
+                                            text: "Ad-Free Experience",
+                                            backgroundColor:
+                                                Colors.black.withOpacity(0.1),
+                                            fontColor: colorBlack,
+                                            fontSize: deviceHeight * 0.016,
+                                          ),
+                                          IconWithText(
+                                            text: "Exclusive Features",
+                                            backgroundColor:
+                                                Colors.black.withOpacity(0.1),
+                                            fontColor: colorBlack,
+                                            fontSize: deviceHeight * 0.016,
+                                          ),
+                                        ],
+                                      ),
                                     ),
                                   )
                                 ]),
@@ -212,7 +224,7 @@ class SubScriptionThirdState extends State<SubScriptionThird> {
             ),
           ),
           Positioned(
-            bottom: deviceHeight * 0.035,
+            bottom: deviceHeight * 0.045,
             left: deviceWidth * 0.125,
             right: deviceWidth * 0.125,
             child: CustomFillButton(
