@@ -71,11 +71,68 @@ class FavouriteState extends State<Favourite> {
         metacritic: 6.6,
         rottenTomatoes: 86,
         letterboxd: 3.2),
+    ItemCardModel(
+        image: 'assets/images/item_card5.png',
+        itemName: 'Parasite',
+        year: 2019,
+        imdb: 9.7,
+        metacritic: 6.6,
+        rottenTomatoes: 86,
+        letterboxd: 3.2),
+    ItemCardModel(
+        image: 'assets/images/item_card5.png',
+        itemName: 'Parasite',
+        year: 2019,
+        imdb: 9.7,
+        metacritic: 6.6,
+        rottenTomatoes: 86,
+        letterboxd: 3.2),
+    ItemCardModel(
+        image: 'assets/images/item_card5.png',
+        itemName: 'Parasite',
+        year: 2019,
+        imdb: 9.7,
+        metacritic: 6.6,
+        rottenTomatoes: 86,
+        letterboxd: 3.2),
+    ItemCardModel(
+        image: 'assets/images/item_card5.png',
+        itemName: 'Parasite',
+        year: 2019,
+        imdb: 9.7,
+        metacritic: 6.6,
+        rottenTomatoes: 86,
+        letterboxd: 3.2),
+    ItemCardModel(
+        image: 'assets/images/item_card5.png',
+        itemName: 'Parasite',
+        year: 2019,
+        imdb: 9.7,
+        metacritic: 6.6,
+        rottenTomatoes: 86,
+        letterboxd: 3.2),
+    ItemCardModel(
+        image: 'assets/images/item_card5.png',
+        itemName: 'Parasite',
+        year: 2019,
+        imdb: 9.7,
+        metacritic: 6.6,
+        rottenTomatoes: 86,
+        letterboxd: 3.2),
+    ItemCardModel(
+        image: 'assets/images/item_card5.png',
+        itemName: 'Parasite',
+        year: 2019,
+        imdb: 9.7,
+        metacritic: 6.6,
+        rottenTomatoes: 86,
+        letterboxd: 3.2),
   ];
 
   @override
   void initState() {
     super.initState();
+    print(items.length);
   }
 
   @override

@@ -82,11 +82,11 @@ class OnboardState extends State<Onboard> {
               onPressed: () {
                 openScreenWithResult(context, const SignUp());
               },
-              width: 100,
+              width: deviceWidth * 0.2,
               child: Text('SKIP',
                   style: GoogleFonts.poppins(
                       fontWeight: FontWeight.bold,
-                      fontSize: 16,
+                      fontSize: deviceAverageSize * 0.016,
                       color: colorWhite))),
           DotsIndicator(
             dotsCount: 3,
@@ -97,11 +97,12 @@ class OnboardState extends State<Onboard> {
               size: const Size.square(9.0),
               activeSize: const Size(18.0, 9.0),
               activeShape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(5.0)),
+                  borderRadius:
+                      BorderRadius.circular(deviceAverageSize * 0.005)),
             ),
           ),
           CustomFillButton(
-            width: 100,
+            width: deviceWidth * 0.2,
             onPressed: () {
               if (currentPage == 2) {
                 openScreenWithResult(context, const SignUp());
@@ -116,11 +117,12 @@ class OnboardState extends State<Onboard> {
                   'NEXT',
                   style: GoogleFonts.poppins(
                       fontWeight: FontWeight.bold,
-                      fontSize: 16,
+                      fontSize: deviceAverageSize * 0.016,
                       color: colorWhite),
                 ),
                 const SizedBox(width: 5),
-                const Icon(Icons.arrow_forward_ios, color: colorWhite, size: 15)
+                Icon(Icons.arrow_forward_ios,
+                    color: colorWhite, size: deviceAverageSize * 0.015)
               ],
             ),
           ),

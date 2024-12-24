@@ -81,118 +81,109 @@ class ProfileState extends State<Profile> {
       backgroundColor: colorMainBackground,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
-        child: Column(
+        child: Stack(
           children: [
-            Expanded(
-              flex: 3,
-              child: Center(
-                child: Stack(
-                  children: [
-                    CircleAvatar(
-                      radius: deviceWidth * 0.2,
-                      backgroundImage:
-                          AssetImage('assets/images/default-avatar.jpg'),
-                    ),
-                    Positioned(
-                      right: 0,
-                      bottom: 0,
-                      child: Container(
-                        width: deviceWidth * 0.1,
-                        height: deviceHeight * 0.05,
-                        decoration: const BoxDecoration(
-                          color: colorWhite,
-                          shape: BoxShape.circle,
-                        ),
-                        child: Icon(
-                          Icons.cameraswitch_sharp,
-                          size: deviceWidth * 0.075,
-                          color: colorMainGray,
+            ListView(
+              children: [
+                Center(
+                  child: Stack(
+                    children: [
+                      ClipOval(
+                        child: LoadImageSimple(
+                          image: 'assets/images/default-avatar.jpg',
+                          width: deviceAverageSize * 0.34,
+                          height: deviceAverageSize * 0.34,
                         ),
                       ),
-                    ),
+                      Positioned(
+                        right: deviceAverageSize * .01,
+                        bottom: deviceAverageSize * .01,
+                        child: Container(
+                          width: deviceAverageSize * 0.06,
+                          height: deviceAverageSize * 0.06,
+                          decoration: const BoxDecoration(
+                            color: colorWhite,
+                            shape: BoxShape.circle,
+                          ),
+                          child: Icon(
+                            Icons.cameraswitch_sharp,
+                            size: deviceWidth * 0.075,
+                            color: colorMainGray,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: deviceHeight * 0.028),
+                Center(
+                  child: Text('Jim Robbins',
+                      style: GoogleFonts.poppins(
+                          fontSize: deviceHeight * 0.032, color: colorWhite)),
+                ),
+                SizedBox(height: deviceHeight * 0.05),
+                Row(
+                  children: [
+                    Text('Profile Details',
+                        style: GoogleFonts.poppins(
+                            color: colorWhite, fontSize: 16)),
+                    const Spacer(),
+                    InkWell(
+                      onTap: () =>
+                          openScreenWithResult(context, const EditProfile()),
+                      child: const Icon(Icons.edit_square,
+                          color: colorMainLightGray),
+                    )
                   ],
                 ),
-              ),
+                SizedBox(height: deviceHeight * 0.032),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text('Email',
+                        style: GoogleFonts.poppins(
+                            fontSize: 14, color: whitecaptcha)),
+                    Text('jimrobbins29@domain.com',
+                        style: GoogleFonts.poppins(
+                            fontSize: 14, color: colorWhite)),
+                  ],
+                ),
+                SizedBox(height: deviceHeight * 0.028),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text('Phone',
+                        style: GoogleFonts.poppins(
+                            fontSize: 14, color: whitecaptcha)),
+                    Text('+078 0527 882',
+                        style: GoogleFonts.poppins(
+                            fontSize: 14, color: colorWhite)),
+                  ],
+                ),
+                SizedBox(height: deviceHeight * 0.028),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text('Password',
+                        style: GoogleFonts.poppins(
+                            fontSize: 14, color: whitecaptcha)),
+                    Text('********',
+                        style: GoogleFonts.poppins(
+                            fontSize: 14, color: colorWhite)),
+                  ],
+                ),
+              ],
             ),
-            SizedBox(height: deviceHeight * 0.02),
-            Expanded(
-              child: Center(
-                child: Text('Jim Robbins',
-                    style: GoogleFonts.poppins(
-                        fontSize: deviceHeight * 0.035, color: colorWhite)),
-              ),
-            ),
-            SizedBox(height: deviceHeight * 0.03),
-            Expanded(
-              flex: 3,
-              child: Column(
-                children: [
-                  Expanded(
-                    child: Row(
-                      children: [
-                        Text('Profile Details',
-                            style: GoogleFonts.poppins(
-                                color: colorWhite, fontSize: 18)),
-                        const Spacer(),
-                        InkWell(
-                          onTap: () => openScreenWithResult(
-                              context, const EditProfile()),
-                          child: const Icon(Icons.edit_square,
-                              color: colorMainLightGray),
-                        )
-                      ],
-                    ),
-                  ),
-                  Expanded(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text('Email',
-                            style: GoogleFonts.poppins(
-                                fontSize: 16, color: whitecaptcha)),
-                        Text('jimrobbins29@domain.com',
-                            style: GoogleFonts.poppins(
-                                fontSize: 16, color: colorWhite)),
-                      ],
-                    ),
-                  ),
-                  Expanded(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text('Phone',
-                            style: GoogleFonts.poppins(
-                                fontSize: 16, color: whitecaptcha)),
-                        Text('+078 0527 882',
-                            style: GoogleFonts.poppins(
-                                fontSize: 16, color: colorWhite)),
-                      ],
-                    ),
-                  ),
-                  Expanded(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text('Password',
-                            style: GoogleFonts.poppins(
-                                fontSize: 16, color: whitecaptcha)),
-                        Text('********',
-                            style: GoogleFonts.poppins(
-                                fontSize: 16, color: colorWhite)),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Expanded(
-              flex: 4,
+            Positioned(
+              bottom: 15,
+              right: 0,
+              left: 0,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text('Subscription',
                       style:
-                          GoogleFonts.poppins(color: colorWhite, fontSize: 18)),
+                          GoogleFonts.poppins(color: colorWhite, fontSize: 16)),
                   const SizedBox(height: 10),
                   if (isSubscribed)
                     _subscribedContainer()
@@ -245,7 +236,7 @@ class ProfileState extends State<Profile> {
                   Text(
                     'Your are currently subscribed to our',
                     style: GoogleFonts.poppins(
-                        color: colorWhite, fontSize: deviceWidth * 0.016),
+                        color: colorWhite, fontSize: deviceWidth * 0.014),
                   ),
                   ShaderMask(
                     shaderCallback: (Rect bounds) {
@@ -258,7 +249,7 @@ class ProfileState extends State<Profile> {
                     child: Text(
                       "PREMIUM PLAN",
                       style: GoogleFonts.poppins(
-                        fontSize: deviceWidth * 0.18,
+                        fontSize: deviceWidth * 0.16,
                         color: colorWhite,
                         fontWeight: FontWeight.bold,
                       ),
@@ -268,7 +259,7 @@ class ProfileState extends State<Profile> {
                   Text(
                     'Unlimited Access for',
                     style: GoogleFonts.poppins(
-                        color: colorWhite, fontSize: deviceWidth * 0.18),
+                        color: colorWhite, fontSize: deviceWidth * 0.16),
                   ),
                   Row(
                     children: [
@@ -285,7 +276,7 @@ class ProfileState extends State<Profile> {
                           style: GoogleFonts.poppins(
                             fontSize: deviceWidth * 0.02,
                             color: colorWhite,
-                            fontWeight: FontWeight.bold,
+                            // fontWeight: FontWeight.bold,
                           ),
                         ),
                       ),
@@ -332,30 +323,30 @@ class ProfileState extends State<Profile> {
               borderRadius: BorderRadius.circular(10),
               child: LoadImageSimple(
                 image: AppImageAsset.homeBG,
-                width: deviceWidth * 0.23,
-                height: deviceHeight * 0.2,
+                width: deviceWidth * 0.2,
+                height: deviceHeight * 0.15,
                 imageFit: BoxFit.cover,
               ),
             ),
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15),
+                padding: const EdgeInsets.symmetric(horizontal: 18),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       'You have only 3 credits left.',
                       style: GoogleFonts.poppins(
-                          color: colorWhite, fontSize: deviceHeight * 0.016),
+                          color: colorWhite, fontSize: deviceHeight * 0.014),
                     ),
-                    SizedBox(height: deviceHeight * 0.01),
+                    SizedBox(height: deviceHeight * 0.008),
                     Row(
                       children: [
                         Text(
                           'Subscribe to ',
                           style: GoogleFonts.poppins(
                               color: colorWhite,
-                              fontSize: deviceHeight * 0.018),
+                              fontSize: deviceHeight * 0.016),
                         ),
                         ShaderMask(
                           shaderCallback: (Rect bounds) {
@@ -368,7 +359,7 @@ class ProfileState extends State<Profile> {
                           child: Text(
                             "PREMIUM PLAN",
                             style: GoogleFonts.poppins(
-                              fontSize: deviceHeight * 0.019,
+                              fontSize: deviceHeight * 0.017,
                               color: colorWhite,
                               fontWeight: FontWeight.bold,
                             ),
@@ -378,19 +369,19 @@ class ProfileState extends State<Profile> {
                     ),
                     Text('for Unlimited Access',
                         style: GoogleFonts.poppins(
-                            color: colorWhite, fontSize: deviceHeight * 0.019)),
-                    SizedBox(height: deviceHeight * 0.02),
+                            color: colorWhite, fontSize: deviceHeight * 0.016)),
+                    SizedBox(height: deviceHeight * 0.01),
                     CustomFillButton(
                       onPressed: () => openSubscriptionPage(context),
                       height: deviceHeight * 0.06,
                       child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
                             '\$2.99 / week',
                             style: GoogleFonts.poppins(
                                 fontSize: deviceHeight * 0.016,
-                                color: colorWhite,
-                                fontWeight: FontWeight.bold),
+                                color: colorWhite),
                           ),
                           SizedBox(
                             width: deviceWidth * 0.02,
@@ -398,7 +389,7 @@ class ProfileState extends State<Profile> {
                           Text(
                             'SUBSCRIBE',
                             style: GoogleFonts.poppins(
-                                fontSize: deviceHeight * 0.018,
+                                fontSize: deviceHeight * 0.016,
                                 color: colorWhite,
                                 fontWeight: FontWeight.bold),
                           ),

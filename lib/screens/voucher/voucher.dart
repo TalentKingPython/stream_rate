@@ -4,13 +4,14 @@ import 'dart:io';
 import 'package:barcode/barcode.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:stream_rate/commonView/custom_fill_button.dart';
 import 'package:stream_rate/commonView/custom_text_form.dart';
 import 'package:stream_rate/commonView/load_image_with_placeholder.dart';
 import 'package:stream_rate/constant/constant.dart';
-import 'package:stream_rate/screens/capture/capture.dart';
 
+import 'package:stream_rate/screens/captcha/captcha.dart';
 import 'package:stream_rate/utils/utils.dart';
-import 'package:stream_rate/commonView/custom_fill_button.dart';
+
 
 class Voucher extends StatefulWidget {
   const Voucher({Key? key}) : super(key: key);
@@ -142,7 +143,7 @@ class VoucherState extends State<Voucher> {
                         vertical: 20, horizontal: 60),
                     child: CustomFillButton(
                       onPressed: () =>
-                          openScreenWithResult(context, const Capture()),
+                          openScreenWithResult(context, const Captcha()),
                       isColorBtn: true,
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,

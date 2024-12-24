@@ -77,30 +77,30 @@ class SplashState extends State<Splash> with SingleTickerProviderStateMixin {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        const LoadImageSimple(
+                         LoadImageSimple(
                             image: "assets/images/logowithname.png",
-                            width: 130),
-                        const SizedBox(height: 30),
+                            width: deviceWidth * 0.35),
+                        SizedBox(height: deviceHeight * 0.05),
                         SizedBox(
-                            width: 150,
+                            width: deviceWidth * 0.3,
                             child: Text(
                               "Movie and series ratings at your fingertips",
                               textAlign: TextAlign.center,
                               style: GoogleFonts.poppins(
-                                  color: colorWhite, fontSize: 12),
+                                  color: colorWhite,
+                                  fontSize: deviceWidth * 0.022),
                             ))
                       ],
                     ))),
             Positioned(
-              bottom: 100,
+              bottom: deviceHeight * 0.08,
               right: 0,
               left: 0,
               child: Center(
                 child: Image.asset(
                   "assets/gifs/splash_loading.gif",
                   color: colorWhite,
-                  height: deviceHeight * 0.05,
-                  width: deviceWidth * 0.09,
+                  height: deviceAverageSize * 0.05,
                 ),
               ),
             ),

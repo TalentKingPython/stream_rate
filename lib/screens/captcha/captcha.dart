@@ -240,14 +240,14 @@ import 'package:stream_rate/screens/login/login.dart';
 
 import 'package:stream_rate/utils/utils.dart';
 
-class Capture extends StatefulWidget {
-  const Capture({Key? key}) : super(key: key);
+class Captcha extends StatefulWidget {
+  const Captcha({Key? key}) : super(key: key);
 
   @override
-  CaptureState createState() => CaptureState();
+  CaptchaState createState() => CaptchaState();
 }
 
-class CaptureState extends State<Capture> {
+class CaptchaState extends State<Captcha> {
   final controller = SliderController();
   double sliderPosition = 0.0;
 
@@ -351,7 +351,7 @@ class CaptureState extends State<Capture> {
                                 blurRadius: 5,
                                 offset: const Offset(-5, 5),
                               ),
-                              BoxShadow(
+                              const BoxShadow(
                                 blurStyle: BlurStyle.normal,
                                 color: colorRed,
                                 spreadRadius: 20,
@@ -415,9 +415,7 @@ class CaptureState extends State<Capture> {
                                   "Report A Problem",
                                   style: TextStyle(color: whitecaptcha),
                                 ),
-                                onPressed: () {
-                                  ///TODO REPORT A PROBLEM ?
-                                },
+                                onPressed: () {},
                               )),
                         ]),
                   )
