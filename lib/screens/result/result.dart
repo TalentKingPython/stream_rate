@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:stream_rate/commonView/custom_fill_button.dart';
 import 'package:stream_rate/constant/constant.dart';
-
 import 'package:stream_rate/constant/image_assets.dart';
 import 'package:stream_rate/commonView/textwithpoppins.dart';
 import 'package:stream_rate/utils/utils.dart';
@@ -20,17 +19,11 @@ class ResultState extends State<Result> {
   ResultBloc? _bloc;
 
   @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-  }
-
-  @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    final height = size.height;
+    final width = size.width;
+
     return Scaffold(
       body: Stack(
         children: [
@@ -45,376 +38,304 @@ class ResultState extends State<Result> {
                   top: 0,
                   child: Image.asset(
                     AppImageAsset.movieimg,
-                    width: deviceWidth,
+                    width: width,
                     fit: BoxFit.cover,
                   ),
                 ),
-                // if img not found
-                //
-                // Positioned(
-                //   top: 140,
-                //   left: 50,
-                //   right: 50,
-                //   child: Opacity(
-                //     opacity: 0.1,
-                //     child: Image.asset(
-                //       AppImageAsset.resultnoimg,
-                //       width: 260,
-                //     ),
-                //   ),
-                // ),
                 Positioned(
-                    left: 20,
-                    bottom: deviceHeight * 0.39,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const TextWithPoppins(
-                                text: 'JAWS',
-                                align: TextAlign.start,
-                                color: white,
-                                size: 32,
-                                weight: FontWeight.normal),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                const TextWithPoppins(
-                                    text: 'by Steven Spiderman',
-                                    align: TextAlign.start,
-                                    color: colorMainLightGray,
-                                    size: 12,
-                                    weight: FontWeight.normal),
-                                Text(
-                                  " | ",
-                                  style: GoogleFonts.poppins(
-                                      color: colorMainLightGray),
-                                ),
-                                const TextWithPoppins(
-                                    text: '1955',
-                                    align: TextAlign.start,
-                                    color: colorMainLightGray,
-                                    size: 12,
-                                    weight: FontWeight.normal),
-                              ],
-                            )
-                          ],
-                        ),
-                      ],
-                    )),
-                Positioned(
-                    bottom: deviceHeight * 0.42,
-                    right: 20,
-                    child: Row(
-                      children: [
-                        InkWell(
-                          onTap: () {
-                            openReportDialog(context);
-                          },
-                          child: Image.asset(
-                            AppImageAsset.dislike,
-                            width: 20,
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 20,
-                        ),
-                        InkWell(
-                          onTap: () {
-                            openNotificationAllowDialog(context);
-                          },
-                          child: Image.asset(
-                            AppImageAsset.love,
-                            width: 20,
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 20,
-                        ),
-                        InkWell(
-                          onTap: () {
-                            openNotFoundDialog(context);
-                          },
-                          child: Image.asset(
-                            AppImageAsset.share,
-                            width: 20,
-                          ),
-                        )
-                      ],
-                    )),
-                Positioned(
-                    left: 20,
-                    right: 20,
-                    bottom: deviceHeight * 0.335,
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(children: [
-                          Container(
-                            alignment: Alignment.center,
-                            width: deviceWidth * 0.2,
-                            height: deviceHeight * 0.05,
-                            decoration: const BoxDecoration(
-                                image: DecorationImage(
-                                    image: AssetImage(
-                              AppImageAsset.rate,
-                            ))),
-                            child: Text('   4.2',
-                                textAlign: TextAlign.center,
-                                style: GoogleFonts.poppins(
-                                  color: white,
-                                )),
-                          ),
-                          const SizedBox(
-                            width: 5,
-                          ),
-                          InkWell(
-                            onTap: () {},
-                            child: Container(
-                              padding: const EdgeInsets.all(8),
-                              width: deviceWidth * 0.26,
-                              height: deviceHeight * 0.05,
-                              decoration: BoxDecoration(
-                                color: whitelow,
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Image.asset(
-                                    AppImageAsset.trailer,
-                                    width: 20,
-                                  ),
-                                  Text(
-                                    '  Trailer',
-                                    style:
-                                        GoogleFonts.poppins(color: colorWhite),
-                                  )
-                                ],
-                              ),
-                            ),
-                          ),
-                        ]),
-                        Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              const TextWithPoppins(
-                                  text: "Terror",
-                                  align: TextAlign.end,
-                                  color: colorMainLightGray,
-                                  size: 14,
-                                  weight: FontWeight.normal),
-                              const SizedBox(width: 5),
-                              Container(
-                                  width: 4,
-                                  height: 4,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(2),
-                                      color: colorMainLightGray)),
-                              const SizedBox(width: 5),
-                              const TextWithPoppins(
-                                  text: '2h 42m',
-                                  align: TextAlign.end,
-                                  color: colorMainLightGray,
-                                  size: 14,
-                                  weight: FontWeight.normal)
-                            ]),
-                      ],
-                    )),
-                Positioned(
-                    left: 20,
-                    right: 20,
-                    bottom: deviceHeight * 0.12,
-                    child: Column(
-                      children: [
-                        Row(
-                          children: [
-                            Image.asset(AppImageAsset.imdb,
-                                width: 50, height: 25),
-                            TextWithPoppins(
-                              text: 'IMDb',
+                  left: width * 0.05,
+                  bottom: height * 0.39,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      TextWithPoppins(
+                          text: 'JAWS',
+                          align: TextAlign.start,
+                          color: white,
+                          size: width * 0.08,
+                          weight: FontWeight.normal),
+                      Row(
+                        children: [
+                          TextWithPoppins(
+                              text: 'by Steven Spiderman',
                               align: TextAlign.start,
-                              color: white,
-                              size: deviceHeight * 0.017,
-                              weight: FontWeight.normal,
-                            ),
-                            const Spacer(),
-                            TextWithPoppins(
-                                text: '5.5',
-                                align: TextAlign.end,
-                                color: white,
-                                size: deviceHeight * 0.017,
-                                weight: FontWeight.normal),
-                            TextWithPoppins(
-                                text: ' /10',
-                                align: TextAlign.end,
-                                color: colorMainLightGray,
-                                size: deviceHeight * 0.017,
-                                weight: FontWeight.normal),
-                          ],
-                        ),
-                        SizedBox(
-                          height: deviceWidth * 0.04,
-                        ),
-                        Row(
-                          children: [
-                            Image.asset(AppImageAsset.tomato,
-                                width: 50, height: 20),
-                            TextWithPoppins(
-                              text: 'Rotten Tomatoes',
+                              color: colorMainLightGray,
+                              size: width * 0.03,
+                              weight: FontWeight.normal),
+                          Text(" | ",
+                              style: GoogleFonts.poppins(
+                                  color: colorMainLightGray)),
+                          TextWithPoppins(
+                              text: '1955',
                               align: TextAlign.start,
-                              color: white,
-                              size: deviceHeight * 0.017,
-                              weight: FontWeight.normal,
-                            ),
-                            const Spacer(),
-                            TextWithPoppins(
-                                text: '97 %',
-                                align: TextAlign.end,
-                                color: white,
-                                size: deviceHeight * 0.017,
-                                weight: FontWeight.normal),
-                            // const TextWithPoppins(
-                            //     text: '%',
-                            //     align: TextAlign.end,
-                            //     color: colorMainLightGray,
-                            //     size: 14,
-                            //     weight: FontWeight.normal),
-                          ],
-                        ),
-                        SizedBox(
-                          height: deviceWidth * 0.04,
-                        ),
-                        Row(
-                          children: [
-                            Image.asset(AppImageAsset.meta,
-                                width: 50, height: 25),
-                            TextWithPoppins(
-                              text: 'Metacritic',
-                              align: TextAlign.start,
-                              color: white,
-                              size: deviceHeight * 0.017,
-                              weight: FontWeight.normal,
-                            ),
-                            const Spacer(),
-                            TextWithPoppins(
-                                text: '9.9',
-                                align: TextAlign.end,
-                                color: white,
-                                size: deviceHeight * 0.017,
-                                weight: FontWeight.normal),
-                            TextWithPoppins(
-                                text: ' /10',
-                                align: TextAlign.end,
-                                color: colorMainLightGray,
-                                size: deviceHeight * 0.017,
-                                weight: FontWeight.normal),
-                          ],
-                        ),
-                        SizedBox(
-                          height: deviceWidth * 0.04,
-                        ),
-                        Row(
-                          children: [
-                            Image.asset(AppImageAsset.letter,
-                                width: 50, height: 25),
-                            TextWithPoppins(
-                              text: 'Letterboxd',
-                              align: TextAlign.start,
-                              color: white,
-                              size: deviceHeight * 0.017,
-                              weight: FontWeight.normal,
-                            ),
-                            const Spacer(),
-                            TextWithPoppins(
-                                text: '9.9',
-                                align: TextAlign.end,
-                                color: white,
-                                size: deviceHeight * 0.017,
-                                weight: FontWeight.normal),
-                            TextWithPoppins(
-                                text: ' /10',
-                                align: TextAlign.end,
-                                color: colorMainLightGray,
-                                size: deviceHeight * 0.017,
-                                weight: FontWeight.normal),
-                          ],
-                        ),
-                      ],
-                    )),
-                Positioned(
-                  bottom: 0,
-                  child: Container(
-                    padding: const EdgeInsets.all(15),
-                    // height: deviceHeight * 0.095,
-                    width: deviceWidth,
-                    decoration: const BoxDecoration(color: colorItemCard),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text('You have only 3 credits left',
-                                style: GoogleFonts.poppins(
-                                    color: colorWhite, fontSize: 16)),
-                            Row(
-                              children: [
-                                Text('Go Unlimited for ',
-                                    style: GoogleFonts.poppins(
-                                        color: colorWhite, fontSize: 16)),
-                                Text('\$2.99',
-                                    style: GoogleFonts.poppins(
-                                        color: colorDestination)),
-                                Text('eek',
-                                    style: GoogleFonts.poppins(
-                                        color: colorWhite, fontSize: 16)),
-                              ],
-                            ),
-                          ],
-                        ),
-                        CustomFillButton(
-                          onPressed: () => openSubscriptionPage(context),
-                          child: Row(children: [
-                            Text('SUBSCRIBE',
-                                style: GoogleFonts.poppins(
-                                    color: colorWhite,
-                                    fontWeight: FontWeight.bold)),
-                            const Icon(Icons.arrow_forward_ios,
-                                size: 15, color: colorWhite)
-                          ]),
-                        )
-                      ],
-                    ),
+                              color: colorMainLightGray,
+                              size: width * 0.03,
+                              weight: FontWeight.normal),
+                        ],
+                      )
+                    ],
                   ),
                 ),
+                Positioned(
+                    bottom: height * 0.42,
+                    right: width * 0.05,
+                    child: Row(
+                      children: [
+                        _buildIconButton(AppImageAsset.dislike,
+                            () => openReportDialog(context)),
+                        SizedBox(width: width * 0.05),
+                        _buildIconButton(AppImageAsset.love,
+                            () => openNotificationAllowDialog(context)),
+                        SizedBox(width: width * 0.05),
+                        _buildIconButton(AppImageAsset.share,
+                            () => openNotFoundDialog(context)),
+                      ],
+                    )),
+                Positioned(
+                  left: width * 0.05,
+                  right: width * 0.05,
+                  bottom: height * 0.33,
+                  child: _buildRatingSection(width, height),
+                ),
+                Positioned(
+                  left: width * 0.05,
+                  right: width * 0.05,
+                  bottom: height * 0.1,
+                  child: _buildRatingsList(width, height),
+                ),
+                Positioned(
+                  bottom: 0,
+                  child: _buildSubscriptionBar(width, height),
+                ),
+                _buildBackButton(width, height),
               ],
             ),
           ),
-          Positioned(
-            top: 50,
-            left: 20,
-            child: InkWell(
-              onTap: () => Navigator.pop(context),
-              child: Container(
-                height: 36,
-                width: 36,
-                padding: const EdgeInsets.symmetric(horizontal: 12),
-                decoration: BoxDecoration(
-                  color: Color.lerp(colorPrimary, colorWhite, 0.1),
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: const Center(
-                  child:
-                      Icon(Icons.arrow_back_ios, size: 16, color: colorWhite),
-                ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildIconButton(String asset, VoidCallback onTap) {
+    return InkWell(
+      onTap: onTap,
+      child: Image.asset(asset, width: 20),
+    );
+  }
+
+  Widget _buildRatingSection(double width, double height) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Row(
+          children: [
+            Container(
+              alignment: Alignment.center,
+              width: width * 0.2,
+              height: height * 0.05,
+              decoration: const BoxDecoration(
+                  image:
+                      DecorationImage(image: AssetImage(AppImageAsset.rate))),
+              child: Text(
+                '   4.2',
+                textAlign: TextAlign.center,
+                style: GoogleFonts.poppins(color: white),
               ),
             ),
+            SizedBox(width: width * 0.02),
+            _buildTrailerButton(width, height),
+          ],
+        ),
+        _buildMovieInfo(),
+      ],
+    );
+  }
+
+  Widget _buildTrailerButton(double width, double height) {
+    return InkWell(
+      onTap: () {},
+      child: Container(
+        padding: EdgeInsets.all(width * 0.02),
+        width: width * 0.26,
+        height: height * 0.05,
+        decoration: BoxDecoration(
+          color: whitelow,
+          borderRadius: BorderRadius.circular(20),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(AppImageAsset.trailer, width: width * 0.05),
+            Text(
+              '  Trailer',
+              style: GoogleFonts.poppins(color: colorWhite),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildMovieInfo() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        TextWithPoppins(
+            text: "Terror",
+            align: TextAlign.end,
+            color: colorMainLightGray,
+            size: 14,
+            weight: FontWeight.normal),
+        const SizedBox(width: 5),
+        Container(
+            width: 4,
+            height: 4,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(2),
+                color: colorMainLightGray)),
+        const SizedBox(width: 5),
+        TextWithPoppins(
+            text: '2h 42m',
+            align: TextAlign.end,
+            color: colorMainLightGray,
+            size: 14,
+            weight: FontWeight.normal)
+      ],
+    );
+  }
+
+  Widget _buildRatingsList(double width, double height) {
+    final ratingItems = [
+      {
+        'asset': AppImageAsset.imdb,
+        'title': 'IMDb',
+        'rating': '5.5',
+        'total': '/10'
+      },
+      {
+        'asset': AppImageAsset.tomato,
+        'title': 'Rotten Tomatoes',
+        'rating': '97 %',
+        'total': ''
+      },
+      {
+        'asset': AppImageAsset.meta,
+        'title': 'Metacritic',
+        'rating': '9.9',
+        'total': '/10'
+      },
+      {
+        'asset': AppImageAsset.letter,
+        'title': 'Letterboxd',
+        'rating': '9.9',
+        'total': '/10'
+      },
+    ];
+
+    return Column(
+      children: ratingItems
+          .map((item) => Padding(
+                padding: EdgeInsets.only(bottom: height * 0.02),
+                child: _buildRatingItem(item, width, height),
+              ))
+          .toList(),
+    );
+  }
+
+  Widget _buildRatingItem(
+      Map<String, String> item, double width, double height) {
+    return Row(
+      children: [
+        Image.asset(item['asset']!, width: width * 0.12, height: height * 0.03),
+        TextWithPoppins(
+          text: item['title']!,
+          align: TextAlign.start,
+          color: white,
+          size: height * 0.017,
+          weight: FontWeight.normal,
+        ),
+        const Spacer(),
+        TextWithPoppins(
+          text: item['rating']!,
+          align: TextAlign.end,
+          color: white,
+          size: height * 0.017,
+          weight: FontWeight.normal,
+        ),
+        TextWithPoppins(
+          text: item['total']!,
+          align: TextAlign.end,
+          color: colorMainLightGray,
+          size: height * 0.017,
+          weight: FontWeight.normal,
+        ),
+      ],
+    );
+  }
+
+  Widget _buildSubscriptionBar(double width, double height) {
+    return Container(
+      padding: EdgeInsets.all(width * 0.04),
+      width: width,
+      decoration: const BoxDecoration(color: colorItemCard),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text('You have only 3 credits left',
+                  style: GoogleFonts.poppins(
+                      color: colorWhite, fontSize: width * 0.04)),
+              Row(
+                children: [
+                  Text('Go Unlimited for ',
+                      style: GoogleFonts.poppins(
+                          color: colorWhite, fontSize: width * 0.04)),
+                  Text('\$2.99',
+                      style: GoogleFonts.poppins(color: colorDestination)),
+                  Text('eek',
+                      style: GoogleFonts.poppins(
+                          color: colorWhite, fontSize: width * 0.04)),
+                ],
+              ),
+            ],
           ),
+          CustomFillButton(
+            onPressed: () => openSubscriptionPage(context),
+            child: Row(
+              children: [
+                Text('SUBSCRIBE',
+                    style: GoogleFonts.poppins(
+                        color: colorWhite, fontWeight: FontWeight.bold)),
+                const Icon(Icons.arrow_forward_ios, size: 15, color: colorWhite)
+              ],
+            ),
+          )
         ],
+      ),
+    );
+  }
+
+  Widget _buildBackButton(double width, double height) {
+    return Positioned(
+      top: height * 0.06,
+      left: width * 0.05,
+      child: InkWell(
+        onTap: () => Navigator.pop(context),
+        child: Container(
+          height: width * 0.09,
+          width: width * 0.09,
+          padding: EdgeInsets.symmetric(horizontal: width * 0.03),
+          decoration: BoxDecoration(
+            color: Color.lerp(colorPrimary, colorWhite, 0.1),
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: const Center(
+            child: Icon(Icons.arrow_back_ios, size: 16, color: colorWhite),
+          ),
+        ),
       ),
     );
   }

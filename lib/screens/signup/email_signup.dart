@@ -112,8 +112,7 @@ class EmailSignUpState extends State<EmailSignUp> {
                   width: double.infinity,
                   child: Text('Do you have a voucher code?',
                       style: GoogleFonts.poppins(
-                          fontSize: deviceAverageSize * 0.02,
-                          color: colorWhite)),
+                          fontSize: deviceHeight * 0.016, color: colorWhite)),
                 ),
                 SizedBox(height: deviceHeight * 0.01),
                 const CustomTextFormField(
@@ -133,10 +132,11 @@ class EmailSignUpState extends State<EmailSignUp> {
                           });
                         },
                         child: Container(
-                          width: deviceAverageSize * 0.02,
-                          height: deviceAverageSize * 0.02,
+                          width: deviceAverageSize * 0.022,
+                          height: deviceAverageSize * 0.022,
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
+                            borderRadius: BorderRadius.circular(
+                                deviceAverageSize * 0.008),
                             border: Border.all(
                                 color: isChecked
                                     ? colorOfferDiscountRed
@@ -190,7 +190,8 @@ class EmailSignUpState extends State<EmailSignUp> {
                   children: [
                     Text("Already have an account?",
                         style: GoogleFonts.poppins(
-                            fontSize: 18, color: colorWhite)),
+                            fontSize: deviceAverageSize * 0.019,
+                            color: colorWhite)),
                     GestureDetector(
                       onTap: () => openScreenWithResult(context, const Login()),
                       child: Center(

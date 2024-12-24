@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import 'package:stream_rate/commonView/custom_fill_button.dart';
 import 'package:stream_rate/commonView/custom_text_form.dart';
 import 'package:stream_rate/constant/constant.dart';
-import 'package:stream_rate/utils/utils.dart';
+import 'package:stream_rate/utils/utils.dart'; // Assuming this imports deviceWidth and deviceHeight
 
 class Support extends StatefulWidget {
   const Support({Key? key}) : super(key: key);
@@ -39,7 +38,7 @@ class SupportState extends State<Support> {
         backgroundColor: colorPrimary,
         automaticallyImplyLeading: false,
         foregroundColor: colorBlack,
-        toolbarHeight: 80,
+        toolbarHeight: deviceHeight * 0.1, // Made toolbar height responsive
         elevation: 0,
         title: Stack(
           children: [
@@ -54,13 +53,13 @@ class SupportState extends State<Support> {
               ),
             ),
             Positioned(
-              left: 15,
+              left: deviceWidth * 0.03,
               child: GestureDetector(
                 onTap: () => Navigator.pop(context),
                 child: Container(
-                  height: 36,
-                  width: 36,
-                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  height: deviceHeight * 0.045,
+                  width: deviceHeight * 0.045,
+                  padding: EdgeInsets.symmetric(horizontal: deviceWidth * 0.03),
                   decoration: BoxDecoration(
                     color: colorWhite.withOpacity(0.1),
                     borderRadius: BorderRadius.circular(10),
@@ -76,49 +75,56 @@ class SupportState extends State<Support> {
         ),
       ),
       backgroundColor: colorMainBackground,
-      body: Padding(
-        padding: const EdgeInsets.all(15),
+      body: SingleChildScrollView(
+        padding: EdgeInsets.all(deviceHeight * 0.02), // Made padding responsive
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(height: 15),
+            SizedBox(height: deviceHeight * 0.02), // Made spacing responsive
             Center(
               child: SizedBox(
                 width: deviceWidth * 0.75,
-                child: Text('Please let us know how can we help you',
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.poppins(
-                        color: colorWhite,
-                        fontSize: deviceHeight * 0.024,
-                        fontWeight: FontWeight.w300)),
+                child: Text(
+                  'Please let us know how we can help you',
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.poppins(
+                      color: colorWhite,
+                      fontSize: deviceHeight * 0.024,
+                      fontWeight: FontWeight.w300),
+                ),
               ),
             ),
             SizedBox(height: deviceHeight * 0.05),
-            Text('Write Your Message',
-                style: GoogleFonts.poppins(
-                    color: colorWhite,
-                    fontSize: deviceHeight * 0.022,
-                    fontWeight: FontWeight.w300)),
+            Text(
+              'Write Your Message',
+              style: GoogleFonts.poppins(
+                  color: colorWhite,
+                  fontSize: deviceHeight * 0.022,
+                  fontWeight: FontWeight.w300),
+            ),
             SizedBox(height: deviceHeight * 0.02),
             CustomTextFormField(
-                height: deviceHeight * 0.18,
-                hintText: "  Message ..",
-                hintStyle: GoogleFonts.poppins(
-                    color: whitecaptcha,
-                    fontSize: deviceHeight * 0.02,
-                    fontWeight: FontWeight.w300),
-                minLines: 8),
+              height: deviceHeight * 0.18,
+              hintText: "  Message ..",
+              hintStyle: GoogleFonts.poppins(
+                  color: whitecaptcha,
+                  fontSize: deviceHeight * 0.02,
+                  fontWeight: FontWeight.w300),
+              minLines: 8,
+            ),
             SizedBox(height: deviceHeight * 0.05),
-            Text('Please enter the characters below',
-                style: GoogleFonts.poppins(
-                    color: colorWhite,
-                    fontSize: deviceHeight * 0.022,
-                    fontWeight: FontWeight.w300)),
+            Text(
+              'Please enter the characters below',
+              style: GoogleFonts.poppins(
+                  color: colorWhite,
+                  fontSize: deviceHeight * 0.022,
+                  fontWeight: FontWeight.w300),
+            ),
             SizedBox(height: deviceHeight * 0.015),
             Container(
               width: deviceWidth,
-              height: 100,
-              padding: const EdgeInsets.all(15),
+              height: deviceHeight * 0.15, // Made container height responsive
+              padding: EdgeInsets.all(deviceHeight * 0.02),
               decoration: BoxDecoration(
                   color: whitelow, borderRadius: BorderRadius.circular(20)),
               child: Transform(
@@ -145,14 +151,17 @@ class SupportState extends State<Support> {
                   fontSize: deviceHeight * 0.02,
                   fontWeight: FontWeight.w300),
             ),
-            const Spacer(),
+            SizedBox(height: deviceHeight * 0.02),
             CustomFillButton(
               onPressed: () => openMessageDialog(context),
+              width: double.infinity,
+              height: deviceHeight * 0.07,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Icon(Icons.send, color: colorWhite, size: 16),
-                  const SizedBox(width: 5),
+                  SizedBox(
+                      width: deviceWidth * 0.01), // Made spacing responsive
                   Text(
                     'SEND MESSAGE',
                     style: GoogleFonts.poppins(

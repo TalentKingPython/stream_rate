@@ -184,8 +184,10 @@ class HistoryState extends State<History> {
         children: [
           Padding(
             padding: const EdgeInsets.fromLTRB(15, 0, 15, 0),
-            child: ListView(
-              children: items.map((item) => ItemCard(item: item)).toList(),
+            child: SingleChildScrollView(
+              child: Column(
+                children: items.map((item) => ItemCard(item: item)).toList(),
+              ),
             ),
           ),
           Positioned(
