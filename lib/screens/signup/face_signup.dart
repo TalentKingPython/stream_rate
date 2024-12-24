@@ -39,39 +39,40 @@ class FaceIdSignUpState extends State<FaceIdSignUp> {
                 fit: BoxFit.cover)),
         child: Stack(children: [
           Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 10,
+            padding: EdgeInsets.symmetric(
+              horizontal: deviceWidth * 0.02,
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(
-                  height: deviceHeight * 0.04,
-                ),
+                // SizedBox(
+                //   height: deviceHeight * 0.04,
+                // ),
                 LoadImageSimple(
                   image: 'assets/images/streamrate-logo.png',
                   width: deviceWidth * 0.4,
                   imageFit: BoxFit.fill,
                 ),
                 Container(
-                    padding: const EdgeInsets.only(top: 30, bottom: 10),
+                    padding: EdgeInsets.only(
+                        top: deviceHeight * 0.03, bottom: deviceHeight * 0.01),
                     child: Text(
                       "Sign Up with",
                       textAlign: TextAlign.center,
                       style: GoogleFonts.poppins(
                         color: colorWhite,
-                        fontSize: deviceHeight * 0.03,
+                        fontSize: deviceHeight * 0.028,
                       ),
                     )),
                 Container(
-                    padding: EdgeInsets.only(bottom: deviceHeight * 0.025),
+                    padding: EdgeInsets.only(bottom: deviceHeight * 0.021),
                     child: Text(
                       "Face ID or Touch ID",
                       textAlign: TextAlign.center,
                       style: GoogleFonts.poppins(
                         color: colorWhite,
-                        fontSize: deviceHeight * 0.03,
+                        fontSize: deviceHeight * 0.028,
                       ),
                     )),
                 LoadImageSimple(
@@ -80,20 +81,21 @@ class FaceIdSignUpState extends State<FaceIdSignUp> {
                   imageFit: BoxFit.cover,
                 ),
                 Container(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 30, horizontal: 50),
+                  padding: EdgeInsets.symmetric(
+                      vertical: deviceHeight * 0.03,
+                      horizontal: deviceWidth * 0.1),
                   child: Text(
                       "Create a passkey with your face, fingerprint, or a passcode to log in more quickly than a password. We can't access this biometric data",
                       textAlign: TextAlign.center,
                       style: GoogleFonts.poppins(
                         color: colorWhite,
-                        fontSize: deviceHeight * 0.02,
+                        fontSize: deviceWidth * 0.043,
                       )),
                 ),
                 SizedBox(
                   height: deviceHeight * 0.01,
                 ),
-                Container(
+                SizedBox(
                   width: deviceWidth * 0.8,
 
                   // padding: const EdgeInsets.fromLTRB(25, 10, 25, 30),
@@ -131,7 +133,7 @@ class FaceIdSignUpState extends State<FaceIdSignUp> {
                   children: [
                     Text("Already have an account?",
                         style: GoogleFonts.poppins(
-                            fontSize: 16, color: colorWhite)),
+                            fontSize: deviceHeight * 0.016, color: colorWhite)),
                     GestureDetector(
                       onTap: () => openScreenWithResult(context, const Login()),
                       child: Center(
@@ -150,7 +152,7 @@ class FaceIdSignUpState extends State<FaceIdSignUp> {
                             child: Text(
                               "Log In?",
                               style: GoogleFonts.poppins(
-                                fontSize: 16,
+                                fontSize: deviceHeight * 0.016,
                                 color: Colors
                                     .white, // The base color won't be visible due to ShaderMask
                                 fontWeight: FontWeight.bold,
@@ -166,21 +168,23 @@ class FaceIdSignUpState extends State<FaceIdSignUp> {
             ),
           ),
           Positioned(
-            top: 50,
-            left: 20,
+            top: deviceHeight * 0.05,
+            left: deviceWidth * 0.035,
             child: GestureDetector(
               onTap: () => Navigator.pop(context),
               child: Container(
-                height: 36,
-                width: 36,
-                padding: const EdgeInsets.symmetric(horizontal: 12),
+                height: deviceAverageSize * 0.04,
+                width: deviceAverageSize * 0.04,
+                padding:
+                    EdgeInsets.symmetric(horizontal: deviceAverageSize * 0.015),
                 decoration: BoxDecoration(
                   color: colorMainGray.withOpacity(0.7),
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius:
+                      BorderRadius.circular(deviceAverageSize * 0.012),
                 ),
-                child: const Center(
-                  child:
-                      Icon(Icons.arrow_back_ios, size: 16, color: colorWhite),
+                child: Center(
+                  child: Icon(Icons.arrow_back_ios,
+                      size: deviceAverageSize * 0.02, color: colorWhite),
                 ),
               ),
             ),

@@ -48,7 +48,7 @@ class OnboardThreeState extends State<OnboardThree> {
             ),
           ),
           Positioned(
-              bottom: 70 + (deviceHeight - 70) * 0.06,
+              bottom: 70 + (deviceHeight - 70) * 0.03,
               left: deviceWidth * 0.25,
               right: deviceWidth * 0.25,
               child: Text(

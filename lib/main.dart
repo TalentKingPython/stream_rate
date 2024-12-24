@@ -15,13 +15,13 @@ final GlobalKey<ScaffoldMessengerState> rootScaffoldMessengerKey =
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   sharedPrefs = await SharedPreferences.getInstance();
-  runApp(const MyApp());
-  // runApp(
-  //   DevicePreview(
-  //     enabled: true,
-  //     builder: (context) => const MyApp(),
-  //   ),
-  // );
+  // runApp(const MyApp());
+  runApp(
+    DevicePreview(
+      enabled: true,
+      builder: (context) => const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatefulWidget {

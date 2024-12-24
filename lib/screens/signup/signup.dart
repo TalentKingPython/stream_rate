@@ -57,7 +57,7 @@ class SignUpState extends State<SignUp> {
                   "Create an account to get started",
                   textAlign: TextAlign.center,
                   style: GoogleFonts.poppins(
-                      color: colorWhite, fontSize: deviceAverageSize * 0.043),
+                      color: colorWhite, fontSize: deviceAverageSize * 0.04),
                 ),
               ),
               Container(
@@ -219,7 +219,7 @@ class SignUpState extends State<SignUp> {
                     textAlign: TextAlign.center,
                     style: GoogleFonts.poppins(
                         color: colorWhite,
-                        fontSize: 16,
+                        fontSize: deviceAverageSize * 0.02,
                         decoration: TextDecoration.underline)),
               ),
               SizedBox(

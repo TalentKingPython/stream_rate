@@ -39,8 +39,10 @@ class LoginState extends State<Login> {
                 fit: BoxFit.cover)),
         child: Padding(
           // Added padding around the entire body
-          padding: const EdgeInsets.symmetric(
-              horizontal: 30), // Adjust the value to your preference
+          padding: EdgeInsets.symmetric(
+              horizontal: deviceWidth * 0.035,
+              vertical:
+                  deviceHeight * 0.02), // Adjust the value to your preference
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -51,34 +53,38 @@ class LoginState extends State<Login> {
                 width: deviceWidth * 0.4,
               ),
               Container(
-                  padding: const EdgeInsets.only(top: 30, bottom: 10),
+                  padding: EdgeInsets.only(
+                      top: deviceHeight * 0.03, bottom: deviceHeight * 0.01),
                   child: Text(
                     "Welcome Back",
                     textAlign: TextAlign.center,
                     style: GoogleFonts.poppins(
                       color: colorWhite,
-                      fontSize: 24,
+                      fontSize: deviceHeight * 0.024,
                     ),
                   )),
 
               Container(
-                  padding: const EdgeInsets.only(top: 10, bottom: 20),
+                  padding: EdgeInsets.only(
+                      top: deviceHeight * 0.01, bottom: deviceHeight * 0.02),
                   child: Text(
                     "Log in to continue",
                     textAlign: TextAlign.center,
                     style: GoogleFonts.poppins(
                       color: colorWhite,
-                      fontSize: 16,
+                      fontSize: deviceHeight * 0.016,
                     ),
                   )),
 
               // Existing content inside the container
               Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+                padding: EdgeInsets.symmetric(
+                    horizontal: deviceWidth * 0.035,
+                    vertical: deviceHeight * 0.005),
                 child: Column(
                   children: [
                     CustomFillButton(
+                      height: deviceHeight * 0.065,
                       onPressed: () =>
                           openScreenWithResult(context, const Home()),
                       isColorBtn: false,
@@ -92,7 +98,8 @@ class LoginState extends State<Login> {
                             child: Text(
                               'Log in with Phone or Email',
                               style: GoogleFonts.poppins(
-                                  color: colorWhite, fontSize: 16),
+                                  color: colorWhite,
+                                  fontSize: deviceHeight * 0.016),
                             ),
                           )
                         ],
@@ -103,11 +110,13 @@ class LoginState extends State<Login> {
               ),
 
               Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+                padding: EdgeInsets.symmetric(
+                    horizontal: deviceWidth * 0.035,
+                    vertical: deviceHeight * 0.005),
                 child: Column(
                   children: [
                     CustomFillButton(
+                      height: deviceHeight * 0.065,
                       isColorBtn: false,
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -119,7 +128,8 @@ class LoginState extends State<Login> {
                             child: Text(
                               'Log in with Face ID',
                               style: GoogleFonts.poppins(
-                                  color: colorWhite, fontSize: 16),
+                                  color: colorWhite,
+                                  fontSize: deviceHeight * 0.016),
                             ),
                           )
                         ],
@@ -130,11 +140,13 @@ class LoginState extends State<Login> {
               ),
 
               Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+                padding: EdgeInsets.symmetric(
+                    horizontal: deviceWidth * 0.035,
+                    vertical: deviceHeight * 0.005),
                 child: Column(
                   children: [
                     CustomFillButton(
+                      height: deviceHeight * 0.065,
                       isColorBtn: false,
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -146,7 +158,8 @@ class LoginState extends State<Login> {
                             child: Text(
                               'Continue with Facebook',
                               style: GoogleFonts.poppins(
-                                  color: colorWhite, fontSize: 16),
+                                  color: colorWhite,
+                                  fontSize: deviceHeight * 0.016),
                             ),
                           )
                         ],
@@ -157,11 +170,13 @@ class LoginState extends State<Login> {
               ),
 
               Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+                padding: EdgeInsets.symmetric(
+                    horizontal: deviceWidth * 0.035,
+                    vertical: deviceHeight * 0.005),
                 child: Column(
                   children: [
                     CustomFillButton(
+                      height: deviceHeight * 0.065,
                       isColorBtn: false,
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -173,7 +188,8 @@ class LoginState extends State<Login> {
                             child: Text(
                               'Continue with Apple',
                               style: GoogleFonts.poppins(
-                                  color: colorWhite, fontSize: 16),
+                                  color: colorWhite,
+                                  fontSize: deviceHeight * 0.016),
                             ),
                           )
                         ],
@@ -184,7 +200,11 @@ class LoginState extends State<Login> {
               ),
 
               Container(
-                padding: const EdgeInsets.fromLTRB(25, 10, 25, 50),
+                padding: EdgeInsets.fromLTRB(
+                    deviceWidth * 0.035,
+                    deviceHeight * 0.005,
+                    deviceWidth * 0.035,
+                    deviceHeight * 0.05),
                 child: Column(
                   children: [
                     CustomFillButton(
@@ -199,7 +219,8 @@ class LoginState extends State<Login> {
                             child: Text(
                               'Continue with Google',
                               style: GoogleFonts.poppins(
-                                  color: colorWhite, fontSize: 16),
+                                  color: colorWhite,
+                                  fontSize: deviceHeight * 0.016),
                             ),
                           )
                         ],
@@ -213,8 +234,8 @@ class LoginState extends State<Login> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text("Don't have an account?",
-                      style:
-                          GoogleFonts.poppins(fontSize: 16, color: colorWhite)),
+                      style: GoogleFonts.poppins(
+                          fontSize: deviceHeight * 0.016, color: colorWhite)),
                   GestureDetector(
                     onTap: () => openScreenWithResult(context, const SignUp()),
                     child: Center(
@@ -232,7 +253,7 @@ class LoginState extends State<Login> {
                           child: Text(
                             "Sign Up",
                             style: GoogleFonts.poppins(
-                              fontSize: 16,
+                              fontSize: deviceHeight * 0.016,
                               color: Colors
                                   .white, // The base color won't be visible due to ShaderMask
                               fontWeight: FontWeight.bold,
