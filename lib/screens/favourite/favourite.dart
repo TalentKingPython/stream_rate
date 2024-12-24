@@ -124,7 +124,6 @@ class FavouriteState extends State<Favourite> {
   @override
   void initState() {
     super.initState();
-    print(items.length);
   }
 
   @override
@@ -182,8 +181,10 @@ class FavouriteState extends State<Favourite> {
       backgroundColor: colorMainBackground,
       body: Padding(
         padding: const EdgeInsets.fromLTRB(15, 0, 15, 0),
-        child: ListView(
-          children: items.map((item) => ItemCard(item: item)).toList(),
+        child: SingleChildScrollView(
+          child: Column(
+            children: items.map((item) => ItemCard(item: item)).toList(),
+          ),
         ),
       ),
     );

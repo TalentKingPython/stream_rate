@@ -15,7 +15,7 @@ class SplashBloc extends Bloc {
   State<Splash> state;
 
   SplashBloc(this.context, this.state) {
-    // splashAction();
+    splashAction();
   }
 
   splashAction() {

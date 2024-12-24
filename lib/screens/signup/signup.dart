@@ -43,27 +43,29 @@ class SignUpState extends State<SignUp> {
           padding: EdgeInsets.symmetric(
               horizontal: deviceWidth * 0.035, vertical: deviceHeight * 0.02),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              SizedBox(height: deviceHeight * .12),
               Image.asset(
                 'assets/images/streamrate-logo.png',
-                width: deviceWidth * 0.4,
+                width: deviceHeight * 0.17,
+                height: deviceHeight * .11,
+                fit: BoxFit.fill,
               ),
               Container(
                 width: deviceWidth * 0.65,
-                padding: EdgeInsets.symmetric(vertical: deviceHeight * 0.03),
+                padding: EdgeInsets.symmetric(vertical: deviceHeight * 0.05),
                 child: Text(
                   "Create an account to get started",
                   textAlign: TextAlign.center,
                   style: GoogleFonts.poppins(
-                      color: colorWhite, fontSize: deviceAverageSize * 0.043),
+                      color: colorWhite, fontSize: deviceHeight * 0.026),
                 ),
               ),
               Container(
                 padding: EdgeInsets.symmetric(
                     horizontal: deviceWidth * 0.035,
-                    vertical: deviceHeight * 0.005),
+                    vertical: deviceHeight * 0.007),
                 child: Column(
                   children: [
                     CustomFillButton(
@@ -82,7 +84,7 @@ class SignUpState extends State<SignUp> {
                               'Sign up with Phone or Email',
                               style: GoogleFonts.poppins(
                                   color: colorWhite,
-                                  fontSize: deviceAverageSize * 0.02),
+                                  fontSize: deviceHeight * .018),
                             ),
                           )
                         ],
@@ -94,7 +96,7 @@ class SignUpState extends State<SignUp> {
               Container(
                 padding: EdgeInsets.symmetric(
                     horizontal: deviceWidth * 0.035,
-                    vertical: deviceHeight * 0.005),
+                    vertical: deviceHeight * 0.007),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -114,7 +116,7 @@ class SignUpState extends State<SignUp> {
                               'Sign up with Face ID',
                               style: GoogleFonts.poppins(
                                   color: colorWhite,
-                                  fontSize: deviceAverageSize * 0.02),
+                                  fontSize: deviceHeight * .018),
                             ),
                           )
                         ],
@@ -126,7 +128,7 @@ class SignUpState extends State<SignUp> {
               Container(
                 padding: EdgeInsets.symmetric(
                     horizontal: deviceWidth * 0.035,
-                    vertical: deviceHeight * 0.005),
+                    vertical: deviceHeight * 0.007),
                 child: Column(
                   children: [
                     CustomFillButton(
@@ -143,7 +145,7 @@ class SignUpState extends State<SignUp> {
                               'Continue with Facebook',
                               style: GoogleFonts.poppins(
                                   color: colorWhite,
-                                  fontSize: deviceAverageSize * 0.02),
+                                  fontSize: deviceHeight * .018),
                             ),
                           )
                         ],
@@ -155,7 +157,7 @@ class SignUpState extends State<SignUp> {
               Container(
                 padding: EdgeInsets.symmetric(
                     horizontal: deviceWidth * 0.035,
-                    vertical: deviceHeight * 0.005),
+                    vertical: deviceHeight * 0.007),
                 child: Column(
                   children: [
                     CustomFillButton(
@@ -172,7 +174,7 @@ class SignUpState extends State<SignUp> {
                               'Continue with Apple',
                               style: GoogleFonts.poppins(
                                   color: colorWhite,
-                                  fontSize: deviceAverageSize * 0.02),
+                                  fontSize: deviceHeight * .018),
                             ),
                           )
                         ],
@@ -184,7 +186,7 @@ class SignUpState extends State<SignUp> {
               Container(
                 padding: EdgeInsets.symmetric(
                     horizontal: deviceWidth * 0.035,
-                    vertical: deviceHeight * 0.005),
+                    vertical: deviceHeight * 0.007),
                 child: Column(
                   children: [
                     CustomFillButton(
@@ -201,7 +203,7 @@ class SignUpState extends State<SignUp> {
                               'Continue with Google',
                               style: GoogleFonts.poppins(
                                   color: colorWhite,
-                                  fontSize: deviceAverageSize * 0.02),
+                                  fontSize: deviceHeight * .018),
                             ),
                           )
                         ],
@@ -210,28 +212,23 @@ class SignUpState extends State<SignUp> {
                   ],
                 ),
               ),
-              SizedBox(
-                height: deviceHeight * 0.03,
-              ),
+              SizedBox(height: deviceHeight * 0.03),
               Container(
-                padding: EdgeInsets.symmetric(vertical: deviceHeight * 0.005),
+                padding: EdgeInsets.symmetric(vertical: deviceHeight * 0.007),
                 child: Text("I will do it later",
                     textAlign: TextAlign.center,
                     style: GoogleFonts.poppins(
                         color: colorWhite,
-                        fontSize: 16,
+                        fontSize: deviceHeight * .018,
                         decoration: TextDecoration.underline)),
               ),
-              SizedBox(
-                height: deviceHeight * 0.03,
-              ),
+              SizedBox(height: deviceHeight * 0.03),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text("Already have an account?",
                       style: GoogleFonts.poppins(
-                          fontSize: deviceAverageSize * 0.02,
-                          color: colorWhite)),
+                          fontSize: deviceHeight * .018, color: colorWhite)),
                   GestureDetector(
                     onTap: () => openScreenWithResult(context, const Login()),
                     child: Center(
@@ -248,7 +245,7 @@ class SignUpState extends State<SignUp> {
                           child: Text(
                             "Log In",
                             style: GoogleFonts.poppins(
-                              fontSize: deviceAverageSize * 0.02,
+                              fontSize: deviceHeight * .018,
                               color: colorWhite,
                               fontWeight: FontWeight.bold,
                             ),

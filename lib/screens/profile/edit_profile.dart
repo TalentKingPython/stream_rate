@@ -78,31 +78,31 @@ class EditProfileState extends State<EditProfile> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(height: 30),
+            SizedBox(height: deviceHeight * 0.03),
             Text('Profile Details',
                 style: GoogleFonts.poppins(color: colorWhite, fontSize: 18)),
-            const SizedBox(height: 15),
+            SizedBox(height: deviceHeight * 0.015),
             const CustomTextFormField(
               initialValue: 'Jim Robbins',
               labelText: 'Username',
               prefixIcon: Icon(Icons.person_outline, color: colorMainLightGray),
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: deviceHeight * 0.020),
             const CustomTextFormField(
               initialValue: 'jimrobbins29@domain.com',
               labelText: 'Email',
               prefixIcon: Icon(Icons.email_outlined, color: colorMainLightGray),
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: deviceHeight * 0.020),
             const CustomTextFormField(
               initialValue: '+078 0527 882',
               labelText: 'Phone',
               prefixIcon: Icon(Icons.phone_outlined, color: colorMainLightGray),
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: deviceHeight * 0.020),
             Text('Change Password',
                 style: GoogleFonts.poppins(color: colorWhite, fontSize: 18)),
-            const SizedBox(height: 15),
+            SizedBox(height: deviceHeight * 0.015),
             CustomTextFormField(
               isPassword: true,
               labelText: 'New Password',
@@ -114,7 +114,7 @@ class EditProfileState extends State<EditProfile> {
                       : Icons.visibility_outlined,
                   color: colorMainLightGray),
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: deviceHeight * 0.020),
             CustomTextFormField(
               isPassword: true,
               labelText: 'Confirm Password',
@@ -138,13 +138,15 @@ class EditProfileState extends State<EditProfile> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Icon(Icons.close,
-                            color: colorMainLightGray, size: 16),
+                        Icon(Icons.close,
+                            color: colorMainLightGray,
+                            size: deviceHeight * .016),
                         const SizedBox(width: 5),
                         Text(
                           'CANCEL',
                           style: GoogleFonts.poppins(
-                              color: colorMainLightGray, fontSize: 16),
+                              color: colorMainLightGray,
+                              fontSize: deviceHeight * .016),
                         ),
                       ],
                     ),
@@ -154,12 +156,13 @@ class EditProfileState extends State<EditProfile> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Icon(Icons.check, color: colorWhite, size: 16),
+                        Icon(Icons.check,
+                            color: colorWhite, size: deviceHeight * .016),
                         const SizedBox(width: 5),
                         Text(
                           'SAVE',
                           style: GoogleFonts.poppins(
-                              color: colorWhite, fontSize: 16),
+                              color: colorWhite, fontSize: deviceHeight * .016),
                         ),
                       ],
                     ),

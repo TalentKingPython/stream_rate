@@ -64,64 +64,63 @@ class CustomTextFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: height ?? deviceHeight * 0.068,
-      child: TextFormField(
-        controller: controller,
-        focusNode: focusNode,
-        obscureText: isPassword,
-        style: textStyle ?? GoogleFonts.poppins(color: colorWhite),
-        keyboardType: inputType,
-        textInputAction: inputAction,
-        initialValue: initialValue,
-        readOnly: readOnly,
-        maxLines: isPassword ? 1 : maxLines,
-        minLines: minLines,
-        cursorColor: colorWhite,
-        decoration: InputDecoration(
-          hintText: hintText,
-          labelText: labelText,
-          prefixIcon: prefixIcon,
-          suffixIcon: suffixIcon,
-          labelStyle: labelStyle ??
-              GoogleFonts.poppins(
-                  color: colorWhite, fontSize: deviceHeight * 0.02),
-          hintStyle: hintStyle,
-          fillColor: fillColor,
-          filled: filled,
-          errorText: errorText,
-          border: enabledBorder ??
-              OutlineInputBorder(
-                borderRadius: BorderRadius.circular(deviceAverageSize * 0.034),
-                borderSide:
-                    const BorderSide(color: colorMainLightGray, width: 1),
-              ),
-          enabledBorder: enabledBorder ??
-              OutlineInputBorder(
-                borderRadius: BorderRadius.circular(deviceAverageSize * 0.034),
-                borderSide:
-                    const BorderSide(color: colorMainLightGray, width: 1),
-              ),
-          focusedBorder: focusedBorder ??
-              OutlineInputBorder(
-                borderRadius: BorderRadius.circular(deviceAverageSize * 0.034),
-                borderSide: const BorderSide(color: colorWhite, width: 2),
-              ),
-          errorBorder: errorBorder ??
-              OutlineInputBorder(
-                borderRadius: BorderRadius.circular(deviceAverageSize * 0.034),
-                borderSide: const BorderSide(color: colorRed, width: 2),
-              ),
-          focusedErrorBorder: focusedErrorBorder ??
-              OutlineInputBorder(
-                borderRadius: BorderRadius.circular(deviceAverageSize * 0.034),
-                borderSide: const BorderSide(color: colorRed, width: 2),
-              ),
-        ),
-        validator: validator,
-        onChanged: onChanged,
-        onTap: onTap,
+    return TextFormField(
+      controller: controller,
+      focusNode: focusNode,
+      obscureText: isPassword,
+      style: textStyle ??
+          GoogleFonts.poppins(
+              color: colorWhite, fontSize: deviceHeight * 0.015),
+      keyboardType: inputType,
+      textInputAction: inputAction,
+      initialValue: initialValue,
+      readOnly: readOnly,
+      maxLines: isPassword ? 1 : maxLines,
+      minLines: minLines,
+      cursorColor: colorWhite,
+      decoration: InputDecoration(
+        contentPadding: EdgeInsets.symmetric(
+            horizontal: deviceHeight * 0.020, vertical: deviceHeight * 0.022),
+        hintText: hintText,
+        labelText: labelText,
+        prefixIcon: prefixIcon,
+        suffixIcon: suffixIcon,
+        labelStyle: labelStyle ??
+            GoogleFonts.poppins(
+                color: colorWhite, fontSize: deviceHeight * 0.015),
+        hintStyle: hintStyle,
+        fillColor: fillColor,
+        filled: filled,
+        errorText: errorText,
+        border: enabledBorder ??
+            OutlineInputBorder(
+              borderRadius: BorderRadius.circular(deviceHeight * 0.022),
+              borderSide: const BorderSide(color: colorMainLightGray, width: 1),
+            ),
+        enabledBorder: enabledBorder ??
+            OutlineInputBorder(
+              borderRadius: BorderRadius.circular(deviceHeight * 0.022),
+              borderSide: const BorderSide(color: colorMainLightGray, width: 1),
+            ),
+        focusedBorder: focusedBorder ??
+            OutlineInputBorder(
+              borderRadius: BorderRadius.circular(deviceHeight * 0.022),
+              borderSide: const BorderSide(color: colorWhite, width: 2),
+            ),
+        errorBorder: errorBorder ??
+            OutlineInputBorder(
+              borderRadius: BorderRadius.circular(deviceHeight * 0.022),
+              borderSide: const BorderSide(color: colorRed, width: 2),
+            ),
+        focusedErrorBorder: focusedErrorBorder ??
+            OutlineInputBorder(
+              borderRadius: BorderRadius.circular(deviceHeight * 0.022),
+              borderSide: const BorderSide(color: colorRed, width: 2),
+            ),
       ),
+      validator: validator,
+      onChanged: onChanged,
+      onTap: onTap,
     );
   }
 }
