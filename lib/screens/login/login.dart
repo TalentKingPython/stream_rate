@@ -47,7 +47,7 @@ class LoginState extends State<Login> {
             children: [
               // Image at the top
               Image.asset(
-                'assets/images/streamrate-logo.png',
+                'assets/images/logowithname.png',
                 width: deviceWidth * 0.4,
               ),
               Container(

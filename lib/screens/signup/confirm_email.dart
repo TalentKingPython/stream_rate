@@ -52,7 +52,7 @@ class ConfirmEmailState extends State<ConfirmEmail> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 LoadImageSimple(
-                  image: 'assets/images/streamrate-logo.png',
+                  image: 'assets/images/logowithname.png',
                   width: deviceWidth * 0.4,
                 ),
                 Container(

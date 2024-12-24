@@ -1,6 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:stream_rate/commonView/load_image_with_placeholder.dart';
+import 'package:stream_rate/constant/constant.dart';
 import 'package:stream_rate/constant/image_assets.dart';
 import 'package:stream_rate/screens/home/home.dart';
 
@@ -45,22 +48,12 @@ class ThanksState extends State<Thanks> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     LoadImageSimple(
-                      image: 'assets/images/streamrate-logo.png',
+                      image: 'assets/images/sub3-logo.png',
                       width: deviceWidth * 0.4,
                     ),
-                    const SizedBox(height: 10),
-                    CustomFillButton(
-                        width: deviceWidth * 0.3,
-                        height: 30,
-                        child: Text("PREMIUM",
-                            textAlign: TextAlign.center,
-                            style: GoogleFonts.poppins(
-                                color: colorWhite,
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold))),
-                    const SizedBox(height: 60),
+                    SizedBox(height: deviceHeight * 0.1),
                     Container(
-                      padding: const EdgeInsets.all(16),
+                      padding: EdgeInsets.all(deviceWidth * 0.06),
                       width: deviceWidth * 0.9,
                       height: deviceHeight * 0.4,
                       decoration: BoxDecoration(
@@ -71,32 +64,43 @@ class ThanksState extends State<Thanks> {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          LoadImageSimple(
-                              image: "assets/images/thanks_main.png",
-                              width: deviceWidth * 0.5),
-                          Container(
-                              padding: const EdgeInsets.symmetric(
-                                  vertical: 20, horizontal: 60),
-                              child: Text(
-                                  "Thank you for subscribing for StreamRate Premium",
-                                  textAlign: TextAlign.center,
-                                  style: GoogleFonts.poppins(fontSize: 18))),
-                          CustomFillButton(
-                            onPressed: () =>
-                                openScreenWithResult(context, const Home()),
-                            width: deviceWidth * 0.4,
-                            isColorBtn: true,
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text("GO BACK HOME",
-                                    style: GoogleFonts.poppins(
-                                        fontSize: 16, color: colorWhite)),
-                                const SizedBox(width: 2),
-                                const Icon(Icons.chevron_right,
-                                    size: 18, color: colorWhite)
-                              ],
+                          Expanded(
+                            flex: 3,
+                            child: LoadImageSimple(
+                                image: "assets/images/thanks_main.png",
+                                width: deviceWidth * 0.5),
+                          ),
+                          Expanded(
+                            flex: 2,
+                            child: Center(
+                              child: Container(
+                                  child: Text(
+                                      "Thank you for subscribing for StreamRate Premium",
+                                      textAlign: TextAlign.center,
+                                      style: GoogleFonts.poppins(
+                                          fontSize: deviceHeight * 0.02))),
+                            ),
+                          ),
+                          Expanded(
+                            child: CustomFillButton(
+                              onPressed: () =>
+                                  openScreenWithResult(context, const Home()),
+                              width: deviceWidth * 0.45,
+                              isColorBtn: true,
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text("GO BACK HOME",
+                                      style: GoogleFonts.poppins(
+                                          fontSize: deviceHeight * 0.018,
+                                          color: colorWhite)),
+                                  const SizedBox(width: 2),
+                                  Icon(Icons.chevron_right,
+                                      size: deviceHeight * 0.018,
+                                      color: colorWhite)
+                                ],
+                              ),
                             ),
                           ),
                         ],

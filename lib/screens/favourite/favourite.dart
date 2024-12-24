@@ -56,6 +56,14 @@ class FavouriteState extends State<Favourite> {
         rottenTomatoes: 86,
         letterboxd: 3.2),
     ItemCardModel(
+        image: 'assets/images/item_card4.png',
+        itemName: 'Casablanca',
+        year: 1942,
+        imdb: 7.7,
+        metacritic: 7.9,
+        rottenTomatoes: 88,
+        letterboxd: 4.0),
+    ItemCardModel(
         image: 'assets/images/item_card5.png',
         itemName: 'Parasite',
         year: 2019,

@@ -1,7 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:stream_rate/commonView/custom_check_text.dart';
 import 'package:stream_rate/commonView/load_image_with_placeholder.dart';
+import 'package:stream_rate/constant/constant.dart';
 import 'package:stream_rate/screens/subscription/thanks.dart';
 
 import 'package:stream_rate/utils/utils.dart';
@@ -36,173 +39,225 @@ class SubScriptionThirdState extends State<SubScriptionThird> {
             color: colorPrimary,
             image: DecorationImage(
                 image: AssetImage("assets/images/onboard1BG.png"),
-                fit: BoxFit.cover)),
+                fit: BoxFit.fill)),
         child: Stack(children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30),
+            padding: EdgeInsets.symmetric(
+                horizontal: 30, vertical: deviceHeight * 0.095),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                LoadImageSimple(
-                  image: 'assets/images/streamrate-logo.png',
-                  width: deviceWidth * 0.4,
+                Expanded(
+                  child: LoadImageSimple(
+                    image: 'assets/images/sub3-logo.png',
+                    width: deviceWidth * 0.35,
+                  ),
                 ),
-                const SizedBox(height: 40),
-                Stack(
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.all(16),
-                      margin: const EdgeInsets.only(bottom: 30),
-                      width: deviceWidth * 0.9,
-                      decoration: BoxDecoration(
-                        color: colorWhite,
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                      child: Column(children: [
-                        Container(
-                          padding: const EdgeInsets.symmetric(vertical: 10),
-                          child: LoadImageSimple(
-                            image: "assets/images/subscribe_main.png",
-                            width: deviceWidth * 0.3,
-                          ),
+                SizedBox(
+                  height: deviceHeight * 0.025,
+                ),
+                Expanded(
+                  flex: 5,
+                  child: Stack(
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 10, horizontal: 10),
+                        // height: deviceHeight * 0.85,
+                        decoration: BoxDecoration(
+                          color: colorWhite,
+                          borderRadius: BorderRadius.circular(30),
                         ),
-                        Text("Go Unlimited with Premium",
-                            style: GoogleFonts.poppins(fontSize: 18)),
-                        const SizedBox(height: 5),
-                        Container(
-                          padding: const EdgeInsets.all(3),
-                          width: deviceWidth * 0.8,
-                          decoration: BoxDecoration(
-                            color: colorMainBackground,
-                            borderRadius: BorderRadius.circular(20.0),
-                            gradient: const LinearGradient(
-                              colors: [Color(0xFFED1945), Color(0xFFF79B1E)],
-                              begin: Alignment.bottomLeft,
-                              end: Alignment.topRight,
+                        child: Column(children: [
+                          Expanded(
+                            flex: 3,
+                            child: Container(
+                              padding: const EdgeInsets.only(bottom: 10),
+                              child: LoadImageSimple(
+                                image: "assets/images/subscribe_main.png",
+                                width: deviceWidth * 0.4,
+                              ),
                             ),
                           ),
-                          child: Container(
-                            padding: const EdgeInsets.all(16.0),
-                            width: deviceWidth * 0.75,
-                            decoration: BoxDecoration(
-                                color: colorWhite,
-                                borderRadius: BorderRadius.circular(20)),
-                            child: Column(children: [
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.baseline,
-                                textBaseline: TextBaseline.alphabetic,
-                                children: [
-                                  ShaderMask(
-                                    shaderCallback: (Rect bounds) {
-                                      return const LinearGradient(
-                                        colors: [
-                                          Color(0xFFED1945),
-                                          Color(0xFFF79B1E)
-                                        ],
-                                        begin: Alignment.topLeft,
-                                        end: Alignment.bottomRight,
-                                      ).createShader(bounds);
-                                    },
-                                    child: Text(
-                                      "\$2.99 ",
-                                      style: GoogleFonts.poppins(
-                                        fontSize: 30,
-                                        color: colorWhite,
-                                        fontWeight: FontWeight.bold,
-                                      ),
+                          Expanded(
+                            child: Text("Go Unlimited with Premium",
+                                style: GoogleFonts.poppins(
+                                    fontSize: deviceHeight * 0.022)),
+                          ),
+                          Expanded(
+                            flex: 10,
+                            child: Container(
+                              padding: const EdgeInsets.all(3),
+                              decoration: BoxDecoration(
+                                color: colorMainBackground,
+                                borderRadius: BorderRadius.circular(20.0),
+                                gradient: const LinearGradient(
+                                  colors: [
+                                    Color(0xFFED1945),
+                                    Color(0xFFF79B1E)
+                                  ],
+                                  begin: Alignment.bottomLeft,
+                                  end: Alignment.topRight,
+                                ),
+                              ),
+                              child: Container(
+                                padding: const EdgeInsets.all(16.0),
+                                decoration: BoxDecoration(
+                                    color: colorWhite,
+                                    borderRadius: BorderRadius.circular(20)),
+                                child: Column(children: [
+                                  Expanded(
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.baseline,
+                                      textBaseline: TextBaseline.alphabetic,
+                                      children: [
+                                        ShaderMask(
+                                          shaderCallback: (Rect bounds) {
+                                            return const LinearGradient(
+                                              colors: [
+                                                Color(0xFFED1945),
+                                                Color(0xFFF79B1E)
+                                              ],
+                                              begin: Alignment.topLeft,
+                                              end: Alignment.bottomRight,
+                                            ).createShader(bounds);
+                                          },
+                                          child: Text(
+                                            "\$2.99 ",
+                                            style: GoogleFonts.poppins(
+                                              fontSize: deviceHeight * 0.03,
+                                              color: colorWhite,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                        ),
+                                        Text("/ ",
+                                            style: GoogleFonts.poppins(
+                                                fontSize: deviceHeight * 0.03,
+                                                color: Colors.black)),
+                                        Text("week",
+                                            style: GoogleFonts.poppins(
+                                                fontSize: deviceHeight * 0.024,
+                                                color: colorBlack)),
+                                      ],
                                     ),
                                   ),
-                                  Text("/ ",
-                                      style: GoogleFonts.poppins(
-                                          fontSize: 20, color: Colors.black)),
-                                  Text("week",
-                                      style: GoogleFonts.poppins(
-                                          fontSize: 20, color: colorBlack)),
-                                ],
+                                  SizedBox(height: deviceHeight * 0.015),
+                                  Expanded(
+                                    flex: 10,
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      // mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        IconWithText(
+                                          text: "Unlimited Access",
+                                          backgroundColor:
+                                              Colors.black.withOpacity(0.1),
+                                          fontColor: colorBlack,
+                                        ),
+                                        IconWithText(
+                                          text: "Priority Support",
+                                          backgroundColor:
+                                              Colors.black.withOpacity(0.1),
+                                          fontColor: colorBlack,
+                                        ),
+                                        IconWithText(
+                                          text: "Access to Series and TV shows",
+                                          backgroundColor:
+                                              Colors.black.withOpacity(0.1),
+                                          fontColor: colorBlack,
+                                        ),
+                                        IconWithText(
+                                          text: "Stop wasting time choosing",
+                                          backgroundColor:
+                                              Colors.black.withOpacity(0.1),
+                                          fontColor: colorBlack,
+                                        ),
+                                        IconWithText(
+                                          text: "Unlimited Catalog",
+                                          backgroundColor:
+                                              Colors.black.withOpacity(0.1),
+                                          fontColor: colorBlack,
+                                        ),
+                                        IconWithText(
+                                          text: "Ad-Free Experience",
+                                          backgroundColor:
+                                              Colors.black.withOpacity(0.1),
+                                          fontColor: colorBlack,
+                                        ),
+                                        IconWithText(
+                                          text: "Exclusive Features",
+                                          backgroundColor:
+                                              Colors.black.withOpacity(0.1),
+                                          fontColor: colorBlack,
+                                        ),
+                                      ],
+                                    ),
+                                  )
+                                ]),
                               ),
-                              const SizedBox(height: 15),
-                              IconWithText(
-                                text: "Unlimited Access",
-                                backgroundColor: Colors.black.withOpacity(0.1),
-                                fontColor: colorBlack,
-                              ),
-                              IconWithText(
-                                text: "Priority Support",
-                                backgroundColor: Colors.black.withOpacity(0.1),
-                                fontColor: colorBlack,
-                              ),
-                              IconWithText(
-                                text: "Access to Series and TV shows",
-                                backgroundColor: Colors.black.withOpacity(0.1),
-                                fontColor: colorBlack,
-                              ),
-                              IconWithText(
-                                text: "Stop wasting time choosing",
-                                backgroundColor: Colors.black.withOpacity(0.1),
-                                fontColor: colorBlack,
-                              ),
-                              IconWithText(
-                                text: "Unlimited Catalog",
-                                backgroundColor: Colors.black.withOpacity(0.1),
-                                fontColor: colorBlack,
-                              ),
-                              IconWithText(
-                                text: "Ad-Free Experience",
-                                backgroundColor: Colors.black.withOpacity(0.1),
-                                fontColor: colorBlack,
-                              ),
-                              IconWithText(
-                                text: "Exclusive Features",
-                                backgroundColor: Colors.black.withOpacity(0.1),
-                                fontColor: colorBlack,
-                              ),
-                            ]),
+                            ),
                           ),
-                        ),
-                        const SizedBox(height: 20),
-                      ]),
-                    ),
-                    Positioned(
-                      bottom: 0,
-                      left: 60,
-                      right: 60,
-                      child: CustomFillButton(
-                        onPressed: () =>
-                            openScreenWithResult(context, const Thanks()),
-                        isColorBtn: true,
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text("PAY \$2.99",
-                                style: GoogleFonts.poppins(
-                                    fontSize: 16, color: colorWhite)),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Text("SUBSCRIBE",
-                                    style: GoogleFonts.poppins(
-                                        fontSize: 16, color: colorWhite)),
-                                const SizedBox(width: 2),
-                                const Icon(Icons.chevron_right,
-                                    size: 16, color: colorWhite)
-                              ],
-                            )
-                          ],
-                        ),
+                        ]),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ],
             ),
           ),
           Positioned(
-            top: 50,
-            left: 20,
+            bottom: deviceHeight * 0.035,
+            left: deviceWidth * 0.125,
+            right: deviceWidth * 0.125,
+            child: CustomFillButton(
+              onPressed: () => openScreenWithResult(context, const Thanks()),
+              isColorBtn: true,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 5),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text("You pay",
+                            style: GoogleFonts.poppins(
+                                fontSize: deviceHeight * 0.012,
+                                color: colorWhite)),
+                        Text("\$2.99",
+                            style: GoogleFonts.poppins(
+                                fontSize: deviceHeight * 0.014,
+                                color: colorWhite)),
+                      ],
+                    ),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text("SUBSCRIBE",
+                          style: GoogleFonts.poppins(
+                              fontSize: deviceHeight * 0.018,
+                              color: colorWhite)),
+                      const SizedBox(width: 2),
+                      Icon(Icons.chevron_right,
+                          size: deviceHeight * 0.018, color: colorWhite)
+                    ],
+                  )
+                ],
+              ),
+            ),
+          ),
+          Positioned(
+            top: deviceHeight * 0.06,
+            left: deviceWidth * 0.05,
             child: GestureDetector(
               onTap: () => Navigator.pop(context),
               child: Container(
