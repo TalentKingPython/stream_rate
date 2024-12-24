@@ -40,13 +40,14 @@ class OnboardTwoState extends State<OnboardTwo> {
             LoadImageSimple(
               image: "assets/images/onboard2BG.png",
               width: deviceWidth,
-              height: deviceHeight * 0.75,
+              height: (deviceHeight - 70) * 0.85,
               imageFit: BoxFit.fill,
             ),
-            SizedBox(height: deviceHeight * 0.01),
+            SizedBox(height: (deviceHeight - 70) * 0.01),
             Text("Point your phone at the TV and press the",
-                style: GoogleFonts.poppins(color: colorWhite, fontSize: 14)),
-            SizedBox(height: deviceHeight * 0.005),
+                style: GoogleFonts.poppins(
+                    color: colorWhite, fontSize: deviceAverageSize * 0.02)),
+            SizedBox(height: (deviceHeight - 70) * 0.005),
             Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.baseline,
@@ -54,12 +55,14 @@ class OnboardTwoState extends State<OnboardTwo> {
                 children: [
                   SvgPicture.asset("assets/svgs/press_button.svg"),
                   Text(" button to view the scores.",
-                      style:
-                          GoogleFonts.poppins(color: colorWhite, fontSize: 14))
+                      style: GoogleFonts.poppins(
+                          color: colorWhite,
+                          fontSize: deviceAverageSize * 0.02))
                 ]),
-            SizedBox(height: deviceHeight * 0.01),
+            SizedBox(height: (deviceHeight - 70) * 0.01),
             Text("Results improve with the movie or series name.",
-                style: GoogleFonts.poppins(color: colorMainGray, fontSize: 14))
+                style: GoogleFonts.poppins(
+                    color: colorMainGray, fontSize: deviceAverageSize * 0.02))
           ],
         ),
       ),
