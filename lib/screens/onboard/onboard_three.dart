@@ -41,14 +41,14 @@ class OnboardThreeState extends State<OnboardThree> {
                 LoadImageSimple(
                   image: "assets/images/onboard3BG.png",
                   width: deviceWidth,
-                  height: deviceHeight * 0.98,
+                  height: deviceHeight,
                   imageFit: BoxFit.fill,
                 ),
               ],
             ),
           ),
           Positioned(
-              bottom: deviceHeight * 0.12,
+              bottom: 70 + (deviceHeight - 70) * 0.06,
               left: deviceWidth * 0.25,
               right: deviceWidth * 0.25,
               child: Text(
@@ -56,26 +56,27 @@ class OnboardThreeState extends State<OnboardThree> {
                 textAlign: TextAlign.center,
                 style: GoogleFonts.poppins(
                   color: colorWhite,
-                  fontSize: deviceHeight * 0.02,
-                  ),
+                  fontSize: deviceAverageSize * 0.02,
+                ),
               )),
           Positioned(
-              top: deviceHeight * 0.44,
+              top: (deviceHeight - 70) * 0.44,
               left: deviceWidth * 0.12,
               child: Container(
                 width: deviceWidth * 0.26,
-                height: deviceHeight * 0.035,
+                height: (deviceHeight - 70) * 0.035,
                 decoration: BoxDecoration(
                     color: colorMainGray.withOpacity(0.85),
-                    borderRadius: BorderRadius.circular(20)),
+                    borderRadius:
+                        BorderRadius.circular(deviceAverageSize * 0.02)),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     LoadImageSimple(
                         image: "assets/images/letter.png",
-                        width: deviceWidth * 0.065,
-                        height: deviceHeight * 0.1),
+                        width: deviceAverageSize * 0.035,
+                        height: deviceAverageSize * 0.035),
                     SizedBox(width: deviceWidth * 0.001),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -86,17 +87,18 @@ class OnboardThreeState extends State<OnboardThree> {
                             textAlign: TextAlign.center,
                             style: GoogleFonts.poppins(
                                 color: colorWhite,
-                                fontSize: deviceHeight * 0.023)),
+                                fontSize: deviceAverageSize * 0.022)),
                         Text("/ ",
                             textAlign: TextAlign.center,
                             style: GoogleFonts.poppins(
                                 color: colorWhite,
-                                fontSize: deviceHeight * 0.02)),
+                                fontSize: deviceAverageSize * 0.018)),
                         Text(
                           " 5",
                           textAlign: TextAlign.center,
                           style: GoogleFonts.poppins(
-                              color: colorWhite, fontSize: deviceHeight * 0.02),
+                              color: colorWhite,
+                              fontSize: deviceAverageSize * 0.02),
                         ),
                       ],
                     ),
@@ -104,22 +106,22 @@ class OnboardThreeState extends State<OnboardThree> {
                 ),
               )),
           Positioned(
-              top: deviceHeight * 0.38,
+              top: (deviceHeight - 70) * 0.38,
               right: deviceWidth * 0.08,
               child: Container(
                 width: deviceWidth * 0.26,
-                height: deviceHeight * 0.035,
+                height: (deviceHeight - 70) * 0.035,
                 decoration: BoxDecoration(
                     color: colorMainGray.withOpacity(0.85),
-                    borderRadius: BorderRadius.circular(20)),
+                    borderRadius:
+                        BorderRadius.circular(deviceAverageSize * 0.02)),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     LoadImageSimple(
                         image: "assets/images/meta.png",
-                        width: deviceWidth * 0.065,
-                        height: deviceHeight * 0.1),
+                        width: deviceAverageSize * 0.035),
                     SizedBox(width: deviceWidth * 0.001),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -130,17 +132,18 @@ class OnboardThreeState extends State<OnboardThree> {
                             textAlign: TextAlign.center,
                             style: GoogleFonts.poppins(
                                 color: colorWhite,
-                                fontSize: deviceHeight * 0.023)),
+                                fontSize: deviceAverageSize * 0.022)),
                         Text("/ ",
                             textAlign: TextAlign.center,
                             style: GoogleFonts.poppins(
                                 color: colorWhite,
-                                fontSize: deviceHeight * 0.02)),
+                                fontSize: deviceAverageSize * 0.018)),
                         Text(
                           " 10",
                           textAlign: TextAlign.center,
                           style: GoogleFonts.poppins(
-                              color: colorWhite, fontSize: deviceHeight * 0.02),
+                              color: colorWhite,
+                              fontSize: deviceAverageSize * 0.02),
                         ),
                       ],
                     ),
@@ -148,22 +151,22 @@ class OnboardThreeState extends State<OnboardThree> {
                 ),
               )),
           Positioned(
-              top: deviceHeight * 0.51,
+              top: (deviceHeight - 70) * 0.51,
               left: deviceWidth * 0.15,
               child: Container(
                 width: deviceWidth * 0.26,
-                height: deviceHeight * 0.035,
+                height: (deviceHeight - 70) * 0.035,
                 decoration: BoxDecoration(
                     color: colorMainGray.withOpacity(0.85),
-                    borderRadius: BorderRadius.circular(20)),
+                    borderRadius:
+                        BorderRadius.circular(deviceAverageSize * 0.02)),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     LoadImageSimple(
                         image: "assets/images/imdb.png",
-                        width: deviceWidth * 0.065,
-                        height: deviceHeight * 0.1),
+                        width: deviceAverageSize * 0.035),
                     SizedBox(width: deviceWidth * 0.001),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -174,17 +177,18 @@ class OnboardThreeState extends State<OnboardThree> {
                             textAlign: TextAlign.center,
                             style: GoogleFonts.poppins(
                                 color: colorWhite,
-                                fontSize: deviceHeight * 0.023)),
+                                fontSize: deviceAverageSize * 0.022)),
                         Text("/ ",
                             textAlign: TextAlign.center,
                             style: GoogleFonts.poppins(
                                 color: colorWhite,
-                                fontSize: deviceHeight * 0.02)),
+                                fontSize: deviceAverageSize * 0.018)),
                         Text(
                           " 10",
                           textAlign: TextAlign.center,
                           style: GoogleFonts.poppins(
-                              color: colorWhite, fontSize: deviceHeight * 0.02),
+                              color: colorWhite,
+                              fontSize: deviceAverageSize * 0.02),
                         ),
                       ],
                     ),
@@ -192,14 +196,15 @@ class OnboardThreeState extends State<OnboardThree> {
                 ),
               )),
           Positioned(
-              top: deviceHeight * 0.45,
+              top: (deviceHeight - 70) * 0.45,
               right: deviceWidth * 0.05,
               child: Container(
                 width: deviceWidth * 0.26,
-                height: deviceHeight * 0.035,
+                height: (deviceHeight - 70) * 0.035,
                 decoration: BoxDecoration(
                     color: colorMainGray.withOpacity(0.85),
-                    borderRadius: BorderRadius.circular(20)),
+                    borderRadius:
+                        BorderRadius.circular(deviceAverageSize * 0.02)),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -207,8 +212,7 @@ class OnboardThreeState extends State<OnboardThree> {
                   children: [
                     LoadImageSimple(
                         image: "assets/images/tomato.png",
-                        width: deviceWidth * 0.05,
-                        height: deviceHeight * 0.05),
+                        width: deviceAverageSize * 0.03),
                     SizedBox(width: deviceWidth * 0.001),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -219,12 +223,12 @@ class OnboardThreeState extends State<OnboardThree> {
                             textAlign: TextAlign.center,
                             style: GoogleFonts.poppins(
                                 color: colorWhite,
-                                fontSize: deviceHeight * 0.023)),
+                                fontSize: deviceAverageSize * 0.02)),
                         Text("%",
                             textAlign: TextAlign.center,
                             style: GoogleFonts.poppins(
                                 color: colorWhite,
-                                fontSize: deviceHeight * 0.02)),
+                                fontSize: deviceAverageSize * 0.02)),
                       ],
                     ),
                   ],

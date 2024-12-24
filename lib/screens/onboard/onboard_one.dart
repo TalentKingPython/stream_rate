@@ -42,29 +42,31 @@ class OnboardOneState extends State<OnboardOne> {
             LoadImageSimple(
                 image: "assets/images/streamrate-logo.png",
                 width: deviceWidth * 0.4),
-            const SizedBox(height: 50),
+            SizedBox(height: (deviceHeight - 70) * 0.05),
             Text("Welcome!",
-                style: GoogleFonts.poppins(color: colorWhite, fontSize: 26)),
+                style: GoogleFonts.poppins(
+                    color: colorWhite, fontSize: deviceAverageSize * 0.04)),
             Text("We are happy to see you here.",
-                style: GoogleFonts.poppins(color: colorWhite, fontSize: 18)),
-            const SizedBox(height: 50),
+                style: GoogleFonts.poppins(
+                    color: colorWhite, fontSize: deviceAverageSize * 0.027)),
+            SizedBox(height: (deviceHeight - 70) * 0.05),
             LoadImageSimple(
                 image: "assets/images/onboard_free.png",
                 width: deviceWidth * 0.6),
-            const SizedBox(height: 50),
+            SizedBox(height: (deviceHeight - 70) * 0.05),
             Text("Streamrate is very easy to use.",
                 style: GoogleFonts.poppins(
                     color: colorWhite,
-                    fontSize: 18,
+                    fontSize: deviceAverageSize * 0.027,
                     fontWeight: FontWeight.w600)),
-            const SizedBox(height: 10),
+            SizedBox(height: (deviceHeight - 70) * 0.01),
             SizedBox(
               width: deviceWidth * 0.5,
               child: Text("You will receive 5 free credits every month.",
                   textAlign: TextAlign.center,
                   style: GoogleFonts.poppins(
                       color: colorWhite,
-                      fontSize: 18,
+                      fontSize: deviceAverageSize * 0.025,
                       fontWeight: FontWeight.w400)),
             ),
           ],

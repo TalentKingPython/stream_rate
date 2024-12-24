@@ -64,12 +64,12 @@ class EmailSignUpState extends State<EmailSignUp> {
                   height: deviceHeight * 0.1,
                 ),
                 Container(
-                  padding: const EdgeInsets.symmetric(vertical: 20),
+                  padding: EdgeInsets.symmetric(vertical: deviceHeight * 0.02),
                   child: Text(
                     "Create an account",
                     textAlign: TextAlign.center,
                     style: GoogleFonts.poppins(
-                        color: colorWhite, fontSize: deviceHeight * 0.03),
+                        color: colorWhite, fontSize: deviceAverageSize * 0.03),
                   ),
                 ),
                 const CustomTextFormField(
@@ -112,7 +112,8 @@ class EmailSignUpState extends State<EmailSignUp> {
                   width: double.infinity,
                   child: Text('Do you have a voucher code?',
                       style: GoogleFonts.poppins(
-                          fontSize: deviceHeight * 0.02, color: colorWhite)),
+                          fontSize: deviceAverageSize * 0.02,
+                          color: colorWhite)),
                 ),
                 SizedBox(height: deviceHeight * 0.01),
                 const CustomTextFormField(
@@ -132,8 +133,8 @@ class EmailSignUpState extends State<EmailSignUp> {
                           });
                         },
                         child: Container(
-                          width: 24,
-                          height: 24,
+                          width: deviceAverageSize * 0.02,
+                          height: deviceAverageSize * 0.02,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(8),
                             border: Border.all(
@@ -145,22 +146,23 @@ class EmailSignUpState extends State<EmailSignUp> {
                                 : Colors.transparent,
                           ),
                           child: isChecked
-                              ? const Icon(Icons.check,
-                                  size: 20, color: colorWhite)
+                              ? Icon(Icons.check,
+                                  size: deviceAverageSize * 0.017,
+                                  color: colorWhite)
                               : null,
                         ),
                       ),
                       Text('   I accept the ',
                           style: GoogleFonts.poppins(
                             color: colorWhite,
-                            fontSize: deviceHeight * 0.02,
+                            fontSize: deviceAverageSize * 0.02,
                           )),
                       GestureDetector(
                         onTap: () {},
                         child: Text(
                           'Terms & Conditions',
                           style: GoogleFonts.poppins(
-                            fontSize: deviceHeight * 0.02,
+                            fontSize: deviceAverageSize * 0.02,
                             color: colorWhite,
                             decoration: TextDecoration.underline,
                           ),
@@ -178,7 +180,7 @@ class EmailSignUpState extends State<EmailSignUp> {
                     'CREATE ACCOUNT',
                     style: GoogleFonts.poppins(
                         color: colorWhite,
-                        fontSize: deviceHeight * 0.024,
+                        fontSize: deviceAverageSize * 0.024,
                         fontWeight: FontWeight.bold),
                   ),
                 ),
@@ -205,7 +207,7 @@ class EmailSignUpState extends State<EmailSignUp> {
                             child: Text(
                               "Log In",
                               style: GoogleFonts.poppins(
-                                fontSize: 16,
+                                fontSize: deviceAverageSize * 0.02,
                                 color: colorWhite,
                                 fontWeight: FontWeight.bold,
                               ),
@@ -220,21 +222,23 @@ class EmailSignUpState extends State<EmailSignUp> {
             ),
           ),
           Positioned(
-            top: 50,
-            left: 20,
+            top: deviceHeight * 0.05,
+            left: deviceWidth * 0.035,
             child: GestureDetector(
               onTap: () => Navigator.pop(context),
               child: Container(
-                height: 36,
-                width: 36,
-                padding: const EdgeInsets.symmetric(horizontal: 12),
+                height: deviceAverageSize * 0.04,
+                width: deviceAverageSize * 0.04,
+                padding:
+                    EdgeInsets.symmetric(horizontal: deviceAverageSize * 0.015),
                 decoration: BoxDecoration(
                   color: colorMainGray.withOpacity(0.7),
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius:
+                      BorderRadius.circular(deviceAverageSize * 0.012),
                 ),
-                child: const Center(
-                  child:
-                      Icon(Icons.arrow_back_ios, size: 16, color: colorWhite),
+                child: Center(
+                  child: Icon(Icons.arrow_back_ios,
+                      size: deviceAverageSize * 0.02, color: colorWhite),
                 ),
               ),
             ),

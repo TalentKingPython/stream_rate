@@ -61,22 +61,26 @@ class ConfirmEmailState extends State<ConfirmEmail> {
                     "Confirm Email",
                     textAlign: TextAlign.center,
                     style: GoogleFonts.poppins(
-                        color: colorWhite, fontSize: deviceWidth * 0.06),
+                        color: colorWhite, fontSize: deviceAverageSize * 0.06),
                   ),
                 ),
                 Text('We sent a 4-digit code to your',
                     style: GoogleFonts.poppins(
-                        color: colorWhite, fontSize: deviceWidth * 0.045)),
+                        color: colorWhite,
+                        fontSize: deviceAverageSize * 0.045)),
                 Text('email address to confirm it’s yours.',
                     style: GoogleFonts.poppins(
-                        color: colorWhite, fontSize: deviceWidth * 0.045)),
+                        color: colorWhite,
+                        fontSize: deviceAverageSize * 0.045)),
                 const SizedBox(height: 30),
                 Text('Please check your inbox and enter',
                     style: GoogleFonts.poppins(
-                        color: colorWhite, fontSize: deviceWidth * 0.045)),
+                        color: colorWhite,
+                        fontSize: deviceAverageSize * 0.045)),
                 Text('the code below.',
                     style: GoogleFonts.poppins(
-                        color: colorWhite, fontSize: deviceWidth * 0.045)),
+                        color: colorWhite,
+                        fontSize: deviceAverageSize * 0.045)),
                 SizedBox(height: deviceHeight * 0.06),
                 Container(
                   margin: EdgeInsetsDirectional.only(top: deviceHeight * 0.01),
@@ -132,14 +136,15 @@ class ConfirmEmailState extends State<ConfirmEmail> {
                   Text(
                     'Didn\'t receive the code?',
                     style: GoogleFonts.poppins(
-                        color: colorWhite, fontSize: deviceWidth * 0.035),
+                        color: colorWhite, fontSize: deviceAverageSize * 0.035),
                   ),
                   TextButton(
                     onPressed: () {},
                     child: Text(
                       'Resend it',
                       style: GoogleFonts.poppins(
-                          color: colorYellow, fontSize: deviceWidth * 0.035),
+                          color: colorYellow,
+                          fontSize: deviceAverageSize * 0.035),
                     ),
                   ),
                 ]),
