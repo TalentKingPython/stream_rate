@@ -5,7 +5,6 @@ import 'package:pin_code_fields/pin_code_fields.dart';
 
 import 'package:stream_rate/commonView/custom_fill_button.dart';
 import 'package:stream_rate/commonView/load_image_with_placeholder.dart';
-import 'package:stream_rate/constant/constant.dart';
 import 'package:stream_rate/screens/login/login.dart';
 import 'package:stream_rate/utils/utils.dart';
 
@@ -29,6 +28,8 @@ class ConfirmEmailState extends State<ConfirmEmail> {
 
   @override
   void dispose() {
+    _textEditingController.dispose();
+    otpFocusNode.dispose();
     super.dispose();
   }
 
@@ -36,54 +37,43 @@ class ConfirmEmailState extends State<ConfirmEmail> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: colorMainBackground,
-      body: Container(
-        width: deviceWidth,
-        // height: deviceHeight * 0.8,
-        decoration: const BoxDecoration(
-            color: colorPrimary,
-            image: DecorationImage(
-                image: AssetImage("assets/images/onboard1BG.png"),
-                fit: BoxFit.cover)),
-        child: Stack(children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 100),
+      body: Stack(
+        children: [
+          SingleChildScrollView(
+            padding: EdgeInsets.symmetric(
+                horizontal: deviceWidth * 0.08, vertical: deviceHeight * 0.12),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 LoadImageSimple(
                   image: 'assets/images/logowithname.png',
-                  width: deviceWidth * 0.4,
+                  width: deviceWidth * 0.45,
                 ),
-                Container(
-                  padding: const EdgeInsets.only(top: 50, bottom: 25),
+                Padding(
+                  padding: EdgeInsets.only(
+                      top: deviceHeight * 0.06, bottom: deviceHeight * 0.03),
                   child: Text(
                     "Confirm Email",
                     textAlign: TextAlign.center,
                     style: GoogleFonts.poppins(
-                        color: colorWhite, fontSize: deviceAverageSize * 0.06),
+                        color: colorWhite, fontSize: deviceHeight * 0.03),
                   ),
                 ),
                 Text('We sent a 4-digit code to your',
                     style: GoogleFonts.poppins(
-                        color: colorWhite,
-                        fontSize: deviceAverageSize * 0.045)),
+                        color: colorWhite, fontSize: deviceHeight * 0.02)),
                 Text('email address to confirm it’s yours.',
                     style: GoogleFonts.poppins(
-                        color: colorWhite,
-                        fontSize: deviceAverageSize * 0.045)),
-                const SizedBox(height: 30),
+                        color: colorWhite, fontSize: deviceHeight * 0.02)),
+                SizedBox(height: deviceHeight * 0.02),
                 Text('Please check your inbox and enter',
                     style: GoogleFonts.poppins(
-                        color: colorWhite,
-                        fontSize: deviceAverageSize * 0.045)),
+                        color: colorWhite, fontSize: deviceHeight * 0.02)),
                 Text('the code below.',
                     style: GoogleFonts.poppins(
-                        color: colorWhite,
-                        fontSize: deviceAverageSize * 0.045)),
-                SizedBox(height: deviceHeight * 0.06),
+                        color: colorWhite, fontSize: deviceHeight * 0.02)),
+                SizedBox(height: deviceHeight * 0.05),
                 Container(
-                  margin: EdgeInsetsDirectional.only(top: deviceHeight * 0.01),
                   width: double.infinity,
                   height: deviceHeight * 0.1,
                   child: PinCodeTextField(
@@ -96,16 +86,17 @@ class ConfirmEmailState extends State<ConfirmEmail> {
                     inputFormatters: [
                       FilteringTextInputFormatter.allow(RegExp('^[0-9]*\$'))
                     ],
-                    textStyle:
-                        GoogleFonts.poppins(color: colorWhite, fontSize: 20),
+                    textStyle: GoogleFonts.poppins(
+                        color: colorWhite, fontSize: deviceHeight * 0.025),
                     hintCharacter: "0",
                     hintStyle: GoogleFonts.poppins(
-                        color: colorMainLightGray, fontSize: 20),
+                        color: colorMainLightGray,
+                        fontSize: deviceHeight * 0.025),
                     pinTheme: PinTheme(
                       shape: PinCodeFieldShape.box,
                       borderRadius: BorderRadius.circular(25),
-                      fieldHeight: deviceAverageSize * 0.09,
-                      fieldWidth: deviceAverageSize * 0.12,
+                      fieldHeight: deviceHeight * 0.08,
+                      fieldWidth: deviceHeight * 0.09,
                       borderWidth: 1,
                       inactiveBorderWidth: 1,
                       activeBorderWidth: 1,
@@ -120,35 +111,46 @@ class ConfirmEmailState extends State<ConfirmEmail> {
                     animationDuration: const Duration(milliseconds: 300),
                     enableActiveFill: true,
                     onChanged: (value) {
-                      // bloc!.changeOtp(value);
+                      // Handle OTP change
                     },
                     beforeTextPaste: (text) {
                       return false;
                     },
                     onCompleted: (value) {
-                      // openScreenWithResult(context, const HomeMainV1());
-                      // bloc!.verify();
+                      // Handle OTP completion
                     },
                     appContext: context,
                   ),
                 ),
-                Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                  Text(
-                    'Didn\'t receive the code?',
-                    style: GoogleFonts.poppins(
-                        color: colorWhite, fontSize: deviceAverageSize * 0.035),
-                  ),
-                  TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      'Resend it',
+                SizedBox(height: deviceHeight * 0.15),
+              ],
+            ),
+          ),
+          Positioned(
+            bottom: deviceHeight * 0,
+            left: deviceWidth * 0.08,
+            right: deviceWidth * 0.08,
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Didn\'t receive the code?',
                       style: GoogleFonts.poppins(
-                          color: colorYellow,
-                          fontSize: deviceAverageSize * 0.035),
+                          color: colorWhite, fontSize: deviceHeight * 0.02),
                     ),
-                  ),
-                ]),
-                SizedBox(height: deviceHeight * 0.05),
+                    TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        'Resend it',
+                        style: GoogleFonts.poppins(
+                            color: colorYellow, fontSize: deviceHeight * 0.02),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: deviceHeight * 0.02),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -158,7 +160,7 @@ class ConfirmEmailState extends State<ConfirmEmail> {
                       },
                       isColorBtn: false,
                       width: deviceWidth * .39,
-                      height: 60,
+                      height: deviceHeight * 0.07,
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
@@ -168,7 +170,7 @@ class ConfirmEmailState extends State<ConfirmEmail> {
                             'Back',
                             style: GoogleFonts.poppins(
                                 color: colorWhite,
-                                fontSize: 20,
+                                fontSize: deviceHeight * 0.02,
                                 fontWeight: FontWeight.bold),
                           ),
                         ],
@@ -177,7 +179,7 @@ class ConfirmEmailState extends State<ConfirmEmail> {
                     CustomFillButton(
                       onPressed: onSubmit,
                       width: deviceWidth * .39,
-                      height: 60,
+                      height: deviceHeight * 0.07,
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
@@ -187,7 +189,7 @@ class ConfirmEmailState extends State<ConfirmEmail> {
                             'CONFIRM',
                             style: GoogleFonts.poppins(
                                 color: colorWhite,
-                                fontSize: 20,
+                                fontSize: deviceHeight * 0.02,
                                 fontWeight: FontWeight.bold),
                           ),
                         ],
@@ -198,27 +200,7 @@ class ConfirmEmailState extends State<ConfirmEmail> {
               ],
             ),
           ),
-          Positioned(
-            top: 50,
-            left: 20,
-            child: GestureDetector(
-              onTap: () => Navigator.pop(context),
-              child: Container(
-                height: 36,
-                width: 36,
-                padding: const EdgeInsets.symmetric(horizontal: 12),
-                decoration: BoxDecoration(
-                  color: colorMainGray.withOpacity(0.7),
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: const Center(
-                  child:
-                      Icon(Icons.arrow_back_ios, size: 16, color: colorWhite),
-                ),
-              ),
-            ),
-          ),
-        ]),
+        ],
       ),
     );
   }
