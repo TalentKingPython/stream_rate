@@ -91,16 +91,16 @@ class ProfileState extends State<Profile> {
                       ClipOval(
                         child: LoadImageSimple(
                           image: 'assets/images/default-avatar.jpg',
-                          width: deviceAverageSize * 0.34,
-                          height: deviceAverageSize * 0.34,
+                          width: deviceHeight * 0.25,
+                          height: deviceHeight * 0.25,
                         ),
                       ),
                       Positioned(
-                        right: deviceAverageSize * .01,
-                        bottom: deviceAverageSize * .01,
+                        right: deviceHeight * .012,
+                        bottom: deviceHeight * .012,
                         child: Container(
-                          width: deviceAverageSize * 0.06,
-                          height: deviceAverageSize * 0.06,
+                          width: deviceHeight * 0.045,
+                          height: deviceHeight * 0.045,
                           decoration: const BoxDecoration(
                             color: colorWhite,
                             shape: BoxShape.circle,
@@ -126,7 +126,7 @@ class ProfileState extends State<Profile> {
                   children: [
                     Text('Profile Details',
                         style: GoogleFonts.poppins(
-                            color: colorWhite, fontSize: 16)),
+                            color: colorWhite, fontSize: deviceHeight * 0.016)),
                     const Spacer(),
                     InkWell(
                       onTap: () =>
@@ -142,10 +142,11 @@ class ProfileState extends State<Profile> {
                   children: [
                     Text('Email',
                         style: GoogleFonts.poppins(
-                            fontSize: 14, color: whitecaptcha)),
+                            fontSize: deviceHeight * 0.015,
+                            color: whitecaptcha)),
                     Text('jimrobbins29@domain.com',
                         style: GoogleFonts.poppins(
-                            fontSize: 14, color: colorWhite)),
+                            fontSize: deviceHeight * 0.015, color: colorWhite)),
                   ],
                 ),
                 SizedBox(height: deviceHeight * 0.028),
@@ -154,10 +155,11 @@ class ProfileState extends State<Profile> {
                   children: [
                     Text('Phone',
                         style: GoogleFonts.poppins(
-                            fontSize: 14, color: whitecaptcha)),
+                            fontSize: deviceHeight * 0.015,
+                            color: whitecaptcha)),
                     Text('+078 0527 882',
                         style: GoogleFonts.poppins(
-                            fontSize: 14, color: colorWhite)),
+                            fontSize: deviceHeight * 0.015, color: colorWhite)),
                   ],
                 ),
                 SizedBox(height: deviceHeight * 0.028),
@@ -166,10 +168,11 @@ class ProfileState extends State<Profile> {
                   children: [
                     Text('Password',
                         style: GoogleFonts.poppins(
-                            fontSize: 14, color: whitecaptcha)),
+                            fontSize: deviceHeight * 0.015,
+                            color: whitecaptcha)),
                     Text('********',
                         style: GoogleFonts.poppins(
-                            fontSize: 14, color: colorWhite)),
+                            fontSize: deviceHeight * 0.015, color: colorWhite)),
                   ],
                 ),
               ],
@@ -182,8 +185,8 @@ class ProfileState extends State<Profile> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text('Subscription',
-                      style:
-                          GoogleFonts.poppins(color: colorWhite, fontSize: 16)),
+                      style: GoogleFonts.poppins(
+                          color: colorWhite, fontSize: deviceHeight * 0.016)),
                   const SizedBox(height: 10),
                   if (isSubscribed)
                     _subscribedContainer()
@@ -337,7 +340,7 @@ class ProfileState extends State<Profile> {
                     Text(
                       'You have only 3 credits left.',
                       style: GoogleFonts.poppins(
-                          color: colorWhite, fontSize: deviceHeight * 0.014),
+                          color: colorWhite, fontSize: deviceHeight * 0.015),
                     ),
                     SizedBox(height: deviceHeight * 0.008),
                     Row(

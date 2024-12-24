@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'package:stream_rate/constant/constant.dart';
 import 'package:stream_rate/screens/onboard/onboard.dart';
-import 'screens/splash/splash.dart';
+import 'package:device_preview/device_preview.dart';
 
 late SharedPreferences sharedPrefs;
 final navigatorKey = GlobalKey<NavigatorState>();
@@ -16,12 +16,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   sharedPrefs = await SharedPreferences.getInstance();
   runApp(const MyApp());
-  // runApp(
-  //   DevicePreview(
-  //     enabled: true,
-  //     builder: (context) => const MyApp(),
-  //   ),
-  // );
+  // runApp(DevicePreview(enabled: true, builder: (context) => const MyApp()));
 }
 
 class MyApp extends StatefulWidget {
@@ -72,9 +67,7 @@ class MyAppState extends State<MyApp> {
             elevation: 3,
             shadowColor: Color(0x33000000),
             systemOverlayStyle: SystemUiOverlayStyle.dark,
-            iconTheme: IconThemeData(
-              color: colorTextCommon,
-            ),
+            iconTheme: IconThemeData(color: colorTextCommon),
           ),
         ),
         builder: (context, child) {

@@ -1,8 +1,4 @@
-import 'dart:ffi';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:stream_rate/commonView/custom_fill_button.dart';
@@ -92,26 +88,22 @@ class EditProfileState extends State<EditProfile> {
               ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
+                children: const [
                   CustomTextFormField(
                     initialValue: 'Jim Robbins',
                     labelText: 'Username',
                     prefixIcon:
                         Icon(Icons.person_outline, color: colorMainLightGray),
                   ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  const CustomTextFormField(
+                  SizedBox(height: 20),
+                  CustomTextFormField(
                     initialValue: 'jimrobbins29@domain.com',
                     labelText: 'Email',
                     prefixIcon:
                         Icon(Icons.email_outlined, color: colorMainLightGray),
                   ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  const CustomTextFormField(
+                  SizedBox(height: 20),
+                  CustomTextFormField(
                     initialValue: '+078 0527 882',
                     labelText: 'Phone',
                     prefixIcon:
@@ -139,9 +131,7 @@ class EditProfileState extends State<EditProfile> {
                             : Icons.visibility_outlined,
                         color: colorMainLightGray),
                   ),
-                  SizedBox(
-                    height: 20,
-                  ),
+                  const SizedBox(height: 20),
                   CustomTextFormField(
                     isPassword: true,
                     labelText: 'Confirm Password',

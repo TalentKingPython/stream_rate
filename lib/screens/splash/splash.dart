@@ -77,8 +77,8 @@ class SplashState extends State<Splash> with SingleTickerProviderStateMixin {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                         LoadImageSimple(
-                            image: "assets/images/logowithname.png",
+                        LoadImageSimple(
+                            image: "assets/images/streamrate-logo.png",
                             width: deviceWidth * 0.35),
                         SizedBox(height: deviceHeight * 0.05),
                         SizedBox(

@@ -17,18 +17,17 @@ class ItemCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: deviceHeight * 0.135,
-      margin: const EdgeInsets.symmetric(
-        vertical: 8,
-      ),
+      margin: EdgeInsets.symmetric(vertical: deviceHeight * 0.01),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20), color: colorItemCard),
+          borderRadius: BorderRadius.circular(deviceHeight * 0.020),
+          color: colorItemCard),
       child: Row(
         children: [
           Expanded(
             child: ClipRRect(
-              borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(20),
-                  bottomLeft: Radius.circular(20)),
+              borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(deviceHeight * 0.020),
+                  bottomLeft: Radius.circular(deviceHeight * 0.020)),
               child: LoadImageSimple(
                 image: item.image,
                 imageFit: BoxFit.cover,
@@ -39,7 +38,7 @@ class ItemCard extends StatelessWidget {
           Expanded(
             flex: 3,
             child: Padding(
-              padding: const EdgeInsets.all(15),
+              padding: EdgeInsets.all(deviceHeight * 0.015),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -48,11 +47,11 @@ class ItemCard extends StatelessWidget {
                       Text('${item.itemName}  ',
                           style: GoogleFonts.poppins(
                               color: colorWhite,
-                              fontSize: deviceHeight * 0.025)),
-                      Text('(${item.year})',
+                              fontSize: deviceHeight * 0.02)),
+                      Text('( ${item.year} )',
                           style: GoogleFonts.poppins(
                               color: colorMainLightGray,
-                              fontSize: deviceHeight * 0.017)),
+                              fontSize: deviceHeight * 0.015)),
                       const Spacer(),
                       SvgPicture.asset('assets/svgs/like.svg'),
                     ],
@@ -70,12 +69,14 @@ class ItemCard extends StatelessWidget {
                             Text(
                               '${item.imdb}',
                               style: GoogleFonts.poppins(
-                                  color: colorWhite, fontSize: 16),
+                                  color: colorWhite,
+                                  fontSize: deviceHeight * 0.016),
                             ),
                             Text(
                               '  / 10',
                               style: GoogleFonts.poppins(
-                                  color: colorMainLightGray, fontSize: 12),
+                                  color: colorMainLightGray,
+                                  fontSize: deviceHeight * 0.012),
                             ),
                           ],
                         ),
@@ -91,12 +92,14 @@ class ItemCard extends StatelessWidget {
                           Text(
                             '${item.metacritic}',
                             style: GoogleFonts.poppins(
-                                color: colorWhite, fontSize: 16),
+                                color: colorWhite,
+                                fontSize: deviceHeight * 0.016),
                           ),
                           Text(
                             '  / 10',
                             style: GoogleFonts.poppins(
-                                color: colorMainLightGray, fontSize: 12),
+                                color: colorMainLightGray,
+                                fontSize: deviceHeight * 0.012),
                           ),
                         ],
                       ))
@@ -115,7 +118,8 @@ class ItemCard extends StatelessWidget {
                           Text(
                             '${item.rottenTomatoes} %',
                             style: GoogleFonts.poppins(
-                                color: colorWhite, fontSize: 16),
+                                color: colorWhite,
+                                fontSize: deviceHeight * 0.016),
                           ),
                         ],
                       )),
@@ -130,12 +134,14 @@ class ItemCard extends StatelessWidget {
                           Text(
                             '${item.letterboxd}',
                             style: GoogleFonts.poppins(
-                                color: colorWhite, fontSize: 16),
+                                color: colorWhite,
+                                fontSize: deviceHeight * 0.016),
                           ),
                           Text(
                             '  / 10',
                             style: GoogleFonts.poppins(
-                                color: colorMainLightGray, fontSize: 12),
+                                color: colorMainLightGray,
+                                fontSize: deviceHeight * 0.012),
                           ),
                         ],
                       ))
