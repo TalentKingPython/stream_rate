@@ -91,13 +91,13 @@ class ProfileState extends State<Profile> {
                       ClipOval(
                         child: LoadImageSimple(
                           image: 'assets/images/default-avatar.jpg',
-                          width: deviceHeight * 0.25,
-                          height: deviceHeight * 0.25,
+                          width: deviceHeight * 0.18,
+                          height: deviceHeight * 0.18,
                         ),
                       ),
                       Positioned(
-                        right: deviceHeight * .012,
-                        bottom: deviceHeight * .012,
+                        right: deviceHeight * .005,
+                        bottom: deviceHeight * .005,
                         child: Container(
                           width: deviceHeight * 0.045,
                           height: deviceHeight * 0.045,

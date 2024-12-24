@@ -43,7 +43,7 @@ class ResultState extends State<Result> {
                   ),
                 ),
                 Positioned(
-                  left: width * 0.05,
+                  left: width * 0.06,
                   bottom: height * 0.39,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -78,7 +78,7 @@ class ResultState extends State<Result> {
                 ),
                 Positioned(
                     bottom: height * 0.42,
-                    right: width * 0.05,
+                    right: width * 0.04,
                     child: Row(
                       children: [
                         _buildIconButton(AppImageAsset.dislike,
@@ -92,15 +92,15 @@ class ResultState extends State<Result> {
                       ],
                     )),
                 Positioned(
-                  left: width * 0.05,
-                  right: width * 0.05,
+                  left: width * 0.04,
+                  right: width * 0.04,
                   bottom: height * 0.33,
                   child: _buildRatingSection(width, height),
                 ),
                 Positioned(
-                  left: width * 0.05,
-                  right: width * 0.05,
-                  bottom: height * 0.1,
+                  left: width * 0.04,
+                  right: width * 0.04,
+                  bottom: height * 0.11,
                   child: _buildRatingsList(width, height),
                 ),
                 Positioned(
@@ -295,7 +295,7 @@ class ResultState extends State<Result> {
                           color: colorWhite, fontSize: width * 0.04)),
                   Text('\$2.99',
                       style: GoogleFonts.poppins(color: colorDestination)),
-                  Text('eek',
+                  Text(' week',
                       style: GoogleFonts.poppins(
                           color: colorWhite, fontSize: width * 0.04)),
                 ],

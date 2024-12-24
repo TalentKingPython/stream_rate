@@ -53,18 +53,19 @@ class _CaptureContentState extends State<_CaptureContent> {
         ),
         child: SafeArea(
           child: SingleChildScrollView(
+            physics: NeverScrollableScrollPhysics(),
             child: Padding(
               padding: EdgeInsets.symmetric(
-                horizontal: widget.width * 0.08,
-                vertical: widget.height * 0.02,
+                horizontal: widget.width * 0.12,
+                vertical: widget.height * 0.004,
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   _buildLogo(),
-                  SizedBox(height: widget.height * 0.06),
+                  SizedBox(height: widget.height * 0.04),
                   _buildInstructions(),
-                  SizedBox(height: widget.height * 0.06),
+                  SizedBox(height: widget.height * 0.04),
                   _buildCaptchaContainer(),
                 ],
               ),

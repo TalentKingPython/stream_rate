@@ -121,8 +121,9 @@ class HomeState extends State<Home> {
                     color: whiteLowOpacity,
                     image: const DecorationImage(
                         image: AssetImage(
-                      AppImageAsset.bottombar,
-                    )),
+                          AppImageAsset.bottombar,
+                        ),
+                        fit: BoxFit.fill),
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
