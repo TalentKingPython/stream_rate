@@ -40,7 +40,7 @@ class OnboardTwoState extends State<OnboardTwo> {
             LoadImageSimple(
               image: "assets/images/onboard2BG.png",
               width: deviceWidth,
-              height: (deviceHeight - 70) * 0.85,
+              height: (deviceHeight - 70) * 0.88,
               imageFit: BoxFit.fill,
             ),
             SizedBox(height: (deviceHeight - 70) * 0.01),

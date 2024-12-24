@@ -82,13 +82,13 @@ class SplashState extends State<Splash> with SingleTickerProviderStateMixin {
                             width: deviceWidth * 0.35),
                         SizedBox(height: deviceHeight * 0.05),
                         SizedBox(
-                            width: deviceWidth * 0.43,
+                            width: deviceWidth * 0.3,
                             child: Text(
                               "Movie and series ratings at your fingertips",
                               textAlign: TextAlign.center,
                               style: GoogleFonts.poppins(
                                   color: colorWhite,
-                                  fontSize: deviceAverageSize * 0.022),
+                                  fontSize: deviceWidth * 0.022),
                             ))
                       ],
                     ))),

@@ -53,6 +53,7 @@ class MyAppState extends State<MyApp> {
       child: MaterialApp(
         navigatorKey: navigatorKey,
         scaffoldMessengerKey: rootScaffoldMessengerKey,
+        useInheritedMediaQuery: true,
         theme: ThemeData(
           primaryColor: colorPrimary,
           colorScheme: ThemeData()
