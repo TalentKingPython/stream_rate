@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'package:stream_rate/constant/constant.dart';
 import 'package:stream_rate/screens/onboard/onboard.dart';
-import 'screens/splash/splash.dart';
+import 'package:device_preview/device_preview.dart';
 
 late SharedPreferences sharedPrefs;
 final navigatorKey = GlobalKey<NavigatorState>();
@@ -67,9 +67,7 @@ class MyAppState extends State<MyApp> {
             elevation: 3,
             shadowColor: Color(0x33000000),
             systemOverlayStyle: SystemUiOverlayStyle.dark,
-            iconTheme: IconThemeData(
-              color: colorTextCommon,
-            ),
+            iconTheme: IconThemeData(color: colorTextCommon),
           ),
         ),
         builder: (context, child) {
@@ -78,7 +76,6 @@ class MyAppState extends State<MyApp> {
           deviceAverageSize = (deviceWidth + deviceHeight) / 2;
           textScaleFactorOf = MediaQuery.textScaleFactorOf(context);
 
-          print(deviceHeight);
           return MediaQuery(
             data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
             child: ScrollConfiguration(behavior: MyBehavior(), child: child!),
