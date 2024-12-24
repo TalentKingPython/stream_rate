@@ -83,13 +83,13 @@ class SupportState extends State<Support> {
             SizedBox(height: deviceHeight * 0.02), // Made spacing responsive
             Center(
               child: SizedBox(
-                width: deviceWidth * 0.75,
+                width: deviceWidth * 0.55,
                 child: Text(
                   'Please let us know how we can help you',
                   textAlign: TextAlign.center,
                   style: GoogleFonts.poppins(
                       color: colorWhite,
-                      fontSize: deviceHeight * 0.024,
+                      fontSize: deviceHeight * 0.018,
                       fontWeight: FontWeight.w300),
                 ),
               ),
@@ -99,7 +99,7 @@ class SupportState extends State<Support> {
               'Write Your Message',
               style: GoogleFonts.poppins(
                   color: colorWhite,
-                  fontSize: deviceHeight * 0.022,
+                  fontSize: deviceHeight * 0.018,
                   fontWeight: FontWeight.w300),
             ),
             SizedBox(height: deviceHeight * 0.02),
@@ -123,7 +123,7 @@ class SupportState extends State<Support> {
             SizedBox(height: deviceHeight * 0.015),
             Container(
               width: deviceWidth,
-              height: deviceHeight * 0.15, // Made container height responsive
+              height: deviceHeight * 0.15,
               padding: EdgeInsets.all(deviceHeight * 0.02),
               decoration: BoxDecoration(
                   color: whitelow, borderRadius: BorderRadius.circular(20)),
@@ -136,7 +136,7 @@ class SupportState extends State<Support> {
                   randomText,
                   style: GoogleFonts.poppins(
                     color: colorWhite,
-                    fontSize: deviceWidth * 0.095,
+                    fontSize: deviceWidth * 0.09,
                     letterSpacing: 10.0,
                   ),
                 ),
@@ -160,12 +160,10 @@ class SupportState extends State<Support> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Icon(Icons.send, color: colorWhite, size: 16),
-                  SizedBox(
-                      width: deviceWidth * 0.01), // Made spacing responsive
+                  SizedBox(width: deviceWidth * 0.01),
                   Text(
                     'SEND MESSAGE',
-                    style: GoogleFonts.poppins(
-                        color: colorWhite, fontSize: deviceWidth * 0.045),
+                    style: GoogleFonts.poppins(color: colorWhite),
                   ),
                 ],
               ),

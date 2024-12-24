@@ -3,8 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:stream_rate/commonView/custom_fill_button.dart';
 import 'package:stream_rate/commonView/contact_user_cart.dart';
 import 'package:stream_rate/commonView/custom_text_form.dart';
-import 'package:stream_rate/constant/constant.dart';
-import 'package:stream_rate/utils/utils.dart'; // Assuming this imports deviceWidth and deviceHeight
+import 'package:stream_rate/utils/utils.dart';
 
 class Invite extends StatefulWidget {
   const Invite({Key? key}) : super(key: key);
@@ -62,9 +61,7 @@ class InviteState extends State<Invite> {
                   right: deviceWidth * 0.05,
                   top: deviceHeight * 0.06),
               child: ConstrainedBox(
-                constraints: BoxConstraints(
-                  minHeight: deviceHeight,
-                ),
+                constraints: BoxConstraints(minHeight: deviceHeight),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -76,9 +73,12 @@ class InviteState extends State<Invite> {
                     ),
                     Container(
                       width: deviceWidth,
-                      padding: EdgeInsets.symmetric(
-                          vertical: deviceHeight * 0.05,
-                          horizontal: deviceWidth * 0.05),
+                      padding: EdgeInsets.fromLTRB(
+                        deviceWidth * 0.05,
+                        deviceHeight * 0.05,
+                        deviceWidth * 0.05,
+                        deviceHeight * 0.03,
+                      ),
                       child: Column(
                         children: [
                           Text(
@@ -86,14 +86,14 @@ class InviteState extends State<Invite> {
                             textAlign: TextAlign.center,
                             style: GoogleFonts.poppins(
                                 color: colorWhite,
-                                fontSize: deviceHeight * 0.022),
+                                fontSize: deviceHeight * 0.02),
                           ),
                           Text(
                             "LIMITED TO 200 CREDITS",
                             textAlign: TextAlign.center,
                             style: GoogleFonts.poppins(
                                 color: whitecaptcha,
-                                fontSize: deviceHeight * 0.018),
+                                fontSize: deviceHeight * 0.016),
                           ),
                         ],
                       ),
@@ -105,21 +105,22 @@ class InviteState extends State<Invite> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          UserCard(userName: "John Warney", isSelected: true),
-                          UserCard(userName: "Mary Styles"),
-                          UserCard(userName: "Mommy", isSelected: true),
-                          UserCard(
+                          const UserCard(
+                              userName: "John Warney", isSelected: true),
+                          const UserCard(userName: "Mary Styles"),
+                          const UserCard(userName: "Mommy", isSelected: true),
+                          const UserCard(
                               userName: "Jack Frank",
                               imagePath: "assets/images/test-avatar.png",
                               isSelected: true),
-                          UserCard(userName: "Eddie Joe"),
+                          const UserCard(userName: "Eddie Joe"),
                           SizedBox(height: deviceHeight * 0.02),
                           Text("Not in contacts? Invite by email",
                               style: GoogleFonts.poppins(
                                   fontSize: deviceHeight * 0.018,
                                   color: colorWhite)),
                           SizedBox(height: deviceHeight * 0.01),
-                          CustomTextFormField(
+                          const CustomTextFormField(
                             labelText: 'Email',
                             prefixIcon: Icon(Icons.email_outlined,
                                 color: colorMainLightGray),

@@ -19,11 +19,12 @@ class UserCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 10),
-      padding: const EdgeInsets.all(10),
+      margin: EdgeInsets.symmetric(vertical: deviceHeight * 0.006),
+      padding: EdgeInsets.all(deviceHeight * 0.01),
+      height: deviceHeight * .065,
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.1), // Replace with `colorWhite`
-        borderRadius: BorderRadius.circular(10),
+        color: colorItemCard,
+        borderRadius: BorderRadius.circular(deviceHeight * 0.02),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -33,28 +34,29 @@ class UserCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Container(
-                width: deviceWidth * 0.07,
-                height: deviceHeight * 0.03,
-                decoration: BoxDecoration(
-                  color: colorMainBackground,
-                  borderRadius: BorderRadius.circular(5),
-                ),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(5),
-                  child: imagePath != null && imagePath!.isNotEmpty
-                      ? LoadImageSimple(
-                          image: imagePath!,
-                          imageFit: BoxFit.cover, // Ensures the image fits
-                          width: 50,
-                          height: 50,
-                        )
-                      : const Icon(
-                          Icons.person,
-                          size: 16,
-                          color: Colors.grey,
+              ClipRRect(
+                borderRadius: BorderRadius.circular(deviceHeight * .005),
+                child: imagePath != null && imagePath!.isNotEmpty
+                    ? LoadImageSimple(
+                        image: imagePath!,
+                        imageFit: BoxFit.fill,
+                        width: deviceHeight * 0.045,
+                        height: deviceHeight * 0.045,
+                      )
+                    : Container(
+                        width: deviceHeight * 0.045,
+                        height: deviceHeight * 0.045,
+                        decoration: BoxDecoration(
+                          color: colorMainBackground,
+                          borderRadius:
+                              BorderRadius.circular(deviceHeight * .013),
                         ),
-                ),
+                        child: Icon(
+                          Icons.person,
+                          size: deviceHeight * .024,
+                          color: colorMainLightGray,
+                        ),
+                      ),
               ),
               SizedBox(
                 width: deviceWidth * 0.03,
@@ -62,8 +64,8 @@ class UserCard extends StatelessWidget {
               Text(
                 userName,
                 style: GoogleFonts.poppins(
-                    color: Colors.white, // Replace with `colorWhite`
-                    fontSize: deviceHeight * 0.022,
+                    color: colorWhite,
+                    fontSize: deviceHeight * 0.018,
                     fontWeight: FontWeight.w300),
               ),
             ],
