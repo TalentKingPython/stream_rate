@@ -5,8 +5,8 @@ import 'package:stream_rate/constant/image_assets.dart';
 import 'package:stream_rate/screens/login/login.dart';
 import 'package:stream_rate/utils/utils.dart';
 
-class Capture extends StatelessWidget {
-  const Capture({Key? key}) : super(key: key);
+class Captcha extends StatelessWidget {
+  const Captcha({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
