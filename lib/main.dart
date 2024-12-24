@@ -4,8 +4,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:stream_rate/constant/constant.dart';
+import 'package:stream_rate/screens/onboard/onboard.dart';
 import 'screens/splash/splash.dart';
-import 'package:device_preview/device_preview.dart';
 
 late SharedPreferences sharedPrefs;
 final navigatorKey = GlobalKey<NavigatorState>();
@@ -89,7 +89,7 @@ class MyAppState extends State<MyApp> {
           );
         },
         debugShowCheckedModeBanner: false,
-        home: const Splash(),
+        home: const Onboard(),
       ),
     );
   }
