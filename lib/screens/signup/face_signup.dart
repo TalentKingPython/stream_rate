@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:stream_rate/commonView/load_image_with_placeholder.dart';
-import 'package:stream_rate/constant/constant.dart';
-import 'package:stream_rate/screens/capture/capture.dart';
+import 'package:stream_rate/screens/captcha/captcha.dart';
 
 import 'package:stream_rate/screens/login/login.dart';
 import 'package:stream_rate/utils/utils.dart';
@@ -102,7 +101,7 @@ class FaceIdSignUpState extends State<FaceIdSignUp> {
                     children: [
                       CustomFillButton(
                         onPressed: () =>
-                            openScreenWithResult(context, const Capture()),
+                            openScreenWithResult(context, const Captcha()),
                         isColorBtn: true,
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
