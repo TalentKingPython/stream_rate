@@ -1,10 +1,4 @@
-import 'dart:convert';
-
-import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-import '../constant/constant.dart';
-import '../main.dart';
 
 const String prefSelectedLanguageCode = "SelectedLanguageCode";
 const String prefSelectedCurrency = "SelectedCurrency";
