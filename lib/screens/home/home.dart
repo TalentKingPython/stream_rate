@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -199,6 +197,10 @@ class HomeState extends State<Home> {
                           showModalBottomSheet(
                             context: context,
                             backgroundColor: darkblue,
+                            shape: const RoundedRectangleBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(20)),
+                            ),
                             builder: (context) => const CustomBottomSheet(),
                           );
                         },
@@ -234,113 +236,97 @@ class CustomBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        // Blurred background
-        BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 7, sigmaY: 7),
-          child: Container(
-            height: 80,
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: const BoxDecoration(
+        color: darkblue,
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          // Orange slider at the top center
+          Container(
+            width: 50,
+            height: 7,
+            decoration: BoxDecoration(
+              gradient: const LinearGradient(
+                colors: [onBoardingRed, onBoardingOrange],
+                begin: Alignment.centerRight,
+                end: Alignment.centerLeft,
+              ),
+              borderRadius: BorderRadius.circular(2.5),
+            ),
+            margin: const EdgeInsets.only(bottom: 16),
           ),
-        ),
-        // Bottom sheet content
-        Container(
-          padding: const EdgeInsets.all(16),
-          decoration: const BoxDecoration(
-            color: darkblue,
-            borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+          // Close button
+          Align(
+            alignment: Alignment.topRight,
+            child: IconButton(
+              icon: const Icon(Icons.close, color: colorWhite),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
           ),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              // Orange slider at the top center
-              Container(
-                width: 50,
-                height: 7,
-                decoration: BoxDecoration(
-                  gradient: const LinearGradient(
-                    colors: [onBoardingRed, onBoardingOrange],
-                    begin: Alignment.centerRight,
-                    end: Alignment.centerLeft,
-                  ),
-                  borderRadius: BorderRadius.circular(2.5),
-                ),
-                margin: const EdgeInsets.only(bottom: 16),
-              ),
-              // Close button
-              Align(
-                alignment: Alignment.topRight,
-                child: IconButton(
-                  icon: const Icon(Icons.close, color: Colors.white),
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                ),
-              ),
-              ListTile(
-                leading: Image.asset(
-                  AppImageAsset.voucherwhite,
-                  width: 20,
-                ),
-                title: const TextWithPoppins(
-                  text: 'Redeem Voucher',
-                  align: TextAlign.start,
-                  color: colorWhite,
-                  size: 16,
-                  weight: FontWeight.normal,
-                ),
-                onTap: () => openScreenWithResult(context, const Voucher()),
-              ),
-              ListTile(
-                  leading: Image.asset(
-                    AppImageAsset.invite,
-                    width: 20,
-                  ),
-                  title: const TextWithPoppins(
-                    text: 'Invite People',
-                    align: TextAlign.start,
-                    color: colorWhite,
-                    size: 16,
-                    weight: FontWeight.normal,
-                  ),
-                  onTap: () => openScreenWithResult(context, const Invite())),
-              ListTile(
-                leading: Image.asset(
-                  AppImageAsset.contact,
-                  width: 20,
-                ),
-                title: const TextWithPoppins(
-                  text: 'Contact Support',
-                  align: TextAlign.start,
-                  color: colorWhite,
-                  size: 16,
-                  weight: FontWeight.normal,
-                ),
-                onTap: () {
-                  openScreenWithResult(context, const Support());
-                },
-              ),
-              ListTile(
-                leading: Image.asset(
-                  AppImageAsset.logout,
-                  color: onBoardingRed,
-                  width: 20,
-                ),
-                title: const TextWithPoppins(
-                  text: 'Log Out',
-                  align: TextAlign.start,
-                  color: onBoardingRed,
-                  size: 16,
-                  weight: FontWeight.normal,
-                ),
-                onTap: () {
-                  openScreen(context, const Login());
-                },
-              ),
-            ],
+          ListTile(
+            leading: Image.asset(AppImageAsset.voucherwhite,
+                width: deviceHeight * .020),
+            title: TextWithPoppins(
+              text: 'Redeem Voucher',
+              align: TextAlign.start,
+              color: colorWhite,
+              size: deviceHeight * .018,
+              weight: FontWeight.normal,
+            ),
+            onTap: () => openScreenWithResult(context, const Voucher()),
           ),
-        ),
-      ],
+          ListTile(
+              leading:
+                  Image.asset(AppImageAsset.invite, width: deviceHeight * .020),
+              title: TextWithPoppins(
+                text: 'Invite People',
+                align: TextAlign.start,
+                color: colorWhite,
+                size: deviceHeight * .018,
+                weight: FontWeight.normal,
+              ),
+              onTap: () => openScreenWithResult(context, const Invite())),
+          ListTile(
+            leading: Image.asset(
+              AppImageAsset.contact,
+              width: deviceHeight * .020,
+            ),
+            title: TextWithPoppins(
+              text: 'Contact Support',
+              align: TextAlign.start,
+              color: colorWhite,
+              size: deviceHeight * .018,
+              weight: FontWeight.normal,
+            ),
+            onTap: () {
+              openScreenWithResult(context, const Support());
+            },
+          ),
+          ListTile(
+            leading: Image.asset(
+              AppImageAsset.logout,
+              color: onBoardingRed,
+              width: deviceHeight * .020,
+            ),
+            title: TextWithPoppins(
+              text: 'Log Out',
+              align: TextAlign.start,
+              color: onBoardingRed,
+              size: deviceHeight * .018,
+              weight: FontWeight.normal,
+            ),
+            onTap: () {
+              openScreen(context, const Login());
+            },
+          ),
+        ],
+      ),
     );
   }
 }

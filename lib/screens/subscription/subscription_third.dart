@@ -48,7 +48,7 @@ class SubScriptionThirdState extends State<SubScriptionThird> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Expanded(
+                const Expanded(
                   flex: 2,
                   child: LoadImageSimple(
                     image: 'assets/images/sub3-logo.png',
@@ -102,7 +102,7 @@ class SubScriptionThirdState extends State<SubScriptionThird> {
                                 ),
                               ),
                               child: Container(
-                                padding: EdgeInsets.all(deviceWidth * 0.04),
+                                padding: EdgeInsets.all(deviceHeight * 0.02),
                                 decoration: BoxDecoration(
                                     color: colorWhite,
                                     borderRadius: BorderRadius.circular(20)),
@@ -138,7 +138,7 @@ class SubScriptionThirdState extends State<SubScriptionThird> {
                                         Text("/ ",
                                             style: GoogleFonts.poppins(
                                                 fontSize: deviceHeight * 0.03,
-                                                color: Colors.black)),
+                                                color: colorBlack)),
                                         Text("week",
                                             style: GoogleFonts.poppins(
                                                 fontSize: deviceHeight * 0.024,
@@ -150,7 +150,8 @@ class SubScriptionThirdState extends State<SubScriptionThird> {
                                   Expanded(
                                     flex: 10,
                                     child: SingleChildScrollView(
-                                      padding: EdgeInsets.only(bottom: 10),
+                                      padding: EdgeInsets.only(
+                                          bottom: deviceHeight * 0.010),
                                       physics: NeverScrollableScrollPhysics(),
                                       child: Column(
                                         mainAxisAlignment:

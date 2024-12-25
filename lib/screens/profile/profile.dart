@@ -57,20 +57,20 @@ class ProfileState extends State<Profile> {
               ),
             ),
             Positioned(
-              left: 15,
+              left: deviceWidth * 0.04,
               child: GestureDetector(
                 onTap: () => Navigator.pop(context),
                 child: Container(
-                  height: 36,
-                  width: 36,
-                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  height: deviceHeight * 0.045,
+                  width: deviceHeight * 0.045,
+                  padding:
+                      EdgeInsets.symmetric(horizontal: deviceHeight * 0.008),
                   decoration: BoxDecoration(
-                    color: colorWhite.withOpacity(0.1),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: const Center(
-                    child:
-                        Icon(Icons.arrow_back_ios, size: 16, color: colorWhite),
+                      color: colorWhite.withOpacity(0.1),
+                      borderRadius: BorderRadius.circular(10)),
+                  child: Center(
+                    child: Icon(Icons.arrow_back_ios,
+                        size: deviceHeight * 0.016, color: colorWhite),
                   ),
                 ),
               ),

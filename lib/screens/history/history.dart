@@ -163,14 +163,14 @@ class HistoryState extends State<History> {
                 child: Container(
                   height: deviceHeight * 0.045,
                   width: deviceHeight * 0.045,
-                  padding: EdgeInsets.symmetric(horizontal: deviceWidth * 0.04),
+                  padding:
+                      EdgeInsets.symmetric(horizontal: deviceHeight * 0.008),
                   decoration: BoxDecoration(
-                    color: colorWhite.withOpacity(0.1),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: const Center(
-                    child:
-                        Icon(Icons.arrow_back_ios, size: 16, color: colorWhite),
+                      color: colorWhite.withOpacity(0.1),
+                      borderRadius: BorderRadius.circular(10)),
+                  child: Center(
+                    child: Icon(Icons.arrow_back_ios,
+                        size: deviceHeight * 0.016, color: colorWhite),
                   ),
                 ),
               ),
@@ -208,21 +208,21 @@ class HistoryState extends State<History> {
                       Text('You have only 3 credits left',
                           style: GoogleFonts.poppins(
                               color: colorWhite,
-                              fontSize: deviceHeight * 0.02)),
+                              fontSize: deviceHeight * 0.014)),
                       Row(
                         children: [
                           Text('Go Unlimited for ',
                               style: GoogleFonts.poppins(
                                   color: colorWhite,
-                                  fontSize: deviceHeight * 0.02)),
+                                  fontSize: deviceHeight * 0.014)),
                           Text('\$2.99',
                               style: GoogleFonts.poppins(
                                   color: colorDestination,
-                                  fontSize: deviceHeight * 0.02)),
+                                  fontSize: deviceHeight * 0.016)),
                           Text('/week',
                               style: GoogleFonts.poppins(
                                   color: colorWhite,
-                                  fontSize: deviceHeight * 0.02)),
+                                  fontSize: deviceHeight * 0.014)),
                         ],
                       ),
                     ],

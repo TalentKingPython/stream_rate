@@ -85,7 +85,7 @@ class VoucherState extends State<Voucher> {
                       textAlign: TextAlign.center,
                       style: GoogleFonts.poppins(
                         color: colorWhite,
-                        fontSize: deviceHeight * 0.030,
+                        fontSize: deviceHeight * 0.025,
                       ),
                     ),
                   ),
@@ -97,7 +97,7 @@ class VoucherState extends State<Voucher> {
                       textAlign: TextAlign.center,
                       style: GoogleFonts.poppins(
                         color: colorWhite,
-                        fontSize: deviceHeight * 0.024,
+                        fontSize: deviceHeight * 0.018,
                       ),
                     ),
                   ),

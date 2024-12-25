@@ -162,14 +162,14 @@ class FavouriteState extends State<Favourite> {
                 child: Container(
                   height: deviceHeight * 0.045,
                   width: deviceHeight * 0.045,
-                  padding: EdgeInsets.symmetric(horizontal: deviceWidth * 0.04),
+                  padding:
+                      EdgeInsets.symmetric(horizontal: deviceHeight * 0.008),
                   decoration: BoxDecoration(
-                    color: colorWhite.withOpacity(0.1),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: const Center(
-                    child:
-                        Icon(Icons.arrow_back_ios, size: 16, color: colorWhite),
+                      color: colorWhite.withOpacity(0.1),
+                      borderRadius: BorderRadius.circular(10)),
+                  child: Center(
+                    child: Icon(Icons.arrow_back_ios,
+                        size: deviceHeight * 0.016, color: colorWhite),
                   ),
                 ),
               ),
