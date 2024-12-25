@@ -56,7 +56,7 @@ class SubScriptionSecondState extends State<SubScriptionSecond> {
               ),
             ),
             Positioned(
-                bottom: deviceHeight * 0.025,
+                bottom: deviceHeight * 0.012,
                 left: 0,
                 right: 0,
                 child: Center(
@@ -71,17 +71,19 @@ class SubScriptionSecondState extends State<SubScriptionSecond> {
                       children: [
                         Text("PAY \$2.99",
                             style: GoogleFonts.poppins(
-                                fontSize: 16, color: colorWhite)),
+                                fontSize: deviceHeight * 0.016,
+                                color: colorWhite)),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Text("SUBSCRIBE",
                                 style: GoogleFonts.poppins(
-                                    fontSize: 16, color: colorWhite)),
+                                    fontSize: deviceHeight * 0.016,
+                                    color: colorWhite)),
                             const SizedBox(width: 2),
-                            const Icon(Icons.chevron_right,
-                                size: 16, color: colorWhite)
+                            Icon(Icons.chevron_right,
+                                size: deviceWidth * 0.03, color: colorWhite)
                           ],
                         )
                       ],

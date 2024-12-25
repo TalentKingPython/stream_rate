@@ -43,7 +43,7 @@ class SubScriptionThirdState extends State<SubScriptionThird> {
         child: Stack(children: [
           Padding(
             padding: EdgeInsets.symmetric(
-                horizontal: 30, vertical: deviceHeight * 0.07),
+                horizontal: deviceWidth * 0.05, vertical: deviceHeight * 0.07),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -63,8 +63,9 @@ class SubScriptionThirdState extends State<SubScriptionThird> {
                   child: Stack(
                     children: [
                       Container(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 40, horizontal: 20),
+                        padding: EdgeInsets.symmetric(
+                            vertical: deviceHeight * 0.04,
+                            horizontal: deviceWidth * 0.018),
                         decoration: BoxDecoration(
                           color: colorWhite,
                           borderRadius: BorderRadius.circular(30),
@@ -73,7 +74,8 @@ class SubScriptionThirdState extends State<SubScriptionThird> {
                           Expanded(
                             flex: 3,
                             child: Container(
-                              padding: const EdgeInsets.only(bottom: 10),
+                              padding:
+                                  EdgeInsets.only(bottom: deviceHeight * 0.01),
                               child: LoadImageSimple(
                                 image: "assets/images/subscribe_main.png",
                                 width: deviceWidth * 0.4,
@@ -86,7 +88,7 @@ class SubScriptionThirdState extends State<SubScriptionThird> {
                                     fontSize: deviceHeight * 0.022)),
                           ),
                           Expanded(
-                            flex: 12,
+                            flex: 10,
                             child: Container(
                               padding: const EdgeInsets.all(3),
                               decoration: BoxDecoration(
@@ -225,12 +227,13 @@ class SubScriptionThirdState extends State<SubScriptionThird> {
             ),
           ),
           Positioned(
-            bottom: deviceHeight * 0.045,
+            bottom: deviceHeight * 0.053,
             left: deviceWidth * 0.125,
             right: deviceWidth * 0.125,
             child: CustomFillButton(
               onPressed: () => openScreenWithResult(context, const Thanks()),
               isColorBtn: true,
+              height: deviceHeight * 0.04,
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
