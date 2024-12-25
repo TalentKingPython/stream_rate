@@ -138,11 +138,11 @@ class HomeState extends State<Home> {
                               width: deviceWidth * 0.05,
                               height: deviceHeight * 0.025,
                             ),
-                            const TextWithPoppins(
+                            TextWithPoppins(
                                 text: 'Profile',
                                 align: TextAlign.center,
                                 color: colorWhite,
-                                size: 12,
+                                size: deviceHeight * 0.014,
                                 weight: FontWeight.normal)
                           ],
                         ),
@@ -160,11 +160,11 @@ class HomeState extends State<Home> {
                               width: deviceWidth * 0.05,
                               height: deviceHeight * 0.025,
                             ),
-                            const TextWithPoppins(
+                            TextWithPoppins(
                                 text: 'History',
                                 align: TextAlign.center,
                                 color: colorWhite,
-                                size: 12,
+                                size: deviceHeight * 0.014,
                                 weight: FontWeight.normal)
                           ],
                         ),
@@ -182,11 +182,11 @@ class HomeState extends State<Home> {
                               width: deviceWidth * 0.05,
                               height: deviceHeight * 0.025,
                             ),
-                            const TextWithPoppins(
+                            TextWithPoppins(
                                 text: 'Favorites',
                                 align: TextAlign.center,
                                 color: colorWhite,
-                                size: 12,
+                                size: deviceHeight * 0.014,
                                 weight: FontWeight.normal)
                           ],
                         ),
@@ -212,11 +212,11 @@ class HomeState extends State<Home> {
                               width: deviceWidth * 0.05,
                               height: deviceHeight * 0.025,
                             ),
-                            const TextWithPoppins(
+                            TextWithPoppins(
                                 text: 'More',
                                 align: TextAlign.center,
                                 color: colorWhite,
-                                size: 12,
+                                size: deviceHeight * 0.014,
                                 weight: FontWeight.normal)
                           ],
                         ),

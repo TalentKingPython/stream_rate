@@ -85,9 +85,7 @@ class OnboardState extends State<Onboard> {
               width: deviceWidth * 0.2,
               child: Text('SKIP',
                   style: GoogleFonts.poppins(
-                      fontWeight: FontWeight.bold,
-                      fontSize: deviceAverageSize * 0.016,
-                      color: colorWhite))),
+                      fontWeight: FontWeight.bold, color: colorWhite))),
           DotsIndicator(
             dotsCount: 3,
             position: currentPage,
@@ -116,9 +114,7 @@ class OnboardState extends State<Onboard> {
                 Text(
                   'NEXT',
                   style: GoogleFonts.poppins(
-                      fontWeight: FontWeight.bold,
-                      fontSize: deviceAverageSize * 0.016,
-                      color: colorWhite),
+                      fontWeight: FontWeight.bold, color: colorWhite),
                 ),
                 const SizedBox(width: 5),
                 Icon(Icons.arrow_forward_ios,

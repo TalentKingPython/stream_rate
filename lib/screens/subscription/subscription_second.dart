@@ -40,16 +40,17 @@ class SubScriptionSecondState extends State<SubScriptionSecond> {
               child: GestureDetector(
                 onTap: () => Navigator.pop(context),
                 child: Container(
-                  height: 36,
-                  width: 36,
-                  padding: const EdgeInsets.symmetric(horizontal: 12),
+                  height: deviceHeight * 0.04,
+                  width: deviceHeight * 0.04,
+                  padding:
+                      EdgeInsets.symmetric(horizontal: deviceHeight * 0.015),
                   decoration: BoxDecoration(
-                    color: colorWhite.withOpacity(0.1),
-                    borderRadius: BorderRadius.circular(10),
+                    color: colorMainGray.withOpacity(0.7),
+                    borderRadius: BorderRadius.circular(deviceHeight * 0.012),
                   ),
-                  child: const Center(
-                    child:
-                        Icon(Icons.arrow_back_ios, size: 16, color: colorWhite),
+                  child: Center(
+                    child: Icon(Icons.arrow_back_ios,
+                        size: deviceHeight * 0.018, color: colorWhite),
                   ),
                 ),
               ),

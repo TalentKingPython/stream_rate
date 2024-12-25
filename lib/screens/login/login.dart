@@ -157,7 +157,7 @@ class LoginState extends State<Login> {
                               'Continue with Facebook',
                               style: GoogleFonts.poppins(
                                   color: colorWhite,
-                                  fontSize: deviceHeight * .018),
+                                  fontSize: deviceHeight * .016),
                             ),
                           )
                         ],
@@ -186,7 +186,7 @@ class LoginState extends State<Login> {
                               'Continue with Apple',
                               style: GoogleFonts.poppins(
                                   color: colorWhite,
-                                  fontSize: deviceHeight * .018),
+                                  fontSize: deviceHeight * .016),
                             ),
                           )
                         ],
@@ -215,7 +215,7 @@ class LoginState extends State<Login> {
                               'Continue with Google',
                               style: GoogleFonts.poppins(
                                   color: colorWhite,
-                                  fontSize: deviceHeight * .018),
+                                  fontSize: deviceHeight * .016),
                             ),
                           )
                         ],
@@ -248,8 +248,7 @@ class LoginState extends State<Login> {
                             "Sign Up",
                             style: GoogleFonts.poppins(
                               fontSize: deviceHeight * 0.016,
-                              color: Colors
-                                  .white, // The base color won't be visible due to ShaderMask
+                              color: colorWhite,
                               fontWeight: FontWeight.bold,
                             ),
                           ),

@@ -84,7 +84,7 @@ class SignUpState extends State<SignUp> {
                               'Sign up with Phone or Email',
                               style: GoogleFonts.poppins(
                                   color: colorWhite,
-                                  fontSize: deviceHeight * .018),
+                                  fontSize: deviceHeight * .016),
                             ),
                           )
                         ],
@@ -116,7 +116,7 @@ class SignUpState extends State<SignUp> {
                               'Sign up with Face ID',
                               style: GoogleFonts.poppins(
                                   color: colorWhite,
-                                  fontSize: deviceHeight * .018),
+                                  fontSize: deviceHeight * .016),
                             ),
                           )
                         ],
@@ -145,7 +145,7 @@ class SignUpState extends State<SignUp> {
                               'Continue with Facebook',
                               style: GoogleFonts.poppins(
                                   color: colorWhite,
-                                  fontSize: deviceHeight * .018),
+                                  fontSize: deviceHeight * .016),
                             ),
                           )
                         ],
@@ -174,7 +174,7 @@ class SignUpState extends State<SignUp> {
                               'Continue with Apple',
                               style: GoogleFonts.poppins(
                                   color: colorWhite,
-                                  fontSize: deviceHeight * .018),
+                                  fontSize: deviceHeight * .016),
                             ),
                           )
                         ],
@@ -203,7 +203,7 @@ class SignUpState extends State<SignUp> {
                               'Continue with Google',
                               style: GoogleFonts.poppins(
                                   color: colorWhite,
-                                  fontSize: deviceHeight * .018),
+                                  fontSize: deviceHeight * .016),
                             ),
                           )
                         ],
@@ -219,7 +219,7 @@ class SignUpState extends State<SignUp> {
                     textAlign: TextAlign.center,
                     style: GoogleFonts.poppins(
                         color: colorWhite,
-                        fontSize: deviceHeight * .018,
+                        fontSize: deviceHeight * .016,
                         decoration: TextDecoration.underline)),
               ),
               SizedBox(height: deviceHeight * 0.03),
@@ -228,7 +228,7 @@ class SignUpState extends State<SignUp> {
                 children: [
                   Text("Already have an account?",
                       style: GoogleFonts.poppins(
-                          fontSize: deviceHeight * .018, color: colorWhite)),
+                          fontSize: deviceHeight * .016, color: colorWhite)),
                   GestureDetector(
                     onTap: () => openScreenWithResult(context, const Login()),
                     child: Center(
@@ -245,7 +245,7 @@ class SignUpState extends State<SignUp> {
                           child: Text(
                             "Log In",
                             style: GoogleFonts.poppins(
-                              fontSize: deviceHeight * .018,
+                              fontSize: deviceHeight * .016,
                               color: colorWhite,
                               fontWeight: FontWeight.bold,
                             ),
