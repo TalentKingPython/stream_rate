@@ -27,9 +27,6 @@ class SubScriptionFirstState extends State<SubScriptionFirst> {
 
   @override
   Widget build(BuildContext context) {
-    double deviceHeight = MediaQuery.of(context).size.height;
-    double deviceWidth = MediaQuery.of(context).size.width;
-
     return Scaffold(
       backgroundColor: colorMainBackground,
       body: Stack(children: [
@@ -58,7 +55,7 @@ class SubScriptionFirstState extends State<SubScriptionFirst> {
                         style: GoogleFonts.poppins(
                             color: colorWhite, fontSize: deviceHeight * 0.02))),
                 Container(
-                    padding: EdgeInsets.all(1),
+                    padding: const EdgeInsets.all(1),
                     width: deviceWidth * 0.8,
                     decoration: BoxDecoration(
                       color: colorMainBackground,

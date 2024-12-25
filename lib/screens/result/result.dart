@@ -1,12 +1,9 @@
-import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:stream_rate/commonView/custom_fill_button.dart';
-import 'package:stream_rate/constant/constant.dart';
 import 'package:stream_rate/constant/image_assets.dart';
 import 'package:stream_rate/commonView/textwithpoppins.dart';
 import 'package:stream_rate/utils/utils.dart';
-import 'result_bloc.dart';
 
 class Result extends StatefulWidget {
   const Result({Key? key}) : super(key: key);
@@ -16,14 +13,8 @@ class Result extends StatefulWidget {
 }
 
 class ResultState extends State<Result> {
-  ResultBloc? _bloc;
-
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-    final height = size.height;
-    final width = size.width;
-
     return Scaffold(
       body: Stack(
         children: [
@@ -38,13 +29,13 @@ class ResultState extends State<Result> {
                   top: 0,
                   child: Image.asset(
                     AppImageAsset.movieimg,
-                    width: width,
+                    width: deviceWidth,
                     fit: BoxFit.cover,
                   ),
                 ),
                 Positioned(
-                  left: width * 0.06,
-                  bottom: height * 0.39,
+                  left: deviceWidth * 0.06,
+                  bottom: deviceHeight * 0.39,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -52,7 +43,7 @@ class ResultState extends State<Result> {
                           text: 'JAWS',
                           align: TextAlign.start,
                           color: white,
-                          size: width * 0.08,
+                          size: deviceWidth * 0.08,
                           weight: FontWeight.normal),
                       Row(
                         children: [
@@ -60,7 +51,7 @@ class ResultState extends State<Result> {
                               text: 'by Steven Spiderman',
                               align: TextAlign.start,
                               color: colorMainLightGray,
-                              size: width * 0.03,
+                              size: deviceWidth * 0.03,
                               weight: FontWeight.normal),
                           Text(" | ",
                               style: GoogleFonts.poppins(
@@ -69,7 +60,7 @@ class ResultState extends State<Result> {
                               text: '1955',
                               align: TextAlign.start,
                               color: colorMainLightGray,
-                              size: width * 0.03,
+                              size: deviceWidth * 0.03,
                               weight: FontWeight.normal),
                         ],
                       )
@@ -77,37 +68,37 @@ class ResultState extends State<Result> {
                   ),
                 ),
                 Positioned(
-                    bottom: height * 0.42,
-                    right: width * 0.04,
+                    bottom: deviceHeight * 0.42,
+                    right: deviceWidth * 0.04,
                     child: Row(
                       children: [
                         _buildIconButton(AppImageAsset.dislike,
                             () => openReportDialog(context)),
-                        SizedBox(width: width * 0.05),
+                        SizedBox(width: deviceWidth * 0.05),
                         _buildIconButton(AppImageAsset.love,
                             () => openNotificationAllowDialog(context)),
-                        SizedBox(width: width * 0.05),
+                        SizedBox(width: deviceWidth * 0.05),
                         _buildIconButton(AppImageAsset.share,
                             () => openNotFoundDialog(context)),
                       ],
                     )),
                 Positioned(
-                  left: width * 0.04,
-                  right: width * 0.04,
-                  bottom: height * 0.33,
-                  child: _buildRatingSection(width, height),
+                  left: deviceWidth * 0.04,
+                  right: deviceWidth * 0.04,
+                  bottom: deviceHeight * 0.33,
+                  child: _buildRatingSection(),
                 ),
                 Positioned(
-                  left: width * 0.04,
-                  right: width * 0.04,
-                  bottom: height * 0.11,
-                  child: _buildRatingsList(width, height),
+                  left: deviceWidth * 0.04,
+                  right: deviceWidth * 0.04,
+                  bottom: deviceHeight * 0.11,
+                  child: _buildRatingsList(),
                 ),
                 Positioned(
                   bottom: 0,
-                  child: _buildSubscriptionBar(width, height),
+                  child: _buildSubscriptionBar(deviceWidth, deviceHeight),
                 ),
-                _buildBackButton(width, height),
+                _buildBackButton(deviceWidth, deviceHeight),
               ],
             ),
           ),
@@ -123,7 +114,7 @@ class ResultState extends State<Result> {
     );
   }
 
-  Widget _buildRatingSection(double width, double height) {
+  Widget _buildRatingSection() {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -132,8 +123,8 @@ class ResultState extends State<Result> {
           children: [
             Container(
               alignment: Alignment.center,
-              width: width * 0.2,
-              height: height * 0.05,
+              width: deviceWidth * 0.2,
+              height: deviceHeight * 0.05,
               decoration: const BoxDecoration(
                   image:
                       DecorationImage(image: AssetImage(AppImageAsset.rate))),
@@ -143,8 +134,8 @@ class ResultState extends State<Result> {
                 style: GoogleFonts.poppins(color: white),
               ),
             ),
-            SizedBox(width: width * 0.02),
-            _buildTrailerButton(width, height),
+            SizedBox(width: deviceWidth * 0.02),
+            _buildTrailerButton(deviceWidth, deviceHeight),
           ],
         ),
         _buildMovieInfo(),
@@ -181,7 +172,7 @@ class ResultState extends State<Result> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        TextWithPoppins(
+        const TextWithPoppins(
             text: "Terror",
             align: TextAlign.end,
             color: colorMainLightGray,
@@ -195,7 +186,7 @@ class ResultState extends State<Result> {
                 borderRadius: BorderRadius.circular(2),
                 color: colorMainLightGray)),
         const SizedBox(width: 5),
-        TextWithPoppins(
+        const TextWithPoppins(
             text: '2h 42m',
             align: TextAlign.end,
             color: colorMainLightGray,
@@ -205,7 +196,7 @@ class ResultState extends State<Result> {
     );
   }
 
-  Widget _buildRatingsList(double width, double height) {
+  Widget _buildRatingsList() {
     final ratingItems = [
       {
         'asset': AppImageAsset.imdb,
@@ -236,23 +227,23 @@ class ResultState extends State<Result> {
     return Column(
       children: ratingItems
           .map((item) => Padding(
-                padding: EdgeInsets.only(bottom: height * 0.02),
-                child: _buildRatingItem(item, width, height),
+                padding: EdgeInsets.only(bottom: deviceHeight * 0.02),
+                child: _buildRatingItem(item),
               ))
           .toList(),
     );
   }
 
-  Widget _buildRatingItem(
-      Map<String, String> item, double width, double height) {
+  Widget _buildRatingItem(Map<String, String> item) {
     return Row(
       children: [
-        Image.asset(item['asset']!, width: width * 0.12, height: height * 0.03),
+        Image.asset(item['asset']!,
+            width: deviceWidth * 0.12, height: deviceHeight * 0.03),
         TextWithPoppins(
           text: item['title']!,
           align: TextAlign.start,
           color: white,
-          size: height * 0.017,
+          size: deviceHeight * 0.017,
           weight: FontWeight.normal,
         ),
         const Spacer(),
@@ -260,14 +251,14 @@ class ResultState extends State<Result> {
           text: item['rating']!,
           align: TextAlign.end,
           color: white,
-          size: height * 0.017,
+          size: deviceHeight * 0.017,
           weight: FontWeight.normal,
         ),
         TextWithPoppins(
           text: item['total']!,
           align: TextAlign.end,
           color: colorMainLightGray,
-          size: height * 0.017,
+          size: deviceHeight * 0.017,
           weight: FontWeight.normal,
         ),
       ],
@@ -295,7 +286,7 @@ class ResultState extends State<Result> {
                           color: colorWhite, fontSize: width * 0.04)),
                   Text('\$2.99',
                       style: GoogleFonts.poppins(color: colorDestination)),
-                  Text(' week',
+                  Text(' / week',
                       style: GoogleFonts.poppins(
                           color: colorWhite, fontSize: width * 0.04)),
                 ],
