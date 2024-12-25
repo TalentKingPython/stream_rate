@@ -64,6 +64,7 @@ class SubScriptionSecondState extends State<SubScriptionSecond> {
                     onPressed: () =>
                         openScreenWithResult(context, const Thanks()),
                     width: deviceWidth * .6,
+                    height: deviceHeight * 0.06,
                     isColorBtn: true,
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
