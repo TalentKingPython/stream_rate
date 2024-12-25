@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:stream_rate/commonView/custom_fill_button.dart';
-
 import 'package:stream_rate/commonView/item_card.dart';
 import 'package:stream_rate/commonView/item_card_model.dart';
-import 'package:stream_rate/constant/image_assets.dart';
 import 'package:stream_rate/utils/utils.dart';
 
 class History extends StatefulWidget {
@@ -144,27 +142,28 @@ class HistoryState extends State<History> {
         backgroundColor: colorPrimary,
         automaticallyImplyLeading: false,
         foregroundColor: colorBlack,
-        toolbarHeight: 80,
+        toolbarHeight: deviceHeight * 0.1,
         elevation: 0,
         title: Stack(
           children: [
             SizedBox(
-              height: 50,
+              height: deviceHeight * 0.06,
               child: Center(
                 child: Text(
                   'History',
-                  style: GoogleFonts.poppins(fontSize: 24, color: colorWhite),
+                  style: GoogleFonts.poppins(
+                      fontSize: deviceHeight * 0.03, color: colorWhite),
                 ),
               ),
             ),
             Positioned(
-              left: 15,
+              left: deviceWidth * 0.04,
               child: GestureDetector(
                 onTap: () => Navigator.pop(context),
                 child: Container(
-                  height: 36,
-                  width: 36,
-                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  height: deviceHeight * 0.045,
+                  width: deviceHeight * 0.045,
+                  padding: EdgeInsets.symmetric(horizontal: deviceWidth * 0.04),
                   decoration: BoxDecoration(
                     color: colorWhite.withOpacity(0.1),
                     borderRadius: BorderRadius.circular(10),
@@ -183,18 +182,21 @@ class HistoryState extends State<History> {
       body: Stack(
         children: [
           Padding(
-            padding: const EdgeInsets.fromLTRB(15, 0, 15, 0),
-            child: SingleChildScrollView(
-              child: Column(
-                children: items.map((item) => ItemCard(item: item)).toList(),
-              ),
+            padding: EdgeInsets.fromLTRB(deviceWidth * 0.04,
+                deviceHeight * 0.02, deviceWidth * 0.04, deviceHeight * 0.12),
+            child: ListView.builder(
+              shrinkWrap: true,
+              itemCount: items.length,
+              itemBuilder: (context, index) {
+                return ItemCard(item: items[index]);
+              },
             ),
           ),
           Positioned(
             bottom: 0,
             child: Container(
-              padding: const EdgeInsets.all(15),
-              height: 90,
+              padding: EdgeInsets.all(deviceWidth * 0.04),
+              height: deviceHeight * 0.11,
               width: deviceWidth,
               decoration: const BoxDecoration(color: colorItemCard),
               child: Row(
@@ -205,18 +207,22 @@ class HistoryState extends State<History> {
                     children: [
                       Text('You have only 3 credits left',
                           style: GoogleFonts.poppins(
-                              color: colorWhite, fontSize: 16)),
+                              color: colorWhite,
+                              fontSize: deviceHeight * 0.02)),
                       Row(
                         children: [
                           Text('Go Unlimited for ',
                               style: GoogleFonts.poppins(
-                                  color: colorWhite, fontSize: 16)),
+                                  color: colorWhite,
+                                  fontSize: deviceHeight * 0.02)),
                           Text('\$2.99',
-                              style:
-                                  GoogleFonts.poppins(color: colorDestination)),
-                          Text('eek',
                               style: GoogleFonts.poppins(
-                                  color: colorWhite, fontSize: 16)),
+                                  color: colorDestination,
+                                  fontSize: deviceHeight * 0.02)),
+                          Text('/week',
+                              style: GoogleFonts.poppins(
+                                  color: colorWhite,
+                                  fontSize: deviceHeight * 0.02)),
                         ],
                       ),
                     ],
@@ -226,7 +232,9 @@ class HistoryState extends State<History> {
                     child: Row(children: [
                       Text('SUBSCRIBE',
                           style: GoogleFonts.poppins(
-                              color: colorWhite, fontWeight: FontWeight.bold)),
+                              fontSize: deviceHeight * 0.016,
+                              color: colorWhite,
+                              fontWeight: FontWeight.bold)),
                       const Icon(Icons.arrow_forward_ios,
                           size: 15, color: colorWhite)
                     ]),

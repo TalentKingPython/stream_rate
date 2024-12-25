@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import 'package:stream_rate/commonView/item_card.dart';
 import 'package:stream_rate/commonView/item_card_model.dart';
-
 import 'package:stream_rate/utils/utils.dart';
 
 class Favourite extends StatefulWidget {
@@ -119,14 +117,6 @@ class FavouriteState extends State<Favourite> {
         metacritic: 6.6,
         rottenTomatoes: 86,
         letterboxd: 3.2),
-    ItemCardModel(
-        image: 'assets/images/item_card5.png',
-        itemName: 'Parasite',
-        year: 2019,
-        imdb: 9.7,
-        metacritic: 6.6,
-        rottenTomatoes: 86,
-        letterboxd: 3.2),
   ];
 
   @override
@@ -146,32 +136,36 @@ class FavouriteState extends State<Favourite> {
 
   @override
   Widget build(BuildContext context) {
+    double deviceHeight = MediaQuery.of(context).size.height;
+    double deviceWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: colorPrimary,
         automaticallyImplyLeading: false,
         foregroundColor: colorBlack,
-        toolbarHeight: 80,
+        toolbarHeight: deviceHeight * 0.1,
         elevation: 0,
         title: Stack(
           children: [
             SizedBox(
-              height: 50,
+              height: deviceHeight * 0.06,
               child: Center(
                 child: Text(
                   'Favourites',
-                  style: GoogleFonts.poppins(fontSize: 24, color: colorWhite),
+                  style: GoogleFonts.poppins(
+                      fontSize: deviceHeight * 0.03, color: colorWhite),
                 ),
               ),
             ),
             Positioned(
-              left: 15,
+              left: deviceWidth * 0.04,
               child: GestureDetector(
                 onTap: () => Navigator.pop(context),
                 child: Container(
-                  height: 36,
-                  width: 36,
-                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  height: deviceHeight * 0.045,
+                  width: deviceHeight * 0.045,
+                  padding: EdgeInsets.symmetric(horizontal: deviceWidth * 0.04),
                   decoration: BoxDecoration(
                     color: colorWhite.withOpacity(0.1),
                     borderRadius: BorderRadius.circular(10),
@@ -188,11 +182,13 @@ class FavouriteState extends State<Favourite> {
       ),
       backgroundColor: colorMainBackground,
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(15, 0, 15, 0),
-        child: SingleChildScrollView(
-          child: Column(
-            children: items.map((item) => ItemCard(item: item)).toList(),
-          ),
+        padding: EdgeInsets.symmetric(horizontal: deviceWidth * 0.04),
+        child: ListView.builder(
+          shrinkWrap: true,
+          itemCount: items.length,
+          itemBuilder: (context, index) {
+            return ItemCard(item: items[index]);
+          },
         ),
       ),
     );

@@ -31,12 +31,12 @@ class SubScriptionSecondState extends State<SubScriptionSecond> {
         decoration: const BoxDecoration(
             image: DecorationImage(
                 image: AssetImage('assets/images/subscription-bg.png'),
-                fit: BoxFit.cover)),
+                fit: BoxFit.fill)),
         child: Stack(
           children: [
             Positioned(
-              top: 50,
-              left: 20,
+              top: deviceHeight * 0.08,
+              left: deviceWidth * 0.03,
               child: GestureDetector(
                 onTap: () => Navigator.pop(context),
                 child: Container(
@@ -55,7 +55,7 @@ class SubScriptionSecondState extends State<SubScriptionSecond> {
               ),
             ),
             Positioned(
-                bottom: 10,
+                bottom: deviceHeight * 0.025,
                 left: 0,
                 right: 0,
                 child: Center(
