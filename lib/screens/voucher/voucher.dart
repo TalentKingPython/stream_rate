@@ -12,7 +12,6 @@ import 'package:stream_rate/constant/constant.dart';
 import 'package:stream_rate/screens/captcha/captcha.dart';
 import 'package:stream_rate/utils/utils.dart';
 
-
 class Voucher extends StatefulWidget {
   const Voucher({Key? key}) : super(key: key);
 
@@ -75,8 +74,8 @@ class VoucherState extends State<Voucher> {
                 children: [
                   LoadImageSimple(
                     image: 'assets/images/voucher_main.png',
-                    width: deviceWidth * 0.4,
-                    height: deviceHeight * 0.18,
+                    width: deviceHeight * 0.1,
+                    height: deviceHeight * 0.1,
                     imageFit: BoxFit.fill,
                   ),
                   Container(
@@ -86,7 +85,7 @@ class VoucherState extends State<Voucher> {
                       textAlign: TextAlign.center,
                       style: GoogleFonts.poppins(
                         color: colorWhite,
-                        fontSize: deviceWidth * 0.065,
+                        fontSize: deviceHeight * 0.030,
                       ),
                     ),
                   ),
@@ -98,7 +97,7 @@ class VoucherState extends State<Voucher> {
                       textAlign: TextAlign.center,
                       style: GoogleFonts.poppins(
                         color: colorWhite,
-                        fontSize: deviceWidth * 0.045,
+                        fontSize: deviceHeight * 0.024,
                       ),
                     ),
                   ),
@@ -118,9 +117,7 @@ class VoucherState extends State<Voucher> {
                   SizedBox(
                     height: deviceHeight * 0.001,
                     width: deviceWidth * 0.7,
-                    child: Container(
-                      color: white,
-                    ),
+                    child: Container(color: white),
                   ),
                   Container(
                     padding: const EdgeInsets.all(20),

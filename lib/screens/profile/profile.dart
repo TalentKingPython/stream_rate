@@ -107,7 +107,7 @@ class ProfileState extends State<Profile> {
                           ),
                           child: Icon(
                             Icons.cameraswitch_sharp,
-                            size: deviceWidth * 0.075,
+                            size: deviceHeight * 0.025,
                             color: colorMainGray,
                           ),
                         ),
@@ -239,7 +239,7 @@ class ProfileState extends State<Profile> {
                   Text(
                     'Your are currently subscribed to our',
                     style: GoogleFonts.poppins(
-                        color: colorWhite, fontSize: deviceWidth * 0.014),
+                        color: colorWhite, fontSize: deviceHeight * 0.014),
                   ),
                   ShaderMask(
                     shaderCallback: (Rect bounds) {
@@ -252,17 +252,17 @@ class ProfileState extends State<Profile> {
                     child: Text(
                       "PREMIUM PLAN",
                       style: GoogleFonts.poppins(
-                        fontSize: deviceWidth * 0.16,
+                        fontSize: deviceHeight * 0.16,
                         color: colorWhite,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
-                  SizedBox(height: deviceWidth * 0.12),
+                  SizedBox(height: deviceHeight * 0.6),
                   Text(
                     'Unlimited Access for',
                     style: GoogleFonts.poppins(
-                        color: colorWhite, fontSize: deviceWidth * 0.16),
+                        color: colorWhite, fontSize: deviceHeight * 0.16),
                   ),
                   Row(
                     children: [
@@ -277,7 +277,7 @@ class ProfileState extends State<Profile> {
                         child: Text(
                           "\$2.99",
                           style: GoogleFonts.poppins(
-                            fontSize: deviceWidth * 0.02,
+                            fontSize: deviceHeight * 0.02,
                             color: colorWhite,
                             // fontWeight: FontWeight.bold,
                           ),
@@ -285,11 +285,12 @@ class ProfileState extends State<Profile> {
                       ),
                       Text("/ ",
                           style: GoogleFonts.poppins(
-                              fontSize: deviceWidth * 0.02,
+                              fontSize: deviceHeight * 0.02,
                               color: Colors.grey)),
                       Text("week",
                           style: GoogleFonts.poppins(
-                              fontSize: deviceWidth * 0.02, color: colorWhite)),
+                              fontSize: deviceHeight * 0.02,
+                              color: colorWhite)),
                     ],
                   ),
                 ],
@@ -386,9 +387,7 @@ class ProfileState extends State<Profile> {
                                 fontSize: deviceHeight * 0.016,
                                 color: colorWhite),
                           ),
-                          SizedBox(
-                            width: deviceWidth * 0.02,
-                          ),
+                          SizedBox(width: deviceWidth * 0.02),
                           Text(
                             'SUBSCRIBE',
                             style: GoogleFonts.poppins(
