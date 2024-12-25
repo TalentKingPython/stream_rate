@@ -46,12 +46,10 @@ class FaceIdSignUpState extends State<FaceIdSignUp> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                // SizedBox(
-                //   height: deviceHeight * 0.04,
-                // ),
                 LoadImageSimple(
                   image: 'assets/images/streamrate-logo.png',
-                  width: deviceWidth * 0.4,
+                  width: deviceHeight * 0.17,
+                  height: deviceHeight * .11,
                   imageFit: BoxFit.fill,
                 ),
                 Container(

@@ -57,7 +57,7 @@ class _CaptureContentState extends State<_CaptureContent> {
             child: Padding(
               padding: EdgeInsets.symmetric(
                 horizontal: widget.width * 0.12,
-                vertical: widget.height * 0.004,
+                vertical: widget.height * 0.08,
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -78,10 +78,10 @@ class _CaptureContentState extends State<_CaptureContent> {
 
   Widget _buildLogo() {
     return LoadImageSimple(
-      image: 'assets/images/logowithname.png',
-      width: widget.width * 0.4,
-      height: widget.height * 0.12,
-      imageFit: BoxFit.contain,
+      image: 'assets/images/streamrate-logo.png',
+      width: deviceHeight * 0.17,
+      height: deviceHeight * .11,
+      imageFit: BoxFit.fill,
     );
   }
 

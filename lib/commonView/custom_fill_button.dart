@@ -17,7 +17,7 @@ class CustomFillButton extends StatelessWidget {
     this.onPressed,
     this.margin,
     this.width,
-    this.height = 50,
+    this.height,
     this.padding,
     this.isColorBtn = true,
     this.borderRadius,
@@ -29,7 +29,7 @@ class CustomFillButton extends StatelessWidget {
     return Container(
       margin: margin,
       width: width,
-      height: height,
+      height: height ?? deviceHeight * .06,
       decoration: BoxDecoration(
         gradient: isColorBtn
             ? const LinearGradient(

@@ -39,15 +39,17 @@ class ConfirmEmailState extends State<ConfirmEmail> {
       backgroundColor: colorMainBackground,
       body: Stack(
         children: [
-          SingleChildScrollView(
-            padding: EdgeInsets.symmetric(
-                horizontal: deviceWidth * 0.08, vertical: deviceHeight * 0.12),
+          Padding(
+            padding: EdgeInsets.fromLTRB(deviceWidth * 0.08,
+                deviceHeight * 0.12, deviceWidth * 0.08, deviceHeight * 0.02),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 LoadImageSimple(
-                  image: 'assets/images/logowithname.png',
-                  width: deviceWidth * 0.4,
+                  image: 'assets/images/streamrate-logo.png',
+                  width: deviceHeight * 0.17,
+                  height: deviceHeight * .11,
+                  imageFit: BoxFit.fill,
                 ),
                 Padding(
                   padding: EdgeInsets.only(
@@ -87,16 +89,16 @@ class ConfirmEmailState extends State<ConfirmEmail> {
                       FilteringTextInputFormatter.allow(RegExp('^[0-9]*\$'))
                     ],
                     textStyle: GoogleFonts.poppins(
-                        color: colorWhite, fontSize: deviceHeight * 0.025),
+                        color: colorWhite, fontSize: deviceWidth * 0.032),
                     hintCharacter: "0",
                     hintStyle: GoogleFonts.poppins(
                         color: colorMainLightGray,
-                        fontSize: deviceHeight * 0.025),
+                        fontSize: deviceWidth * 0.032),
                     pinTheme: PinTheme(
                       shape: PinCodeFieldShape.box,
-                      borderRadius: BorderRadius.circular(25),
-                      fieldHeight: deviceHeight * 0.06,
-                      fieldWidth: deviceHeight * 0.07,
+                      borderRadius: BorderRadius.circular(deviceWidth * 0.055),
+                      fieldHeight: deviceWidth * 0.14,
+                      fieldWidth: deviceWidth * 0.18,
                       borderWidth: 1,
                       inactiveBorderWidth: 1,
                       activeBorderWidth: 1,
@@ -127,7 +129,7 @@ class ConfirmEmailState extends State<ConfirmEmail> {
             ),
           ),
           Positioned(
-            bottom: deviceHeight * 0,
+            bottom: deviceHeight * 0.02,
             left: deviceWidth * 0.08,
             right: deviceWidth * 0.08,
             child: Column(
@@ -150,17 +152,16 @@ class ConfirmEmailState extends State<ConfirmEmail> {
                     ),
                   ],
                 ),
-                SizedBox(height: deviceHeight * 0.02),
+                SizedBox(height: deviceHeight * 0.05),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     CustomFillButton(
-                      onPressed: () {
-                        openScreenWithResult(context, const Login());
-                      },
+                      onPressed: () =>
+                          openScreenWithResult(context, const Login()),
                       isColorBtn: false,
                       width: deviceWidth * .39,
-                      height: deviceHeight * 0.07,
+                      height: deviceHeight * 0.06,
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
@@ -181,7 +182,7 @@ class ConfirmEmailState extends State<ConfirmEmail> {
                     CustomFillButton(
                       onPressed: onSubmit,
                       width: deviceWidth * .39,
-                      height: deviceHeight * 0.07,
+                      height: deviceHeight * 0.06,
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [

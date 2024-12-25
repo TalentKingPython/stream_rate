@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:stream_rate/commonView/load_image_with_placeholder.dart';
 import 'package:stream_rate/screens/login/login.dart';
 import 'package:stream_rate/screens/signup/email_signup.dart';
 import 'package:stream_rate/screens/signup/face_signup.dart';
@@ -46,11 +47,11 @@ class SignUpState extends State<SignUp> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(height: deviceHeight * .12),
-              Image.asset(
-                'assets/images/streamrate-logo.png',
+              LoadImageSimple(
+                image: 'assets/images/streamrate-logo.png',
                 width: deviceHeight * 0.17,
                 height: deviceHeight * .11,
-                fit: BoxFit.fill,
+                imageFit: BoxFit.fill,
               ),
               Container(
                 width: deviceWidth * 0.65,
