@@ -90,7 +90,7 @@ class _CaptureContentState extends State<_CaptureContent> {
       'Drag the slider to fit the puzzle',
       style: TextStyle(
         color: colorWhite,
-        fontSize: widget.width * 0.04,
+        fontSize: deviceHeight * .014,
       ),
     );
   }
