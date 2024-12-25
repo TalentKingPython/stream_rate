@@ -194,14 +194,15 @@ openNotificationAllowDialog(BuildContext context) {
       context: context,
       builder: (BuildContext context) {
         return Dialog(
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(deviceWidth * 0.04)),
           child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+              padding: EdgeInsets.symmetric(
+                  horizontal: deviceWidth * 0.02,
+                  vertical: deviceHeight * 0.02),
               height: deviceHeight * 0.45,
-              width: deviceWidth * 0.8,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(deviceWidth * 0.04),
                   color: colorMainBackground),
               child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -209,25 +210,27 @@ openNotificationAllowDialog(BuildContext context) {
                   children: [
                     LoadImageSimple(
                         image: "assets/images/notification.png",
-                        width: deviceWidth * 0.3,
-                        // height: deviceHeight * 0.15,
+                        width: deviceWidth * 0.2,
+                        height: deviceHeight * 0.1,
                         imageFit: BoxFit.fill),
                     Container(
-                      // padding: const EdgeInsets.symmetric(horizontal: 10),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: deviceWidth * 0.06),
                       child: Text(
                           "StreamRate would like to send you notifications",
                           textAlign: TextAlign.center,
                           style: GoogleFonts.poppins(
-                              color: colorWhite,
-                              fontSize: deviceHeight * 0.025)),
+                              color: colorWhite, fontSize: deviceWidth * 0.04)),
                     ),
                     Container(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: deviceWidth * 0.05),
                       child: Text(
                           "To stay on top of latest updates and new offers, please allow StreamRate to send you notifications.",
                           textAlign: TextAlign.center,
                           style: GoogleFonts.poppins(
                               color: colorWhite,
-                              fontSize: deviceHeight * 0.015)),
+                              fontSize: deviceWidth * 0.032)),
                     ),
                     Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -239,7 +242,7 @@ openNotificationAllowDialog(BuildContext context) {
                               child: Text("DON'T ALLOW",
                                   style: GoogleFonts.poppins(
                                       color: colorWhite,
-                                      fontSize: deviceHeight * 0.018))),
+                                      fontSize: deviceWidth * 0.03))),
                           CustomFillButton(
                               isColorBtn: true,
                               width: deviceWidth * 0.3,
@@ -250,9 +253,6 @@ openNotificationAllowDialog(BuildContext context) {
                                     fontSize: deviceHeight * 0.018),
                               ))
                         ]),
-                    SizedBox(
-                      height: 1,
-                    )
                   ])),
         );
       });
@@ -263,39 +263,43 @@ openContactsAllowDialog(BuildContext context) {
       context: context,
       builder: (BuildContext context) {
         return Dialog(
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(deviceWidth * 0.04)),
           child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 50),
-              height: deviceHeight * 0.5,
-              width: deviceWidth * 0.8,
+              padding: EdgeInsets.symmetric(
+                  horizontal: deviceWidth * 0.02,
+                  vertical: deviceHeight * 0.02),
+              height: deviceHeight * 0.45,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(deviceWidth * 0.04),
                   color: colorMainBackground),
               child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    const LoadImageSimple(
+                    LoadImageSimple(
                         image: "assets/images/contacts.png",
-                        width: 100,
-                        height: 100,
+                        width: deviceWidth * 0.2,
+                        height: deviceHeight * 0.1,
                         imageFit: BoxFit.cover),
                     Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: deviceWidth * 0.06),
                       child: Text(
                           "StreamRate would like to access your contacts",
                           textAlign: TextAlign.center,
                           style: GoogleFonts.poppins(
-                              color: colorWhite, fontSize: 24)),
+                              color: colorWhite, fontSize: deviceWidth * 0.04)),
                     ),
                     Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: deviceWidth * 0.05),
                       child: Text(
                           "Please allow StreamRate to sync your contacts to easily share content and invite people you know",
                           textAlign: TextAlign.center,
                           style: GoogleFonts.poppins(
-                              color: colorWhite, fontSize: 18)),
+                              color: colorWhite,
+                              fontSize: deviceWidth * 0.032)),
                     ),
                     Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -307,7 +311,8 @@ openContactsAllowDialog(BuildContext context) {
                               child: Text("DON'T ALLOW",
                                   textAlign: TextAlign.center,
                                   style: GoogleFonts.poppins(
-                                      color: colorWhite, fontSize: 16))),
+                                      color: colorWhite,
+                                      fontSize: deviceWidth * 0.03))),
                           CustomFillButton(
                               isColorBtn: true,
                               width: deviceWidth * 0.3,
@@ -315,7 +320,8 @@ openContactsAllowDialog(BuildContext context) {
                                 "ALLOW",
                                 textAlign: TextAlign.center,
                                 style: GoogleFonts.poppins(
-                                    color: colorWhite, fontSize: 16),
+                                    color: colorWhite,
+                                    fontSize: deviceHeight * 0.018),
                               ))
                         ]),
                   ])),
@@ -331,43 +337,51 @@ openReportDialog(BuildContext context) {
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
           child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 50),
+              padding: EdgeInsets.symmetric(
+                  horizontal: deviceWidth * 0.015,
+                  vertical: deviceHeight * 0.05),
               height: deviceHeight * 0.5,
               width: deviceHeight * 0.8,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(deviceWidth * 0.04),
                   color: colorMainBackground),
               child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    const LoadImageSimple(
+                    LoadImageSimple(
                         image: "assets/images/report.png",
-                        width: 100,
-                        height: 100,
+                        width: deviceWidth * 0.2,
+                        height: deviceHeight * 0.1,
                         imageFit: BoxFit.cover),
                     Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: deviceWidth * 0.036),
                       child: Text("Thank you for using StreamRate!",
                           textAlign: TextAlign.center,
                           style: GoogleFonts.poppins(
-                              color: colorWhite, fontSize: 24)),
+                              color: colorWhite,
+                              fontSize: deviceHeight * 0.02)),
                     ),
                     Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: deviceWidth * 0.06),
                       child: Text(
                           "We'll review the error, refund your credit, and keep improving. For questions, use the Help button bellow.",
                           textAlign: TextAlign.center,
                           style: GoogleFonts.poppins(
-                              color: colorWhite, fontSize: 18)),
+                              color: colorWhite,
+                              fontSize: deviceHeight * 0.014)),
                     ),
                     Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 30),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: deviceWidth * 0.17),
                       child: Text(
                           "We'are 95% accurate and always aiming higher!",
                           textAlign: TextAlign.center,
                           style: GoogleFonts.poppins(
-                              color: colorWhite, fontSize: 18)),
+                              color: colorWhite,
+                              fontSize: deviceHeight * 0.014)),
                     ),
                     Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -386,7 +400,8 @@ openReportDialog(BuildContext context) {
                                     const SizedBox(width: 10),
                                     Text("HELP",
                                         style: GoogleFonts.poppins(
-                                            color: colorWhite, fontSize: 20))
+                                            color: colorWhite,
+                                            fontSize: deviceHeight * 0.02))
                                   ])),
                           CustomFillButton(
                               onPressed: () =>
@@ -396,7 +411,8 @@ openReportDialog(BuildContext context) {
                               child: Text(
                                 "GO HOME",
                                 style: GoogleFonts.poppins(
-                                    color: colorWhite, fontSize: 20),
+                                    color: colorWhite,
+                                    fontSize: deviceHeight * 0.02),
                               ))
                         ]),
                   ])),
@@ -409,42 +425,47 @@ openNotFoundDialog(BuildContext context) {
       context: context,
       builder: (BuildContext context) {
         return Dialog(
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(deviceWidth * 0.04)),
           child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 50),
-              height: deviceHeight * 0.5,
-              width: deviceWidth * 0.8,
+              padding: EdgeInsets.symmetric(
+                  horizontal: deviceWidth * 0.02,
+                  vertical: deviceHeight * 0.02),
+              height: deviceHeight * 0.45,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(deviceWidth * 0.04),
                   color: colorMainBackground),
               child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    const LoadImageSimple(
+                    LoadImageSimple(
                         image: "assets/images/not_found.png",
-                        width: 100,
-                        height: 100,
+                        width: deviceWidth * 0.2,
+                        height: deviceHeight * 0.1,
                         imageFit: BoxFit.cover),
                     Text("Uh Oh! No results found!",
                         textAlign: TextAlign.center,
                         style: GoogleFonts.poppins(
-                            color: colorWhite, fontSize: 24)),
+                            color: colorWhite, fontSize: deviceHeight * 0.02)),
                     Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: deviceWidth * 0.04),
                       child: Text(
                           "It looks like we couldn't find a result. Please make sure the camera is facing the TV screen and it fits inside the marks.",
                           textAlign: TextAlign.center,
                           style: GoogleFonts.poppins(
-                              color: colorWhite, fontSize: 16)),
+                              color: colorWhite,
+                              fontSize: deviceHeight * 0.014)),
                     ),
                     Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 70),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: deviceWidth * 0.18),
                       child: Text("Please contact us if the problem persists.",
                           textAlign: TextAlign.center,
                           style: GoogleFonts.poppins(
-                              color: colorWhite, fontSize: 16)),
+                              color: colorWhite,
+                              fontSize: deviceHeight * 0.016)),
                     ),
                     Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -463,7 +484,8 @@ openNotFoundDialog(BuildContext context) {
                                     const SizedBox(width: 10),
                                     Text("HELP",
                                         style: GoogleFonts.poppins(
-                                            color: colorWhite, fontSize: 20))
+                                            color: colorWhite,
+                                            fontSize: deviceHeight * 0.02))
                                   ])),
                           CustomFillButton(
                               onPressed: () =>
@@ -473,7 +495,8 @@ openNotFoundDialog(BuildContext context) {
                               child: Text(
                                 "GO HOME",
                                 style: GoogleFonts.poppins(
-                                    color: colorWhite, fontSize: 20),
+                                    color: colorWhite,
+                                    fontSize: deviceHeight * 0.02),
                               ))
                         ]),
                   ])),
@@ -486,36 +509,38 @@ openMessageDialog(BuildContext context) {
       context: context,
       builder: (BuildContext context) {
         return Dialog(
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(deviceWidth * 0.04)),
           child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+              padding: EdgeInsets.symmetric(
+                  horizontal: deviceWidth * 0.02,
+                  vertical: deviceHeight * 0.02),
               height: deviceHeight * 0.45,
-              width: deviceHeight * 0.8,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(deviceWidth * 0.04),
                   color: colorMainBackground),
               child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    const LoadImageSimple(
+                    LoadImageSimple(
                         image: "assets/images/message.png",
-                        width: 100,
-                        height: 100,
-                        imageFit: BoxFit.cover),
+                        width: deviceWidth * 0.25,
+                        height: deviceHeight * 0.15,
+                        imageFit: BoxFit.fill),
                     Text("Thank you for reaching out!",
                         textAlign: TextAlign.center,
                         style: GoogleFonts.poppins(
-                            color: colorWhite, fontSize: deviceWidth * 0.05)),
+                            color: colorWhite, fontSize: deviceWidth * 0.04)),
                     Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: deviceWidth * 0.09),
                       child: Text(
                           "We've received your message and will respond to the email address you provided shortly ",
                           textAlign: TextAlign.center,
                           style: GoogleFonts.poppins(
                               color: colorWhite,
-                              fontSize: deviceHeight * 0.018)),
+                              fontSize: deviceHeight * 0.016)),
                     ),
                     CustomFillButton(
                         onPressed: () =>
@@ -525,7 +550,7 @@ openMessageDialog(BuildContext context) {
                         child: Text(
                           "GO HOME",
                           style: GoogleFonts.poppins(
-                              color: colorWhite, fontSize: 20),
+                              color: colorWhite, fontSize: deviceWidth * 0.035),
                         ))
                   ])),
         );
