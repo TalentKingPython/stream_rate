@@ -62,7 +62,7 @@ class FaceIdSignUpState extends State<FaceIdSignUp> {
                       textAlign: TextAlign.center,
                       style: GoogleFonts.poppins(
                         color: colorWhite,
-                        fontSize: deviceHeight * 0.028,
+                        fontSize: deviceHeight * 0.024,
                       ),
                     )),
                 Container(
@@ -72,7 +72,7 @@ class FaceIdSignUpState extends State<FaceIdSignUp> {
                       textAlign: TextAlign.center,
                       style: GoogleFonts.poppins(
                         color: colorWhite,
-                        fontSize: deviceHeight * 0.028,
+                        fontSize: deviceHeight * 0.024,
                       ),
                     )),
                 LoadImageSimple(
@@ -89,16 +89,12 @@ class FaceIdSignUpState extends State<FaceIdSignUp> {
                       textAlign: TextAlign.center,
                       style: GoogleFonts.poppins(
                         color: colorWhite,
-                        fontSize: deviceWidth * 0.043,
+                        fontSize: deviceHeight * 0.016,
                       )),
                 ),
-                SizedBox(
-                  height: deviceHeight * 0.01,
-                ),
+                SizedBox(height: deviceHeight * 0.01),
                 SizedBox(
                   width: deviceWidth * 0.8,
-
-                  // padding: const EdgeInsets.fromLTRB(25, 10, 25, 30),
                   child: Column(
                     children: [
                       CustomFillButton(
@@ -115,7 +111,7 @@ class FaceIdSignUpState extends State<FaceIdSignUp> {
                                 'SIGN UP',
                                 style: GoogleFonts.poppins(
                                     color: colorWhite,
-                                    fontSize: deviceHeight * 0.018,
+                                    fontSize: deviceHeight * 0.014,
                                     fontWeight: FontWeight.w600),
                               ),
                             )
@@ -138,9 +134,7 @@ class FaceIdSignUpState extends State<FaceIdSignUp> {
                       onTap: () => openScreenWithResult(context, const Login()),
                       child: Center(
                         child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal:
-                                  8), // Add uniform padding of 16 pixels
+                          padding: const EdgeInsets.symmetric(horizontal: 8),
                           child: ShaderMask(
                             shaderCallback: (Rect bounds) {
                               return const LinearGradient(
@@ -153,8 +147,7 @@ class FaceIdSignUpState extends State<FaceIdSignUp> {
                               "Log In?",
                               style: GoogleFonts.poppins(
                                 fontSize: deviceHeight * 0.016,
-                                color: Colors
-                                    .white, // The base color won't be visible due to ShaderMask
+                                color: colorWhite,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -173,18 +166,16 @@ class FaceIdSignUpState extends State<FaceIdSignUp> {
             child: GestureDetector(
               onTap: () => Navigator.pop(context),
               child: Container(
-                height: deviceAverageSize * 0.04,
-                width: deviceAverageSize * 0.04,
-                padding:
-                    EdgeInsets.symmetric(horizontal: deviceAverageSize * 0.015),
+                height: deviceHeight * 0.04,
+                width: deviceHeight * 0.04,
+                padding: EdgeInsets.symmetric(horizontal: deviceHeight * 0.015),
                 decoration: BoxDecoration(
                   color: colorMainGray.withOpacity(0.7),
-                  borderRadius:
-                      BorderRadius.circular(deviceAverageSize * 0.012),
+                  borderRadius: BorderRadius.circular(deviceHeight * 0.012),
                 ),
                 child: Center(
                   child: Icon(Icons.arrow_back_ios,
-                      size: deviceAverageSize * 0.02, color: colorWhite),
+                      size: deviceHeight * 0.018, color: colorWhite),
                 ),
               ),
             ),

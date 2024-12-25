@@ -151,7 +151,7 @@ class FavouriteState extends State<Favourite> {
                 child: Text(
                   'Favourites',
                   style: GoogleFonts.poppins(
-                      fontSize: deviceHeight * 0.03, color: colorWhite),
+                      fontSize: deviceHeight * .024, color: colorWhite),
                 ),
               ),
             ),
@@ -160,16 +160,17 @@ class FavouriteState extends State<Favourite> {
               child: GestureDetector(
                 onTap: () => Navigator.pop(context),
                 child: Container(
-                  height: deviceHeight * 0.045,
-                  width: deviceHeight * 0.045,
+                  height: deviceHeight * 0.04,
+                  width: deviceHeight * 0.04,
                   padding:
-                      EdgeInsets.symmetric(horizontal: deviceHeight * 0.008),
+                      EdgeInsets.symmetric(horizontal: deviceHeight * 0.015),
                   decoration: BoxDecoration(
-                      color: colorWhite.withOpacity(0.1),
-                      borderRadius: BorderRadius.circular(10)),
+                    color: colorMainGray.withOpacity(0.7),
+                    borderRadius: BorderRadius.circular(deviceHeight * 0.012),
+                  ),
                   child: Center(
                     child: Icon(Icons.arrow_back_ios,
-                        size: deviceHeight * 0.016, color: colorWhite),
+                        size: deviceHeight * 0.018, color: colorWhite),
                   ),
                 ),
               ),

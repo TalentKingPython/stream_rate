@@ -68,7 +68,7 @@ class InviteState extends State<Invite> {
                     Center(
                       child: Text("Invite People",
                           style: GoogleFonts.poppins(
-                              fontSize: deviceHeight * 0.035,
+                              fontSize: deviceHeight * .024,
                               color: colorWhite)),
                     ),
                     Container(
@@ -86,7 +86,7 @@ class InviteState extends State<Invite> {
                             textAlign: TextAlign.center,
                             style: GoogleFonts.poppins(
                                 color: colorWhite,
-                                fontSize: deviceHeight * 0.02),
+                                fontSize: deviceHeight * 0.018),
                           ),
                           Text(
                             "LIMITED TO 200 CREDITS",
@@ -100,7 +100,7 @@ class InviteState extends State<Invite> {
                     ),
                     Text("Synced Contacts",
                         style: GoogleFonts.poppins(
-                            fontSize: deviceHeight * 0.02, color: colorWhite)),
+                            fontSize: deviceHeight * 0.018, color: colorWhite)),
                     Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -163,16 +163,16 @@ class InviteState extends State<Invite> {
             child: GestureDetector(
               onTap: () => Navigator.pop(context),
               child: Container(
-                height: 36,
-                width: 36,
-                padding: EdgeInsets.symmetric(horizontal: deviceWidth * 0.03),
+                height: deviceHeight * 0.04,
+                width: deviceHeight * 0.04,
+                padding: EdgeInsets.symmetric(horizontal: deviceHeight * 0.015),
                 decoration: BoxDecoration(
-                  color: colorWhite.withOpacity(0.1),
-                  borderRadius: BorderRadius.circular(10),
+                  color: colorMainGray.withOpacity(0.7),
+                  borderRadius: BorderRadius.circular(deviceHeight * 0.012),
                 ),
-                child: const Center(
-                  child:
-                      Icon(Icons.arrow_back_ios, size: 16, color: colorWhite),
+                child: Center(
+                  child: Icon(Icons.arrow_back_ios,
+                      size: deviceHeight * 0.018, color: colorWhite),
                 ),
               ),
             ),

@@ -56,22 +56,22 @@ class ConfirmEmailState extends State<ConfirmEmail> {
                     "Confirm Email",
                     textAlign: TextAlign.center,
                     style: GoogleFonts.poppins(
-                        color: colorWhite, fontSize: deviceHeight * 0.03),
+                        color: colorWhite, fontSize: deviceHeight * 0.024),
                   ),
                 ),
                 Text('We sent a 4-digit code to your',
                     style: GoogleFonts.poppins(
-                        color: colorWhite, fontSize: deviceHeight * 0.02)),
+                        color: colorWhite, fontSize: deviceHeight * 0.018)),
                 Text('email address to confirm it’s yours.',
                     style: GoogleFonts.poppins(
-                        color: colorWhite, fontSize: deviceHeight * 0.02)),
+                        color: colorWhite, fontSize: deviceHeight * 0.018)),
                 SizedBox(height: deviceHeight * 0.02),
                 Text('Please check your inbox and enter',
                     style: GoogleFonts.poppins(
-                        color: colorWhite, fontSize: deviceHeight * 0.02)),
+                        color: colorWhite, fontSize: deviceHeight * 0.018)),
                 Text('the code below.',
                     style: GoogleFonts.poppins(
-                        color: colorWhite, fontSize: deviceHeight * 0.02)),
+                        color: colorWhite, fontSize: deviceHeight * 0.018)),
                 SizedBox(height: deviceHeight * 0.05),
                 Container(
                   width: double.infinity,
@@ -95,8 +95,8 @@ class ConfirmEmailState extends State<ConfirmEmail> {
                     pinTheme: PinTheme(
                       shape: PinCodeFieldShape.box,
                       borderRadius: BorderRadius.circular(25),
-                      fieldHeight: deviceHeight * 0.08,
-                      fieldWidth: deviceHeight * 0.09,
+                      fieldHeight: deviceHeight * 0.06,
+                      fieldWidth: deviceHeight * 0.07,
                       borderWidth: 1,
                       inactiveBorderWidth: 1,
                       activeBorderWidth: 1,
@@ -138,14 +138,14 @@ class ConfirmEmailState extends State<ConfirmEmail> {
                     Text(
                       'Didn\'t receive the code?',
                       style: GoogleFonts.poppins(
-                          color: colorWhite, fontSize: deviceHeight * 0.02),
+                          color: colorWhite, fontSize: deviceHeight * 0.016),
                     ),
                     TextButton(
                       onPressed: () {},
                       child: Text(
                         'Resend it',
                         style: GoogleFonts.poppins(
-                            color: colorYellow, fontSize: deviceHeight * 0.02),
+                            color: colorYellow, fontSize: deviceHeight * 0.016),
                       ),
                     ),
                   ],
@@ -164,14 +164,16 @@ class ConfirmEmailState extends State<ConfirmEmail> {
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          const Icon(Icons.arrow_back_ios,
-                              color: colorWhite, size: 18),
+                          Icon(
+                            Icons.arrow_back_ios,
+                            color: colorWhite,
+                            size: deviceHeight * 0.014,
+                          ),
                           Text(
                             'Back',
                             style: GoogleFonts.poppins(
                                 color: colorWhite,
-                                fontSize: deviceHeight * 0.02,
-                                fontWeight: FontWeight.bold),
+                                fontSize: deviceHeight * 0.014),
                           ),
                         ],
                       ),
@@ -183,14 +185,17 @@ class ConfirmEmailState extends State<ConfirmEmail> {
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          const Icon(Icons.check, color: colorWhite, size: 18),
+                          Icon(
+                            Icons.check,
+                            color: colorWhite,
+                            size: deviceHeight * 0.014,
+                          ),
                           const SizedBox(width: 4),
                           Text(
                             'CONFIRM',
                             style: GoogleFonts.poppins(
                                 color: colorWhite,
-                                fontSize: deviceHeight * 0.02,
-                                fontWeight: FontWeight.bold),
+                                fontSize: deviceHeight * 0.014),
                           ),
                         ],
                       ),

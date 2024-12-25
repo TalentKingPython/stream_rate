@@ -65,33 +65,37 @@ class SplashState extends State<Splash> with SingleTickerProviderStateMixin {
           ),
           child: Stack(children: [
             Center(
-                child: AnimatedBuilder(
-                    animation: _scaleAnimation,
-                    builder: (context, child) {
-                      return Transform.scale(
-                        scale: _scaleAnimation.value,
-                        child: child,
-                      );
-                    },
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        LoadImageSimple(
-                            image: "assets/images/streamrate-logo.png",
-                            width: deviceWidth * 0.35),
-                        SizedBox(height: deviceHeight * 0.05),
-                        SizedBox(
-                            width: deviceWidth * 0.3,
-                            child: Text(
-                              "Movie and series ratings at your fingertips",
-                              textAlign: TextAlign.center,
-                              style: GoogleFonts.poppins(
-                                  color: colorWhite,
-                                  fontSize: deviceWidth * 0.022),
-                            ))
-                      ],
-                    ))),
+              child: AnimatedBuilder(
+                animation: _scaleAnimation,
+                builder: (context, child) {
+                  return Transform.scale(
+                    scale: _scaleAnimation.value,
+                    child: child,
+                  );
+                },
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      'assets/images/streamrate-logo.png',
+                      width: deviceHeight * 0.17,
+                      height: deviceHeight * .11,
+                      fit: BoxFit.fill,
+                    ),
+                    SizedBox(height: deviceHeight * 0.05),
+                    SizedBox(
+                        width: deviceWidth * 0.3,
+                        child: Text(
+                          "Movie and series ratings at your fingertips",
+                          textAlign: TextAlign.center,
+                          style: GoogleFonts.poppins(
+                              color: colorWhite, fontSize: deviceWidth * 0.022),
+                        ))
+                  ],
+                ),
+              ),
+            ),
             Positioned(
               bottom: deviceHeight * 0.08,
               right: 0,

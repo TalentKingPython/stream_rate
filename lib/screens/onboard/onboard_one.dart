@@ -39,9 +39,12 @@ class OnboardOneState extends State<OnboardOne> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            LoadImageSimple(
-                image: "assets/images/streamrate-logo.png",
-                width: deviceWidth * 0.4),
+            Image.asset(
+              'assets/images/streamrate-logo.png',
+              width: deviceHeight * 0.17,
+              height: deviceHeight * .11,
+              fit: BoxFit.fill,
+            ),
             SizedBox(height: (deviceHeight - 70) * 0.05),
             Text("Welcome!",
                 style: GoogleFonts.poppins(

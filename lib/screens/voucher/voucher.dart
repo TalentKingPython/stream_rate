@@ -54,12 +54,8 @@ class VoucherState extends State<Voucher> {
   @override
   Widget build(BuildContext context) {
     final Barcode barcode = Barcode.upcA();
-    final String svg = barcode.toSvg(
-      '98765432109', // Your data
-      width: deviceWidth * 0.9, // Width
-      height: deviceHeight * 0.12, // Height
-      drawText: true, // Include text under the barcode
-    );
+    final String svg = barcode.toSvg('98765432109',
+        width: deviceWidth * 0.9, height: deviceHeight * 0.12, drawText: true);
 
     return Scaffold(
       backgroundColor: colorMainBackground,
@@ -111,7 +107,7 @@ class VoucherState extends State<Voucher> {
                     child: SvgPicture.string(
                       svg,
                       fit: BoxFit.contain,
-                      color: Colors.grey,
+                      color: colorMainLightGray,
                     ),
                   ),
                   SizedBox(
@@ -167,16 +163,16 @@ class VoucherState extends State<Voucher> {
             child: GestureDetector(
               onTap: () => Navigator.pop(context),
               child: Container(
-                height: 36,
-                width: 36,
-                padding: const EdgeInsets.symmetric(horizontal: 12),
+                height: deviceHeight * 0.04,
+                width: deviceHeight * 0.04,
+                padding: EdgeInsets.symmetric(horizontal: deviceHeight * 0.015),
                 decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.1),
-                  borderRadius: BorderRadius.circular(10),
+                  color: colorMainGray.withOpacity(0.7),
+                  borderRadius: BorderRadius.circular(deviceHeight * 0.012),
                 ),
-                child: const Center(
-                  child:
-                      Icon(Icons.arrow_back_ios, size: 16, color: colorWhite),
+                child: Center(
+                  child: Icon(Icons.arrow_back_ios,
+                      size: deviceHeight * 0.018, color: colorWhite),
                 ),
               ),
             ),
